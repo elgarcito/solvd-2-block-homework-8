@@ -1,6 +1,10 @@
 package com.solvd.essay;
 
 
+import com.solvd.essay.domain.EssayModule;
+import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.EssayModuleRepositoryImpl;
+import com.solvd.essay.service.EssayModuleService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,7 +21,9 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/solvd_essay","root","Edgar1269!");
+
         conn.setAutoCommit(false);
+        /*
         try {
             PreparedStatement ps =conn.prepareStatement("insert into essay_module (module_description) value (?) ", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1,"Greater module");
@@ -30,6 +36,16 @@ public class Main {
         finally {
             conn.setAutoCommit(true);
         }
+
+         */
+            AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+            EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+
+            EssayModule newEssayModule1= new EssayModule();
+            newEssayModule1.setModuleDescription("Probando");
+
+
+            newEssayModuleService.create(newEssayModule1);
 
 
     }

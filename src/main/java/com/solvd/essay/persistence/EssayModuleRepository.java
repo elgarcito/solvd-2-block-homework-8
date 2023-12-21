@@ -1,4 +1,5 @@
 package com.solvd.essay.persistence;
 
-public interface EssayModuleRepository {
+public interface EssayModuleRepository<T> extends InterfaceGenerericDao<T> {
+
 }

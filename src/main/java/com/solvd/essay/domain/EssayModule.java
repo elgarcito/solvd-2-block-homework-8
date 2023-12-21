@@ -1,7 +1,10 @@
 package com.solvd.essay.domain;
 
+import java.io.Serializable;
+
 public class EssayModule {
 
+    public final String tableName="essay_module";
     private Long id;
    private String moduleDescription;
 
