@@ -10,9 +10,9 @@ public interface InterfaceGenerericDao<T> {
     public void create(final T thingToCreate) throws SQLException;
     public List<T> getAll() throws SQLException;
 
-    /*
-    public T findById(final long id);
 
+    public T findById(final long id) throws SQLException;
+    /*
 
     public void delete(final T thingToDelete);
     public void deleteById (final Long thingId);

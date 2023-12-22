@@ -61,6 +61,28 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
         }
     }
 
+    @Override
+    public T findById(long id) throws SQLException {
+        try {
+            if (id==0l){
+                throw new SQLException("The id must be greater than 0L");
+            }
+            conn.setAutoCommit(false);
+            String query="select * from "+getTableName()+" where id="+id+";";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ResultSet result =ps.executeQuery();
+            result.next();
+            newClass = mapResultToObject(result);
+            return newClass;
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+        finally {
+            conn.setAutoCommit(true);
+        }
+    }
+
     /*Return the table name */
     public abstract String getTableName();
 

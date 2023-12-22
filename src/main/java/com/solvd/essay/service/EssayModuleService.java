@@ -20,8 +20,12 @@ public class EssayModuleService {
             throw new RuntimeException(e);
         }
     }
-
     public List<EssayModule> findAll() throws SQLException {
             return essayModuleImpl.getAll();
     }
+
+    public EssayModule findOne(Long id) throws SQLException {
+        return essayModuleImpl.findById(id);
+    }
+
 }

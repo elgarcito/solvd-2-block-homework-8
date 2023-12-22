@@ -63,5 +63,8 @@ public class Main {
         for (EssayModule module:moduleList) {
             System.out.println(module.getId()+" "+module.getModuleDescription());
         }
+
+        EssayModule module1 = newEssayModuleService.findOne(0L);
+        System.out.println(module1.getId()+" "+module1.getModuleDescription());
     }
 }
