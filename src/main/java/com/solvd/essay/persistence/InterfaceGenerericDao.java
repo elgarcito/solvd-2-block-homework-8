@@ -8,6 +8,8 @@ import java.util.List;
 public interface InterfaceGenerericDao<T> {
 
     public void create(final T thingToCreate) throws SQLException;
+    public List<T> getAll() throws SQLException;
+
     /*
     public T findById(final long id);
 
@@ -19,7 +21,7 @@ public interface InterfaceGenerericDao<T> {
     public void update(final T thingToUpdate);
 
     public void setThing(Class<T> thingToSet);
-    public List<T> findAll();
+
 
      */
 

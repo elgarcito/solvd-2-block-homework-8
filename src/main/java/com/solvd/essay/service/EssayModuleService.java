@@ -4,6 +4,7 @@ import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.persistence.impl.AbstracDao;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class EssayModuleService {
     private final AbstracDao<EssayModule> essayModuleImpl;
@@ -18,5 +19,9 @@ public class EssayModuleService {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public List<EssayModule> findAll() throws SQLException {
+            return essayModuleImpl.getAll();
     }
 }
