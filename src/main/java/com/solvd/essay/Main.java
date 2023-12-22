@@ -50,18 +50,18 @@ public class Main {
             conn.setAutoCommit(true);
         }
         */
-
-
-
+        //Create
 
             AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
             EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
             EssayModule newEssayModule1= new EssayModule();
-            newEssayModule1.setModuleDescription("Probando");
+            newEssayModule1.setModuleDescription("Probando abc");
 
             newEssayModuleService.create(newEssayModule1);
 
+
+        //Find All
         /*
          PreparedStatement pr = conn.prepareStatement("select * from essay_module");
          ResultSet result = pr.executeQuery();
@@ -73,17 +73,21 @@ public class Main {
         for (EssayModule module:moduleList) {
             System.out.println(module.getId()+" "+module.getModuleDescription());
         }
-
-
-
-
         */
-
+        //Find one by id
+        /*
         EssayModule module1 = newEssayModuleService.findOne(5L);
         System.out.println(module1.getId()+" "+module1.getModuleDescription());
+         */
 
+        //Delete one by id
+        /*
         newEssayModuleService.deleteOne(11L);
-
+         */
+        //Delete one by the object
+        EssayModule newEssayModule2= new EssayModule();
+        newEssayModule2.setId(21L);
+        newEssayModuleService.deleteEntity(newEssayModule2);
 
     }
 }

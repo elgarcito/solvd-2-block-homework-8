@@ -33,4 +33,10 @@ public class EssayModuleService {
         System.out.println("Object with id= "+id+" deleted successfully");
     }
 
+    public void deleteEntity(EssayModule essayModule){
+        essayModuleImpl.delete(essayModule);
+        System.out.println("Object with id= "+essayModule.getId()+"and "
+                +essayModule.getModuleDescription()+" deleted successfully");
+    }
+
 }

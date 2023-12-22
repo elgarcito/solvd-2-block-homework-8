@@ -15,9 +15,11 @@ public interface InterfaceGenerericDao<T> {
 
     public void deleteById (final Long thingId) throws SQLException;
 
+    public void delete(final T thingToDelete);
+
     /*
 
-    public void delete(final T thingToDelete);
+
 
 
 

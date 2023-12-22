@@ -40,5 +40,8 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
         return newEssayModule;
     }
 
-
+    @Override
+    public Long getThingId(EssayModule thing) {
+        return thing.getId();
+    }
 }

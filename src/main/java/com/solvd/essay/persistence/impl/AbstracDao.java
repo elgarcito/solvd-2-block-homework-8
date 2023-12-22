@@ -100,6 +100,16 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
         }
     }
 
+    @Override
+    public void delete(T thingToDelete) {
+        try {
+            Long idOfObject=getThingId(thingToDelete);
+            deleteById(idOfObject);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     /*Return the table name */
     public abstract String getTableName();
 
@@ -110,6 +120,8 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     /*Return the field values of the object that we want to add to the attributes in the new row of the table.
     they must be separated by comma in one string*/
     public abstract String getThingFields(T thing);
+
+    public abstract Long getThingId(T thing);
 
     public abstract T mapResultToObject(ResultSet resultSet) throws SQLException;
 }
