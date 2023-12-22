@@ -40,6 +40,20 @@ public class Main {
 
          */
         /*
+        try {
+            PreparedStatement ps =conn.prepareStatement("delete from essay_module  where id= ? ;");
+            ps.setLong(1,10);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        finally {
+            conn.setAutoCommit(true);
+        }
+        */
+
+
+
+
             AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
             EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
@@ -48,23 +62,28 @@ public class Main {
 
             newEssayModuleService.create(newEssayModule1);
 
-         */
         /*
          PreparedStatement pr = conn.prepareStatement("select * from essay_module");
          ResultSet result = pr.executeQuery();
          while (result.next()){
              System.out.println(result.getString("module_description"));
          }
-         */
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
-        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
         List<EssayModule> moduleList =newEssayModuleService.findAll();
         for (EssayModule module:moduleList) {
             System.out.println(module.getId()+" "+module.getModuleDescription());
         }
 
-        EssayModule module1 = newEssayModuleService.findOne(0L);
+
+
+
+        */
+
+        EssayModule module1 = newEssayModuleService.findOne(5L);
         System.out.println(module1.getId()+" "+module1.getModuleDescription());
+
+        newEssayModuleService.deleteOne(11L);
+
+
     }
 }

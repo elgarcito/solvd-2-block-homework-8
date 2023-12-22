@@ -12,10 +12,13 @@ public interface InterfaceGenerericDao<T> {
 
 
     public T findById(final long id) throws SQLException;
+
+    public void deleteById (final Long thingId) throws SQLException;
+
     /*
 
     public void delete(final T thingToDelete);
-    public void deleteById (final Long thingId);
+
 
 
     public void update(final T thingToUpdate);

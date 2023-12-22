@@ -28,4 +28,9 @@ public class EssayModuleService {
         return essayModuleImpl.findById(id);
     }
 
+    public void deleteOne(Long id) throws SQLException {
+        essayModuleImpl.deleteById(id);
+        System.out.println("Object with id= "+id+" deleted successfully");
+    }
+
 }

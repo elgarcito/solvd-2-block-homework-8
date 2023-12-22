@@ -68,14 +68,31 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 throw new SQLException("The id must be greater than 0L");
             }
             conn.setAutoCommit(false);
-            String query="select * from "+getTableName()+" where id="+id+";";
+            String query="select * from "+getTableName()+" where id=?;";
             PreparedStatement ps = conn.prepareStatement(query);
+            ps.setLong(1,id);
             ResultSet result =ps.executeQuery();
             result.next();
             newClass = mapResultToObject(result);
             return newClass;
         } catch (SQLException e) {
             System.out.println(e.getMessage());
+            throw new RuntimeException(e);
+        }
+        finally {
+            conn.setAutoCommit(true);
+        }
+    }
+
+    @Override
+    public void deleteById(Long thingId) throws SQLException {
+        try {
+            conn.setAutoCommit(false);
+            String query="delete from "+getTableName()+" where id=?;";
+            PreparedStatement ps = conn.prepareStatement(query);
+            ps.setLong(1,thingId);
+            ps.executeUpdate();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         finally {
