@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
-    private Class<T> thing;
     public Connection conn;
 
     public AbstracDao(Connection conn) {
