@@ -1,9 +1,7 @@
 package com.solvd.essay.persistence.impl;
 
-import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.persistence.InterfaceGenerericDao;
 
-import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,7 +52,9 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             }
             return listOfThings;
         } catch (SQLException e) {
+            conn.rollback();
             throw new RuntimeException(e);
+
         }
         finally {
             conn.setAutoCommit(true);
@@ -76,6 +76,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             newClass = mapResultToObject(result);
             return newClass;
         } catch (SQLException e) {
+            conn.rollback();
             System.out.println(e.getMessage());
             throw new RuntimeException(e);
         }
@@ -93,6 +94,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             ps.setLong(1,thingId);
             ps.executeUpdate();
         } catch (SQLException e) {
+            conn.rollback();
             throw new RuntimeException(e);
         }
         finally {
@@ -110,18 +112,39 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
         }
     }
 
+    @Override
+    public void update(T thingToUpdate) throws SQLException {
+        try {
+            Long thingId=getThingId(thingToUpdate);
+            T lastValueOfThing=findById(thingId);
+            conn.setAutoCommit(false);
+            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate));
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            conn.rollback();
+            throw new RuntimeException(e);
+        }
+        finally {
+            conn.setAutoCommit(true);
+        }
+    }
+
+    protected abstract String getUpdateQuery(T newThingToUpdate);
+
+
     /*Return the table name */
-    public abstract String getTableName();
+    protected abstract String getTableName();
 
     /*Return the table fields in the order that we want to show it or use it it must be separated by
     * commas and lower case
     * */
-    public abstract String getTableFields();
+    protected abstract String getTableFields();
     /*Return the field values of the object that we want to add to the attributes in the new row of the table.
     they must be separated by comma in one string*/
-    public abstract String getThingFields(T thing);
+    protected abstract String getThingFields(T thing);
 
-    public abstract Long getThingId(T thing);
+    protected abstract Long getThingId(T thing);
 
-    public abstract T mapResultToObject(ResultSet resultSet) throws SQLException;
+    protected abstract T mapResultToObject(ResultSet resultSet) throws SQLException;
+
 }

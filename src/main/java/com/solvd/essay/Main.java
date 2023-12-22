@@ -24,6 +24,7 @@ public class Main {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/solvd_essay","root","Edgar1269!");
 
         conn.setAutoCommit(false);
+        //insert practice example
         /*
         try {
             PreparedStatement ps =conn.prepareStatement("insert into essay_module (module_description) value (?) ", Statement.RETURN_GENERATED_KEYS);
@@ -39,6 +40,7 @@ public class Main {
         }
 
          */
+        //Delete practice example
         /*
         try {
             PreparedStatement ps =conn.prepareStatement("delete from essay_module  where id= ? ;");
@@ -50,18 +52,7 @@ public class Main {
             conn.setAutoCommit(true);
         }
         */
-        //Create
-
-            AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
-            EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
-
-            EssayModule newEssayModule1= new EssayModule();
-            newEssayModule1.setModuleDescription("Probando abc");
-
-            newEssayModuleService.create(newEssayModule1);
-
-
-        //Find All
+        //Find All practice example
         /*
          PreparedStatement pr = conn.prepareStatement("select * from essay_module");
          ResultSet result = pr.executeQuery();
@@ -69,11 +60,49 @@ public class Main {
              System.out.println(result.getString("module_description"));
          }
 
+         */
+        /*
+        try {
+            PreparedStatement ps =conn.prepareStatement("update essay_module set module_description=?" +
+                    " where id= ? ;");
+            ps.setString(1,"probando 345");
+            ps.setLong(2,24);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+        finally {
+            conn.setAutoCommit(true);
+        }
+
+         */
+
+
+
+            AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+            EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+
+
+        //Create implementation
+        /*
+            EssayModule newEssayModule1= new EssayModule();
+            newEssayModule1.setModuleDescription("Probando abc");
+
+            newEssayModuleService.create(newEssayModule1);
+
+         */
+
+
+
+        /*
+
+         //Find all implementation
         List<EssayModule> moduleList =newEssayModuleService.findAll();
         for (EssayModule module:moduleList) {
             System.out.println(module.getId()+" "+module.getModuleDescription());
         }
         */
+
+
         //Find one by id
         /*
         EssayModule module1 = newEssayModuleService.findOne(5L);
@@ -85,9 +114,17 @@ public class Main {
         newEssayModuleService.deleteOne(11L);
          */
         //Delete one by the object
+
+        /*
         EssayModule newEssayModule2= new EssayModule();
         newEssayModule2.setId(21L);
         newEssayModuleService.deleteEntity(newEssayModule2);
+         */
+        EssayModule newEssayModule3= new EssayModule();
+        newEssayModule3.setId(24L);
+        newEssayModule3.setModuleDescription("Probando 999");
+        newEssayModuleService.updateEntity(newEssayModule3);
+
 
     }
 }

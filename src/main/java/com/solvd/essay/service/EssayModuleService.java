@@ -39,4 +39,17 @@ public class EssayModuleService {
                 +essayModule.getModuleDescription()+" deleted successfully");
     }
 
+    public void updateEntity(EssayModule essayModule){
+        try {
+            essayModuleImpl.update(essayModule);
+            System.out.println("Object with id= "+essayModule.getId()+"and "
+                    +essayModule.getModuleDescription()+" was updated successfully");
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+
+
 }

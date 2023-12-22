@@ -44,4 +44,10 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
     public Long getThingId(EssayModule thing) {
         return thing.getId();
     }
+
+    @Override
+    protected String getUpdateQuery(EssayModule newEssayModule) {
+        return "update essay_module set module_description=\""+newEssayModule.getModuleDescription()+
+                "\" where id="+newEssayModule.getId();
+    }
 }

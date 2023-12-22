@@ -17,13 +17,15 @@ public interface InterfaceGenerericDao<T> {
 
     public void delete(final T thingToDelete);
 
+    public void update(final T thingToUpdate) throws SQLException;
+
     /*
 
 
 
 
 
-    public void update(final T thingToUpdate);
+
 
     public void setThing(Class<T> thingToSet);
 
