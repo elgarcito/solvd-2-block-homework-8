@@ -88,7 +88,6 @@ public class Main {
             newEssayModule1.setModuleDescription("Probando abc");
 
             newEssayModuleService.create(newEssayModule1);
-
          */
 
 
@@ -121,10 +120,10 @@ public class Main {
         newEssayModuleService.deleteEntity(newEssayModule2);
          */
         EssayModule newEssayModule3= new EssayModule();
-        newEssayModule3.setId(24L);
-        newEssayModule3.setModuleDescription("Probando 999");
+        newEssayModule3.setId(5L);
+        newEssayModule3.setModuleDescription("Probando 6969");
         newEssayModuleService.updateEntity(newEssayModule3);
-
+        conn.close();
 
     }
 }

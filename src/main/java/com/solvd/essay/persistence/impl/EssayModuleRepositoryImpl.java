@@ -34,20 +34,20 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
     @Override
     public EssayModule mapResultToObject(ResultSet resultSet) throws SQLException {
 
-        EssayModule newEssayModule= new EssayModule();
-        newEssayModule.setId(resultSet.getLong("id"));
-        newEssayModule.setModuleDescription(resultSet.getString("module_description"));
-        return newEssayModule;
+        EssayModule entity= new EssayModule();
+        entity.setId(resultSet.getLong("id"));
+        entity.setModuleDescription(resultSet.getString("module_description"));
+        return entity;
     }
 
     @Override
-    public Long getThingId(EssayModule thing) {
-        return thing.getId();
+    public Long getThingId(EssayModule entity) {
+        return entity.getId();
     }
 
     @Override
-    protected String getUpdateQuery(EssayModule newEssayModule) {
-        return "update essay_module set module_description=\""+newEssayModule.getModuleDescription()+
-                "\" where id="+newEssayModule.getId();
+    protected String getUpdateQuery(EssayModule entity) {
+        return "update essay_module set module_description=\""+entity.getModuleDescription()+
+                "\" where id="+entity.getId();
     }
 }

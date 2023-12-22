@@ -1,6 +1,9 @@
 package com.solvd.essay.persistence.impl;
 
+import com.solvd.essay.Main;
 import com.solvd.essay.persistence.InterfaceGenerericDao;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,8 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
+
+    private static final Logger LOGGER = LogManager.getLogger(AbstracDao.class);
 
     private T newClass;
     public Connection conn;
@@ -30,7 +36,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             ps.setString(1, getThingFields(thingToCreate));
             ps.executeUpdate();
         } catch (Exception e) {
-            e.getMessage();
+            LOGGER.error(e.getMessage()) ;
             conn.rollback();
         }
         finally {
@@ -73,11 +79,11 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             ps.setLong(1,id);
             ResultSet result =ps.executeQuery();
             result.next();
-            newClass = mapResultToObject(result);
+            T newClass = mapResultToObject(result);
             return newClass;
         } catch (SQLException e) {
             conn.rollback();
-            System.out.println(e.getMessage());
+            LOGGER.error(e.getMessage());
             throw new RuntimeException(e);
         }
         finally {
@@ -115,8 +121,6 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     @Override
     public void update(T thingToUpdate) throws SQLException {
         try {
-            Long thingId=getThingId(thingToUpdate);
-            T lastValueOfThing=findById(thingId);
             conn.setAutoCommit(false);
             PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate));
             ps.executeUpdate();
