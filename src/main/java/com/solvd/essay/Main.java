@@ -23,5 +23,11 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/solvd_essay","root","Edgar1269!");
         conn.setAutoCommit(false);
+        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+       // List<EssayModule> newList= newEssayModuleService.findAll();
+      // newList.forEach(essayModule -> System.out.println(essayModule.getModuleDescription()));
+        //EssayModule essayModule=newEssayModuleService.findOne(10L);
+        newEssayModuleService.deleteOne(5L);
     }
 }

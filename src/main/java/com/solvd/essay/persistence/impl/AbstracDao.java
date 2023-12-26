@@ -71,16 +71,22 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     public T findById(long id) throws SQLException {
         try {
             if (id==0l){
-                throw new SQLException("The id must be greater than 0L");
+                LOGGER.info("The id must be greater than 0L, returning a null value");
+                return null;
             }
             conn.setAutoCommit(false);
-            String query="select * from "+getTableName()+" where id=?;";
+            String query= "select * from "+getTableName()+" where id=?;";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setLong(1,id);
+
             ResultSet result =ps.executeQuery();
-            result.next();
-            T newClass = mapResultToObject(result);
-            return newClass;
+            if (!result.next()){
+                LOGGER.info("The value can not be found returning a null value");
+                return null;
+            }
+        T newClass = mapResultToObject(result);
+        return newClass;
+
         } catch (SQLException e) {
             conn.rollback();
             LOGGER.error(e.getMessage());
@@ -94,7 +100,12 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     @Override
     public void deleteById(Long thingId) throws SQLException {
         try {
+            T thingToDelete=findById(thingId);
             conn.setAutoCommit(false);
+            if (thingToDelete==null) {
+                LOGGER.info("The object does not exist");
+                return;
+            }
             String query="delete from "+getTableName()+" where id=?;";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setLong(1,thingId);

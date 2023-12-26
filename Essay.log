@@ -1,0 +1,26 @@
+19:12:01.119 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Parameter index out of range (1 > number of parameters, which is 0).
+19:12:43.240 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Parameter index out of range (1 > number of parameters, which is 0).
+19:12:50.792 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Parameter index out of range (1 > number of parameters, which is 0).
+19:20:06.963 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:21:28.776 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:21:59.813 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:24:59.351 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:25:08.931 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:25:15.090 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:26:01.272 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:26:45.288 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:28:45.004 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:29:24.595 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Illegal operation on empty result set.
+19:30:01.287 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - this value is not in te database
+19:30:19.377 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - this value is not in te database
+19:33:57.523 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+19:38:01.618 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Operation not allowed for a result set of type ResultSet.TYPE_FORWARD_ONLY.
+19:38:22.181 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - this value is not in te database
+19:38:39.265 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - After end of result set
+19:39:08.585 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - this value is not in te database
+19:41:15.949 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+19:50:51.647 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+20:00:17.967 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+20:02:06.637 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+20:03:05.260 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+20:03:05.264 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
