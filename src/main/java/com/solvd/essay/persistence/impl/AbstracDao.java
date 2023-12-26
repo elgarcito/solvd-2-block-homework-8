@@ -48,7 +48,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     public List<T> getAll() throws SQLException {
         try {
             conn.setAutoCommit(false);
-            String query="select * from "+getTableName();
+            String query=String.format("select * from %s",getTableName());
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet result =ps.executeQuery();
             List<T> listOfThings=new ArrayList<>();
