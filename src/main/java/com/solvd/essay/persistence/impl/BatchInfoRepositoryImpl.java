@@ -14,7 +14,8 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
 
     @Override
     protected String getUpdateQuery(BatchInfo newThingToUpdate) {
-        return null;
+        return "update batch_info set batchNumber\""+newThingToUpdate.getBatchNumber()
+                +"\" where id="+newThingToUpdate.getId();
     }
 
     @Override

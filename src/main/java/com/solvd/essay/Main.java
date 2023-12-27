@@ -35,7 +35,7 @@ public class Main {
       // newList.forEach(essayModule -> System.out.println(essayModule.getModuleDescription()));
         //EssayModule essayModule=newEssayModuleService.findOne(10L);
 
-
+        // Batch info
         newEssayModuleService.deleteOne(5L);
         List<BatchInfo> newBatchInfoList= newBatchInfoService.findAll();
         newBatchInfoList.forEach(batchInfo ->LOGGER.info(batchInfo.getId()+" "+batchInfo.getBatchNumber()));
@@ -47,6 +47,8 @@ public class Main {
         BatchInfo found1=newBatchInfoService.findOne(1L);
         LOGGER.info(found1.getId()+found1.getBatchNumber());
         newBatchInfoService.deleteEntity(newBatchInfo);
+
+        //
 
     }
 }
