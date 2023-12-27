@@ -56,6 +56,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 newClass = mapResultToObject(result);
                 listOfThings.add(newClass);
             }
+            LOGGER.info("All the elements were added to the list successfully");
             return listOfThings;
         } catch (SQLException e) {
             conn.rollback();
@@ -81,10 +82,11 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
             ResultSet result =ps.executeQuery();
             if (!result.next()){
-                LOGGER.info("The value can not be found returning a null value");
+                LOGGER.info("The value can not be found, returning a null value");
                 return null;
             }
-        T newClass = mapResultToObject(result);
+            T newClass = mapResultToObject(result);
+            LOGGER.info("The object was found successfully");
         return newClass;
 
         } catch (SQLException e) {
@@ -103,13 +105,14 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             T thingToDelete=findById(thingId);
             conn.setAutoCommit(false);
             if (thingToDelete==null) {
-                LOGGER.info("The object does not exist");
+                LOGGER.info("The object does not exist, delete operation failed");
                 return;
             }
             String query="delete from "+getTableName()+" where id=?;";
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setLong(1,thingId);
             ps.executeUpdate();
+            LOGGER.info("The selected object was deleted successfully");
         } catch (SQLException e) {
             conn.rollback();
             throw new RuntimeException(e);
@@ -135,6 +138,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             conn.setAutoCommit(false);
             PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate));
             ps.executeUpdate();
+            LOGGER.info("The object was updated successfully");
         } catch (SQLException e) {
             conn.rollback();
             throw new RuntimeException(e);

@@ -24,3 +24,88 @@
 20:02:06.637 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
 20:03:05.260 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
 20:03:05.264 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+12:51:44.895 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+12:51:44.899 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+12:51:44.904 [main] INFO  com.solvd.essay.Main - 1 PR1001
+12:51:44.904 [main] INFO  com.solvd.essay.Main - 2 PR1002
+12:51:44.904 [main] INFO  com.solvd.essay.Main - 3 PR1003
+12:54:07.425 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+12:54:07.429 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+12:54:07.435 [main] INFO  com.solvd.essay.Main - 1 PR1001
+12:54:07.435 [main] INFO  com.solvd.essay.Main - 2 PR1002
+12:54:07.435 [main] INFO  com.solvd.essay.Main - 3 PR1003
+12:54:07.452 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Data truncation: Data too long for column 'batch_number' at row 1
+12:54:55.088 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+12:54:55.092 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+12:54:55.097 [main] INFO  com.solvd.essay.Main - 1 PR1001
+12:54:55.097 [main] INFO  com.solvd.essay.Main - 2 PR1002
+12:54:55.097 [main] INFO  com.solvd.essay.Main - 3 PR1003
+12:56:15.858 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+12:56:15.862 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+12:56:15.868 [main] INFO  com.solvd.essay.Main - 1 PR1001
+12:56:15.869 [main] INFO  com.solvd.essay.Main - 2 PR1002
+12:56:15.869 [main] INFO  com.solvd.essay.Main - 3 PR1003
+12:56:15.869 [main] INFO  com.solvd.essay.Main - 4 l584
+12:58:01.821 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+12:58:01.827 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+12:58:01.833 [main] INFO  com.solvd.essay.Main - 1 PR1001
+12:58:01.833 [main] INFO  com.solvd.essay.Main - 2 PR1002
+12:58:01.833 [main] INFO  com.solvd.essay.Main - 3 PR1003
+12:58:01.833 [main] INFO  com.solvd.essay.Main - 5 l584
+12:58:01.848 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+12:58:01.849 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+12:58:01.855 [main] INFO  com.solvd.essay.Main - 1PR1001
+13:13:27.390 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+13:13:27.394 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+13:13:27.400 [main] INFO  com.solvd.essay.Main - 1 PR1001
+13:13:27.400 [main] INFO  com.solvd.essay.Main - 2 PR1002
+13:13:27.401 [main] INFO  com.solvd.essay.Main - 3 PR1003
+13:13:27.401 [main] INFO  com.solvd.essay.Main - 5 l584
+13:13:27.401 [main] INFO  com.solvd.essay.Main - 6 l584
+13:13:27.416 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+13:13:27.417 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+13:13:27.422 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+13:13:27.423 [main] INFO  com.solvd.essay.Main - 1PR1001
+13:15:07.312 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+13:15:07.316 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+13:15:07.320 [main] INFO  com.solvd.essay.Main - 1 PR1001
+13:15:07.321 [main] INFO  com.solvd.essay.Main - 2 PR1002
+13:15:07.321 [main] INFO  com.solvd.essay.Main - 3 PR1003
+13:15:07.321 [main] INFO  com.solvd.essay.Main - 5 l584
+13:15:07.321 [main] INFO  com.solvd.essay.Main - 6 l584
+13:15:07.321 [main] INFO  com.solvd.essay.Main - 7 l584
+13:15:07.338 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found returning a null value
+13:15:07.339 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist
+13:15:07.343 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+13:15:07.344 [main] INFO  com.solvd.essay.Main - 1PR1001
+13:19:59.516 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+13:19:59.520 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+13:19:59.525 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+13:19:59.526 [main] INFO  com.solvd.essay.Main - 1 PR1001
+13:19:59.526 [main] INFO  com.solvd.essay.Main - 2 PR1002
+13:19:59.527 [main] INFO  com.solvd.essay.Main - 3 PR1003
+13:19:59.527 [main] INFO  com.solvd.essay.Main - 5 l584
+13:19:59.527 [main] INFO  com.solvd.essay.Main - 6 l584
+13:19:59.527 [main] INFO  com.solvd.essay.Main - 7 l584
+13:19:59.527 [main] INFO  com.solvd.essay.Main - 8 l584
+13:19:59.546 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+13:19:59.547 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+13:19:59.551 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+13:19:59.553 [main] INFO  com.solvd.essay.Main - 1PR1001
+13:21:28.372 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+13:21:28.376 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+13:21:28.380 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+13:21:28.382 [main] INFO  com.solvd.essay.Main - 1 PR1001
+13:21:28.382 [main] INFO  com.solvd.essay.Main - 2 PR1002
+13:21:28.382 [main] INFO  com.solvd.essay.Main - 3 PR1003
+13:21:28.382 [main] INFO  com.solvd.essay.Main - 5 l584
+13:21:28.383 [main] INFO  com.solvd.essay.Main - 6 l584
+13:21:28.383 [main] INFO  com.solvd.essay.Main - 7 l584
+13:21:28.383 [main] INFO  com.solvd.essay.Main - 8 l584
+13:21:28.383 [main] INFO  com.solvd.essay.Main - 9 l584
+13:21:28.402 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+13:21:28.403 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+13:21:28.406 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+13:21:28.407 [main] INFO  com.solvd.essay.Main - 1PR1001
+13:21:28.410 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+13:21:28.413 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The selected object was deleted successfully
