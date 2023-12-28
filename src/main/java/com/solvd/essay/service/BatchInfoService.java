@@ -36,9 +36,9 @@ public class BatchInfoService {
         batchInfoImpl.delete(batchInfo);
     }
 
-    public void updateEntity(BatchInfo essayModule){
+    public void updateEntity(BatchInfo batchInfo){
         try {
-            batchInfoImpl.update(essayModule);
+            batchInfoImpl.update(batchInfo);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

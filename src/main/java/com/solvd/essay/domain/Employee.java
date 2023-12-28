@@ -35,8 +35,8 @@ public class Employee {
         this.personalId = personalId;
     }
 
-    public Date getBirthDate() {
-        return birthDate;
+    public java.sql.Date getBirthDate() {
+        return (java.sql.Date) birthDate;
     }
 
     public void setBirthDate(Date birthDate) {

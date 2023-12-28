@@ -31,9 +31,12 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             if(thingToCreate==null){
                 throw new RuntimeException("No null entity can be added");
             }
-            String query="insert into "+getTableName()+"("+getTableFields()+")" +"values (?)";
-            PreparedStatement ps =conn.prepareStatement(query);
-            ps.setString(1, getThingFields(thingToCreate));
+
+            //String query="insert into "+getTableName()+"("+getTableFields()+")" +" values ("+getThingFields(thingToCreate)+")";
+            String createQuery= getCreateQuery(); // only has the queries with ??? return string
+            PreparedStatement ps =conn.prepareStatement(createQuery);
+            setQueryStatements(ps,thingToCreate);// do the setString,date, etc for each value return void
+            //ps.setString(1, getThingFields(thingToCreate));
             ps.executeUpdate();
         } catch (Exception e) {
             LOGGER.error(e.getMessage()) ;
@@ -76,7 +79,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 return null;
             }
             conn.setAutoCommit(false);
-            String query= "select * from "+getTableName()+" where id=?;";
+            String query= String.format("select * from %s where id=?",getTableName());
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setLong(1,id);
 
@@ -108,7 +111,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 LOGGER.info("The object does not exist, delete operation failed");
                 return;
             }
-            String query="delete from "+getTableName()+" where id=?;";
+            String query=String.format("delete from %s where id=?",getTableName()) ;
             PreparedStatement ps = conn.prepareStatement(query);
             ps.setLong(1,thingId);
             ps.executeUpdate();
@@ -166,4 +169,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
     protected abstract T mapResultToObject(ResultSet resultSet) throws SQLException;
 
+    protected abstract String getCreateQuery();
+
+    protected abstract void setQueryStatements(PreparedStatement ps,T thingToCreate);
 }

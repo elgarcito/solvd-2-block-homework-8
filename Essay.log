@@ -109,3 +109,35 @@
 13:21:28.407 [main] INFO  com.solvd.essay.Main - 1PR1001
 13:21:28.410 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
 13:21:28.413 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The selected object was deleted successfully
+14:09:21.022 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:10:05.043 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:13:57.896 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:17:27.090 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:19:21.618 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:20:36.979 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:21:09.712 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:22:05.263 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:23:40.852 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:24:18.540 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:26:49.038 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:32:11.121 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:34:20.197 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:35:42.655 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:38:42.799 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Column count doesn't match value count at row 1
+14:40:36.438 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Data truncation: Incorrect date value: 'Fri Sep 22 00:00:00 ART 3893' for column 'birth_date' at row 1
+13:53:42.576 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+13:55:45.256 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+13:55:45.273 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - No value specified for parameter 1
+13:56:22.836 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+13:56:22.852 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''modulo12'' at line 1
+13:56:50.118 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+13:57:52.775 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''modulo12'' at line 1
+13:58:01.929 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+13:58:21.618 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''modulo12'' at line 1
+13:59:03.223 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+13:59:03.239 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''modulo12'' at line 1
+13:59:10.074 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+13:59:22.569 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''modulo12'' at line 1
+13:59:41.950 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+14:07:18.408 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+14:08:07.090 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
