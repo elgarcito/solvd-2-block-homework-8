@@ -15,8 +15,13 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
 
     @Override
     protected String getUpdateQuery(BatchInfo newThingToUpdate) {
+        String updateQuery=String.format("update batch_info set batchNumber\" %s\" where id=%s"
+                ,newThingToUpdate.getBatchNumber(),+newThingToUpdate.getId());
+        /*
         return "update batch_info set batchNumber\""+newThingToUpdate.getBatchNumber()
                 +"\" where id="+newThingToUpdate.getId();
+         */
+        return updateQuery;
     }
 
     @Override
@@ -29,10 +34,13 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
         return "batch_number";
     }
 
+    /*
     @Override
     protected String getThingFields(BatchInfo thing) {
         return thing.getBatchNumber();
     }
+
+     */
 
     @Override
     protected Long getThingId(BatchInfo thing) {

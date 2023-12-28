@@ -38,6 +38,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             setQueryStatements(ps,thingToCreate);// do the setString,date, etc for each value return void
             //ps.setString(1, getThingFields(thingToCreate));
             ps.executeUpdate();
+            LOGGER.info("Object was added to database successfully");
         } catch (Exception e) {
             LOGGER.error(e.getMessage()) ;
             conn.rollback();
@@ -139,7 +140,13 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     public void update(T thingToUpdate) throws SQLException {
         try {
             conn.setAutoCommit(false);
-            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate));
+            T checkIfExist=findById(getThingId(thingToUpdate));
+            conn.setAutoCommit(false);
+            if (checkIfExist==null) {
+                LOGGER.info("The object does not exist, update operation failed");
+                return;
+            }
+            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(checkIfExist));
             ps.executeUpdate();
             LOGGER.info("The object was updated successfully");
         } catch (SQLException e) {
@@ -161,9 +168,10 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     * commas and lower case
     * */
     protected abstract String getTableFields();
+
     /*Return the field values of the object that we want to add to the attributes in the new row of the table.
     they must be separated by comma in one string*/
-    protected abstract String getThingFields(T thing);
+    //protected abstract String getThingFields(T thing);
 
     protected abstract Long getThingId(T thing);
 

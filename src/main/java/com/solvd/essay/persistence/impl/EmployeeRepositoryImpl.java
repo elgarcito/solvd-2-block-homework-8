@@ -14,12 +14,19 @@ public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
 
     @Override
     protected String getUpdateQuery(Employee newThingToUpdate) {
+        String updateQuery=String.format("update employee set first_name=\"%s\",last_name=\"%s\",personal_id=\"%s\",birth_date=\"%s\",salary=%s where id= %s",
+                newThingToUpdate.getFirstName(),newThingToUpdate.getLastName(),newThingToUpdate.getPersonalId(),
+                newThingToUpdate.getBirthDate(),newThingToUpdate.getSalary(),newThingToUpdate.getId());
+        /*
         return "update employee set first_name=\""+newThingToUpdate.getFirstName()+"\""+
                 "last_name=\""+newThingToUpdate.getLastName()+"\""+
                 "personal_id=\""+newThingToUpdate.getPersonalId()+"\""+
                 "birth_date=\""+newThingToUpdate.getBirthDate()+"\""+
                 "salary=\""+newThingToUpdate.getSalary()+"\""+
                 "where id="+newThingToUpdate.getId();
+
+         */
+        return updateQuery;
     }
 
     @Override
@@ -32,13 +39,20 @@ public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
         return "first_name,last_name,personal_id,birth_date,salary";
     }
 
+    /*
     @Override
     protected String getThingFields(Employee thing) {
+
         String valuesToUpdate= "\""+thing.getFirstName()+"\",\""+thing.getLastName()+"\",\""+thing.getPersonalId()
                 +"\",\""+thing.getBirthDate()+"\","+thing.getSalary();
 
+        String valuesToUpdate=String.format("\"%s \",\"%s\",\"%s\",\"%s\",%s",thing.getFirstName(),thing.getLastName(),
+                thing.getPersonalId(),thing.getBirthDate(),thing.getSalary());
         return valuesToUpdate;
     }
+     */
+
+
 
     @Override
     protected Long getThingId(Employee thing) {

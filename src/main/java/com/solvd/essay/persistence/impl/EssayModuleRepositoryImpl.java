@@ -23,10 +23,13 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
         return "module_description";
     }
 
+    /*
     @Override
     public String getThingFields(EssayModule essayModule) {
         return essayModule.getModuleDescription();
     }
+
+     */
 
     @Override
     public EssayModule mapResultToObject(ResultSet resultSet) throws SQLException {

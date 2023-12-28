@@ -141,3 +141,41 @@
 13:59:41.950 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
 14:07:18.408 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
 14:08:07.090 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - SQL String cannot be NULL
+14:33:24.808 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564A6' for key 'employee.personal_id'
+14:34:15.440 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L1456486' for key 'employee.personal_id'
+14:36:14.739 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:36:47.171 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:39:16.598 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:42:16.340 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:42:58.092 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:42:58.116 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+14:42:58.119 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The selected object was deleted successfully
+14:45:22.097 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:48:05.820 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:55:19.098 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+14:56:51.657 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'L14564861111' for key 'employee.personal_id'
+15:00:20.408 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+15:02:01.028 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:02:01.033 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The selected object was deleted successfully
+15:03:28.797 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+15:03:28.801 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+15:03:28.804 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+15:43:24.920 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'area new' for key 'employee_work_area.area_name'
+15:43:24.945 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:44:37.455 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'area new' for key 'employee_work_area.area_name'
+15:44:37.482 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:45:45.750 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'area new' for key 'employee_work_area.area_name'
+15:45:45.773 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:45:45.776 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+15:48:26.790 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'area new' for key 'employee_work_area.area_name'
+15:48:26.816 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:48:26.818 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+15:48:26.820 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:48:26.823 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The selected object was deleted successfully
+15:49:36.579 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully
+15:49:36.605 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:49:36.610 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+15:59:21.158 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'area new' for key 'employee_work_area.area_name'
+15:59:21.182 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+15:59:21.185 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+15:59:21.186 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
