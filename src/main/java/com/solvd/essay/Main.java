@@ -45,6 +45,9 @@ public class Main {
         AbstracDao<TemperatureEssay> temperatureEssayImpl = new TemperatureEssayRepositoryImpl(conn);
         TemperatureEssayService newTemperatureEssayService= new TemperatureEssayService(temperatureEssayImpl);
 
+        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
+        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
+
        // List<EssayModule> newList= newEssayModuleService.findAll();
       // newList.forEach(essayModule -> System.out.println(essayModule.getModuleDescription()));
         //EssayModule essayModule=newEssayModuleService.findOne(10L);
@@ -143,8 +146,19 @@ public class Main {
         tEssay.setId(7L);
         tEssay.setFrontMeasurement(45);
         newTemperatureEssayService.updateEntity(tEssay);
-
          */
+
+        /*
+        //Laboratory tool
+        LaboratoryTool ltool=new LaboratoryTool();
+        ltool.setToolName("tool1");
+        ltool.setToolDescription("usefully tool");
+        //newLaboratoryToolService.create(ltool);
+        ltool.setId(5L);
+        ltool.setToolName("tool5");
+        newLaboratoryToolService.updateEntity(ltool);
+         */
+
 
     }
 }

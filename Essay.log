@@ -255,3 +255,6 @@
 00:06:51.601 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
 00:06:55.909 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
 00:06:55.915 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+00:40:26.575 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully
+00:42:17.498 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:42:17.504 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
