@@ -24,6 +24,8 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
         return updateQuery;
     }
 
+
+
     @Override
     protected String getTableName() {
         return "batch_info";
@@ -48,7 +50,7 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
     }
 
     @Override
-    protected BatchInfo mapResultToObject(ResultSet resultSet) throws SQLException {
+    protected BatchInfo mapResultToObject(ResultSet resultSet, Connection conn) throws SQLException {
         BatchInfo entity= new BatchInfo();
         entity.setId(resultSet.getLong("id"));
         entity.setBatchNumber(resultSet.getString("batch_number"));

@@ -44,7 +44,7 @@ public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea>
         return thing.getId();
     }
     @Override
-    protected EmployeeWorkArea mapResultToObject(ResultSet resultSet) throws SQLException {
+    protected EmployeeWorkArea mapResultToObject(ResultSet resultSet,Connection conn) throws SQLException {
         EmployeeWorkArea entity= new EmployeeWorkArea();
         entity.setId(resultSet.getLong("id"));
         entity.setAreaName(resultSet.getString("area_name"));

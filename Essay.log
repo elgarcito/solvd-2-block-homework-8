@@ -179,3 +179,79 @@
 15:59:21.182 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
 15:59:21.185 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
 15:59:21.186 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+17:21:01.738 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully
+17:24:40.611 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry '19' for key 'energy_efficiency_essay.lab_test_report_id'
+17:24:40.633 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:24:40.635 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The selected object was deleted successfully
+17:25:28.740 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully
+17:25:28.765 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+17:25:28.767 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+17:26:15.323 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry '13' for key 'energy_efficiency_essay.lab_test_report_id'
+17:26:15.344 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+17:26:15.345 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+17:26:15.347 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+17:26:15.348 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+17:26:54.530 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry '19' for key 'energy_efficiency_essay.lab_test_report_id'
+17:26:54.551 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+17:26:54.553 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, delete operation failed
+17:26:54.555 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+17:26:54.556 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+17:27:31.584 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The value can not be found, returning a null value
+17:27:31.587 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+17:27:47.671 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:28:53.289 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:31:15.523 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:33:44.675 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:34:15.708 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:34:15.713 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+17:34:48.877 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:34:48.882 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+17:35:13.863 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:35:17.288 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+17:35:23.791 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:35:41.325 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+17:35:56.832 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:36:14.525 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+17:36:37.034 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:36:37.039 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+17:36:42.162 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+17:36:45.431 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+23:39:28.239 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully
+23:41:11.838 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry '20' for key 'gas_consumption_essay.lab_test_report_id'
+23:41:11.863 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:41:27.471 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:42:24.011 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:42:55.729 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:43:34.891 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:44:31.920 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:45:57.637 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:45:57.642 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+23:53:02.873 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully
+23:53:40.005 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:53:40.010 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+23:54:44.447 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:54:44.451 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+23:56:47.358 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:56:47.364 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+23:57:01.152 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:57:01.159 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+23:57:06.460 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:57:06.465 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+23:57:32.194 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+23:57:40.356 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+00:00:52.370 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:00:58.202 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+00:03:14.831 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:03:29.364 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+00:03:55.871 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:03:55.875 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+00:04:26.082 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:05:29.376 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+00:05:59.375 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:05:59.379 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object does not exist, update operation failed
+00:06:31.987 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:06:31.992 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+00:06:51.595 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:06:51.601 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
+00:06:55.909 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+00:06:55.915 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully

@@ -5,10 +5,12 @@ public class GasConsumptionEssay {
     private Long id;
     private double maxConsume;
     private double standardMean;
-    private double measurement_error;
-    private boolean essay_result;
+    private double measurementError;
+    private boolean essayResult;
 
     private LabTestReport labTestReport;
+
+    private Long labTestReportId;
 
 
     public Long getId() {
@@ -35,20 +37,12 @@ public class GasConsumptionEssay {
         this.standardMean = standardMean;
     }
 
-    public double getMeasurement_error() {
-        return measurement_error;
+    public double getMeasurementError() {
+        return measurementError;
     }
 
-    public void setMeasurement_error(double measurement_error) {
-        this.measurement_error = measurement_error;
-    }
-
-    public boolean isEssay_result() {
-        return essay_result;
-    }
-
-    public void setEssay_result(boolean essay_result) {
-        this.essay_result = essay_result;
+    public void setMeasurementError(double measurementError) {
+        this.measurementError = measurementError;
     }
 
     public LabTestReport getLabTestReport() {
@@ -58,4 +52,20 @@ public class GasConsumptionEssay {
     public void setLabTestReport(LabTestReport labTestReport) {
         this.labTestReport = labTestReport;
     }
+    public boolean getEssayResult(){
+        return essayResult;
+    }
+
+    public void setEssayResult(boolean essayResult) {
+        this.essayResult = essayResult;
+    }
+
+    public Long getLabTestReportId() {
+        return labTestReportId;
+    }
+
+    public void setLabTestReportId(Long labTestReportId) {
+        this.labTestReportId = labTestReportId;
+    }
+
 }

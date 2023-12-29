@@ -6,8 +6,9 @@ public class EnergyEfficiencyEssay {
     private double valueOfEssay;
     private String category;
 
-    private boolean essay_result;
+    private boolean essayResult;
 
+    private Long labTestReportId;
     private LabTestReport labTestReport;
 
 
@@ -28,13 +29,10 @@ public class EnergyEfficiencyEssay {
         this.category = category;
     }
 
-    public boolean isEssay_result() {
-        return essay_result;
+    public boolean essayResult() {
+        return essayResult;
     }
 
-    public void setEssay_result(boolean essay_result) {
-        this.essay_result = essay_result;
-    }
 
     public LabTestReport getLabTestReport() {
         return labTestReport;
@@ -50,5 +48,22 @@ public class EnergyEfficiencyEssay {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+
+    public Long getLabTestReportId() {
+        return labTestReportId;
+    }
+
+    public void setLabTestReportId(Long labTestReportId) {
+        this.labTestReportId = labTestReportId;
+    }
+
+    public boolean getEssayResult(){
+        return essayResult;
+    }
+
+    public void setEssayResult(boolean essayResult) {
+        this.essayResult = essayResult;
     }
 }

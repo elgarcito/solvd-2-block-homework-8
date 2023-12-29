@@ -4,9 +4,12 @@ public class TemperatureEssay {
 
     private Long id;
     private double frontMeasurement;
-    private double leftSideMeasurement;
     private boolean essayResult;
     private LabTestReport labTestReport;
+
+    private Long labTestReportId;
+    private double leftSideMeasurement;
+
 
 
     public Long getId() {
@@ -33,13 +36,6 @@ public class TemperatureEssay {
         this.leftSideMeasurement = leftSideMeasurement;
     }
 
-    public boolean isEssayResult() {
-        return essayResult;
-    }
-
-    public void setEssayResult(boolean essayResult) {
-        this.essayResult = essayResult;
-    }
 
     public LabTestReport getLabTestReport() {
         return labTestReport;
@@ -47,5 +43,21 @@ public class TemperatureEssay {
 
     public void setLabTestReport(LabTestReport labTestReport) {
         this.labTestReport = labTestReport;
+    }
+
+    public boolean getEssayResult(){
+        return essayResult;
+    }
+
+    public void setEssayResult(boolean essayResult) {
+        this.essayResult = essayResult;
+    }
+
+    public Long getLabTestReportId() {
+        return labTestReportId;
+    }
+
+    public void setLabTestReportId(Long labTestReportId) {
+        this.labTestReportId = labTestReportId;
     }
 }

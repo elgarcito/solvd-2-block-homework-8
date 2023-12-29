@@ -60,7 +60,7 @@ public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
     }
 
     @Override
-    protected Employee mapResultToObject(ResultSet resultSet) throws SQLException {
+    protected Employee mapResultToObject(ResultSet resultSet,Connection conn) throws SQLException {
         Employee entity= new Employee();
         entity.setId(resultSet.getLong("id"));
         entity.setFirstName(resultSet.getString("first_name"));

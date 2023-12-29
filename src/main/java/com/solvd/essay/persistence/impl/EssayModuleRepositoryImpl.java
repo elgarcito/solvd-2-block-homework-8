@@ -32,7 +32,7 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
      */
 
     @Override
-    public EssayModule mapResultToObject(ResultSet resultSet) throws SQLException {
+    public EssayModule mapResultToObject(ResultSet resultSet,Connection conn) throws SQLException {
 
         EssayModule entity= new EssayModule();
         entity.setId(resultSet.getLong("id"));

@@ -1,15 +1,9 @@
 package com.solvd.essay;
 
 
-import com.solvd.essay.domain.BatchInfo;
-import com.solvd.essay.domain.Employee;
-import com.solvd.essay.domain.EmployeeWorkArea;
-import com.solvd.essay.domain.EssayModule;
+import com.solvd.essay.domain.*;
 import com.solvd.essay.persistence.impl.*;
-import com.solvd.essay.service.BatchInfoService;
-import com.solvd.essay.service.EmployeeService;
-import com.solvd.essay.service.EmployeeWorkAreaService;
-import com.solvd.essay.service.EssayModuleService;
+import com.solvd.essay.service.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -42,6 +36,14 @@ public class Main {
         AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl(conn);
         EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
 
+        AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl= new EnergyEfficiencyEssayRepositoryImpl(conn);
+        EnergyEfficiencyEssayService newEnergyEfficiencyEssayService= new EnergyEfficiencyEssayService(energyEfficiencyEssayImpl);
+
+        AbstracDao<GasConsumptionEssay> newGasConsumptionEssayImpl=new GasConsumptionEssayRepositoryImpl(conn);
+        GasConsumptionEssayService newGasConsumptionEssayService=new GasConsumptionEssayService(newGasConsumptionEssayImpl);
+
+        AbstracDao<TemperatureEssay> temperatureEssayImpl = new TemperatureEssayRepositoryImpl(conn);
+        TemperatureEssayService newTemperatureEssayService= new TemperatureEssayService(temperatureEssayImpl);
 
        // List<EssayModule> newList= newEssayModuleService.findAll();
       // newList.forEach(essayModule -> System.out.println(essayModule.getModuleDescription()));
@@ -87,6 +89,7 @@ public class Main {
 
          */
 
+        /*
         //EmployeeWorkArea
         EmployeeWorkArea area2= new EmployeeWorkArea();
         area2.setAreaName("area new");
@@ -98,5 +101,50 @@ public class Main {
         area2.setAreaCode("area 29955");
         newEmployeeWorkAreaService.updateEntity(area2);
         //newEmployeeWorkAreaService.deleteOne(4L);
+
+         */
+        /*
+        //Energy efficiency essay
+        EnergyEfficiencyEssay eeEssay =new EnergyEfficiencyEssay();
+        eeEssay.setValueOfEssay(25.0);
+        eeEssay.setEssayResult(false);
+        eeEssay.setLabTestReportId(19L);
+        eeEssay.setCategory("A");
+        //newEnergyEfficiencyEssayService.create(eeEssay);
+        eeEssay.setId(9L);
+        //newEnergyEfficiencyEssayService.deleteEntity(eeEssay);
+        newEnergyEfficiencyEssayService.updateEntity(eeEssay);
+
+         */
+
+        /*
+        //Gas consumption essay
+        GasConsumptionEssay gcEssay =new GasConsumptionEssay();
+        gcEssay.setMaxConsume(10.1);
+        gcEssay.setStandardMean(9.8);
+        gcEssay.setMeasurementError(0.1);
+        gcEssay.setEssayResult(true);
+        gcEssay.setLabTestReportId(20L);
+        //newGasConsumptionEssayService.create(gcEssay);
+        gcEssay.setId(6L);
+        gcEssay.setMaxConsume(25.3);
+        newGasConsumptionEssayService.updateEntity(gcEssay);
+
+         */
+        /*
+        //Temperature essay
+        TemperatureEssay tEssay =new TemperatureEssay();
+        tEssay.setFrontMeasurement(30.1);
+        tEssay.setLeftSideMeasurement(25);
+        tEssay.setEssayResult(false);
+        tEssay.setLabTestReportId(21L);
+        tEssay.setEssayResult(true);
+        //newTemperatureEssayService.create(tEssay);
+        tEssay.setId(7L);
+        tEssay.setFrontMeasurement(45);
+        newTemperatureEssayService.updateEntity(tEssay);
+
+         */
+
     }
 }

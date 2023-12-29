@@ -57,7 +57,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             ResultSet result =ps.executeQuery();
             List<T> listOfThings=new ArrayList<>();
             while (result.next()){
-                newClass = mapResultToObject(result);
+                newClass = mapResultToObject(result,conn);
                 listOfThings.add(newClass);
             }
             LOGGER.info("All the elements were added to the list successfully");
@@ -89,7 +89,8 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 LOGGER.info("The value can not be found, returning a null value");
                 return null;
             }
-            T newClass = mapResultToObject(result);
+
+            T newClass = mapResultToObject(result ,conn);
             LOGGER.info("The object was found successfully");
         return newClass;
 
@@ -146,7 +147,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 LOGGER.info("The object does not exist, update operation failed");
                 return;
             }
-            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(checkIfExist));
+            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate));
             ps.executeUpdate();
             LOGGER.info("The object was updated successfully");
         } catch (SQLException e) {
@@ -175,7 +176,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
     protected abstract Long getThingId(T thing);
 
-    protected abstract T mapResultToObject(ResultSet resultSet) throws SQLException;
+    protected abstract T mapResultToObject(ResultSet resultSet,Connection conn) throws SQLException;
 
     protected abstract String getCreateQuery();
 
