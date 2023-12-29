@@ -55,7 +55,16 @@ public class Main {
         AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-       // List<EssayModule> newList= newEssayModuleService.findAll();
+        //Intermediate tables
+        AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasImpl =new EmployeeEmployeeWorkAreasRepositoryImpl(conn);
+        EmployeeEmployeeWorkAreasService newEmployeeEmployeeWorkAreasService =new EmployeeEmployeeWorkAreasService(employeeEmployeeWorkAreasImpl);
+
+        AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolImpl =new EmployeeLaboratoryToolsRepositoryImpl(conn);
+        EmployeeLaboratoryToolsService newEmployeeLaboratoryToolImpl =new EmployeeLaboratoryToolsService(employeeLaboratoryToolImpl);
+
+
+
+        // List<EssayModule> newList= newEssayModuleService.findAll();
       // newList.forEach(essayModule -> System.out.println(essayModule.getModuleDescription()));
         //EssayModule essayModule=newEssayModuleService.findOne(10L);
 

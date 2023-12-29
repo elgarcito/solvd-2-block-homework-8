@@ -5,10 +5,7 @@ import com.solvd.essay.persistence.InterfaceGenerericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -34,11 +31,11 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
             //String query="insert into "+getTableName()+"("+getTableFields()+")" +" values ("+getThingFields(thingToCreate)+")";
             String createQuery= getCreateQuery(); // only has the queries with ??? return string
-            PreparedStatement ps =conn.prepareStatement(createQuery);
+            PreparedStatement ps =conn.prepareStatement(createQuery, Statement.RETURN_GENERATED_KEYS);
             setQueryStatements(ps,thingToCreate);// do the setString,date, etc for each value return void
             //ps.setString(1, getThingFields(thingToCreate));
-            ps.executeUpdate();
-            LOGGER.info("Object was added to database successfully");
+            int number= ps.executeUpdate();
+            LOGGER.info("Object was added to database successfully the row affected was: "+number);
         } catch (Exception e) {
             LOGGER.error(e.getMessage()) ;
             conn.rollback();
@@ -114,10 +111,10 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 return;
             }
             String query=String.format("delete from %s where id=?",getTableName()) ;
-            PreparedStatement ps = conn.prepareStatement(query);
+            PreparedStatement ps = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             ps.setLong(1,thingId);
-            ps.executeUpdate();
-            LOGGER.info("The selected object was deleted successfully");
+            int rowNumber= ps.executeUpdate();
+            LOGGER.info("The selected object was deleted successfully row affected: "+rowNumber);
         } catch (SQLException e) {
             conn.rollback();
             throw new RuntimeException(e);
@@ -147,9 +144,9 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 LOGGER.info("The object does not exist, update operation failed");
                 return;
             }
-            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate));
-            ps.executeUpdate();
-            LOGGER.info("The object was updated successfully");
+            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate),Statement.RETURN_GENERATED_KEYS);
+            int number= ps.executeUpdate();
+            LOGGER.info("The object was updated successfully the row affected was: "+number);
         } catch (SQLException e) {
             conn.rollback();
             throw new RuntimeException(e);

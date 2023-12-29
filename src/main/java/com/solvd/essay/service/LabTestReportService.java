@@ -42,7 +42,6 @@ public class LabTestReportService {
             labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
             labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
         }
-
             return labTestReportList;
     }
 
