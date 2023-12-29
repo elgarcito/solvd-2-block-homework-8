@@ -34,8 +34,8 @@ public class EquipmentForTestModel {
         this.modelDescription = modelDescription;
     }
 
-    public Date getReleaseDate() {
-        return releaseDate;
+    public java.sql.Date getReleaseDate() {
+        return (java.sql.Date) releaseDate;
     }
 
     public void setReleaseDate(Date releaseDate) {

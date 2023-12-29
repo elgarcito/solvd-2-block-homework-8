@@ -48,6 +48,12 @@ public class Main {
         AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
         LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
 
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+
+        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
+
        // List<EssayModule> newList= newEssayModuleService.findAll();
       // newList.forEach(essayModule -> System.out.println(essayModule.getModuleDescription()));
         //EssayModule essayModule=newEssayModuleService.findOne(10L);
@@ -159,6 +165,34 @@ public class Main {
         newLaboratoryToolService.updateEntity(ltool);
          */
 
+        /*
+        //Lab test report
+        LabTestReport ltr=new LabTestReport();
+        ltr.setEssayCode("EA32");
+        ltr.setDateOfEssay(Date.valueOf("2023-12-29"));
+        ltr.setEssayDescription("essay from java");
+        ltr.setEquipmentForTestModelId(1L);
+        ltr.setBatchInfoId(2L);
+        ltr.setEmployeeId(2L);
+        ltr.setEssayModuleId(2L);
+        //newLabTestReportService.create(ltr);
+        ltr.setEssayDescription("essay from java updated");
+        ltr.setId(24L);
+        newLabTestReportService.updateEntity(ltr);
+         */
+
+        /*
+        //Equipment for test model
+        EquipmentForTestModel eqft= new EquipmentForTestModel();
+        eqft.setModelName("model 4");
+        eqft.setModelDescription("rare model");
+        eqft.setReleaseDate(Date.valueOf("2023-12-29"));
+        //newEquipmentForTestModelService.create(eqft);
+        eqft.setId(5L);
+        eqft.setModelDescription("super rare model");
+        newEquipmentForTestModelService.updateEntity(eqft);
+
+         */
 
     }
 }
