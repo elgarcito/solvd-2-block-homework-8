@@ -1,8 +1,11 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
+import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,12 +23,22 @@ public class EnergyEfficiencyEssayService {
             throw new RuntimeException(e);
         }
     }
-    public List<EnergyEfficiencyEssay> findAll() throws SQLException {
-            return energyEfficiencyEssayImpl.getAll();
+    public List<EnergyEfficiencyEssay> findAll(Connection conn) throws SQLException {
+        List<EnergyEfficiencyEssay> eeList=energyEfficiencyEssayImpl.getAll();
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+        for (EnergyEfficiencyEssay enEfEssay:eeList) {
+            enEfEssay.setLabTestReport(newLabTestReportService.findOne(enEfEssay.getLabTestReportId(),conn));
+        }
+            return eeList;
     }
 
-    public EnergyEfficiencyEssay findOne(Long id) throws SQLException {
-        return energyEfficiencyEssayImpl.findById(id);
+    public EnergyEfficiencyEssay findOne(Long id ,Connection conn) throws SQLException {
+        EnergyEfficiencyEssay essay= energyEfficiencyEssayImpl.findById(id);
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+        essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId(),conn));
+        return essay;
     }
 
     public void deleteOne(Long id) throws SQLException {

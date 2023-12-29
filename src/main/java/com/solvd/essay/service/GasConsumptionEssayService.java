@@ -1,8 +1,11 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.GasConsumptionEssay;
+import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,12 +23,23 @@ public class GasConsumptionEssayService {
             throw new RuntimeException(e);
         }
     }
-    public List<GasConsumptionEssay> findAll() throws SQLException {
-            return gasConsumptionEssayImpl.getAll();
+    public List<GasConsumptionEssay> findAll(Connection conn) throws SQLException {
+        List<GasConsumptionEssay> listOfGasEssays=gasConsumptionEssayImpl.getAll();
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+        for (GasConsumptionEssay gasConEssay:listOfGasEssays) {
+            gasConEssay.setLabTestReport(newLabTestReportService.findOne(gasConEssay.getLabTestReportId(),conn));
+        }
+        return listOfGasEssays;
+
     }
 
-    public GasConsumptionEssay findOne(Long id) throws SQLException {
-        return gasConsumptionEssayImpl.findById(id);
+    public GasConsumptionEssay findOne(Long id, Connection conn) throws SQLException {
+        GasConsumptionEssay gasConEssay= gasConsumptionEssayImpl.findById(id);
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+        gasConEssay.setLabTestReport(newLabTestReportService.findOne(gasConEssay.getLabTestReportId(),conn));
+        return gasConEssay;
     }
 
     public void deleteOne(Long id) throws SQLException {

@@ -24,6 +24,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/solvd_essay","root","Edgar1269!");
         conn.setAutoCommit(false);
+
         AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
@@ -112,6 +113,7 @@ public class Main {
         //newEmployeeWorkAreaService.deleteOne(4L);
 
          */
+
         /*
         //Energy efficiency essay
         EnergyEfficiencyEssay eeEssay =new EnergyEfficiencyEssay();
@@ -122,9 +124,13 @@ public class Main {
         //newEnergyEfficiencyEssayService.create(eeEssay);
         eeEssay.setId(9L);
         //newEnergyEfficiencyEssayService.deleteEntity(eeEssay);
-        newEnergyEfficiencyEssayService.updateEntity(eeEssay);
+        //newEnergyEfficiencyEssayService.updateEntity(eeEssay);
+        EnergyEfficiencyEssay eeEssay2= newEnergyEfficiencyEssayService.findOne(5L,conn);
+        System.out.println(eeEssay2.getLabTestReport().getEssayDescription());
 
-         */
+        //List<EnergyEfficiencyEssay> eef= newEnergyEfficiencyEssayService.findAll(conn);
+        //eef.forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
+        /*
 
         /*
         //Gas consumption essay
@@ -138,8 +144,14 @@ public class Main {
         gcEssay.setId(6L);
         gcEssay.setMaxConsume(25.3);
         newGasConsumptionEssayService.updateEntity(gcEssay);
+        GasConsumptionEssay gcEssay2= newGasConsumptionEssayService.findOne(5L,conn);
+       // System.out.println(gcEssay2.getLabTestReport().getEssayDescription());
+        List<GasConsumptionEssay> gcs= newGasConsumptionEssayService.findAll(conn);
+        gcs.forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
+
 
          */
+
         /*
         //Temperature essay
         TemperatureEssay tEssay =new TemperatureEssay();

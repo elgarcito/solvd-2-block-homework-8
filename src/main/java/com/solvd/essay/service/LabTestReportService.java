@@ -1,8 +1,9 @@
 package com.solvd.essay.service;
 
-import com.solvd.essay.domain.LabTestReport;
-import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.domain.*;
+import com.solvd.essay.persistence.impl.*;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -20,12 +21,53 @@ public class LabTestReportService {
             throw new RuntimeException(e);
         }
     }
-    public List<LabTestReport> findAll() throws SQLException {
-            return labTestReportImpl.getAll();
+    public List<LabTestReport> findAll(Connection conn) throws SQLException {
+        List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
+
+        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
+
+        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl(conn);
+        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
+
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
+
+        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+
+        for (LabTestReport labTestReport: labTestReportList) {
+            labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
+            labTestReport.setBatchInfo(newBatchInfoService.findOne(labTestReport.getBatchInfoId()));
+            labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
+            labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
+        }
+
+            return labTestReportList;
     }
 
-    public LabTestReport findOne(Long id) throws SQLException {
-        return labTestReportImpl.findById(id);
+    public LabTestReport findOne(Long id,Connection conn) throws SQLException {
+
+        LabTestReport labTestReport=labTestReportImpl.findById(id);
+
+        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
+
+        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl(conn);
+        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
+
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
+
+        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+
+        labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
+        labTestReport.setBatchInfo(newBatchInfoService.findOne(labTestReport.getBatchInfoId()));
+        labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
+        labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
+
+        return labTestReport;
     }
 
     public void deleteOne(Long id) throws SQLException {
