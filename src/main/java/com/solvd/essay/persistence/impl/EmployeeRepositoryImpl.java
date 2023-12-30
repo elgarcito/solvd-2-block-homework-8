@@ -8,8 +8,7 @@ import java.text.SimpleDateFormat;
 
 public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
 
-    public EmployeeRepositoryImpl(Connection conn) {
-        super(conn);
+    public EmployeeRepositoryImpl() {
     }
 
     @Override

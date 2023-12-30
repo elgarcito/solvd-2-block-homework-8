@@ -9,8 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
-    public BatchInfoRepositoryImpl(Connection conn) {
-        super(conn);
+    public BatchInfoRepositoryImpl() {
     }
 
     @Override

@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class GasConsumptionEssayRepositoryImpl extends AbstracDao<GasConsumptionEssay>{
-    public GasConsumptionEssayRepositoryImpl(Connection conn) {
-        super(conn);
+    public GasConsumptionEssayRepositoryImpl() {
     }
 
     @Override

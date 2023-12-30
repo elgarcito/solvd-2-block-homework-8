@@ -9,8 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentForTestModel>{
-    public EquipmentForTestModelRepositoryImpl(Connection conn) {
-        super(conn);
+    public EquipmentForTestModelRepositoryImpl() {
     }
 
     @Override

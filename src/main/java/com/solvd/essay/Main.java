@@ -9,6 +9,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
@@ -25,41 +26,41 @@ public class Main {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/solvd_essay","root","Edgar1269!");
         conn.setAutoCommit(false);
 
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl(conn);
+        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
         BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl(conn);
+        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
         EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
 
-        AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl= new EnergyEfficiencyEssayRepositoryImpl(conn);
+        AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl= new EnergyEfficiencyEssayRepositoryImpl();
         EnergyEfficiencyEssayService newEnergyEfficiencyEssayService= new EnergyEfficiencyEssayService(energyEfficiencyEssayImpl);
 
-        AbstracDao<GasConsumptionEssay> newGasConsumptionEssayImpl=new GasConsumptionEssayRepositoryImpl(conn);
+        AbstracDao<GasConsumptionEssay> newGasConsumptionEssayImpl=new GasConsumptionEssayRepositoryImpl();
         GasConsumptionEssayService newGasConsumptionEssayService=new GasConsumptionEssayService(newGasConsumptionEssayImpl);
 
-        AbstracDao<TemperatureEssay> temperatureEssayImpl = new TemperatureEssayRepositoryImpl(conn);
+        AbstracDao<TemperatureEssay> temperatureEssayImpl = new TemperatureEssayRepositoryImpl();
         TemperatureEssayService newTemperatureEssayService= new TemperatureEssayService(temperatureEssayImpl);
 
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
+        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl();
         LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
 
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
 
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
         //Intermediate tables
-        AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasImpl =new EmployeeEmployeeWorkAreasRepositoryImpl(conn);
+        AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasImpl =new EmployeeEmployeeWorkAreasRepositoryImpl();
         EmployeeEmployeeWorkAreasService newEmployeeEmployeeWorkAreasService =new EmployeeEmployeeWorkAreasService(employeeEmployeeWorkAreasImpl);
 
-        AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolImpl =new EmployeeLaboratoryToolsRepositoryImpl(conn);
+        AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolImpl =new EmployeeLaboratoryToolsRepositoryImpl();
         EmployeeLaboratoryToolsService newEmployeeLaboratoryToolImpl =new EmployeeLaboratoryToolsService(employeeLaboratoryToolImpl);
 
 
@@ -205,15 +206,22 @@ public class Main {
         /*
         //Equipment for test model
         EquipmentForTestModel eqft= new EquipmentForTestModel();
-        eqft.setModelName("model 4");
-        eqft.setModelDescription("rare model");
+        eqft.setModelName("model 11");
+        eqft.setModelDescription("rare model5");
         eqft.setReleaseDate(Date.valueOf("2023-12-29"));
-        //newEquipmentForTestModelService.create(eqft);
-        eqft.setId(5L);
-        eqft.setModelDescription("super rare model");
+        newEquipmentForTestModelService.create(eqft);
+        eqft.setId(9L);
+        eqft.setModelDescription("super duper rare model");
+        List<EquipmentForTestModel>list1=new ArrayList<>();
+        list1=newEquipmentForTestModelService.findAll();
+        list1.forEach(x-> System.out.println(x.getModelName()));
+        //newEquipmentForTestModelService.deleteOne(6L);
         newEquipmentForTestModelService.updateEntity(eqft);
-
+        //newEquipmentForTestModelService.updateEntity(eqft);
          */
+
+
+
 
     }
 }

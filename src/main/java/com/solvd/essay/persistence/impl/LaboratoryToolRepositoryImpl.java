@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LaboratoryToolRepositoryImpl extends AbstracDao<LaboratoryTool> {
-    public LaboratoryToolRepositoryImpl(Connection conn) {
-        super(conn);
+    public LaboratoryToolRepositoryImpl() {
     }
 
     @Override

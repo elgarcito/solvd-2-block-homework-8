@@ -9,9 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLaboratoryTools>{
-    public EmployeeLaboratoryToolsRepositoryImpl(Connection conn) {
-        super(conn);
-    }
+    public EmployeeLaboratoryToolsRepositoryImpl() {}
 
     @Override
     protected String getUpdateQuery(EmployeeLaboratoryTools newThingToUpdate) {

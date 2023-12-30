@@ -28,10 +28,10 @@ public class EmployeeEmployeeWorkAreasService {
     public List<EmployeeEmployeeWorkAreas> findAll(Connection conn) throws SQLException {
         List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList=employeeEmployeeWorkAreasImpl.getAll();
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl(conn);
+        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
         EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
 
         for (EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas: employeeEmployeeWorkAreasList) {
@@ -43,10 +43,10 @@ public class EmployeeEmployeeWorkAreasService {
 
     public EmployeeEmployeeWorkAreas findOne(Long id,Connection conn) throws SQLException {
         EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas= employeeEmployeeWorkAreasImpl.findById(id);
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl(conn);
+        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
         EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
 
         employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));

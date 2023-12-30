@@ -25,7 +25,7 @@ public class EnergyEfficiencyEssayService {
     }
     public List<EnergyEfficiencyEssay> findAll(Connection conn) throws SQLException {
         List<EnergyEfficiencyEssay> eeList=energyEfficiencyEssayImpl.getAll();
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         for (EnergyEfficiencyEssay enEfEssay:eeList) {
             enEfEssay.setLabTestReport(newLabTestReportService.findOne(enEfEssay.getLabTestReportId(),conn));
@@ -35,7 +35,7 @@ public class EnergyEfficiencyEssayService {
 
     public EnergyEfficiencyEssay findOne(Long id ,Connection conn) throws SQLException {
         EnergyEfficiencyEssay essay= energyEfficiencyEssayImpl.findById(id);
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
+        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId(),conn));
         return essay;

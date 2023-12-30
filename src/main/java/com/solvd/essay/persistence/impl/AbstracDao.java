@@ -1,6 +1,7 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.Main;
+import com.solvd.essay.persistence.ConnectionPool;
 import com.solvd.essay.persistence.InterfaceGenerericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,70 +16,86 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     private static final Logger LOGGER = LogManager.getLogger(AbstracDao.class);
 
     private T newClass;
-    public Connection conn;
 
-    public AbstracDao(Connection conn) {
-        this.conn = conn;
-    }
 
     @Override
     public void create(T thingToCreate) throws SQLException {
+        Connection conn1;
         try {
-            conn.setAutoCommit(false);
-            if(thingToCreate==null){
+            conn1 = ConnectionPool.getConnection();
+            conn1.setAutoCommit(false);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        try {
+            if (thingToCreate == null) {
                 throw new RuntimeException("No null entity can be added");
             }
-
             //String query="insert into "+getTableName()+"("+getTableFields()+")" +" values ("+getThingFields(thingToCreate)+")";
             String createQuery= getCreateQuery(); // only has the queries with ??? return string
-            PreparedStatement ps =conn.prepareStatement(createQuery, Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps =conn1.prepareStatement(createQuery, Statement.RETURN_GENERATED_KEYS);
             setQueryStatements(ps,thingToCreate);// do the setString,date, etc for each value return void
             //ps.setString(1, getThingFields(thingToCreate));
             int number= ps.executeUpdate();
             LOGGER.info("Object was added to database successfully the row affected was: "+number);
+
         } catch (Exception e) {
             LOGGER.error(e.getMessage()) ;
-            conn.rollback();
+            conn1.rollback();
         }
         finally {
-            conn.setAutoCommit(true);
+            conn1.setAutoCommit(true);
+            ConnectionPool.releaseConnection(conn1);
         }
     }
 
     @Override
     public List<T> getAll() throws SQLException {
+        Connection conn1;
         try {
-            conn.setAutoCommit(false);
+            conn1 = ConnectionPool.getConnection();
+            conn1.setAutoCommit(false);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        try {
             String query=String.format("select * from %s",getTableName());
-            PreparedStatement ps = conn.prepareStatement(query);
+            PreparedStatement ps = conn1.prepareStatement(query);
             ResultSet result =ps.executeQuery();
             List<T> listOfThings=new ArrayList<>();
             while (result.next()){
-                newClass = mapResultToObject(result,conn);
+                newClass = mapResultToObject(result,conn1);
                 listOfThings.add(newClass);
             }
             LOGGER.info("All the elements were added to the list successfully");
             return listOfThings;
         } catch (SQLException e) {
-            conn.rollback();
+            conn1.rollback();
             throw new RuntimeException(e);
 
         }
         finally {
-            conn.setAutoCommit(true);
+            conn1.setAutoCommit(true);
+            ConnectionPool.releaseConnection(conn1);
         }
     }
 
     @Override
     public T findById(long id) throws SQLException {
+        Connection conn1;
+        try {
+            conn1 = ConnectionPool.getConnection();
+            conn1.setAutoCommit(false);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
         try {
             if (id==0l){
                 LOGGER.info("The id must be greater than 0L, returning a null value");
                 return null;
             }
-            conn.setAutoCommit(false);
             String query= String.format("select * from %s where id=?",getTableName());
-            PreparedStatement ps = conn.prepareStatement(query);
+            PreparedStatement ps = conn1.prepareStatement(query);
             ps.setLong(1,id);
 
             ResultSet result =ps.executeQuery();
@@ -87,40 +104,48 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 return null;
             }
 
-            T newClass = mapResultToObject(result ,conn);
+            T newClass = mapResultToObject(result ,conn1);
             LOGGER.info("The object was found successfully");
         return newClass;
 
         } catch (SQLException e) {
-            conn.rollback();
+            conn1.rollback();
             LOGGER.error(e.getMessage());
             throw new RuntimeException(e);
         }
         finally {
-            conn.setAutoCommit(true);
+            conn1.setAutoCommit(true);
+            ConnectionPool.releaseConnection(conn1);
         }
     }
 
     @Override
     public void deleteById(Long thingId) throws SQLException {
+        Connection conn1;
+        try {
+            conn1 = ConnectionPool.getConnection();
+            conn1.setAutoCommit(false);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
         try {
             T thingToDelete=findById(thingId);
-            conn.setAutoCommit(false);
             if (thingToDelete==null) {
                 LOGGER.info("The object does not exist, delete operation failed");
                 return;
             }
             String query=String.format("delete from %s where id=?",getTableName()) ;
-            PreparedStatement ps = conn.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = conn1.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
             ps.setLong(1,thingId);
             int rowNumber= ps.executeUpdate();
             LOGGER.info("The selected object was deleted successfully row affected: "+rowNumber);
         } catch (SQLException e) {
-            conn.rollback();
+            conn1.rollback();
             throw new RuntimeException(e);
         }
         finally {
-            conn.setAutoCommit(true);
+            conn1.setAutoCommit(true);
+            ConnectionPool.releaseConnection(conn1);
         }
     }
 
@@ -136,23 +161,29 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
     @Override
     public void update(T thingToUpdate) throws SQLException {
+        Connection conn1;
         try {
-            conn.setAutoCommit(false);
+            conn1 = ConnectionPool.getConnection();
+            conn1.setAutoCommit(false);
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+        try {
             T checkIfExist=findById(getThingId(thingToUpdate));
-            conn.setAutoCommit(false);
             if (checkIfExist==null) {
                 LOGGER.info("The object does not exist, update operation failed");
                 return;
             }
-            PreparedStatement ps = conn.prepareStatement(getUpdateQuery(thingToUpdate),Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = conn1.prepareStatement(getUpdateQuery(thingToUpdate),Statement.RETURN_GENERATED_KEYS);
             int number= ps.executeUpdate();
             LOGGER.info("The object was updated successfully the row affected was: "+number);
         } catch (SQLException e) {
-            conn.rollback();
+            conn1.rollback();
             throw new RuntimeException(e);
         }
         finally {
-            conn.setAutoCommit(true);
+            conn1.setAutoCommit(true);
+            ConnectionPool.releaseConnection(conn1);
         }
     }
 

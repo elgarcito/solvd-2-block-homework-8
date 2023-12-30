@@ -6,8 +6,7 @@ import java.sql.*;
 import java.util.List;
 
 public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
-    public EssayModuleRepositoryImpl(Connection conn) {
-        super(conn);
+    public EssayModuleRepositoryImpl() {
     }
 
 

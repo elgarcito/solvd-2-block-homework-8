@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea> {
-    public EmployeeWorkAreaRepositoryImpl(Connection conn) {
-        super(conn);
+    public EmployeeWorkAreaRepositoryImpl() {
     }
 
     @Override

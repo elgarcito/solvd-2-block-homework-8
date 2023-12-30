@@ -30,10 +30,10 @@ public class EmployeeLaboratoryToolsService {
     public List<EmployeeLaboratoryTools> findAll(Connection conn) throws SQLException {
         List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsImpl.getAll();
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
+        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl();
         LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
 
 
@@ -46,10 +46,10 @@ public class EmployeeLaboratoryToolsService {
 
     public EmployeeLaboratoryTools findOne(Long id,Connection conn) throws SQLException {
         EmployeeLaboratoryTools employeeLaboratoryTools = employeeLaboratoryToolsImpl.findById(id);
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
+        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl();
         LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
 
         employeeLaboratoryTools.setEmployee(newEmployeeService.findOne(employeeLaboratoryTools.getEmployeeId()));

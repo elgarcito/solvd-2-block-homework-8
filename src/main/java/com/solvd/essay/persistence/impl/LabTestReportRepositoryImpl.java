@@ -9,8 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LabTestReportRepositoryImpl extends AbstracDao<LabTestReport> {
-    public LabTestReportRepositoryImpl(Connection conn) {
-        super(conn);
+    public LabTestReportRepositoryImpl() {
     }
 
     @Override

@@ -22,3 +22,26 @@
 14:18:23.945 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
 14:19:44.284 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
 14:19:44.292 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+18:39:12.319 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully the row affected was: 1
+18:44:55.794 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'model 6' for key 'equipment_for_test_model.model_name'
+18:44:55.814 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+18:49:00.963 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'model 6' for key 'equipment_for_test_model.model_name'
+18:49:00.982 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+18:49:00.987 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+18:49:00.990 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The selected object was deleted successfully row affected: 1
+18:50:39.841 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully the row affected was: 1
+18:50:39.865 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+18:50:39.870 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+18:51:37.371 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'model 6' for key 'equipment_for_test_model.model_name'
+18:51:37.392 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+18:52:06.846 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+18:54:19.398 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - Object was added to database successfully the row affected was: 1
+18:54:19.418 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+18:54:19.422 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+18:55:57.958 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+18:55:57.966 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+18:55:57.968 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully the row affected was: 1
+19:05:47.230 [main] ERROR com.solvd.essay.persistence.impl.AbstracDao - Duplicate entry 'model 11' for key 'equipment_for_test_model.model_name'
+19:05:47.255 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
+19:05:47.259 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+19:05:47.262 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully the row affected was: 1

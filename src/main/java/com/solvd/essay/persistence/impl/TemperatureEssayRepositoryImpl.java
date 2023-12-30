@@ -10,8 +10,7 @@ import java.sql.SQLException;
 
 public class TemperatureEssayRepositoryImpl extends AbstracDao<TemperatureEssay> {
 
-    public TemperatureEssayRepositoryImpl(Connection conn) {
-        super(conn);
+    public TemperatureEssayRepositoryImpl() {
     }
 
     @Override

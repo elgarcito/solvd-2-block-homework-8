@@ -10,8 +10,7 @@ import java.sql.SQLException;
 
 public class EnergyEfficiencyEssayRepositoryImpl extends AbstracDao<EnergyEfficiencyEssay> {
 
-    public EnergyEfficiencyEssayRepositoryImpl(Connection conn) {
-        super(conn);
+    public EnergyEfficiencyEssayRepositoryImpl() {
     }
 
     @Override

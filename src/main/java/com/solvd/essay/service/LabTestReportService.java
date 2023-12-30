@@ -24,16 +24,16 @@ public class LabTestReportService {
     public List<LabTestReport> findAll(Connection conn) throws SQLException {
         List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
 
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl(conn);
+        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
         BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
         for (LabTestReport labTestReport: labTestReportList) {
@@ -49,16 +49,16 @@ public class LabTestReportService {
 
         LabTestReport labTestReport=labTestReportImpl.findById(id);
 
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl(conn);
+        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
         BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
         labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
