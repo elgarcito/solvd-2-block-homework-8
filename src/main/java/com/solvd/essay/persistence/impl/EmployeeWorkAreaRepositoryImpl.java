@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea> {
+public class EmployeeWorkAreaRepositoryImpl extends AbstractDao<EmployeeWorkArea> {
     public EmployeeWorkAreaRepositoryImpl(Connection conn) {
         super(conn);
     }

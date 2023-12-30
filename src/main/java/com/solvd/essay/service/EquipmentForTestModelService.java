@@ -1,16 +1,16 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EquipmentForTestModel;
-import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.AbstractDao;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EquipmentForTestModelService {
-    private final AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl;
+    private final AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl;
 
-    public EquipmentForTestModelService(AbstracDao<EquipmentForTestModel> equipmentForTestModelAbstracDao){
-        this.equipmentForTestModelImpl =equipmentForTestModelAbstracDao;
+    public EquipmentForTestModelService(AbstractDao<EquipmentForTestModel> equipmentForTestModelAbstractDao){
+        this.equipmentForTestModelImpl = equipmentForTestModelAbstractDao;
     }
 
     public void create(EquipmentForTestModel equipmentForTestModel){

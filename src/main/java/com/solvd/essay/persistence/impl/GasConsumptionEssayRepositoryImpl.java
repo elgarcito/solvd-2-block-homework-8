@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class GasConsumptionEssayRepositoryImpl extends AbstracDao<GasConsumptionEssay>{
+public class GasConsumptionEssayRepositoryImpl extends AbstractDao<GasConsumptionEssay> {
     public GasConsumptionEssayRepositoryImpl(Connection conn) {
         super(conn);
     }

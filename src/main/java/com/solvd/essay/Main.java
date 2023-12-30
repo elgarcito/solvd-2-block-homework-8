@@ -1,8 +1,22 @@
 package com.solvd.essay;
 
 
+import com.solvd.essay.domain.BatchInfo;
+import com.solvd.essay.domain.exceptions.ResourceNotFoundException;
+import com.solvd.essay.persistence.BatchInfoRepository;
+import com.solvd.essay.service.BatchInfoService;
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Optional;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -13,6 +27,26 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) {
+        try{
+            BatchInfoService batchInfoService =new BatchInfoService();
+            /*
+            BatchInfo batchInfo1=new BatchInfo();
+            batchInfo1.setBatchNumber("ksff14");
+            batchInfoService.create(batchInfo1);
+            batchInfoService.deleteOne(12L);
+            batchInfo1.setBatchNumber("ksff14485");
+            batchInfoService.updateEntity(batchInfo1,11L);
+            Optional<BatchInfo> batchInfo2=batchInfoService.findOne(11L);
+            System.out.println(batchInfo2.isPresent());
+            BatchInfo batchInfo3= batchInfo2.get();
+            System.out.println(batchInfo3.getBatchNumber());
+
+             */
+            List<BatchInfo> list=batchInfoService.findAll();
+            list.forEach(x-> System.out.println(x.getBatchNumber()));
+
+        } catch (SQLException e) {
+        }
 
     }
 }

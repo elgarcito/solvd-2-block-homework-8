@@ -1,12 +1,10 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.Employee;
-import com.solvd.essay.domain.EssayModule;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 
-public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
+public class EmployeeRepositoryImpl extends AbstractDao<Employee> {
 
     public EmployeeRepositoryImpl(Connection conn) {
         super(conn);

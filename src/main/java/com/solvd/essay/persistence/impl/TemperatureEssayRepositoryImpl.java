@@ -1,6 +1,5 @@
 package com.solvd.essay.persistence.impl;
 
-import com.solvd.essay.domain.GasConsumptionEssay;
 import com.solvd.essay.domain.TemperatureEssay;
 
 import java.sql.Connection;
@@ -8,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class TemperatureEssayRepositoryImpl extends AbstracDao<TemperatureEssay> {
+public class TemperatureEssayRepositoryImpl extends AbstractDao<TemperatureEssay> {
 
     public TemperatureEssayRepositoryImpl(Connection conn) {
         super(conn);

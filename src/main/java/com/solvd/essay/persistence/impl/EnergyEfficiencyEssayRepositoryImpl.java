@@ -1,14 +1,13 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
-import com.solvd.essay.domain.LabTestReport;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EnergyEfficiencyEssayRepositoryImpl extends AbstracDao<EnergyEfficiencyEssay> {
+public class EnergyEfficiencyEssayRepositoryImpl extends AbstractDao<EnergyEfficiencyEssay> {
 
     public EnergyEfficiencyEssayRepositoryImpl(Connection conn) {
         super(conn);

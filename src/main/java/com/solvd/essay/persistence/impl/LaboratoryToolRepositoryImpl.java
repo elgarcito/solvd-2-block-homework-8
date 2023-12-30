@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LaboratoryToolRepositoryImpl extends AbstracDao<LaboratoryTool> {
+public class LaboratoryToolRepositoryImpl extends AbstractDao<LaboratoryTool> {
     public LaboratoryToolRepositoryImpl(Connection conn) {
         super(conn);
     }

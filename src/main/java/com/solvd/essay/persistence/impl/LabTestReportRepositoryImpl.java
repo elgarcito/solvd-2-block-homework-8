@@ -1,14 +1,13 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.LabTestReport;
-import com.solvd.essay.domain.TemperatureEssay;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class LabTestReportRepositoryImpl extends AbstracDao<LabTestReport> {
+public class LabTestReportRepositoryImpl extends AbstractDao<LabTestReport> {
     public LabTestReportRepositoryImpl(Connection conn) {
         super(conn);
     }

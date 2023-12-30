@@ -1,6 +1,5 @@
 package com.solvd.essay.persistence.impl;
 
-import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
 import com.solvd.essay.domain.EmployeeLaboratoryTools;
 
 import java.sql.Connection;
@@ -8,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLaboratoryTools>{
+public class EmployeeLaboratoryToolsRepositoryImpl extends AbstractDao<EmployeeLaboratoryTools> {
     public EmployeeLaboratoryToolsRepositoryImpl(Connection conn) {
         super(conn);
     }

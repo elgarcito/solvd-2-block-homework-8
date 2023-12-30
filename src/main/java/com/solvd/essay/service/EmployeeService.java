@@ -1,16 +1,16 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.Employee;
-import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.AbstractDao;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeService {
-    private final AbstracDao<Employee> employeeImpl;
+    private final AbstractDao<Employee> employeeImpl;
 
-    public EmployeeService(AbstracDao<Employee> employeeAbstracDao){
-        this.employeeImpl =employeeAbstracDao;
+    public EmployeeService(AbstractDao<Employee> employeeAbstractDao){
+        this.employeeImpl = employeeAbstractDao;
     }
 
     public void create(Employee employee){

@@ -1,24 +1,24 @@
-14:06:30.394 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:06:30.402 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
-14:06:30.404 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:06:30.409 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.668 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.675 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was updated successfully
-14:10:08.677 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.683 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.687 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
-14:10:08.689 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.693 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.696 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.699 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.701 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:10:08.704 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:18:23.921 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - All the elements were added to the list successfully
-14:18:23.931 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:18:23.933 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:18:23.936 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:18:23.939 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:18:23.942 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:18:23.945 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:19:44.284 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
-14:19:44.292 [main] INFO  com.solvd.essay.persistence.impl.AbstracDao - The object was found successfully
+14:06:30.394 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:06:30.402 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was updated successfully
+14:06:30.404 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:06:30.409 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.668 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.675 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was updated successfully
+14:10:08.677 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.683 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.687 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - All the elements were added to the list successfully
+14:10:08.689 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.693 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.696 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.699 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.701 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:10:08.704 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:18:23.921 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - All the elements were added to the list successfully
+14:18:23.931 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:18:23.933 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:18:23.936 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:18:23.939 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:18:23.942 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:18:23.945 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:19:44.284 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+14:19:44.292 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully

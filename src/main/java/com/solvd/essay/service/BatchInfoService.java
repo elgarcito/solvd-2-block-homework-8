@@ -1,48 +1,32 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.BatchInfo;
-import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.BatchInfoRepository;
+import com.solvd.essay.persistence.impl.BatchInfoRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class BatchInfoService {
-    private final AbstracDao<BatchInfo> batchInfoImpl;
-
-    public BatchInfoService(AbstracDao<BatchInfo> batchInfoAbstracDao){
-        this.batchInfoImpl =batchInfoAbstracDao;
-    }
-
-    public void create(BatchInfo batchInfo){
-        try {
-            batchInfoImpl.create(batchInfo);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    private final BatchInfoRepository batchInfoRepository= new BatchInfoRepositoryImpl();
+    public void create(BatchInfo batchInfo) throws SQLException {
+        batchInfoRepository.create(batchInfo);
     }
     public List<BatchInfo> findAll() throws SQLException {
-            return batchInfoImpl.getAll();
+            return batchInfoRepository.getAll();
     }
 
-    public BatchInfo findOne(Long id) throws SQLException {
-        return batchInfoImpl.findById(id);
+    public Optional<BatchInfo> findOne(Long id) throws SQLException {
+        return Optional.ofNullable(batchInfoRepository.findById(id));
     }
 
     public void deleteOne(Long id) throws SQLException {
-        batchInfoImpl.deleteById(id);
+        batchInfoRepository.deleteById(id);
     }
 
-    public void deleteEntity(BatchInfo batchInfo){
-        batchInfoImpl.delete(batchInfo);
-    }
-
-    public void updateEntity(BatchInfo batchInfo){
-        try {
-            batchInfoImpl.update(batchInfo);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
+    public void updateEntity(BatchInfo batchInfo,Long entityId) throws SQLException {
+        batchInfoRepository.updateById(batchInfo, entityId);
     }
 
 

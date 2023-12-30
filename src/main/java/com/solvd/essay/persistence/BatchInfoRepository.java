@@ -1,4 +1,7 @@
 package com.solvd.essay.persistence;
 
-public interface BatchInfoRepository {
+import com.solvd.essay.domain.BatchInfo;
+
+public interface BatchInfoRepository extends InterfaceGenericDao<BatchInfo> {
+
 }

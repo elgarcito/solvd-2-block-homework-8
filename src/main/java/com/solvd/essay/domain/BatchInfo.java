@@ -1,8 +1,12 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class BatchInfo {
     private Long id;
     private String batchNumber;
+
+    private List<BatchInfo> myBatchInfoList;
 
 
     public String getBatchNumber() {
@@ -19,5 +23,13 @@ public class BatchInfo {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<BatchInfo> getMyBatchInfoList() {
+        return myBatchInfoList;
+    }
+
+    public void setMyBatchInfoList(List<BatchInfo> myBatchInfoList) {
+        this.myBatchInfoList = myBatchInfoList;
     }
 }

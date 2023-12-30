@@ -1,6 +1,5 @@
 package com.solvd.essay.persistence.impl;
 
-import com.solvd.essay.domain.Employee;
 import com.solvd.essay.domain.EquipmentForTestModel;
 
 import java.sql.Connection;
@@ -8,7 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentForTestModel>{
+public class EquipmentForTestModelRepositoryImpl extends AbstractDao<EquipmentForTestModel> {
     public EquipmentForTestModelRepositoryImpl(Connection conn) {
         super(conn);
     }

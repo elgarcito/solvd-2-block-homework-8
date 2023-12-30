@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class LabTestReportService {
-    private final AbstracDao<LabTestReport> labTestReportImpl;
+    private final AbstractDao<LabTestReport> labTestReportImpl;
 
-    public LabTestReportService(AbstracDao<LabTestReport> labTestReportAbstracDao){
-        this.labTestReportImpl =labTestReportAbstracDao;
+    public LabTestReportService(AbstractDao<LabTestReport> labTestReportAbstractDao){
+        this.labTestReportImpl = labTestReportAbstractDao;
     }
 
     public void create(LabTestReport labTestReport){
@@ -24,21 +24,19 @@ public class LabTestReportService {
     public List<LabTestReport> findAll(Connection conn) throws SQLException {
         List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
 
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl(conn);
-        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        AbstractDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
         for (LabTestReport labTestReport: labTestReportList) {
             labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
-            labTestReport.setBatchInfo(newBatchInfoService.findOne(labTestReport.getBatchInfoId()));
+
             labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
             labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
         }
@@ -49,20 +47,18 @@ public class LabTestReportService {
 
         LabTestReport labTestReport=labTestReportImpl.findById(id);
 
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
+        AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl(conn);
-        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
+        AbstractDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
         labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
-        labTestReport.setBatchInfo(newBatchInfoService.findOne(labTestReport.getBatchInfoId()));
         labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
         labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
 

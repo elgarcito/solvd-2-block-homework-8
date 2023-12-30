@@ -1,16 +1,16 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EssayModule;
-import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.AbstractDao;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EssayModuleService {
-    private final AbstracDao<EssayModule> essayModuleImpl;
+    private final AbstractDao<EssayModule> essayModuleImpl;
 
-    public EssayModuleService(AbstracDao<EssayModule> essayModuleAbstracDao){
-        this.essayModuleImpl =essayModuleAbstracDao;
+    public EssayModuleService(AbstractDao<EssayModule> essayModuleAbstractDao){
+        this.essayModuleImpl = essayModuleAbstractDao;
     }
 
     public void create(EssayModule essayModule){

@@ -2,11 +2,9 @@ package com.solvd.essay.service;
 
 import com.solvd.essay.domain.Employee;
 import com.solvd.essay.domain.EmployeeLaboratoryTools;
-import com.solvd.essay.domain.EmployeeWorkArea;
 import com.solvd.essay.domain.LaboratoryTool;
-import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.AbstractDao;
 import com.solvd.essay.persistence.impl.EmployeeRepositoryImpl;
-import com.solvd.essay.persistence.impl.EmployeeWorkAreaRepositoryImpl;
 import com.solvd.essay.persistence.impl.LaboratoryToolRepositoryImpl;
 
 import java.sql.Connection;
@@ -14,10 +12,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeLaboratoryToolsService {
-    private final AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsImpl;
+    private final AbstractDao<EmployeeLaboratoryTools> employeeLaboratoryToolsImpl;
 
-    public EmployeeLaboratoryToolsService(AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsAbstracDao){
-        this.employeeLaboratoryToolsImpl =employeeLaboratoryToolsAbstracDao;
+    public EmployeeLaboratoryToolsService(AbstractDao<EmployeeLaboratoryTools> employeeLaboratoryToolsAbstractDao){
+        this.employeeLaboratoryToolsImpl = employeeLaboratoryToolsAbstractDao;
     }
 
     public void create(EmployeeLaboratoryTools employeeLaboratoryTools){
@@ -30,10 +28,10 @@ public class EmployeeLaboratoryToolsService {
     public List<EmployeeLaboratoryTools> findAll(Connection conn) throws SQLException {
         List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsImpl.getAll();
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
+        AbstractDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
         LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
 
 
@@ -46,10 +44,10 @@ public class EmployeeLaboratoryToolsService {
 
     public EmployeeLaboratoryTools findOne(Long id,Connection conn) throws SQLException {
         EmployeeLaboratoryTools employeeLaboratoryTools = employeeLaboratoryToolsImpl.findById(id);
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
+        AbstractDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
         LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
 
         employeeLaboratoryTools.setEmployee(newEmployeeService.findOne(employeeLaboratoryTools.getEmployeeId()));
