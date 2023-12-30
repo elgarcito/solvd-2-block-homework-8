@@ -24,5 +24,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/solvd_essay","root","Edgar1269!");
         conn.setAutoCommit(false);
+
+
     }
 }

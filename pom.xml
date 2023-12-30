@@ -18,6 +18,7 @@
         <log4jCoreVersion>2.21.1</log4jCoreVersion>
         <log4jApiVersion>2.21.1</log4jApiVersion>
         <mavenJarPluginVersion>3.3.0</mavenJarPluginVersion>
+        <myBatisVersion>3.5.15</myBatisVersion>
     </properties>
 
     <dependencies>
@@ -35,6 +36,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
             <version>${log4jApiVersion}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>${myBatisVersion}</version>
         </dependency>
 
 
