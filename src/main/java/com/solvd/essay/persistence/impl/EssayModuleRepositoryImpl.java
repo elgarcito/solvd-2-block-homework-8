@@ -1,72 +1,57 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.EssayModule;
+import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
+import com.solvd.essay.persistence.EssayModuleRepository;
+import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
+import java.util.List;
 
-public class EssayModuleRepositoryImpl extends AbstractDao<EssayModule> {
-    public EssayModuleRepositoryImpl(Connection conn) {
-        super(conn);
-    }
-
-
-
+public class EssayModuleRepositoryImpl implements EssayModuleRepository {
+    private static final Logger LOGGER = LogManager.getLogger(EssayModuleRepositoryImpl.class);
     @Override
-    public String getTableName() {
-        return "essay_module";
-    }
-
-
-    @Override
-    public String getTableFields() {
-        return "module_description";
-    }
-
-    /*
-    @Override
-    public String getThingFields(EssayModule essayModule) {
-        return essayModule.getModuleDescription();
-    }
-
-     */
-
-    @Override
-    public EssayModule mapResultToObject(ResultSet resultSet,Connection conn) throws SQLException {
-
-        EssayModule entity= new EssayModule();
-        entity.setId(resultSet.getLong("id"));
-        entity.setModuleDescription(resultSet.getString("module_description"));
-        return entity;
+    public void create(EssayModule thingToCreate) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EssayModuleRepository essayModuleRepository= sqlSession.getMapper(EssayModuleRepository.class);
+            essayModuleRepository.create(thingToCreate);
+        }catch (SQLException e){
+            LOGGER.error(e.getMessage());
+        }
     }
 
     @Override
-    public Long getThingId(EssayModule entity) {
-        return entity.getId();
+    public List<EssayModule> getAll() throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EssayModuleRepository essayModuleRepository= sqlSession.getMapper(EssayModuleRepository.class);
+            return essayModuleRepository.getAll();
+        }
     }
 
     @Override
-    protected String getUpdateQuery(EssayModule entity) {
-        String updateQuery= String.format("update essay_module set module_description=\"%s\" where id= %s",
-                entity.getModuleDescription(),entity.getId());
-
-        //"update essay_module set module_description=\""+entity.getModuleDescription()+
-        //        "\" where id="+entity.getId();
-
-        return updateQuery;
+    public EssayModule findById(long id) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EssayModuleRepository essayModuleRepository= sqlSession.getMapper(EssayModuleRepository.class);
+            return essayModuleRepository.findById(id);
+        }
     }
 
     @Override
-    protected String getCreateQuery() {
-        String createQuery= String.format("insert into %s(%s) value (?)",getTableName(),getTableFields());
-        return createQuery;
+    public void deleteById(Long thingId) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EssayModuleRepository essayModuleRepository= sqlSession.getMapper(EssayModuleRepository.class);
+            essayModuleRepository.deleteById(thingId);
+        }
     }
 
     @Override
-    protected void setQueryStatements(PreparedStatement ps, EssayModule thingToCreate) {
-        try {
-            ps.setString(1,thingToCreate.getModuleDescription());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public void updateById(EssayModule thingToUpdate, Long entityId) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EssayModuleRepository essayModuleRepository= sqlSession.getMapper(EssayModuleRepository.class);
+            essayModuleRepository.updateById(thingToUpdate,entityId);
         }
     }
 }

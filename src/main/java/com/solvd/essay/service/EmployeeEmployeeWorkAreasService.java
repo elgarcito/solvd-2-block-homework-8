@@ -28,29 +28,22 @@ public class EmployeeEmployeeWorkAreasService {
     public List<EmployeeEmployeeWorkAreas> findAll(Connection conn) throws SQLException {
         List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList=employeeEmployeeWorkAreasImpl.getAll();
 
-        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstractDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl(conn);
-        EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
+
+
+
+
 
         for (EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas: employeeEmployeeWorkAreasList) {
-            employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));
-            employeeEmployeeWorkAreas.setEmployeeWorkArea(newEmployeeWorkAreaService.findOne(employeeEmployeeWorkAreas.getEmployeeworkAreaId()));
+
         }
         return employeeEmployeeWorkAreasList;
     }
 
     public EmployeeEmployeeWorkAreas findOne(Long id,Connection conn) throws SQLException {
         EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas= employeeEmployeeWorkAreasImpl.findById(id);
-        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstractDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl(conn);
-        EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
 
-        employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));
-        employeeEmployeeWorkAreas.setEmployeeWorkArea(newEmployeeWorkAreaService.findOne(employeeEmployeeWorkAreas.getEmployeeworkAreaId()));
         return employeeEmployeeWorkAreas;
     }
 

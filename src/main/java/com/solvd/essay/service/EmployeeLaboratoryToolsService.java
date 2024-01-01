@@ -28,30 +28,20 @@ public class EmployeeLaboratoryToolsService {
     public List<EmployeeLaboratoryTools> findAll(Connection conn) throws SQLException {
         List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsImpl.getAll();
 
-        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstractDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
-        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
+
+
 
 
         for (EmployeeLaboratoryTools employeeLaboratoryTools: employeeLaboratoryToolsList) {
-            employeeLaboratoryTools.setEmployee(newEmployeeService.findOne(employeeLaboratoryTools.getEmployeeId()));
-            employeeLaboratoryTools.setLaboratoryTool(newLaboratoryToolService.findOne(employeeLaboratoryTools.getLaboratoryToolId()));
+
         }
         return employeeLaboratoryToolsList;
     }
 
     public EmployeeLaboratoryTools findOne(Long id,Connection conn) throws SQLException {
         EmployeeLaboratoryTools employeeLaboratoryTools = employeeLaboratoryToolsImpl.findById(id);
-        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstractDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl(conn);
-        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
-
-        employeeLaboratoryTools.setEmployee(newEmployeeService.findOne(employeeLaboratoryTools.getEmployeeId()));
-        employeeLaboratoryTools.setLaboratoryTool(newLaboratoryToolService.findOne(employeeLaboratoryTools.getLaboratoryToolId()));
         return employeeLaboratoryTools;
     }
 

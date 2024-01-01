@@ -1,64 +1,60 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.EquipmentForTestModel;
+import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
+import com.solvd.essay.persistence.EquipmentForTestModelRepository;
+import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
-public class EquipmentForTestModelRepositoryImpl extends AbstractDao<EquipmentForTestModel> {
-    public EquipmentForTestModelRepositoryImpl(Connection conn) {
-        super(conn);
+public class EquipmentForTestModelRepositoryImpl implements EquipmentForTestModelRepository {
+    private static final Logger LOGGER = LogManager.getLogger(EquipmentForTestModelRepositoryImpl.class);
+    @Override
+    public void create(EquipmentForTestModel thingToCreate) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EquipmentForTestModelRepository equipmentForTestModelRepository= sqlSession.getMapper(EquipmentForTestModelRepository.class);
+            equipmentForTestModelRepository.create(thingToCreate);
+        }catch (SQLException e){
+            LOGGER.error(e.getMessage());
+        }
     }
 
     @Override
-    protected String getUpdateQuery(EquipmentForTestModel newThingToUpdate) {
-        String updateQuery=String.format("update %s set model_name=\"%s\",model_description=\"%s\",release_date=\"%s\" where id= %s",
-                getTableName(),newThingToUpdate.getModelName(),newThingToUpdate.getModelDescription(),
-                newThingToUpdate.getReleaseDate(),newThingToUpdate.getId());
-        return updateQuery;
+    public List<EquipmentForTestModel> getAll() throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EquipmentForTestModelRepository equipmentForTestModelRepository= sqlSession.getMapper(EquipmentForTestModelRepository.class);
+            return equipmentForTestModelRepository.getAll();
+        }
     }
 
     @Override
-    protected String getTableName() {
-        return "equipment_for_test_model";
+    public EquipmentForTestModel findById(long id) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EquipmentForTestModelRepository equipmentForTestModelRepository= sqlSession.getMapper(EquipmentForTestModelRepository.class);
+            return equipmentForTestModelRepository.findById(id);
+        }
     }
 
     @Override
-    protected String getTableFields() {
-        return "model_name,model_description,release_date";
+    public void deleteById(Long thingId) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+        EquipmentForTestModelRepository equipmentForTestModelRepository= sqlSession.getMapper(EquipmentForTestModelRepository.class);
+        equipmentForTestModelRepository.deleteById(thingId);
+        }
     }
 
     @Override
-    protected Long getThingId(EquipmentForTestModel thing) {
-        return thing.getId();
-    }
-
-    @Override
-    protected EquipmentForTestModel mapResultToObject(ResultSet resultSet, Connection conn) throws SQLException {
-        EquipmentForTestModel entity= new EquipmentForTestModel();
-        entity.setId(resultSet.getLong("id"));
-        entity.setModelName(resultSet.getString("model_name"));
-        entity.setModelDescription(resultSet.getString("model_description"));
-        entity.setReleaseDate(resultSet.getDate(  "release_date"));
-        return entity;
-    }
-
-    @Override
-    protected String getCreateQuery() {
-        String createQuery= String.format("insert into %s(%s) value (?,?,?)",getTableName(),getTableFields());
-        return createQuery;
-    }
-
-    @Override
-    protected void setQueryStatements(PreparedStatement ps, EquipmentForTestModel thingToCreate) {
-        try {
-            ps.setString(1,thingToCreate.getModelName());
-            ps.setString(2,thingToCreate.getModelDescription());
-            ps.setDate(3, thingToCreate.getReleaseDate());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public void updateById(EquipmentForTestModel thingToUpdate, Long entityId) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EquipmentForTestModelRepository equipmentForTestModelRepository= sqlSession.getMapper(EquipmentForTestModelRepository.class);
+            equipmentForTestModelRepository.updateById(thingToUpdate,entityId);
         }
     }
 }

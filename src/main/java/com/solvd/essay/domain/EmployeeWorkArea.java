@@ -1,10 +1,13 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class EmployeeWorkArea {
 
     private Long id;
     private String areaName;
     private String areaCode;
+    private List<EmployeeWorkArea> employeeWorkAreaList;
 
     public String getAreaName() {
         return areaName;
@@ -28,5 +31,13 @@ public class EmployeeWorkArea {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<EmployeeWorkArea> getEmployeeWorkAreaList() {
+        return employeeWorkAreaList;
+    }
+
+    public void setEmployeeWorkAreaList(List<EmployeeWorkArea> employeeWorkAreaList) {
+        this.employeeWorkAreaList = employeeWorkAreaList;
     }
 }

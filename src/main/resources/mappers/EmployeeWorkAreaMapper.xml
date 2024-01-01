@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.essay.persistence.EmployeeWorkAreaRepository">
+
+    <sql id="employeeWorkAreaSelect">
+        select id,area_name, area_code from employee_work_area
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        insert into employee_work_area(area_name,area_code) value (#{areaName},#{areaCode})
+    </insert>
+
+    <update id="updateById" keyColumn="id" useGeneratedKeys="true">
+        update employee_work_area set area_name=#{thingToUpdate.areaName},area_code=#{thingToUpdate.areaCode} where id=#{id}
+    </update>
+
+    <select id="getAll" resultMap="findAllResult">
+        select * from employee_work_area
+    </select>
+
+    <select id="findById" resultMap="employeeWorkAreaResult" >
+        <include refid="employeeWorkAreaSelect"/>
+        where id=#{id}
+    </select>
+    
+    <delete id="deleteById">
+        delete from employee_work_area where id=#{id}
+    </delete>
+
+    <resultMap id="employeeWorkAreaResult" type="com.solvd.essay.domain.EmployeeWorkArea">
+        <id property="id" column="id" />
+        <result property="areaName" column="area_name"/>
+        <result property="areaCode" column="area_code"/>
+    </resultMap>
+
+    <resultMap id="findAllResult" type="com.solvd.essay.domain.EmployeeWorkArea">
+        <id property="id" column="id" />
+        <result property="areaName" column="area_name"/>
+        <result property="areaCode" column="area_code"/>
+        <collection property="employeeWorkAreaList" javaType="ArrayList" ofType="com.solvd.essay.domain.EmployeeWorkArea"/>
+    </resultMap>
+
+    
+</mapper>

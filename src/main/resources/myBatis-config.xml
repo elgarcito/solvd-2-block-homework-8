@@ -19,6 +19,11 @@
 
     <mappers>
         <mapper resource="mappers/BatchInfoMapper.xml"/>
+        <mapper resource="mappers/LaboratoryToolMapper.xml"/>
+        <mapper resource="mappers/EmployeeWorkAreaMapper.xml"/>
+        <mapper resource="mappers/EmployeeMapper.xml"/>
+        <mapper resource="mappers/EssayModuleMapper.xml"/>
+        <mapper resource="mappers/EquipmentForTestModelMapper.xml"/>
     </mappers>
 
 </configuration>

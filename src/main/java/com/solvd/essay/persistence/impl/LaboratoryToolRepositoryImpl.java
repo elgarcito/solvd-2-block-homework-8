@@ -1,61 +1,62 @@
 package com.solvd.essay.persistence.impl;
 
+import com.solvd.essay.Main;
 import com.solvd.essay.domain.LaboratoryTool;
+import com.solvd.essay.persistence.BatchInfoRepository;
+import com.solvd.essay.persistence.LaboratoryToolRepository;
+import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
-public class LaboratoryToolRepositoryImpl extends AbstractDao<LaboratoryTool> {
-    public LaboratoryToolRepositoryImpl(Connection conn) {
-        super(conn);
-    }
-
+public class LaboratoryToolRepositoryImpl implements LaboratoryToolRepository {
+    private static final Logger LOGGER = LogManager.getLogger(LaboratoryToolRepositoryImpl.class);
     @Override
-    protected String getUpdateQuery(LaboratoryTool newThingToUpdate) {
-        String updateQuery=String.format("update %s set tool_name=\"%s\", tool_description=\"%s\" where id=%s",
-                getTableName(),newThingToUpdate.getToolName(),newThingToUpdate.getToolDescription(),newThingToUpdate.getId());
-        return updateQuery;
-    }
-
-    @Override
-    protected String getTableName() {
-        return "laboratory_tool";
-    }
-
-    @Override
-    protected String getTableFields() {
-        return "tool_name,tool_description";
-    }
-
-    @Override
-    protected Long getThingId(LaboratoryTool thing) {
-        return thing.getId();
-    }
-
-    @Override
-    protected LaboratoryTool mapResultToObject(ResultSet resultSet, Connection conn) throws SQLException {
-        LaboratoryTool entity= new LaboratoryTool();
-        entity.setId(resultSet.getLong("id"));
-        entity.setToolName(resultSet.getString("tool_name"));
-        entity.setToolDescription(resultSet.getString("tool_description"));
-        return entity;
-    }
-
-    @Override
-    protected String getCreateQuery() {
-        String createQuery= String.format("insert into %s(%s) value (?,?)",getTableName(),getTableFields());
-        return createQuery;
-    }
-
-    @Override
-    protected void setQueryStatements(PreparedStatement ps, LaboratoryTool thingToCreate) {
-        try {
-            ps.setString(1,thingToCreate.getToolName());
-            ps.setString(2,thingToCreate.getToolDescription());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public void create(LaboratoryTool thingToCreate) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            LaboratoryToolRepository laboratoryToolRepository= sqlSession.getMapper(LaboratoryToolRepository.class);
+            laboratoryToolRepository.create(thingToCreate);
+        }catch (SQLException e){
+            LOGGER.error(e.getMessage());
         }
     }
+
+    @Override
+    public List<LaboratoryTool> getAll() throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            LaboratoryToolRepository laboratoryToolRepository = sqlSession.getMapper(LaboratoryToolRepository.class);
+            return laboratoryToolRepository.getAll();
+        }
+    }
+
+    @Override
+    public LaboratoryTool findById(long id) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            LaboratoryToolRepository laboratoryToolRepository = sqlSession.getMapper(LaboratoryToolRepository.class);
+            return laboratoryToolRepository.findById(id);
+        }
+    }
+
+    @Override
+    public void deleteById(Long thingId) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            LaboratoryToolRepository laboratoryToolRepository = sqlSession.getMapper(LaboratoryToolRepository.class);
+            laboratoryToolRepository.deleteById(thingId);
+        }
+    }
+
+    @Override
+    public void updateById(LaboratoryTool thingToUpdate, Long entityId) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            LaboratoryToolRepository laboratoryToolRepository = sqlSession.getMapper(LaboratoryToolRepository.class);
+            laboratoryToolRepository.updateById(thingToUpdate,entityId);
+        }
+    }
+
 }

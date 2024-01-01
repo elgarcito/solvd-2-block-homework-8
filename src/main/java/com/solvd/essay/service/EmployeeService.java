@@ -2,43 +2,45 @@ package com.solvd.essay.service;
 
 import com.solvd.essay.domain.Employee;
 import com.solvd.essay.persistence.impl.AbstractDao;
+import com.solvd.essay.persistence.impl.EmployeeRepositoryImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class EmployeeService {
-    private final AbstractDao<Employee> employeeImpl;
-
-    public EmployeeService(AbstractDao<Employee> employeeAbstractDao){
-        this.employeeImpl = employeeAbstractDao;
-    }
-
+    private static final Logger LOGGER = LogManager.getLogger(EmployeeService.class);
+    EmployeeRepositoryImpl employeeRepositoryImpl=new EmployeeRepositoryImpl();
     public void create(Employee employee){
         try {
-            employeeImpl.create(employee);
+            employeeRepositoryImpl.create(employee);
+            LOGGER.info("Object added successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<Employee> findAll() throws SQLException {
-            return employeeImpl.getAll();
+        List<Employee> list= employeeRepositoryImpl.getAll();
+        LOGGER.info("List returned successfully");
+        return list;
     }
 
-    public Employee findOne(Long id) throws SQLException {
-        return employeeImpl.findById(id);
+    public Optional<Employee> findOne(Long id) throws SQLException {
+        return Optional.ofNullable(employeeRepositoryImpl.findById(id));
     }
 
     public void deleteOne(Long id) throws SQLException {
-        employeeImpl.deleteById(id);
+        employeeRepositoryImpl.deleteById(id);
+        LOGGER.info("Object deleted successfully");
     }
 
-    public void deleteEntity(Employee employee){
-        employeeImpl.delete(employee);
-    }
 
-    public void updateEntity(Employee employee){
+    public void updateEntity(Employee employee,Long id){
         try {
-            employeeImpl.update(employee);
+            employeeRepositoryImpl.updateById(employee,id);
+            LOGGER.info("Object updated successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

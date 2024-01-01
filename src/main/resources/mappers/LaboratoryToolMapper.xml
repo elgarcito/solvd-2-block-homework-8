@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.essay.persistence.LaboratoryToolRepository">
+
+    <sql id="laboratoryToolSelect">
+        select id,tool_name, tool_description from laboratory_tool
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        insert into laboratory_tool(tool_name,tool_description) value (#{toolName},#{toolDescription})
+    </insert>
+
+    <update id="updateById" keyColumn="id" useGeneratedKeys="true">
+        update laboratory_tool set tool_name=#{thingToUpdate.toolName},tool_description=#{thingToUpdate.toolDescription} where id=#{id}
+    </update>
+
+    <select id="getAll" resultMap="findAllResult">
+        select * from laboratory_tool
+    </select>
+
+    <select id="findById" resultMap="laboratoryToolResult" >
+        <include refid="laboratoryToolSelect"/>
+        where id=#{id}
+    </select>
+    
+    <delete id="deleteById">
+        delete from laboratory_tool where id=#{id}
+    </delete>
+
+    <resultMap id="laboratoryToolResult" type="com.solvd.essay.domain.LaboratoryTool">
+        <id property="id" column="id" />
+        <result property="toolName" column="tool_name"/>
+        <result property="toolDescription" column="tool_description"/>
+    </resultMap>
+
+    <resultMap id="findAllResult" type="com.solvd.essay.domain.LaboratoryTool">
+        <id property="id" column="id" />
+        <result property="toolName" column="tool_name"/>
+        <result property="toolDescription" column="tool_description"/>
+        <collection property="laboratoryToolList" javaType="ArrayList" ofType="com.solvd.essay.domain.LaboratoryTool"/>
+    </resultMap>
+
+    
+</mapper>

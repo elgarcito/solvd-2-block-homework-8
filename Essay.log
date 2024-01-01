@@ -22,3 +22,23 @@
 14:18:23.945 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
 14:19:44.284 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
 14:19:44.292 [main] INFO  com.solvd.essay.persistence.impl.AbstractDao - The object was found successfully
+16:16:50.822 [main] INFO  com.solvd.essay.service.LaboratoryToolService - Object added successfully
+16:17:38.600 [main] INFO  com.solvd.essay.service.LaboratoryToolService - Object added successfully
+16:17:38.607 [main] INFO  com.solvd.essay.service.LaboratoryToolService - Object deleted successfully
+16:19:22.765 [main] INFO  com.solvd.essay.service.LaboratoryToolService - Object updated successfully
+17:00:32.776 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:16:55.074 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:19:27.678 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:19:53.692 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:20:14.162 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:20:33.331 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:20:53.952 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:23:32.846 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:24:29.032 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+17:24:49.775 [main] INFO  com.solvd.essay.service.LaboratoryToolService - List returned successfully
+19:39:46.541 [main] INFO  com.solvd.essay.service.EmployeeService - List returned successfully
+20:08:59.552 [main] INFO  com.solvd.essay.service.EmployeeService - List returned successfully
+20:08:59.565 [main] INFO  com.solvd.essay.persistence.impl.EssayModuleRepositoryImpl - List returned successfully
+20:34:59.825 [main] INFO  com.solvd.essay.service.EmployeeService - List returned successfully
+20:34:59.847 [main] INFO  com.solvd.essay.persistence.impl.EssayModuleRepositoryImpl - List returned successfully
+20:34:59.854 [main] INFO  com.solvd.essay.service.EquipmentForTestModelService - List returned successfully

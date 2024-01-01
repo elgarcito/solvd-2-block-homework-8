@@ -2,9 +2,12 @@ package com.solvd.essay;
 
 
 import com.solvd.essay.domain.BatchInfo;
+import com.solvd.essay.domain.EmployeeWorkArea;
+import com.solvd.essay.domain.EquipmentForTestModel;
+import com.solvd.essay.domain.LaboratoryTool;
 import com.solvd.essay.domain.exceptions.ResourceNotFoundException;
 import com.solvd.essay.persistence.BatchInfoRepository;
-import com.solvd.essay.service.BatchInfoService;
+import com.solvd.essay.service.*;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -26,9 +29,13 @@ public class Main {
     }
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
-    public static void main(String[] args) {
-        try{
-            BatchInfoService batchInfoService =new BatchInfoService();
+    public static void main(String[] args) throws SQLException {
+        BatchInfoService batchInfoService =new BatchInfoService();
+        LaboratoryToolService laboratoryToolService=new LaboratoryToolService();
+        EmployeeWorkAreaService employeeWorkAreaService=new EmployeeWorkAreaService();
+        EmployeeService employeeService=new EmployeeService();
+        EssayModuleService essayModuleService=new EssayModuleService();
+        EquipmentForTestModelService equipmentForTestModelService=new EquipmentForTestModelService();
             /*
             BatchInfo batchInfo1=new BatchInfo();
             batchInfo1.setBatchNumber("ksff14");
@@ -41,12 +48,35 @@ public class Main {
             BatchInfo batchInfo3= batchInfo2.get();
             System.out.println(batchInfo3.getBatchNumber());
 
-             */
+
             List<BatchInfo> list=batchInfoService.findAll();
             list.forEach(x-> System.out.println(x.getBatchNumber()));
 
-        } catch (SQLException e) {
-        }
+             */
+
+        //LaboratoryTools
+        //Optional<LaboratoryTool> laboratoryTool= laboratoryToolService.findOne(5L);
+        //System.out.println(laboratoryTool.get().getToolDescription());
+        //LaboratoryTool laboratoryTool1= new LaboratoryTool();
+        //laboratoryTool1.setToolName("tool8");
+        //laboratoryTool1.setToolDescription("super tool1");
+        //laboratoryToolService.create(laboratoryTool1);
+        //laboratoryToolService.deleteOne(6L);
+        //laboratoryToolService.updateEntity(laboratoryTool1,8L);
+        //laboratoryToolService.findAll().forEach(x-> System.out.println(x.getToolDescription()));
+
+        //EmployeeWorkAreas
+       // Optional<EmployeeWorkArea> employeeWorkArea= employeeWorkAreaService.findOne(9L);
+        //System.out.println(employeeWorkArea.get().getAreaName());
+
+        //Employee
+        employeeService.findAll().forEach(x-> System.out.println(x.getFirstName()+x.getLastName()));
+
+        //Essay module
+        essayModuleService.findAll().forEach(x-> System.out.println(x.getModuleDescription()));
+
+        //Equipment for test model
+        equipmentForTestModelService.findAll().forEach(x-> System.out.println(x.getModelDescription()));
 
     }
 }

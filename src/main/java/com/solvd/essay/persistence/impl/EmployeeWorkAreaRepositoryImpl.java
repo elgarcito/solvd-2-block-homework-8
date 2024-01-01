@@ -1,70 +1,60 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.EmployeeWorkArea;
+import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
+import com.solvd.essay.persistence.LaboratoryToolRepository;
+import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
-public class EmployeeWorkAreaRepositoryImpl extends AbstractDao<EmployeeWorkArea> {
-    public EmployeeWorkAreaRepositoryImpl(Connection conn) {
-        super(conn);
+public class EmployeeWorkAreaRepositoryImpl implements EmployeeWorkAreaRepository {
+    private static final Logger LOGGER = LogManager.getLogger(EmployeeWorkAreaRepositoryImpl.class);
+    @Override
+    public void create(EmployeeWorkArea thingToCreate) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EmployeeWorkAreaRepository employeeWorkAreaRepository= sqlSession.getMapper(EmployeeWorkAreaRepository.class);
+            employeeWorkAreaRepository.create(thingToCreate);
+        }catch (SQLException e){
+            LOGGER.error(e.getMessage());
+        }
     }
 
     @Override
-    protected String getUpdateQuery(EmployeeWorkArea newThingToUpdate) {
-        String updateQuery=String.format("update %s set area_name=\"%s\", area_code=\"%s\" where id=%s",
-                getTableName(),newThingToUpdate.getAreaName(),newThingToUpdate.getAreaCode(),newThingToUpdate.getId());
-        return updateQuery;
+    public List<EmployeeWorkArea> getAll() throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            EmployeeWorkAreaRepository employeeWorkAreaRepository = sqlSession.getMapper(EmployeeWorkAreaRepository.class);
+            return employeeWorkAreaRepository.getAll();
+        }
     }
 
     @Override
-    protected String getTableName() {
-        return "employee_work_area";
+    public EmployeeWorkArea findById(long id) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            EmployeeWorkAreaRepository employeeWorkAreaRepository = sqlSession.getMapper(EmployeeWorkAreaRepository.class);
+            return employeeWorkAreaRepository.findById(id);
+        }
     }
 
     @Override
-    protected String getTableFields() {
-        return "area_name,area_code";
-    }
-
-    /*
-    @Override
-    protected String getThingFields(EmployeeWorkArea thing) {
-        String returnValue=String.format("\"s%\",\"s%\"",thing.getAreaName(),
-                thing.getAreaCode());
-        return returnValue;
-    }
-
-     */
-
-    @Override
-    protected Long getThingId(EmployeeWorkArea thing) {
-        return thing.getId();
-    }
-    @Override
-    protected EmployeeWorkArea mapResultToObject(ResultSet resultSet,Connection conn) throws SQLException {
-        EmployeeWorkArea entity= new EmployeeWorkArea();
-        entity.setId(resultSet.getLong("id"));
-        entity.setAreaName(resultSet.getString("area_name"));
-        entity.setAreaCode(resultSet.getString("area_code"));
-        return entity;
+    public void deleteById(Long thingId) throws SQLException {
+            try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+                EmployeeWorkAreaRepository employeeWorkAreaRepository = sqlSession.getMapper(EmployeeWorkAreaRepository.class);
+                employeeWorkAreaRepository.deleteById(thingId);
+            }
     }
 
     @Override
-    protected String getCreateQuery() {
-        String createQuery= String.format("insert into %s(%s) value (?,?)",getTableName(),getTableFields());
-        return createQuery;
-    }
-
-    @Override
-    protected void setQueryStatements(PreparedStatement ps, EmployeeWorkArea thingToCreate) {
-        try {
-            ps.setString(1,thingToCreate.getAreaName());
-            ps.setString(2,thingToCreate.getAreaCode());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public void updateById(EmployeeWorkArea thingToUpdate, Long entityId) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            EmployeeWorkAreaRepository employeeWorkAreaRepository = sqlSession.getMapper(EmployeeWorkAreaRepository.class);
+            employeeWorkAreaRepository.updateById(thingToUpdate,entityId);
         }
     }
 }

@@ -2,51 +2,46 @@ package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.persistence.impl.AbstractDao;
+import com.solvd.essay.persistence.impl.EmployeeWorkAreaRepositoryImpl;
+import com.solvd.essay.persistence.impl.EssayModuleRepositoryImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class EssayModuleService {
-    private final AbstractDao<EssayModule> essayModuleImpl;
-
-    public EssayModuleService(AbstractDao<EssayModule> essayModuleAbstractDao){
-        this.essayModuleImpl = essayModuleAbstractDao;
-    }
+    private static final Logger LOGGER = LogManager.getLogger(EssayModuleRepositoryImpl.class);
+    private final EssayModuleRepositoryImpl essayModuleRepositoryImpl=new EssayModuleRepositoryImpl();
 
     public void create(EssayModule essayModule){
         try {
-            essayModuleImpl.create(essayModule);
+            essayModuleRepositoryImpl.create(essayModule);
+            LOGGER.info("Object added successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<EssayModule> findAll() throws SQLException {
-            return essayModuleImpl.getAll();
+        List<EssayModule> list=essayModuleRepositoryImpl.getAll();
+        LOGGER.info("List returned successfully");
+            return list;
     }
 
-    public EssayModule findOne(Long id) throws SQLException {
-        return essayModuleImpl.findById(id);
+    public Optional<EssayModule> findOne(Long id) throws SQLException {
+        return Optional.ofNullable(essayModuleRepositoryImpl.findById(id));
     }
 
     public void deleteOne(Long id) throws SQLException {
-        essayModuleImpl.deleteById(id);
+        essayModuleRepositoryImpl.deleteById(id);
+        LOGGER.info("Object deleted successfully");
     }
 
-    public void deleteEntity(EssayModule essayModule){
-        essayModuleImpl.delete(essayModule);
-        /*
-        System.out.println("Object with id= "+essayModule.getId()+"and "
-                +essayModule.getModuleDescription()+" deleted successfully");
-    */
-    }
-
-    public void updateEntity(EssayModule essayModule){
+    public void updateEntity(EssayModule essayModule,Long id){
         try {
-            essayModuleImpl.update(essayModule);
-            /*
-            System.out.println("Object with id= "+essayModule.getId()+"and "
-                    +essayModule.getModuleDescription()+" was updated successfully");
-             */
+            essayModuleRepositoryImpl.updateById(essayModule,id);
+            LOGGER.info("Object updated successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -1,4 +1,7 @@
 package com.solvd.essay.persistence;
 
-public interface LaboratoryToolRepository {
+import com.solvd.essay.domain.LaboratoryTool;
+
+public interface LaboratoryToolRepository extends InterfaceGenericDao<LaboratoryTool>{
+
 }

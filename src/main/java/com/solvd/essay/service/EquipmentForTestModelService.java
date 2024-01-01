@@ -2,43 +2,46 @@ package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EquipmentForTestModel;
 import com.solvd.essay.persistence.impl.AbstractDao;
+import com.solvd.essay.persistence.impl.EquipmentForTestModelRepositoryImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class EquipmentForTestModelService {
-    private final AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl;
+    private final EquipmentForTestModelRepositoryImpl equipmentForTestModelRepositoryImpl=new EquipmentForTestModelRepositoryImpl();
 
-    public EquipmentForTestModelService(AbstractDao<EquipmentForTestModel> equipmentForTestModelAbstractDao){
-        this.equipmentForTestModelImpl = equipmentForTestModelAbstractDao;
-    }
-
+    private static final Logger LOGGER = LogManager.getLogger(EquipmentForTestModelService.class);
     public void create(EquipmentForTestModel equipmentForTestModel){
         try {
-            equipmentForTestModelImpl.create(equipmentForTestModel);
+            equipmentForTestModelRepositoryImpl.create(equipmentForTestModel);
+            LOGGER.info("Object added successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<EquipmentForTestModel> findAll() throws SQLException {
-            return equipmentForTestModelImpl.getAll();
+        List<EquipmentForTestModel> list=equipmentForTestModelRepositoryImpl.getAll();
+        LOGGER.info("List returned successfully");
+            return list;
     }
 
-    public EquipmentForTestModel findOne(Long id) throws SQLException {
-        return equipmentForTestModelImpl.findById(id);
+    public Optional<EquipmentForTestModel> findOne(Long id) throws SQLException {
+        return Optional.ofNullable(equipmentForTestModelRepositoryImpl.findById(id));
     }
 
     public void deleteOne(Long id) throws SQLException {
-        equipmentForTestModelImpl.deleteById(id);
+        equipmentForTestModelRepositoryImpl.deleteById(id);
+        LOGGER.info("Object deleted successfully");
     }
 
-    public void deleteEntity(EquipmentForTestModel equipmentForTestModel){
-        equipmentForTestModelImpl.delete(equipmentForTestModel);
-    }
 
-    public void updateEntity(EquipmentForTestModel equipmentForTestModel){
+    public void updateEntity(EquipmentForTestModel equipmentForTestModel, Long id){
         try {
-            equipmentForTestModelImpl.update(equipmentForTestModel);
+            equipmentForTestModelRepositoryImpl.updateById(equipmentForTestModel,id);
+            LOGGER.info("Object updated successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

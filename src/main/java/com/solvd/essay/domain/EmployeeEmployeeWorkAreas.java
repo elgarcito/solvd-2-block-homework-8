@@ -1,11 +1,15 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class EmployeeEmployeeWorkAreas {
     private Long id;
     private Employee employee;
     private Long employeeId;
     private EmployeeWorkArea employeeWorkArea;
     private Long employeeworkAreaId;
+
+
     public Employee getEmployee() {
         return employee;
     }
@@ -45,4 +49,6 @@ public class EmployeeEmployeeWorkAreas {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 }

@@ -24,21 +24,13 @@ public class LabTestReportService {
     public List<LabTestReport> findAll(Connection conn) throws SQLException {
         List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
 
-        AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
-        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
 
-        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstractDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
-        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+
 
         for (LabTestReport labTestReport: labTestReportList) {
-            labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
 
-            labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
-            labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
         }
             return labTestReportList;
     }
@@ -47,20 +39,7 @@ public class LabTestReportService {
 
         LabTestReport labTestReport=labTestReportImpl.findById(id);
 
-        AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl(conn);
-        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-
-
-        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl(conn);
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
-
-        AbstractDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl(conn);
-        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
-
-        labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
-        labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
-        labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
 
         return labTestReport;
     }

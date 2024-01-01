@@ -1,6 +1,7 @@
 package com.solvd.essay.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class EquipmentForTestModel {
 
@@ -9,6 +10,8 @@ public class EquipmentForTestModel {
     private String modelDescription;
 
     private Date releaseDate;
+
+    private List<EquipmentForTestModel> equipmentForTestModelList;
 
     public Long getId() {
         return id;
@@ -40,5 +43,13 @@ public class EquipmentForTestModel {
 
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
+    }
+
+    public List<EquipmentForTestModel> getEquipmentForTestModelList() {
+        return equipmentForTestModelList;
+    }
+
+    public void setEquipmentForTestModelList(List<EquipmentForTestModel> equipmentForTestModelList) {
+        this.equipmentForTestModelList = equipmentForTestModelList;
     }
 }
