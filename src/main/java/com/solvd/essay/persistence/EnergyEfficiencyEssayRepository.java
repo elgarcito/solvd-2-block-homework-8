@@ -1,4 +1,6 @@
 package com.solvd.essay.persistence;
 
-public interface EnergyEfficiencyEssayRepository {
+import com.solvd.essay.domain.EnergyEfficiencyEssay;
+
+public interface EnergyEfficiencyEssayRepository extends InterfaceGenericDao<EnergyEfficiencyEssay> {
 }

@@ -26,6 +26,8 @@
         <mapper resource="mappers/EquipmentForTestModelMapper.xml"/>
         <mapper resource="mappers/LabTestReportMapper.xml"/>
         <mapper resource="mappers/TemperatureEssayMapper.xml"/>
+        <mapper resource="mappers/EnergyEfficiencyEssayMapper.xml"/>
+        <mapper resource="mappers/GasConsumptionEssayMapper.xml"/>
     </mappers>
 
 </configuration>

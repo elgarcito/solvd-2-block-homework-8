@@ -1,5 +1,7 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class GasConsumptionEssay {
 
     private Long id;
@@ -9,8 +11,8 @@ public class GasConsumptionEssay {
     private boolean essayResult;
 
     private LabTestReport labTestReport;
+    private List<GasConsumptionEssay> gasConsumptionEssayList;
 
-    private Long labTestReportId;
 
 
     public Long getId() {
@@ -60,12 +62,15 @@ public class GasConsumptionEssay {
         this.essayResult = essayResult;
     }
 
-    public Long getLabTestReportId() {
-        return labTestReportId;
+    public boolean isEssayResult() {
+        return essayResult;
     }
 
-    public void setLabTestReportId(Long labTestReportId) {
-        this.labTestReportId = labTestReportId;
+    public List<GasConsumptionEssay> getGasConsumptionEssayList() {
+        return gasConsumptionEssayList;
     }
 
+    public void setGasConsumptionEssayList(List<GasConsumptionEssay> gasConsumptionEssayList) {
+        this.gasConsumptionEssayList = gasConsumptionEssayList;
+    }
 }

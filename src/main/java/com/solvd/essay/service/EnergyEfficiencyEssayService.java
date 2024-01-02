@@ -1,53 +1,49 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
-import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.persistence.impl.AbstractDao;
-import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
+import com.solvd.essay.persistence.impl.EnergyEfficiencyEssayRepositoryImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class EnergyEfficiencyEssayService {
-    private final AbstractDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl;
-
-    public EnergyEfficiencyEssayService(AbstractDao<EnergyEfficiencyEssay> energyEfficiencyEssayAbstractDao){
-        this.energyEfficiencyEssayImpl = energyEfficiencyEssayAbstractDao;
-    }
+    private static final Logger LOGGER = LogManager.getLogger(EnergyEfficiencyEssayService.class);
+    private final EnergyEfficiencyEssayRepositoryImpl energyEfficiencyEssayRepositoryImpl= new EnergyEfficiencyEssayRepositoryImpl();
 
     public void create(EnergyEfficiencyEssay energyEfficiencyEssay){
         try {
-            energyEfficiencyEssayImpl.create(energyEfficiencyEssay);
+            energyEfficiencyEssayRepositoryImpl.create(energyEfficiencyEssay);
+            LOGGER.info("Object added successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public List<EnergyEfficiencyEssay> findAll(Connection conn) throws SQLException {
-        List<EnergyEfficiencyEssay> eeList=energyEfficiencyEssayImpl.getAll();
-
-        for (EnergyEfficiencyEssay enEfEssay:eeList) {
-        }
+    public List<EnergyEfficiencyEssay> findAll() throws SQLException {
+        List<EnergyEfficiencyEssay> eeList= energyEfficiencyEssayRepositoryImpl.getAll();
+        LOGGER.info("List returned successfully");
             return eeList;
     }
 
-    public EnergyEfficiencyEssay findOne(Long id ,Connection conn) throws SQLException {
-        EnergyEfficiencyEssay essay= energyEfficiencyEssayImpl.findById(id);
+    public EnergyEfficiencyEssay findOne(Long id) throws SQLException {
+        EnergyEfficiencyEssay essay= energyEfficiencyEssayRepositoryImpl.findById(id);
 
         return essay;
     }
 
     public void deleteOne(Long id) throws SQLException {
-        energyEfficiencyEssayImpl.deleteById(id);
+        energyEfficiencyEssayRepositoryImpl.deleteById(id);
+        LOGGER.info("Object deleted successfully");
     }
 
-    public void deleteEntity(EnergyEfficiencyEssay energyEfficiencyEssay){
-        energyEfficiencyEssayImpl.delete(energyEfficiencyEssay);
-    }
 
-    public void updateEntity(EnergyEfficiencyEssay energyEfficiencyEssay){
+    public void updateEntity(EnergyEfficiencyEssay energyEfficiencyEssay,Long id){
         try {
-            energyEfficiencyEssayImpl.update(energyEfficiencyEssay);
+            energyEfficiencyEssayRepositoryImpl.updateById(energyEfficiencyEssay,id);
+            LOGGER.info("Object updated successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

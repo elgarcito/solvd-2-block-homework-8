@@ -1,68 +1,60 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.GasConsumptionEssay;
+import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
+import com.solvd.essay.persistence.GasConsumptionRepository;
+import com.solvd.essay.persistence.MyPersistenceConfig;
+import com.solvd.essay.service.EmployeeWorkAreaService;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
-public class GasConsumptionEssayRepositoryImpl extends AbstractDao<GasConsumptionEssay> {
-    public GasConsumptionEssayRepositoryImpl(Connection conn) {
-        super(conn);
+public class GasConsumptionEssayRepositoryImpl implements GasConsumptionRepository {
+    private static final Logger LOGGER = LogManager.getLogger(GasConsumptionEssayRepositoryImpl.class);
+
+    @Override
+    public void create(GasConsumptionEssay thingToCreate) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            GasConsumptionRepository gasConsumptionRepository = sqlSession.getMapper(GasConsumptionRepository.class);
+            gasConsumptionRepository.create(thingToCreate);
+        }
     }
 
     @Override
-    protected String getUpdateQuery(GasConsumptionEssay newThingToUpdate) {
-        String updateQuery= String.format("update gas_consumption_essay set max_consume=%s,standard_mean=%s,measurement_error=%s,essay_result=%s,lab_test_report_id=%s where id=%s",
-                newThingToUpdate.getMaxConsume(),newThingToUpdate.getStandardMean(),newThingToUpdate.getMeasurementError(),
-                newThingToUpdate.getEssayResult(),newThingToUpdate.getLabTestReportId(),newThingToUpdate.getId());
-        return updateQuery;
+    public List<GasConsumptionEssay> getAll() throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            GasConsumptionRepository gasConsumptionRepository = sqlSession.getMapper(GasConsumptionRepository.class);
+            return gasConsumptionRepository.getAll();
+        }
     }
 
     @Override
-    protected String getTableName() {
-        return "gas_consumption_essay";
+    public GasConsumptionEssay findById(long id) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            GasConsumptionRepository gasConsumptionRepository = sqlSession.getMapper(GasConsumptionRepository.class);
+            return gasConsumptionRepository.findById(id);
+        }
     }
 
     @Override
-    protected String getTableFields() {
-        return "max_consume,standard_mean,measurement_error,essay_result,lab_test_report_id";
+    public void deleteById(Long thingId) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            GasConsumptionRepository gasConsumptionRepository = sqlSession.getMapper(GasConsumptionRepository.class);
+            gasConsumptionRepository.deleteById(thingId);
+        }
     }
 
     @Override
-    protected Long getThingId(GasConsumptionEssay thing) {
-        return thing.getId();
-    }
-
-    @Override
-    protected GasConsumptionEssay mapResultToObject(ResultSet resultSet, Connection conn) throws SQLException {
-        GasConsumptionEssay entity=new GasConsumptionEssay();
-        entity.setId(resultSet.getLong("id"));
-        entity.setMaxConsume(resultSet.getDouble("max_consume"));
-        entity.setStandardMean(resultSet.getDouble("standard_mean"));
-        entity.setMeasurementError(resultSet.getDouble("measurement_error"));
-        entity.setEssayResult(resultSet.getBoolean("essay_result"));
-        entity.setLabTestReportId(resultSet.getLong("lab_test_report_id"));
-        return entity;
-    }
-
-    @Override
-    protected String getCreateQuery() {
-        String createQuery= String.format("insert into %s(%s) value (?,?,?,?,?)",getTableName(),getTableFields());
-        return createQuery;
-    }
-
-    @Override
-    protected void setQueryStatements(PreparedStatement ps, GasConsumptionEssay thingToCreate) {
-        try {
-            ps.setDouble(1,thingToCreate.getMaxConsume());
-            ps.setDouble(2,thingToCreate.getStandardMean());
-            ps.setDouble(3,thingToCreate.getMeasurementError());
-            ps.setBoolean(4,thingToCreate.getEssayResult());
-            ps.setLong(5,thingToCreate.getLabTestReportId());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public void updateById(GasConsumptionEssay thingToUpdate, Long entityId) throws SQLException {
+        try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
+            GasConsumptionRepository gasConsumptionRepository = sqlSession.getMapper(GasConsumptionRepository.class);
+            gasConsumptionRepository.updateById(thingToUpdate,entityId);
         }
     }
 }

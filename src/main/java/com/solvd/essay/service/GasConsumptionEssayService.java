@@ -1,51 +1,50 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.GasConsumptionEssay;
-import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.persistence.impl.AbstractDao;
-import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
+import com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class GasConsumptionEssayService {
-    private final AbstractDao<GasConsumptionEssay> gasConsumptionEssayImpl;
-
-    public GasConsumptionEssayService(AbstractDao<GasConsumptionEssay> gasConsumptionEssayAbstractDao){
-        this.gasConsumptionEssayImpl = gasConsumptionEssayAbstractDao;
-    }
+    private final GasConsumptionEssayRepositoryImpl gasConsumptionEssayRepositoryImpl= new GasConsumptionEssayRepositoryImpl();
+    private static final Logger LOGGER = LogManager.getLogger(GasConsumptionEssayRepositoryImpl.class);
 
     public void create(GasConsumptionEssay gasConsumptionEssay){
         try {
-            gasConsumptionEssayImpl.create(gasConsumptionEssay);
+            gasConsumptionEssayRepositoryImpl.create(gasConsumptionEssay);
+            LOGGER.info("Object added successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public List<GasConsumptionEssay> findAll(Connection conn) throws SQLException {
-        List<GasConsumptionEssay> listOfGasEssays=gasConsumptionEssayImpl.getAll();
-        for (GasConsumptionEssay gasConEssay:listOfGasEssays) {}
+    public List<GasConsumptionEssay> findAll() throws SQLException {
+        List<GasConsumptionEssay> listOfGasEssays= gasConsumptionEssayRepositoryImpl.getAll();
+        LOGGER.info("List returned successfully");
         return listOfGasEssays;
 
     }
 
-    public GasConsumptionEssay findOne(Long id, Connection conn) throws SQLException {
-        GasConsumptionEssay gasConEssay= gasConsumptionEssayImpl.findById(id);
-        return gasConEssay;
+    public Optional<GasConsumptionEssay> findOne(Long id) throws SQLException {
+        GasConsumptionEssay gasConEssay= gasConsumptionEssayRepositoryImpl.findById(id);
+        return Optional.ofNullable(gasConEssay);
     }
 
     public void deleteOne(Long id) throws SQLException {
-        gasConsumptionEssayImpl.deleteById(id);
+        gasConsumptionEssayRepositoryImpl.deleteById(id);
+        LOGGER.info("Object deleted successfully");
     }
 
-    public void deleteEntity(GasConsumptionEssay gasConsumptionEssay){
-        gasConsumptionEssayImpl.delete(gasConsumptionEssay);
-    }
 
-    public void updateEntity(GasConsumptionEssay gasConsumptionEssay){
+    public void updateEntity(GasConsumptionEssay gasConsumptionEssay,Long id){
         try {
-            gasConsumptionEssayImpl.update(gasConsumptionEssay);
+            gasConsumptionEssayRepositoryImpl.updateById(gasConsumptionEssay,id);
+            LOGGER.info("Object updated successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

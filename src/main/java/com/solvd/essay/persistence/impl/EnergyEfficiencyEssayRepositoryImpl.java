@@ -1,67 +1,62 @@
 package com.solvd.essay.persistence.impl;
 
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
+import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
+import com.solvd.essay.persistence.EnergyEfficiencyEssayRepository;
+import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
-public class EnergyEfficiencyEssayRepositoryImpl extends AbstractDao<EnergyEfficiencyEssay> {
-
-    public EnergyEfficiencyEssayRepositoryImpl(Connection conn) {
-        super(conn);
-    }
-
+public class EnergyEfficiencyEssayRepositoryImpl implements EnergyEfficiencyEssayRepository {
+    private static final Logger LOGGER = LogManager.getLogger(EnergyEfficiencyEssayRepositoryImpl.class);
     @Override
-    protected String getUpdateQuery(EnergyEfficiencyEssay newThingToUpdate) {
-        String updateQuery=String.format("update energy_efficiency_essay set value_of_essay=%s,category=\"%s\",essay_result=%s,lab_test_report_id=%s where id= %s",
-                newThingToUpdate.getValueOfEssay(),newThingToUpdate.getCategory(),newThingToUpdate.essayResult(),newThingToUpdate.getLabTestReportId(),newThingToUpdate.getId());
-        return updateQuery;
-    }
-
-    @Override
-    protected String getTableName() {
-        return "energy_efficiency_essay";
-    }
-
-    @Override
-    protected String getTableFields() {
-        return "value_of_essay,category,essay_result,lab_test_report_id";
-    }
-
-    @Override
-    protected Long getThingId(EnergyEfficiencyEssay thing) {
-        return thing.getId();
-    }
-
-    @Override
-    protected EnergyEfficiencyEssay mapResultToObject(ResultSet resultSet,Connection conn) throws SQLException {
-        EnergyEfficiencyEssay entity=new EnergyEfficiencyEssay();
-        entity.setId(resultSet.getLong("id"));
-        entity.setValueOfEssay(resultSet.getDouble("value_of_essay"));
-        entity.setCategory(resultSet.getString("category"));
-        entity.setEssayResult(resultSet.getBoolean("essay_result"));
-        entity.setLabTestReportId(resultSet.getLong("lab_test_report_id"));
-        return  entity;
-    }
-
-    @Override
-    protected String getCreateQuery() {
-        String createQuery= String.format("insert into %s(%s) value (?,?,?,?)",getTableName(),getTableFields());
-        return createQuery;
-    }
-
-    @Override
-    protected void setQueryStatements(PreparedStatement ps, EnergyEfficiencyEssay thingToCreate) {
-        try {
-            ps.setDouble(1,thingToCreate.getValueOfEssay());
-            ps.setString(2,thingToCreate.getCategory());
-            ps.setBoolean(3,thingToCreate.getEssayResult());
-            ps.setLong(4,thingToCreate.getLabTestReportId());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+    public void create(EnergyEfficiencyEssay thingToCreate) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EnergyEfficiencyEssayRepository energyEfficiencyEssayRepository= sqlSession.getMapper(EnergyEfficiencyEssayRepository.class);
+            energyEfficiencyEssayRepository.create(thingToCreate);
+        }catch (SQLException e){
+            LOGGER.error(e.getMessage());
         }
 
+
+    }
+
+    @Override
+    public List<EnergyEfficiencyEssay> getAll() throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EnergyEfficiencyEssayRepository energyEfficiencyEssayRepository= sqlSession.getMapper(EnergyEfficiencyEssayRepository.class);
+            return energyEfficiencyEssayRepository.getAll();
+        }
+    }
+
+    @Override
+    public EnergyEfficiencyEssay findById(long id) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EnergyEfficiencyEssayRepository energyEfficiencyEssayRepository= sqlSession.getMapper(EnergyEfficiencyEssayRepository.class);
+            return energyEfficiencyEssayRepository.findById(id);
+        }
+    }
+
+    @Override
+    public void deleteById(Long thingId) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EnergyEfficiencyEssayRepository energyEfficiencyEssayRepository= sqlSession.getMapper(EnergyEfficiencyEssayRepository.class);
+            energyEfficiencyEssayRepository.deleteById(thingId);
+        }
+    }
+
+    @Override
+    public void updateById(EnergyEfficiencyEssay thingToUpdate, Long entityId) throws SQLException {
+        try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
+            EnergyEfficiencyEssayRepository energyEfficiencyEssayRepository= sqlSession.getMapper(EnergyEfficiencyEssayRepository.class);
+            energyEfficiencyEssayRepository.updateById(thingToUpdate,entityId);
+        }
     }
 }

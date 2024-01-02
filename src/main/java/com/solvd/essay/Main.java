@@ -36,6 +36,8 @@ public class Main {
         EquipmentForTestModelService equipmentForTestModelService = new EquipmentForTestModelService();
         LabTestReportService labTestReportService = new LabTestReportService();
         TemperatureEssayService temperatureEssayService=new TemperatureEssayService();
+        EnergyEfficiencyEssayService energyEfficiencyEssayService=new EnergyEfficiencyEssayService();
+        GasConsumptionEssayService gasConsumptionEssayService= new GasConsumptionEssayService();
             /*
             BatchInfo batchInfo1=new BatchInfo();
             batchInfo1.setBatchNumber("ksff14");
@@ -86,7 +88,12 @@ public class Main {
         List<LabTestReport> list = labTestReportService.findAll();
         list.forEach(x->x.getEmployee().getLastName());
          */
-        List<TemperatureEssay>list= temperatureEssayService.findAll();
-        list.forEach(x-> System.out.println(x.getLabTestReport().getEmployee().getLastName()));
+        //List<TemperatureEssay>list1= temperatureEssayService.findAll();
+       // list1.forEach(x-> System.out.println(x.getLabTestReport().getEmployee().getLastName()));
+
+      //  energyEfficiencyEssayService.findAll().forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
+
+      //Gas consumption
+        gasConsumptionEssayService.findAll().forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
     }
 }

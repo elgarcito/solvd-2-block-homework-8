@@ -3,19 +3,20 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.solvd.essay.persistence.TemperatureEssayRepository">
+<mapper namespace="com.solvd.essay.persistence.EnergyEfficiencyEssayRepository">
 
-    <sql id="temperatureEssaySelect">
+    <sql id="energyEfficiencyEssaySelect">
         select
         lab_test_report.id as ltr_id,essay_code,date_of_essay, essay_description,
         equipment_for_test_model.id as eq_id,model_name,model_description,release_date,
         batch_info.id as ba_id,batch_number,
         employee.id as em_id,first_name, last_name,personal_id,birth_date,salary
         , essay_module.id as es_id ,module_description,
-        temperature_essay.id,
-        front_measurement,
+        energy_efficiency_essay.id,
+        value_of_essay,
+        category,
         essay_result,
-        left_side_measurement
+        lab_test_report_id
         from lab_test_report left join employee
         on lab_test_report.employee_id=employee.id
         left join equipment_for_test_model
@@ -24,51 +25,52 @@
         on lab_test_report.batch_info_id=batch_info.id
         left join essay_module
         on lab_test_report.essay_module_id=essay_module.id
-        inner join temperature_essay
-        on temperature_essay.lab_test_report_id=lab_test_report.id
+        inner join energy_efficiency_essay
+        on energy_efficiency_essay.lab_test_report_id=lab_test_report.id
     </sql>
 
     <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
-        insert into temperature_essay(front_measurement, essay_result,lab_test_report_id, left_side_measurement)
-        values (#{frontMeasurement},#{essayResult},#{labTestReport.getId()},#{leftSideMeasurement})
+        insert into energy_efficiency_essay(value_of_essay,category ,essay_result,lab_test_report_id)
+        values (#{valueOfEssay},#{category},#{essayResult},#{labTestReport.getId()})
     </insert>
 
     <update id="updateById" keyColumn="id" useGeneratedKeys="true">
-        update temperature_essay set front_measurement=#{thingToUpdate.frontMeasurement},
+        update energy_efficiency_essay set value_of_essay=#{thingToUpdate.valueOfEssay},
+        category=#{thingToUpdate.category},
         essay_result=#{thingToUpdate.essayResult},
         lab_test_report_id=#{thingToUpdate.labTestReport.getId()},
-        left_side_measurement=#{thingToUpdate.leftSideMeasurement}
-        where temperature_essay.id=#{id}
+        where energy_efficiency_essay.id=#{id}
     </update>
 
     <select id="getAll" resultMap="findAllResult">
-        <include refid="temperatureEssaySelect"/>
+        <include refid="energyEfficiencyEssaySelect"/>
     </select>
 
-    <select id="findById" resultMap="temperatureEssayResult" >
-        <include refid="temperatureEssaySelect"/>
-        where temperature_essay.id=#{id}
+    <select id="findById" resultMap="energyEfficiencyEssayResult" >
+        <include refid="energyEfficiencyEssaySelect"/>
+        where energy_efficiency_essay.id=#{id}
     </select>
     
     <delete id="deleteById">
-        delete from temperature_essay where temperature_essay.id=#{id}
+        delete from energy_efficiency_essay where energy_efficiency_essay.id=#{id}
     </delete>
 
-    <resultMap id="temperatureEssayResult" type="com.solvd.essay.domain.TemperatureEssay">
+    <resultMap id="energyEfficiencyEssayResult" type="com.solvd.essay.domain.EnergyEfficiencyEssay">
         <id property="id" column="id" />
-        <result property="frontMeasurement" column="front_measurement"/>
+        <result property="valueOfEssay" column="value_of_essay"/>
+        <result property="category" column="category"/>
         <result property="essayResult" column="essay_result"/>
-        <result property="leftSideMeasurement" column="left_side_measurement"/>
         <association property="labTestReport" resultMap="labTestReportResult"/>
     </resultMap>
 
-    <resultMap id="findAllResult" type="com.solvd.essay.domain.TemperatureEssay">
+
+    <resultMap id="findAllResult" type="com.solvd.essay.domain.EnergyEfficiencyEssay">
         <id property="id" column="id" />
-        <result property="frontMeasurement" column="front_measurement"/>
+        <result property="valueOfEssay" column="value_of_essay"/>
+        <result property="category" column="category"/>
         <result property="essayResult" column="essay_result"/>
-        <result property="leftSideMeasurement" column="left_side_measurement"/>
         <association property="labTestReport" resultMap="labTestReportResult"/>
-        <collection property="temperatureEssayList" javaType="ArrayList" ofType="com.solvd.essay.domain.TemperatureEssay"/>
+        <collection property="energyEfficiencyEssayList" javaType="ArrayList" ofType="com.solvd.essay.domain.EnergyEfficiencyEssay"/>
     </resultMap>
 
     <resultMap id="labTestReportResult" type="com.solvd.essay.domain.LabTestReport">
@@ -113,8 +115,5 @@
         <result property="moduleDescription" column="module_description"/>
         <collection property="essayModuleList" javaType="ArrayList" ofType="com.solvd.essay.domain.EssayModule"/>
     </resultMap>
-
-
-
 
 </mapper>

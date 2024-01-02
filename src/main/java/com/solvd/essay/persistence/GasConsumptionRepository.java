@@ -1,4 +1,6 @@
 package com.solvd.essay.persistence;
 
-public interface GasConsumptionRepository {
+import com.solvd.essay.domain.GasConsumptionEssay;
+
+public interface GasConsumptionRepository extends InterfaceGenericDao<GasConsumptionEssay>{
 }
