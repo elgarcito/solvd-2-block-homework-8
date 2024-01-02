@@ -1,4 +1,6 @@
 package com.solvd.essay.persistence;
 
-public interface LabTestReportRepository {
+import com.solvd.essay.domain.LabTestReport;
+
+public interface LabTestReportRepository extends InterfaceGenericDao<LabTestReport> {
 }

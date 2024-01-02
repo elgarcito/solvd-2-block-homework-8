@@ -42,3 +42,14 @@
 20:34:59.825 [main] INFO  com.solvd.essay.service.EmployeeService - List returned successfully
 20:34:59.847 [main] INFO  com.solvd.essay.persistence.impl.EssayModuleRepositoryImpl - List returned successfully
 20:34:59.854 [main] INFO  com.solvd.essay.service.EquipmentForTestModelService - List returned successfully
+16:51:48.807 [main] INFO  com.solvd.essay.persistence.impl.EssayModuleRepositoryImpl - List returned successfully
+17:04:53.867 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+17:06:04.031 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+17:06:25.243 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+17:07:59.841 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+17:08:10.018 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+17:11:59.762 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+17:12:07.679 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+17:38:14.496 [main] INFO  com.solvd.essay.service.TemperatureEssayService - List returned successfully
+17:38:20.844 [main] INFO  com.solvd.essay.service.TemperatureEssayService - List returned successfully
+17:39:46.802 [main] INFO  com.solvd.essay.service.TemperatureEssayService - List returned successfully

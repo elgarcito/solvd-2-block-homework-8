@@ -1,4 +1,6 @@
 package com.solvd.essay.persistence;
 
-public interface TemperatureEssayRepository {
+import com.solvd.essay.domain.TemperatureEssay;
+
+public interface TemperatureEssayRepository extends InterfaceGenericDao<TemperatureEssay> {
 }

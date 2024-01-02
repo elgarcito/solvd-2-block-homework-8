@@ -2,59 +2,45 @@ package com.solvd.essay.service;
 
 import com.solvd.essay.domain.*;
 import com.solvd.essay.persistence.impl.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Optional;
 
 public class LabTestReportService {
-    private final AbstractDao<LabTestReport> labTestReportImpl;
-
-    public LabTestReportService(AbstractDao<LabTestReport> labTestReportAbstractDao){
-        this.labTestReportImpl = labTestReportAbstractDao;
-    }
-
+    private static final Logger LOGGER = LogManager.getLogger(LabTestReportService.class);
+    private final LabTestReportRepositoryImpl labTestReportRepositoryImpl = new LabTestReportRepositoryImpl();
     public void create(LabTestReport labTestReport){
         try {
-            labTestReportImpl.create(labTestReport);
+            labTestReportRepositoryImpl.create(labTestReport);
+            LOGGER.info("Object added successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
-    public List<LabTestReport> findAll(Connection conn) throws SQLException {
-        List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
-
-
-
-
-
-
-        for (LabTestReport labTestReport: labTestReportList) {
-
-        }
-            return labTestReportList;
+    public List<LabTestReport> findAll() throws SQLException {
+        List<LabTestReport> labTestReportList= labTestReportRepositoryImpl.getAll();
+        LOGGER.info("List returned successfully");
+        return labTestReportList;
     }
 
-    public LabTestReport findOne(Long id,Connection conn) throws SQLException {
-
-        LabTestReport labTestReport=labTestReportImpl.findById(id);
-
-
-
-        return labTestReport;
+    public Optional<LabTestReport> findOne(Long id) throws SQLException {
+        LabTestReport labTestReport= labTestReportRepositoryImpl.findById(id);
+        return Optional.ofNullable(labTestReport);
     }
 
     public void deleteOne(Long id) throws SQLException {
-        labTestReportImpl.deleteById(id);
+        labTestReportRepositoryImpl.deleteById(id);
+        LOGGER.info("Object deleted successfully");
     }
 
-    public void deleteEntity(LabTestReport labTestReport){
-        labTestReportImpl.delete(labTestReport);
-    }
-
-    public void updateEntity(LabTestReport labTestReport){
+    public void updateEntity(LabTestReport labTestReport,Long id){
         try {
-            labTestReportImpl.update(labTestReport);
+            labTestReportRepositoryImpl.updateById(labTestReport,id);
+            LOGGER.info("Object updated successfully");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

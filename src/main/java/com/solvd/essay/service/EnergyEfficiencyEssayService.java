@@ -25,19 +25,15 @@ public class EnergyEfficiencyEssayService {
     }
     public List<EnergyEfficiencyEssay> findAll(Connection conn) throws SQLException {
         List<EnergyEfficiencyEssay> eeList=energyEfficiencyEssayImpl.getAll();
-        AbstractDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+
         for (EnergyEfficiencyEssay enEfEssay:eeList) {
-            enEfEssay.setLabTestReport(newLabTestReportService.findOne(enEfEssay.getLabTestReportId(),conn));
         }
             return eeList;
     }
 
     public EnergyEfficiencyEssay findOne(Long id ,Connection conn) throws SQLException {
         EnergyEfficiencyEssay essay= energyEfficiencyEssayImpl.findById(id);
-        AbstractDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl(conn);
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
-        essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId(),conn));
+
         return essay;
     }
 

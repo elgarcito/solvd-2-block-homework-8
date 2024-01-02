@@ -1,5 +1,7 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class TemperatureEssay {
 
     private Long id;
@@ -7,8 +9,9 @@ public class TemperatureEssay {
     private boolean essayResult;
     private LabTestReport labTestReport;
 
-    private Long labTestReportId;
     private double leftSideMeasurement;
+
+    private List<TemperatureEssay> temperatureEssayList;
 
 
 
@@ -53,11 +56,12 @@ public class TemperatureEssay {
         this.essayResult = essayResult;
     }
 
-    public Long getLabTestReportId() {
-        return labTestReportId;
+
+    public List<TemperatureEssay> getTemperatureEssayList() {
+        return temperatureEssayList;
     }
 
-    public void setLabTestReportId(Long labTestReportId) {
-        this.labTestReportId = labTestReportId;
+    public void setTemperatureEssayList(List<TemperatureEssay> temperatureEssayList) {
+        this.temperatureEssayList = temperatureEssayList;
     }
 }

@@ -24,6 +24,8 @@
         <mapper resource="mappers/EmployeeMapper.xml"/>
         <mapper resource="mappers/EssayModuleMapper.xml"/>
         <mapper resource="mappers/EquipmentForTestModelMapper.xml"/>
+        <mapper resource="mappers/LabTestReportMapper.xml"/>
+        <mapper resource="mappers/TemperatureEssayMapper.xml"/>
     </mappers>
 
 </configuration>

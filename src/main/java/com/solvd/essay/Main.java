@@ -1,10 +1,7 @@
 package com.solvd.essay;
 
 
-import com.solvd.essay.domain.BatchInfo;
-import com.solvd.essay.domain.EmployeeWorkArea;
-import com.solvd.essay.domain.EquipmentForTestModel;
-import com.solvd.essay.domain.LaboratoryTool;
+import com.solvd.essay.domain.*;
 import com.solvd.essay.domain.exceptions.ResourceNotFoundException;
 import com.solvd.essay.persistence.BatchInfoRepository;
 import com.solvd.essay.service.*;
@@ -27,15 +24,18 @@ public class Main {
     static {
         System.setProperty("log4j.configurationFile", "log4j2.xml");
     }
+
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws SQLException {
-        BatchInfoService batchInfoService =new BatchInfoService();
-        LaboratoryToolService laboratoryToolService=new LaboratoryToolService();
-        EmployeeWorkAreaService employeeWorkAreaService=new EmployeeWorkAreaService();
-        EmployeeService employeeService=new EmployeeService();
-        EssayModuleService essayModuleService=new EssayModuleService();
-        EquipmentForTestModelService equipmentForTestModelService=new EquipmentForTestModelService();
+        BatchInfoService batchInfoService = new BatchInfoService();
+        LaboratoryToolService laboratoryToolService = new LaboratoryToolService();
+        EmployeeWorkAreaService employeeWorkAreaService = new EmployeeWorkAreaService();
+        EmployeeService employeeService = new EmployeeService();
+        EssayModuleService essayModuleService = new EssayModuleService();
+        EquipmentForTestModelService equipmentForTestModelService = new EquipmentForTestModelService();
+        LabTestReportService labTestReportService = new LabTestReportService();
+        TemperatureEssayService temperatureEssayService=new TemperatureEssayService();
             /*
             BatchInfo batchInfo1=new BatchInfo();
             batchInfo1.setBatchNumber("ksff14");
@@ -66,17 +66,27 @@ public class Main {
         //laboratoryToolService.findAll().forEach(x-> System.out.println(x.getToolDescription()));
 
         //EmployeeWorkAreas
-       // Optional<EmployeeWorkArea> employeeWorkArea= employeeWorkAreaService.findOne(9L);
+        // Optional<EmployeeWorkArea> employeeWorkArea= employeeWorkAreaService.findOne(9L);
         //System.out.println(employeeWorkArea.get().getAreaName());
 
         //Employee
-        employeeService.findAll().forEach(x-> System.out.println(x.getFirstName()+x.getLastName()));
+        //employeeService.findAll().forEach(x-> System.out.println(x.getFirstName()+x.getLastName()));
 
         //Essay module
-        essayModuleService.findAll().forEach(x-> System.out.println(x.getModuleDescription()));
+        //essayModuleService.findAll().forEach(x-> System.out.println(x.getModuleDescription()));
 
         //Equipment for test model
-        equipmentForTestModelService.findAll().forEach(x-> System.out.println(x.getModelDescription()));
+        //equipmentForTestModelService.findAll().forEach(x-> System.out.println(x.getModelDescription()));
 
+        //Lab test report
+        /*
+        Optional<LabTestReport> result = labTestReportService.findOne(1L);
+        System.out.println(result.get().getEssayDescription());
+        System.out.println(result.get().getEssayModule().getModuleDescription());
+        List<LabTestReport> list = labTestReportService.findAll();
+        list.forEach(x->x.getEmployee().getLastName());
+         */
+        List<TemperatureEssay>list= temperatureEssayService.findAll();
+        list.forEach(x-> System.out.println(x.getLabTestReport().getEmployee().getLastName()));
     }
 }
