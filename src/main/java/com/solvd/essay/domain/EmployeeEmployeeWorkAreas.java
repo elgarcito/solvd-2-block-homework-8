@@ -5,9 +5,9 @@ import java.util.List;
 public class EmployeeEmployeeWorkAreas {
     private Long id;
     private Employee employee;
-    private Long employeeId;
     private EmployeeWorkArea employeeWorkArea;
-    private Long employeeworkAreaId;
+
+    private List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList;
 
 
     public Employee getEmployee() {
@@ -26,22 +26,6 @@ public class EmployeeEmployeeWorkAreas {
         this.employeeWorkArea = employeeWorkArea;
     }
 
-    public Long getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public Long getEmployeeworkAreaId() {
-        return employeeworkAreaId;
-    }
-
-    public void setEmployeeworkAreaId(Long employeeworkAreaId) {
-        this.employeeworkAreaId = employeeworkAreaId;
-    }
-
     public Long getId() {
         return id;
     }
@@ -50,5 +34,11 @@ public class EmployeeEmployeeWorkAreas {
         this.id = id;
     }
 
+    public List<EmployeeEmployeeWorkAreas> getEmployeeEmployeeWorkAreasList() {
+        return employeeEmployeeWorkAreasList;
+    }
 
+    public void setEmployeeEmployeeWorkAreasList(List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList) {
+        this.employeeEmployeeWorkAreasList = employeeEmployeeWorkAreasList;
+    }
 }

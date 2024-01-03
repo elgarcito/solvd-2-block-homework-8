@@ -38,6 +38,8 @@ public class Main {
         TemperatureEssayService temperatureEssayService=new TemperatureEssayService();
         EnergyEfficiencyEssayService energyEfficiencyEssayService=new EnergyEfficiencyEssayService();
         GasConsumptionEssayService gasConsumptionEssayService= new GasConsumptionEssayService();
+        EmployeeEmployeeWorkAreasService employeeEmployeeWorkAreasService= new EmployeeEmployeeWorkAreasService();
+        EmployeeLaboratoryToolsService employeeLaboratoryToolsService= new EmployeeLaboratoryToolsService();
             /*
             BatchInfo batchInfo1=new BatchInfo();
             batchInfo1.setBatchNumber("ksff14");
@@ -94,6 +96,8 @@ public class Main {
       //  energyEfficiencyEssayService.findAll().forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
 
       //Gas consumption
-        gasConsumptionEssayService.findAll().forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
+        //gasConsumptionEssayService.findAll().forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
+    employeeLaboratoryToolsService.findAll().forEach(x-> System.out.println(x.getEmployee().getFirstName()));
+
     }
 }

@@ -28,6 +28,8 @@
         <mapper resource="mappers/TemperatureEssayMapper.xml"/>
         <mapper resource="mappers/EnergyEfficiencyEssayMapper.xml"/>
         <mapper resource="mappers/GasConsumptionEssayMapper.xml"/>
+        <mapper resource="mappers/EmployeeEmployeeLaboratoryToolsMapper.xml"/>
+        <mapper resource="mappers/EmployeeEmployeeWorkAreasMapper.xml"/>
     </mappers>
 
 </configuration>

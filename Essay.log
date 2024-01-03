@@ -55,3 +55,5 @@
 17:39:46.802 [main] INFO  com.solvd.essay.service.TemperatureEssayService - List returned successfully
 18:39:49.647 [main] INFO  com.solvd.essay.service.EnergyEfficiencyEssayService - List returned successfully
 19:03:39.631 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
+21:08:49.554 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
+21:20:58.346 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
