@@ -1,19 +1,40 @@
-
 In this progressive project, we are going to model a lab essay
- management database. 
+management database.
 The structure of the databases
 
-Exercises 
+Exercises
+
+### 26/12/2023
+Add MyBatis DAOs to the existing hierarchy with the same requirements. Choose any XML or interface mapping.
+Switch service classes to MyBatis.
+
+* All added all necessary files to configure myBatis , these were:
+  * BatchInfoMapper.xml
+  * EmployeeEmployeeLaboratoryToolsMapper.xml
+  * EmployeeEmployeeWorkAreasMapper.xml
+  * EmployeeMapper.xml
+  * EmployeeWorkAreaMapper.xml
+  * EnergyEfficiencyEssayMapper.xml
+  * EquipmentForTestModelMapper.xml
+  * EssayModuleMapper.xml
+  * GasConsumptionEssayMapper.xml
+  * LaboratoryToolMapper.xml
+  * LabTestReportMapper.xml
+  * TemperatureEssayMapper.xml
+  * myBatis-config.xml
+
+  This configuration was implemented in myBatisBranch
 
 ### 19/12/2023
 Build hierarchy for Schema from the below course.
-Create DAO classes with necessary interfaces, abstract classes, and Generics. 
+Create DAO classes with necessary interfaces, abstract classes, and Generics.
 DAO should be scalable and flexible to support another framework and another database as well.
 All CRUD operations should be supported using JDBC. Use connection pool from the below block.
 Implement Service layer with necessary abstraction to be able to switch between databases and frameworks.
 
-### 14/12/2023
+* All Crud operation with this requirements were done in master branch
 
+### 14/12/2024
 Exercises
 
 * 10 statements for insertion.
@@ -29,12 +50,10 @@ There were added all the queries in the essay project folder. Each file
 has the name of the asked queries.
 
 
-
-
 ### 12/12/2024
 
-Create a database schema using Mysql Workbench for the 
-new hierarchy with at least 12 tables and all relations. 
+Create a database schema using Mysql Workbench for the
+new hierarchy with at least 12 tables and all relations.
 The schema should satisfy the 3 Normal Forms.
 
 The schema was created and satisfy the 3 normal forms.
@@ -49,8 +68,7 @@ The tables created were:
 * temperature_essay: the temperature essay results
 * gas_consumption_essay: the gas consumption essay results
 * energy_efficiency_essay: the energy efficiency essay results
-* employee_employee_work_areas: an intermediate table that joins 
-the employees with their different working areas
+* employee_employee_work_areas: an intermediate table that joins
+  the employees with their different working areas
 * employee_laboratory_tools: an intermediate table that joins
-  the employees with the different tools that use
-* 
+  the employees with the different tools that use.
