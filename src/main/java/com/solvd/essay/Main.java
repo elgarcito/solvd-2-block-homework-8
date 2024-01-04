@@ -97,7 +97,7 @@ public class Main {
 
       //Gas consumption
         //gasConsumptionEssayService.findAll().forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
-    employeeLaboratoryToolsService.findAll().forEach(x-> System.out.println(x.getEmployee().getFirstName()));
+    //employeeLaboratoryToolsService.findAll().forEach(x-> System.out.println(x.getEmployee().getFirstName()));
 
     }
 }
