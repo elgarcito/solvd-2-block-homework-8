@@ -24,8 +24,8 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
 
     /*
     @Override
-    public String getThingFields(EssayModule essayModule) {
-        return essayModule.getModuleDescription();
+    public String getThingFields(EssayModule essayModule.xml) {
+        return essayModule.xml.getModuleDescription();
     }
 
      */

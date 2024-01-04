@@ -35,8 +35,8 @@ public class EssayModuleService {
     public void deleteEntity(EssayModule essayModule){
         essayModuleImpl.delete(essayModule);
         /*
-        System.out.println("Object with id= "+essayModule.getId()+"and "
-                +essayModule.getModuleDescription()+" deleted successfully");
+        System.out.println("Object with id= "+essayModule.xml.getId()+"and "
+                +essayModule.xml.getModuleDescription()+" deleted successfully");
     */
     }
 
@@ -44,8 +44,8 @@ public class EssayModuleService {
         try {
             essayModuleImpl.update(essayModule);
             /*
-            System.out.println("Object with id= "+essayModule.getId()+"and "
-                    +essayModule.getModuleDescription()+" was updated successfully");
+            System.out.println("Object with id= "+essayModule.xml.getId()+"and "
+                    +essayModule.xml.getModuleDescription()+" was updated successfully");
              */
         } catch (SQLException e) {
             throw new RuntimeException(e);

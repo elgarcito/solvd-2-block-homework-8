@@ -66,8 +66,8 @@ public class Main {
 
 
         // List<EssayModule> newList= newEssayModuleService.findAll();
-      // newList.forEach(essayModule -> System.out.println(essayModule.getModuleDescription()));
-        //EssayModule essayModule=newEssayModuleService.findOne(10L);
+      // newList.forEach(essayModule.xml -> System.out.println(essayModule.xml.getModuleDescription()));
+        //EssayModule essayModule.xml=newEssayModuleService.findOne(10L);
 
         // Batch info
         /*

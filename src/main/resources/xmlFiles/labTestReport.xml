@@ -1,0 +1,25 @@
+<labTestReport xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="../xsdFiles/labTestReport.xsd" id="1">
+    <essayCode>EA1</essayCode>
+    <dateOfEssay>2023-12-22</dateOfEssay>
+    <essayDescription>Big equipment gas compsumption essay</essayDescription>
+    <equipmentForTestModel id="1">
+        <modelName>model 1</modelName>
+        <modelDescription>Big equipment</modelDescription>
+        <releaseDate>2023-01-01</releaseDate>
+    </equipmentForTestModel>
+    <batchInfo id="1">
+        <batchNumber>PR1001</batchNumber>
+    </batchInfo>
+    <employee id="1">
+        <firstName>john</firstName>
+        <lastName>smith</lastName>
+        <personalId>Abc123</personalId>
+        <birthDate>2000-12-15</birthDate>
+        <salary>1000</salary>
+    </employee>
+    <essayModule id="1">
+        <moduleDescription>Big equipment module</moduleDescription>
+    </essayModule>
+</labTestReport>
+
