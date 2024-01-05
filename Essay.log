@@ -58,3 +58,8 @@
 21:08:49.554 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
 21:20:58.346 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
 19:17:48.678 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
+06:51:38.216 [main] INFO  com.solvd.essay.Main - BatchInfo{id=1, batchNumber='PR1001', myBatchInfoList=null}
+06:51:38.242 [main] INFO  com.solvd.essay.Main - EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=2023-01-01, equipmentForTestModelList=null}
+06:51:38.284 [main] INFO  com.solvd.essay.Main - Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=2000-12-15, salary=1000.0, employeeList=null}
+06:51:38.286 [main] INFO  com.solvd.essay.Main - EssayModule{id=1, moduleDescription='Big equipment module', essayModuleList=null}
+06:51:38.369 [main] INFO  com.solvd.essay.Main - LabTestReport{id=1, essayCode='EA1', dateOfEssay=2023-12-22, essayDescription='Big equipment gas compsumption essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=2023-01-01, equipmentForTestModelList=null}, batchInfo=BatchInfo{id=1, batchNumber='PR1001', myBatchInfoList=null}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=2000-12-15, salary=1000.0, employeeList=null}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module', essayModuleList=null}, labTestReportList=null}

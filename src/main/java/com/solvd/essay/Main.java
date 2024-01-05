@@ -122,15 +122,14 @@ public class Main {
             EssayModule essayModule= handler3.getEssayModule();
 
             LabTestReport labTestReport= handler4.getLabTestReport();
-            Long id=1L;
 
-            System.out.println(batchInfo.toString());
-            System.out.println(equipmentForTestModel.toString());
-            System.out.println(employee.toString());
-            System.out.println(essayModule.toString());
+            LOGGER.info(batchInfo.toString());
+            LOGGER.info(equipmentForTestModel.toString());
+            LOGGER.info(employee.toString());
+            LOGGER.info(essayModule.toString());
 
 
-            System.out.println(labTestReport.toString());
+            LOGGER.info(labTestReport.toString());
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
             throw new RuntimeException(e);
