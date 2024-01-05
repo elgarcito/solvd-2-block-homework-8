@@ -1,5 +1,7 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class GasConsumptionEssay {
 
     private Long id;
@@ -9,6 +11,7 @@ public class GasConsumptionEssay {
     private boolean essayResult;
 
     private LabTestReport labTestReport;
+    private List<GasConsumptionEssay> gasConsumptionEssayList;
 
 
 
@@ -60,6 +63,13 @@ public class GasConsumptionEssay {
         this.essayResult = essayResult;
     }
 
+    public List<GasConsumptionEssay> getGasConsumptionEssayList() {
+        return gasConsumptionEssayList;
+    }
+
+    public void setGasConsumptionEssayList(List<GasConsumptionEssay> gasConsumptionEssayList) {
+        this.gasConsumptionEssayList = gasConsumptionEssayList;
+    }
 
     @Override
     public String toString() {

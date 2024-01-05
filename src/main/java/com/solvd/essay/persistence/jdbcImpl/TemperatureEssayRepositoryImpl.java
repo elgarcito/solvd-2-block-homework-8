@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class TemperatureEssayRepositoryImpl extends AbstracDao<TemperatureEssay> {
     private static final Logger LOGGER = LogManager.getLogger(TemperatureEssayRepositoryImpl.class);
@@ -79,5 +80,10 @@ public class TemperatureEssayRepositoryImpl extends AbstracDao<TemperatureEssay>
     @Override
     protected TemperatureEssay returnVoidInstance() {
         return new TemperatureEssay();
+    }
+
+    @Override
+    protected void saveListInObject(TemperatureEssay thing, List<TemperatureEssay> list) {
+        thing.setTemperatureEssayList(list);
     }
 }

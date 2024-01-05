@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLaboratoryTools>{
     private static final Logger LOGGER = LogManager.getLogger(EmployeeLaboratoryToolsRepositoryImpl.class);
@@ -80,5 +81,10 @@ public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLa
     @Override
     protected EmployeeLaboratoryTools returnVoidInstance() {
         return new EmployeeLaboratoryTools();
+    }
+
+    @Override
+    protected void saveListInObject(EmployeeLaboratoryTools thing, List<EmployeeLaboratoryTools> list) {
+        thing.setEmployeeLaboratoryToolsList(list);
     }
 }

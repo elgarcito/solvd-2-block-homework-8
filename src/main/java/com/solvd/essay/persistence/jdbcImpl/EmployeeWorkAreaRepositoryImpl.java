@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea> {
     public EmployeeWorkAreaRepositoryImpl() {
@@ -70,5 +71,10 @@ public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea>
     @Override
     protected EmployeeWorkArea returnVoidInstance() {
         return new EmployeeWorkArea();
+    }
+
+    @Override
+    protected void saveListInObject(EmployeeWorkArea thing, List<EmployeeWorkArea> list) {
+        thing.setEmployeeWorkAreaList(list);
     }
 }

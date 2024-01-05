@@ -1,6 +1,7 @@
 package com.solvd.essay.domain;
 
 import java.util.Date;
+import java.util.List;
 
 public class LabTestReport {
 
@@ -13,8 +14,9 @@ public class LabTestReport {
 
     private BatchInfo batchInfo;
     private Employee employee;
-
     private EssayModule essayModule;
+    private List<LabTestReport> labTestReportList;
+
 
 
     public Long getId() {
@@ -81,6 +83,13 @@ public class LabTestReport {
         this.essayModule = essayModule;
     }
 
+    public List<LabTestReport> getLabTestReportList() {
+        return labTestReportList;
+    }
+
+    public void setLabTestReportList(List<LabTestReport> labTestReportList) {
+        this.labTestReportList = labTestReportList;
+    }
 
     @Override
     public String toString() {

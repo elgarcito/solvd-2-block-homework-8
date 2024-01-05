@@ -3,6 +3,7 @@ package com.solvd.essay.persistence.jdbcImpl;
 import com.solvd.essay.domain.Employee;
 
 import java.sql.*;
+import java.util.List;
 
 public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
 
@@ -90,5 +91,10 @@ public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
     @Override
     protected Employee returnVoidInstance() {
         return new Employee();
+    }
+
+    @Override
+    protected void saveListInObject(Employee thing, List<Employee> list) {
+        thing.setEmployeeList(list);
     }
 }

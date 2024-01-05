@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class LabTestReportRepositoryImpl extends AbstracDao<LabTestReport> {
     private static final Logger LOGGER = LogManager.getLogger(LabTestReportRepositoryImpl.class);
@@ -109,5 +110,10 @@ public class LabTestReportRepositoryImpl extends AbstracDao<LabTestReport> {
     @Override
     protected LabTestReport returnVoidInstance() {
         return new LabTestReport();
+    }
+
+    @Override
+    protected void saveListInObject(LabTestReport thing, List<LabTestReport> list) {
+        thing.setLabTestReportList(list);
     }
 }

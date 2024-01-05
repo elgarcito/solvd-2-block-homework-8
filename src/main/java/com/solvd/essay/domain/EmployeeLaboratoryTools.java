@@ -1,11 +1,14 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class EmployeeLaboratoryTools {
     private Long id;
 
     private Employee employee;
 
     private LaboratoryTool laboratoryTool;
+    private List<EmployeeLaboratoryTools> employeeLaboratoryToolsList;
     public Employee getEmployee() {
         return employee;
     }
@@ -22,6 +25,13 @@ public class EmployeeLaboratoryTools {
         this.laboratoryTool = laboratoryTool;
     }
 
+    public List<EmployeeLaboratoryTools> getEmployeeLaboratoryToolsList() {
+        return employeeLaboratoryToolsList;
+    }
+
+    public void setEmployeeLaboratoryToolsList(List<EmployeeLaboratoryTools> employeeLaboratoryToolsList) {
+        this.employeeLaboratoryToolsList = employeeLaboratoryToolsList;
+    }
 
     public Long getId() {
         return id;

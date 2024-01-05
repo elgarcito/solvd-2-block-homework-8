@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EmployeeEmployeeWorkAreasRepositoryImpl extends AbstracDao<EmployeeEmployeeWorkAreas>{
     private static final Logger LOGGER = LogManager.getLogger(EmployeeEmployeeWorkAreasRepositoryImpl.class);
@@ -82,4 +83,10 @@ public class EmployeeEmployeeWorkAreasRepositoryImpl extends AbstracDao<Employee
     protected EmployeeEmployeeWorkAreas returnVoidInstance() {
         return new EmployeeEmployeeWorkAreas();
     }
+
+    @Override
+    protected void saveListInObject(EmployeeEmployeeWorkAreas thing, List<EmployeeEmployeeWorkAreas> list) {
+        thing.setEmployeeEmployeeWorkAreasList(list);
+    }
 }
+

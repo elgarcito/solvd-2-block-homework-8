@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class GasConsumptionEssayRepositoryImpl extends AbstracDao<GasConsumptionEssay>{
     public GasConsumptionEssayRepositoryImpl() {
@@ -83,5 +84,11 @@ public class GasConsumptionEssayRepositoryImpl extends AbstracDao<GasConsumption
     @Override
     protected GasConsumptionEssay returnVoidInstance() {
         return new GasConsumptionEssay();
+    }
+
+
+    @Override
+    protected void saveListInObject(GasConsumptionEssay thing, List<GasConsumptionEssay> list) {
+        thing.setGasConsumptionEssayList(list);
     }
 }

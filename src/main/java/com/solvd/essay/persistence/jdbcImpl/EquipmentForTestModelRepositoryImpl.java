@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentForTestModel>{
     public EquipmentForTestModelRepositoryImpl() {
@@ -65,4 +66,10 @@ public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentFor
     protected EquipmentForTestModel returnVoidInstance() {
         return new EquipmentForTestModel();
     }
+
+    @Override
+    protected void saveListInObject(EquipmentForTestModel thing, List<EquipmentForTestModel> list) {
+        thing.setEquipmentForTestModelList(list);
+    }
+
 }

@@ -1,5 +1,7 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class EnergyEfficiencyEssay {
 
     private Long id;
@@ -7,9 +9,9 @@ public class EnergyEfficiencyEssay {
     private String category;
 
     private boolean essayResult;
-
-
     private LabTestReport labTestReport;
+    private List<EnergyEfficiencyEssay> energyEfficiencyEssayList;
+
 
 
 
@@ -57,6 +59,14 @@ public class EnergyEfficiencyEssay {
 
     public void setEssayResult(boolean essayResult) {
         this.essayResult = essayResult;
+    }
+
+    public List<EnergyEfficiencyEssay> getEnergyEfficiencyEssayList() {
+        return energyEfficiencyEssayList;
+    }
+
+    public void setEnergyEfficiencyEssayList(List<EnergyEfficiencyEssay> energyEfficiencyEssayList) {
+        this.energyEfficiencyEssayList = energyEfficiencyEssayList;
     }
 
     @Override

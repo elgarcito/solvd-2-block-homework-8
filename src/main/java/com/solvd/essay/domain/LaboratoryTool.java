@@ -1,10 +1,13 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class LaboratoryTool {
 
     private Long id;
     private String toolName;
     private String toolDescription;
+    private List<LaboratoryTool> laboratoryToolList;
 
 
     public Long getId() {
@@ -29,6 +32,14 @@ public class LaboratoryTool {
 
     public void setToolDescription(String toolDescription) {
         this.toolDescription = toolDescription;
+    }
+
+    public List<LaboratoryTool> getLaboratoryToolList() {
+        return laboratoryToolList;
+    }
+
+    public void setLaboratoryToolList(List<LaboratoryTool> laboratoryToolList) {
+        this.laboratoryToolList = laboratoryToolList;
     }
 
     @Override

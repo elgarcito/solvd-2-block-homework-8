@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
     public BatchInfoRepositoryImpl() {
@@ -70,5 +71,10 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
     @Override
     protected BatchInfo returnVoidInstance() {
         return new BatchInfo();
+    }
+
+    @Override
+    protected void saveListInObject(BatchInfo thing, List<BatchInfo> list) {
+        thing.setMyBatchInfoList(list);
     }
 }

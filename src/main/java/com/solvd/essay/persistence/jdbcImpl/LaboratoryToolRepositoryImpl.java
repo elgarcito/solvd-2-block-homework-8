@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class LaboratoryToolRepositoryImpl extends AbstracDao<LaboratoryTool> {
     public LaboratoryToolRepositoryImpl() {
@@ -61,5 +62,10 @@ public class LaboratoryToolRepositoryImpl extends AbstracDao<LaboratoryTool> {
     @Override
     protected LaboratoryTool returnVoidInstance() {
         return new LaboratoryTool();
+    }
+
+    @Override
+    protected void saveListInObject(LaboratoryTool thing, List<LaboratoryTool> list) {
+        thing.setLaboratoryToolList(list);
     }
 }

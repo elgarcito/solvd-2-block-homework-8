@@ -65,6 +65,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
                 listOfThings.add(newClass);
             }
             LOGGER.info("All the elements were added to the list successfully");
+            saveListInObject(newClass,listOfThings);
             return listOfThings;
         } catch (SQLException e) {
             conn1.rollback();
@@ -201,5 +202,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     protected abstract void setQueryStatements(PreparedStatement ps,T thingToCreate);
 
     protected abstract T returnVoidInstance();
+
+    protected abstract void saveListInObject(T thing,List<T> list);
 
 }

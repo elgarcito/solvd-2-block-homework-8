@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EnergyEfficiencyEssayRepositoryImpl extends AbstracDao<EnergyEfficiencyEssay> {
 
@@ -80,5 +81,10 @@ public class EnergyEfficiencyEssayRepositoryImpl extends AbstracDao<EnergyEffici
     @Override
     protected EnergyEfficiencyEssay returnVoidInstance() {
         return new EnergyEfficiencyEssay();
+    }
+
+    @Override
+    protected void saveListInObject(EnergyEfficiencyEssay thing, List<EnergyEfficiencyEssay> list) {
+        thing.setEnergyEfficiencyEssayList(list);
     }
 }

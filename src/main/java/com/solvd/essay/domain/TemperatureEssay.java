@@ -1,13 +1,15 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class TemperatureEssay {
 
     private Long id;
     private double frontMeasurement;
     private boolean essayResult;
     private LabTestReport labTestReport;
-
     private double leftSideMeasurement;
+    private List<TemperatureEssay> temperatureEssayList;
 
 
 
@@ -52,6 +54,13 @@ public class TemperatureEssay {
         this.essayResult = essayResult;
     }
 
+    public List<TemperatureEssay> getTemperatureEssayList() {
+        return temperatureEssayList;
+    }
+
+    public void setTemperatureEssayList(List<TemperatureEssay> temperatureEssayList) {
+        this.temperatureEssayList = temperatureEssayList;
+    }
 
     @Override
     public String toString() {

@@ -1,10 +1,14 @@
 package com.solvd.essay.domain;
 
+import java.util.List;
+
 public class EmployeeEmployeeWorkAreas {
     private Long id;
     private Employee employee;
 
     private EmployeeWorkArea employeeWorkArea;
+
+    private List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList;
 
     public Employee getEmployee() {
         return employee;
@@ -31,6 +35,14 @@ public class EmployeeEmployeeWorkAreas {
         this.id = id;
     }
 
+    public List<EmployeeEmployeeWorkAreas> getEmployeeEmployeeWorkAreasList() {
+        return employeeEmployeeWorkAreasList;
+    }
+
+    public void setEmployeeEmployeeWorkAreasList(List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList) {
+        this.employeeEmployeeWorkAreasList = employeeEmployeeWorkAreasList;
+    }
+
     @Override
     public String toString() {
         return "EmployeeEmployeeWorkAreas{" +
@@ -39,4 +51,5 @@ public class EmployeeEmployeeWorkAreas {
                 ", employeeWorkArea=" + employeeWorkArea.toString() +
                 '}';
     }
+
 }

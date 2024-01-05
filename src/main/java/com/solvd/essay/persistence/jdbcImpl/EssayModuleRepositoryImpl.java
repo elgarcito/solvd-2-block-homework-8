@@ -3,6 +3,7 @@ package com.solvd.essay.persistence.jdbcImpl;
 import com.solvd.essay.domain.EssayModule;
 
 import java.sql.*;
+import java.util.List;
 
 public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
     public EssayModuleRepositoryImpl() {
@@ -69,5 +70,10 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
     @Override
     protected EssayModule returnVoidInstance() {
         return new EssayModule();
+    }
+
+    @Override
+    protected void saveListInObject(EssayModule thing, List<EssayModule> list) {
+        thing.setEssayModuleList(list);
     }
 }
