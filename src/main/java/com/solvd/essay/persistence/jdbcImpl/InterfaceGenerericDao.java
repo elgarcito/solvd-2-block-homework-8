@@ -1,4 +1,4 @@
-package com.solvd.essay.persistence;
+package com.solvd.essay.persistence.jdbcImpl;
 
 import java.sql.SQLException;
 import java.util.List;

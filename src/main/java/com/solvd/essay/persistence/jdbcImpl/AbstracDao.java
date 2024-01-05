@@ -1,7 +1,6 @@
 package com.solvd.essay.persistence.jdbcImpl;
 
 import com.solvd.essay.persistence.ConnectionPool;
-import com.solvd.essay.persistence.InterfaceGenerericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
