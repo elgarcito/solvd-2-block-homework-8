@@ -1,7 +1,5 @@
 package com.solvd.essay.persistence;
 
-import com.solvd.essay.domain.Employee;
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,9 +13,8 @@ public interface InterfaceGenerericDao<T> {
 
     public void deleteById (final Long thingId) throws SQLException;
 
-    public void delete(final T thingToDelete);
 
-    public void update(final T thingToUpdate, Long id) throws SQLException;
+    public void updateById(final T thingToUpdate, Long id) throws SQLException;
 
     /*
 

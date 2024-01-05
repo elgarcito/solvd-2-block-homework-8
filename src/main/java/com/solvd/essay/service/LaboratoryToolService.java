@@ -34,13 +34,10 @@ public class LaboratoryToolService {
         laboratoryToolRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(LaboratoryTool laboratoryTool){
-        laboratoryToolRepositoryImpl.delete(laboratoryTool);
-    }
 
     public void updateEntity(LaboratoryTool laboratoryTool,Long id){
         try {
-            laboratoryToolRepositoryImpl.update(laboratoryTool, id);
+            laboratoryToolRepositoryImpl.updateById(laboratoryTool, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

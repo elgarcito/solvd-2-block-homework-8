@@ -34,13 +34,9 @@ public class EmployeeService {
         employeeRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(Employee employee){
-        employeeRepositoryImpl.delete(employee);
-    }
-
     public void updateEntity(Employee employee,Long id){
         try {
-            employeeRepositoryImpl.update(employee, id);
+            employeeRepositoryImpl.updateById(employee, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

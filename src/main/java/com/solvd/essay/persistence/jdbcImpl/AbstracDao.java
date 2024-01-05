@@ -145,18 +145,9 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
         }
     }
 
-    @Override
-    public void delete(T thingToDelete) {
-        try {
-            Long idOfObject=getThingId(thingToDelete);
-            deleteById(idOfObject);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
     @Override
-    public void update(T thingToUpdate, Long id) throws SQLException {
+    public void updateById(T thingToUpdate, Long id) throws SQLException {
         Connection conn1;
         try {
             conn1 = ConnectionPool.getConnection();

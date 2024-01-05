@@ -48,13 +48,11 @@ public class EnergyEfficiencyEssayService {
         energyEfficiencyEssayRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(EnergyEfficiencyEssay energyEfficiencyEssay){
-        energyEfficiencyEssayRepositoryImpl.delete(energyEfficiencyEssay);
-    }
+
 
     public void updateEntity(EnergyEfficiencyEssay energyEfficiencyEssay, Long id){
         try {
-            energyEfficiencyEssayRepositoryImpl.update(energyEfficiencyEssay,id);
+            energyEfficiencyEssayRepositoryImpl.updateById(energyEfficiencyEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

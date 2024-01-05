@@ -33,13 +33,10 @@ public class EquipmentForTestModelService {
         equipmentForTestModelRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(EquipmentForTestModel equipmentForTestModel){
-        equipmentForTestModelRepositoryImpl.delete(equipmentForTestModel);
-    }
 
     public void updateEntity(EquipmentForTestModel equipmentForTestModel,Long id){
         try {
-            equipmentForTestModelRepositoryImpl.update(equipmentForTestModel, id);
+            equipmentForTestModelRepositoryImpl.updateById(equipmentForTestModel, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

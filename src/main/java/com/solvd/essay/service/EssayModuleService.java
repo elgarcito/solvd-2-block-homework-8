@@ -32,13 +32,10 @@ public class EssayModuleService {
         essayModuleRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(EssayModule essayModule){
-        essayModuleRepositoryImpl.delete(essayModule);
-    }
 
     public void updateEntity(EssayModule essayModule, Long id){
         try {
-            essayModuleRepositoryImpl.update(essayModule,id);
+            essayModuleRepositoryImpl.updateById(essayModule,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

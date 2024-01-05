@@ -33,13 +33,11 @@ public class BatchInfoService {
         batchInfoRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(BatchInfo batchInfo){
-        batchInfoRepositoryImpl.delete(batchInfo);
-    }
+
 
     public void updateEntity(BatchInfo batchInfo,Long id){
         try {
-            batchInfoRepositoryImpl.update(batchInfo,id);
+            batchInfoRepositoryImpl.updateById(batchInfo,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

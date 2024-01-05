@@ -87,13 +87,10 @@ public class LabTestReportService {
         labTestReportRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(LabTestReport labTestReport){
-        labTestReportRepositoryImpl.delete(labTestReport);
-    }
 
     public void updateEntity(LabTestReport labTestReport,Long id){
         try {
-            labTestReportRepositoryImpl.update(labTestReport, id);
+            labTestReportRepositoryImpl.updateById(labTestReport, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

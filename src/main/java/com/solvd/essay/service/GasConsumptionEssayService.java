@@ -49,13 +49,10 @@ public class GasConsumptionEssayService {
         gasConsumptionEssayRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(GasConsumptionEssay gasConsumptionEssay){
-        gasConsumptionEssayRepositoryImpl.delete(gasConsumptionEssay);
-    }
 
     public void updateEntity(GasConsumptionEssay gasConsumptionEssay,Long id){
         try {
-            gasConsumptionEssayRepositoryImpl.update(gasConsumptionEssay,id);
+            gasConsumptionEssayRepositoryImpl.updateById(gasConsumptionEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

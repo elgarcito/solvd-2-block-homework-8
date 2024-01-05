@@ -33,13 +33,11 @@ public class EmployeeWorkAreaService {
         employeeWorkAreaRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(EmployeeWorkArea employeeWorkArea){
-        employeeWorkAreaRepositoryImpl.delete(employeeWorkArea);
-    }
+
 
     public void updateEntity(EmployeeWorkArea employeeWorkArea,Long id){
         try {
-            employeeWorkAreaRepositoryImpl.update(employeeWorkArea, id);
+            employeeWorkAreaRepositoryImpl.updateById(employeeWorkArea, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

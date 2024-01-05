@@ -48,13 +48,9 @@ public class TemperatureEssayService {
         temperatureEssayRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(TemperatureEssay temperatureEssay){
-        temperatureEssayRepositoryImpl.delete(temperatureEssay);
-    }
-
     public void updateEntity(TemperatureEssay temperatureEssay, Long id){
         try {
-            temperatureEssayRepositoryImpl.update(temperatureEssay,id);
+            temperatureEssayRepositoryImpl.updateById(temperatureEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

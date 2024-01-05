@@ -59,13 +59,11 @@ public class EmployeeLaboratoryToolsService {
         employeeLaboratoryToolsRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(EmployeeLaboratoryTools employeeLaboratoryTools){
-        employeeLaboratoryToolsRepositoryImpl.delete(employeeLaboratoryTools);
-    }
+
 
     public void updateEntity(EmployeeLaboratoryTools employeeLaboratoryTools,Long id){
         try {
-            employeeLaboratoryToolsRepositoryImpl.update(employeeLaboratoryTools,id);
+            employeeLaboratoryToolsRepositoryImpl.updateById(employeeLaboratoryTools,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

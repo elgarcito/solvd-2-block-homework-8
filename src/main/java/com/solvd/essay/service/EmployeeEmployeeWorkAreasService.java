@@ -58,13 +58,10 @@ public class EmployeeEmployeeWorkAreasService {
         employeeEmployeeWorkAreasRepositoryImpl.deleteById(id);
     }
 
-    public void deleteEntity(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas){
-        employeeEmployeeWorkAreasRepositoryImpl.delete(employeeEmployeeWorkAreas);
-    }
 
     public void updateEntity(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas, Long id){
         try {
-            employeeEmployeeWorkAreasRepositoryImpl.update(employeeEmployeeWorkAreas, id);
+            employeeEmployeeWorkAreasRepositoryImpl.updateById(employeeEmployeeWorkAreas, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
