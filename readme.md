@@ -1,10 +1,6 @@
 # solvd-2-block-homework-3
 
-n this progressive project, we are going to model a lab essay management database. The structure of the databases
-
-Exercises
-
-19/12/2023
+## 19/12/2023
 Build hierarchy for Schema from the below course.
 
 Create DAO classes with necessary interfaces, abstract classes, and Generics.  
