@@ -12,9 +12,9 @@ public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea>
     }
 
     @Override
-    protected String getUpdateQuery(EmployeeWorkArea newThingToUpdate) {
+    protected String getUpdateQuery(EmployeeWorkArea newThingToUpdate,Long id) {
         String updateQuery=String.format("update %s set area_name=\"%s\", area_code=\"%s\" where id=%s",
-                getTableName(),newThingToUpdate.getAreaName(),newThingToUpdate.getAreaCode(),newThingToUpdate.getId());
+                getTableName(),newThingToUpdate.getAreaName(),newThingToUpdate.getAreaCode(),id);
         return updateQuery;
     }
 
@@ -65,5 +65,10 @@ public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea>
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    protected EmployeeWorkArea returnVoidInstance() {
+        return new EmployeeWorkArea();
     }
 }

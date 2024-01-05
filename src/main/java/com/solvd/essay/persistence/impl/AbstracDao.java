@@ -6,6 +6,8 @@ import com.solvd.essay.persistence.InterfaceGenerericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -92,7 +94,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
         try {
             if (id==0l){
                 LOGGER.info("The id must be greater than 0L, returning a null value");
-                return null;
+                return returnVoidInstance();
             }
             String query= String.format("select * from %s where id=?",getTableName());
             PreparedStatement ps = conn1.prepareStatement(query);
@@ -100,20 +102,18 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
             ResultSet result =ps.executeQuery();
             if (!result.next()){
-                LOGGER.info("The value can not be found, returning a null value");
-                return null;
+                return returnVoidInstance();
             }
 
             T newClass = mapResultToObject(result ,conn1);
-            LOGGER.info("The object was found successfully");
+            //LOGGER.info("The object was found successfully");
         return newClass;
 
         } catch (SQLException e) {
             conn1.rollback();
             LOGGER.error(e.getMessage());
             throw new RuntimeException(e);
-        }
-        finally {
+        } finally {
             conn1.setAutoCommit(true);
             ConnectionPool.releaseConnection(conn1);
         }
@@ -132,7 +132,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             T thingToDelete=findById(thingId);
             if (thingToDelete==null) {
                 LOGGER.info("The object does not exist, delete operation failed");
-                return;
+                return ;
             }
             String query=String.format("delete from %s where id=?",getTableName()) ;
             PreparedStatement ps = conn1.prepareStatement(query,Statement.RETURN_GENERATED_KEYS);
@@ -160,7 +160,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     }
 
     @Override
-    public void update(T thingToUpdate) throws SQLException {
+    public void update(T thingToUpdate, Long id) throws SQLException {
         Connection conn1;
         try {
             conn1 = ConnectionPool.getConnection();
@@ -169,12 +169,16 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
             throw new RuntimeException(e);
         }
         try {
-            T checkIfExist=findById(getThingId(thingToUpdate));
+            T checkIfExist=findById(id);
             if (checkIfExist==null) {
                 LOGGER.info("The object does not exist, update operation failed");
                 return;
             }
-            PreparedStatement ps = conn1.prepareStatement(getUpdateQuery(thingToUpdate),Statement.RETURN_GENERATED_KEYS);
+            if (getUpdateQuery(thingToUpdate,id).equals("invalid update")){
+                LOGGER.info("The object is incomplete to update, insert a valid one");
+                return;
+            }
+            PreparedStatement ps = conn1.prepareStatement(getUpdateQuery(thingToUpdate,id),Statement.RETURN_GENERATED_KEYS);
             int number= ps.executeUpdate();
             LOGGER.info("The object was updated successfully the row affected was: "+number);
         } catch (SQLException e) {
@@ -187,7 +191,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
         }
     }
 
-    protected abstract String getUpdateQuery(T newThingToUpdate);
+    protected abstract String getUpdateQuery(T newThingToUpdate,Long id);
 
 
     /*Return the table name */
@@ -209,4 +213,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
     protected abstract String getCreateQuery();
 
     protected abstract void setQueryStatements(PreparedStatement ps,T thingToCreate);
+
+    protected abstract T returnVoidInstance();
+
 }

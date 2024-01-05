@@ -41,9 +41,9 @@ public class EquipmentForTestModelService {
         equipmentForTestModelImpl.delete(equipmentForTestModel);
     }
 
-    public void updateEntity(EquipmentForTestModel equipmentForTestModel){
+    public void updateEntity(EquipmentForTestModel equipmentForTestModel,Long id){
         try {
-            equipmentForTestModelImpl.update(equipmentForTestModel);
+            equipmentForTestModelImpl.update(equipmentForTestModel, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

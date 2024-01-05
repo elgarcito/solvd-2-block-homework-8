@@ -41,7 +41,7 @@ public class Main {
         essayModule1.setModuleDescription("module 125");
         newEssayModuleService.create(essayModule1);
         essayModule1.setId(5L);
-        newEssayModuleService.updateEntity(essayModule1);
+        newEssayModuleService.updateEntity(essayModule1,5L);
 
 
         System.out.println();
@@ -63,7 +63,7 @@ public class Main {
         newBatchInfo.setId(7L);
         newBatchInfoService.create(newBatchInfo);
         newBatchInfoService.deleteOne(5L);
-        newBatchInfoService.updateEntity(newBatchInfo);
+        newBatchInfoService.updateEntity(newBatchInfo,5L);
 
 
         System.out.println();
@@ -91,7 +91,7 @@ public class Main {
         newEmployeeService.deleteOne(20L);
         employee2.setPersonalId("1285");
         employee2.setId(23L);
-        newEmployeeService.updateEntity(employee2);
+        newEmployeeService.updateEntity(employee2,23L);
 
 
         System.out.println();
@@ -114,7 +114,7 @@ public class Main {
         newEmployeeWorkAreaService.create(area2);
         area2.setId(1L);
         area2.setAreaCode("area 299565");
-        newEmployeeWorkAreaService.updateEntity(area2);
+        newEmployeeWorkAreaService.updateEntity(area2,1L);
         newEmployeeWorkAreaService.deleteOne(4L);
 
         System.out.println();
@@ -133,11 +133,10 @@ public class Main {
         EnergyEfficiencyEssay eeEssay =new EnergyEfficiencyEssay();
         eeEssay.setValueOfEssay(25.0);
         eeEssay.setEssayResult(false);
-        eeEssay.setLabTestReportId(19L);
         eeEssay.setCategory("A");
         newEnergyEfficiencyEssayService.create(eeEssay);
         eeEssay.setId(9L);
-        newEnergyEfficiencyEssayService.updateEntity(eeEssay);
+        newEnergyEfficiencyEssayService.updateEntity(eeEssay,9L);
 
         System.out.println();
         System.out.println();
@@ -158,11 +157,11 @@ public class Main {
         gcEssay.setStandardMean(9.8);
         gcEssay.setMeasurementError(0.1);
         gcEssay.setEssayResult(true);
-        gcEssay.setLabTestReportId(20L);
+
         newGasConsumptionEssayService.create(gcEssay);
         gcEssay.setId(6L);
         gcEssay.setMaxConsume(25.3);
-        newGasConsumptionEssayService.updateEntity(gcEssay);
+        newGasConsumptionEssayService.updateEntity(gcEssay,6L);
         newGasConsumptionEssayService.deleteOne(6L);
 
         System.out.println();
@@ -182,12 +181,12 @@ public class Main {
         tEssay.setFrontMeasurement(30.1);
         tEssay.setLeftSideMeasurement(25);
         tEssay.setEssayResult(false);
-        tEssay.setLabTestReportId(21L);
+
         tEssay.setEssayResult(true);
         newTemperatureEssayService.create(tEssay);
         tEssay.setId(7L);
         tEssay.setFrontMeasurement(45);
-        newTemperatureEssayService.updateEntity(tEssay);
+        newTemperatureEssayService.updateEntity(tEssay,7L);
 
         System.out.println();
         System.out.println();
@@ -209,7 +208,7 @@ public class Main {
         ltool.setId(5L);
         ltool.setToolName("tool5");
         newLaboratoryToolService.deleteOne(6L);
-        newLaboratoryToolService.updateEntity(ltool);
+        newLaboratoryToolService.updateEntity(ltool,5L);
 
         System.out.println();
         System.out.println();
@@ -220,7 +219,7 @@ public class Main {
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
 
         //Usage of the service
-        LabTestReport labTestReport1=newLabTestReportService.findOne(3L);
+        LabTestReport labTestReport1=newLabTestReportService.findOne(100L);
         LOGGER.info(labTestReport1);
         List<LabTestReport> labTestReportList=newLabTestReportService.findAll();
         labTestReportList.forEach(x-> LOGGER.info(x.toString()));
@@ -228,14 +227,10 @@ public class Main {
         ltr.setEssayCode("EA32");
         ltr.setDateOfEssay(Date.valueOf("2023-12-29"));
         ltr.setEssayDescription("essay from java");
-        ltr.setEquipmentForTestModelId(1L);
-        ltr.setBatchInfoId(2L);
-        ltr.setEmployeeId(2L);
-        ltr.setEssayModuleId(2L);
         newLabTestReportService.create(ltr);
         ltr.setEssayDescription("essay from java updated");
         ltr.setId(24L);
-        newLabTestReportService.updateEntity(ltr);
+        newLabTestReportService.updateEntity(ltr,24L);
         newLabTestReportService.deleteOne(24L);
 
         System.out.println();
@@ -261,7 +256,7 @@ public class Main {
         list1.forEach(x-> LOGGER.info(x.toString()));
         newEquipmentForTestModelService.deleteOne(6L);
         eqft.setModelDescription("rare rare model");
-        newEquipmentForTestModelService.updateEntity(eqft);
+        newEquipmentForTestModelService.updateEntity(eqft,6L);
 
         System.out.println();
         System.out.println();
@@ -277,11 +272,8 @@ public class Main {
         employeeEmployeeWorkAreasList.forEach(x->LOGGER.info(x.toString()));
         newEmployeeEmployeeWorkAreasService.deleteOne(3L);
         EmployeeEmployeeWorkAreas emwas =new EmployeeEmployeeWorkAreas();
-        emwas.setEmployeeId(1L);
-        emwas.setEmployeeworkAreaId(3L);
         newEmployeeEmployeeWorkAreasService.create(emwas);
         emwas.setId(4L);
-        emwas.setEmployeeId(1L);
 
 
         System.out.println();
@@ -303,6 +295,7 @@ public class Main {
         emlt1.setLaboratoryToolId(2L);
         newEmployeeLaboratoryToolService.create(emlt1);
         newEmployeeLaboratoryToolService.deleteOne(4L);
+
 
     }
 }

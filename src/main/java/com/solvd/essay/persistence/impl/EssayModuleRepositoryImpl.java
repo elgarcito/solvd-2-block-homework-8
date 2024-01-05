@@ -45,12 +45,9 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
     }
 
     @Override
-    protected String getUpdateQuery(EssayModule entity) {
+    protected String getUpdateQuery(EssayModule entity,Long id) {
         String updateQuery= String.format("update essay_module set module_description=\"%s\" where id= %s",
-                entity.getModuleDescription(),entity.getId());
-
-        //"update essay_module set module_description=\""+entity.getModuleDescription()+
-        //        "\" where id="+entity.getId();
+                entity.getModuleDescription(),id);
 
         return updateQuery;
     }
@@ -68,5 +65,10 @@ public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    protected EssayModule returnVoidInstance() {
+        return new EssayModule();
     }
 }

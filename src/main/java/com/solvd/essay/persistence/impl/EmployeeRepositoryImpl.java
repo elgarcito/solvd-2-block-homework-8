@@ -12,10 +12,10 @@ public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
     }
 
     @Override
-    protected String getUpdateQuery(Employee newThingToUpdate) {
+    protected String getUpdateQuery(Employee newThingToUpdate,Long id) {
         String updateQuery=String.format("update employee set first_name=\"%s\",last_name=\"%s\",personal_id=\"%s\",birth_date=\"%s\",salary=%s where id= %s",
                 newThingToUpdate.getFirstName(),newThingToUpdate.getLastName(),newThingToUpdate.getPersonalId(),
-                newThingToUpdate.getBirthDate(),newThingToUpdate.getSalary(),newThingToUpdate.getId());
+                newThingToUpdate.getBirthDate(),newThingToUpdate.getSalary(),id);
         /*
         return "update employee set first_name=\""+newThingToUpdate.getFirstName()+"\""+
                 "last_name=\""+newThingToUpdate.getLastName()+"\""+
@@ -87,5 +87,10 @@ public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    protected Employee returnVoidInstance() {
+        return new Employee();
     }
 }

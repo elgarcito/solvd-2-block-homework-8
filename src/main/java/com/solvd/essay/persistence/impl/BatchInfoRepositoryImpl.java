@@ -13,9 +13,9 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
     }
 
     @Override
-    protected String getUpdateQuery(BatchInfo newThingToUpdate) {
+    protected String getUpdateQuery(BatchInfo newThingToUpdate,Long id) {
         String updateQuery=String.format("update batch_info set batch_Number=\"%s\" where id=%s"
-                ,newThingToUpdate.getBatchNumber(),+newThingToUpdate.getId());
+                ,newThingToUpdate.getBatchNumber(),id);
         return updateQuery;
     }
 
@@ -66,5 +66,10 @@ public class BatchInfoRepositoryImpl extends AbstracDao<BatchInfo> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    protected BatchInfo returnVoidInstance() {
+        return new BatchInfo();
     }
 }

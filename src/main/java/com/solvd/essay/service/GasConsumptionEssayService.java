@@ -25,11 +25,14 @@ public class GasConsumptionEssayService {
     }
     public List<GasConsumptionEssay> findAll() throws SQLException {
         List<GasConsumptionEssay> listOfGasEssays=gasConsumptionEssayImpl.getAll();
+        /*
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         for (GasConsumptionEssay gasConEssay:listOfGasEssays) {
             gasConEssay.setLabTestReport(newLabTestReportService.findOne(gasConEssay.getLabTestReportId()));
         }
+
+         */
         return listOfGasEssays;
 
     }
@@ -39,9 +42,12 @@ public class GasConsumptionEssayService {
         if (gasConEssay==null){
             return new GasConsumptionEssay();
         }
+        /*
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         gasConEssay.setLabTestReport(newLabTestReportService.findOne(gasConEssay.getLabTestReportId()));
+
+         */
         return gasConEssay;
     }
 
@@ -53,9 +59,9 @@ public class GasConsumptionEssayService {
         gasConsumptionEssayImpl.delete(gasConsumptionEssay);
     }
 
-    public void updateEntity(GasConsumptionEssay gasConsumptionEssay){
+    public void updateEntity(GasConsumptionEssay gasConsumptionEssay,Long id){
         try {
-            gasConsumptionEssayImpl.update(gasConsumptionEssay);
+            gasConsumptionEssayImpl.update(gasConsumptionEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

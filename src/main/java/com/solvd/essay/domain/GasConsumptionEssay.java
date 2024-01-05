@@ -10,7 +10,7 @@ public class GasConsumptionEssay {
 
     private LabTestReport labTestReport;
 
-    private Long labTestReportId;
+
 
 
     public Long getId() {
@@ -60,23 +60,24 @@ public class GasConsumptionEssay {
         this.essayResult = essayResult;
     }
 
-    public Long getLabTestReportId() {
-        return labTestReportId;
-    }
-
-    public void setLabTestReportId(Long labTestReportId) {
-        this.labTestReportId = labTestReportId;
-    }
 
     @Override
     public String toString() {
+        String labTestReportValue=null;
+
+        if (labTestReport==null){
+            labTestReportValue="null";
+        }else {
+            labTestReportValue= labTestReport.toString();
+        }
+
         return "GasConsumptionEssay{" +
                 "id=" + id +
                 ", maxConsume=" + maxConsume +
                 ", standardMean=" + standardMean +
                 ", measurementError=" + measurementError +
                 ", essayResult=" + essayResult +
-                ", labTestReport=" + labTestReport.toString() +
+                ", labTestReport=" + labTestReportValue +
                 '}';
     }
 }

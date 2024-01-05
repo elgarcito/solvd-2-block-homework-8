@@ -42,9 +42,9 @@ public class EmployeeWorkAreaService {
         employeeWorkAreaImpl.delete(employeeWorkArea);
     }
 
-    public void updateEntity(EmployeeWorkArea employeeWorkArea){
+    public void updateEntity(EmployeeWorkArea employeeWorkArea,Long id){
         try {
-            employeeWorkAreaImpl.update(employeeWorkArea);
+            employeeWorkAreaImpl.update(employeeWorkArea, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

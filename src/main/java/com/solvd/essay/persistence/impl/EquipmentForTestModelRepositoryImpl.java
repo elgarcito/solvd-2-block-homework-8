@@ -13,10 +13,10 @@ public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentFor
     }
 
     @Override
-    protected String getUpdateQuery(EquipmentForTestModel newThingToUpdate) {
+    protected String getUpdateQuery(EquipmentForTestModel newThingToUpdate,Long id) {
         String updateQuery=String.format("update %s set model_description=\"%s\",release_date=\"%s\" where id= %s",
                 getTableName(),newThingToUpdate.getModelDescription(),
-                newThingToUpdate.getReleaseDate(),newThingToUpdate.getId());
+                newThingToUpdate.getReleaseDate(),id);
         return updateQuery;
     }
 
@@ -60,5 +60,10 @@ public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentFor
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    protected EquipmentForTestModel returnVoidInstance() {
+        return new EquipmentForTestModel();
     }
 }

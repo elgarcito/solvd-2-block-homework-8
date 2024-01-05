@@ -69,9 +69,9 @@ public class EmployeeLaboratoryToolsService {
         employeeLaboratoryToolsImpl.delete(employeeLaboratoryTools);
     }
 
-    public void updateEntity(EmployeeLaboratoryTools employeeLaboratoryTools){
+    public void updateEntity(EmployeeLaboratoryTools employeeLaboratoryTools,Long id){
         try {
-            employeeLaboratoryToolsImpl.update(employeeLaboratoryTools);
+            employeeLaboratoryToolsImpl.update(employeeLaboratoryTools,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

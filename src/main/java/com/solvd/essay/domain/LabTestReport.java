@@ -10,13 +10,12 @@ public class LabTestReport {
     private String essayDescription;
 
     private EquipmentForTestModel equipmentForTestModel;
-    private Long equipmentForTestModelId;
+
     private BatchInfo batchInfo;
-    private Long batchInfoId;
     private Employee employee;
-    private Long employeeId;
+
     private EssayModule essayModule;
-    private Long essayModuleId;
+
 
     public Long getId() {
         return id;
@@ -82,49 +81,45 @@ public class LabTestReport {
         this.essayModule = essayModule;
     }
 
-    public Long getEquipmentForTestModelId() {
-        return equipmentForTestModelId;
-    }
-
-    public void setEquipmentForTestModelId(Long equipmentForTestModelId) {
-        this.equipmentForTestModelId = equipmentForTestModelId;
-    }
-
-    public Long getBatchInfoId() {
-        return batchInfoId;
-    }
-
-    public void setBatchInfoId(Long batchInfoId) {
-        this.batchInfoId = batchInfoId;
-    }
-
-    public Long getEmployeeId() {
-        return employeeId;
-    }
-
-    public void setEmployeeId(Long employeeId) {
-        this.employeeId = employeeId;
-    }
-
-    public Long getEssayModuleId() {
-        return essayModuleId;
-    }
-
-    public void setEssayModuleId(Long essayModuleId) {
-        this.essayModuleId = essayModuleId;
-    }
 
     @Override
     public String toString() {
+        String equipmentForTestModelValue=null;
+        String batchInfoValue=null;
+        String employeeValue=null;
+        String essayModuleValue=null;
+
+        if (equipmentForTestModel==null){
+            equipmentForTestModelValue="null";
+        }else {
+            equipmentForTestModelValue= equipmentForTestModel.toString();
+        }
+        if (batchInfo==null){
+            batchInfoValue="null";
+        }else {
+            batchInfoValue= batchInfo.toString();
+        }
+        if (employee==null){
+            employeeValue="null";
+        }else {
+            employeeValue= employee.toString();
+        }
+        if (essayModule==null){
+            essayModuleValue="null";
+        }else {
+            essayModuleValue= essayModule.toString();
+        }
+
+
         return "LabTestReport{" +
                 "id=" + id +
                 ", essayCode='" + essayCode + '\'' +
                 ", dateOfEssay=" + dateOfEssay +
                 ", essayDescription='" + essayDescription + '\'' +
-                ", equipmentForTestModel=" + equipmentForTestModel.toString() +
-                ", batchInfo=" + batchInfo.toString() +
-                ", employee=" + employee.toString() +
-                ", essayModule=" + essayModule.toString() +
+                ", equipmentForTestModel=" + equipmentForTestModelValue +
+                ", batchInfo=" +batchInfoValue+
+                ", employee=" + employeeValue +
+                ", essayModule=" + essayModuleValue +
                 '}';
     }
 }

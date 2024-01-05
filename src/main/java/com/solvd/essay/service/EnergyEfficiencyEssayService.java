@@ -25,11 +25,14 @@ public class EnergyEfficiencyEssayService {
     }
     public List<EnergyEfficiencyEssay> findAll() throws SQLException {
         List<EnergyEfficiencyEssay> eeList=energyEfficiencyEssayImpl.getAll();
+        /*
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         for (EnergyEfficiencyEssay enEfEssay:eeList) {
             enEfEssay.setLabTestReport(newLabTestReportService.findOne(enEfEssay.getLabTestReportId()));
         }
+
+         */
             return eeList;
     }
 
@@ -38,9 +41,12 @@ public class EnergyEfficiencyEssayService {
         if (essay==null){
             return new EnergyEfficiencyEssay();
         }
+        /*
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId()));
+
+         */
         return essay;
     }
 
@@ -52,9 +58,9 @@ public class EnergyEfficiencyEssayService {
         energyEfficiencyEssayImpl.delete(energyEfficiencyEssay);
     }
 
-    public void updateEntity(EnergyEfficiencyEssay energyEfficiencyEssay){
+    public void updateEntity(EnergyEfficiencyEssay energyEfficiencyEssay, Long id){
         try {
-            energyEfficiencyEssayImpl.update(energyEfficiencyEssay);
+            energyEfficiencyEssayImpl.update(energyEfficiencyEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

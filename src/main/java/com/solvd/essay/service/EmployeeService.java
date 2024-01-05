@@ -41,9 +41,9 @@ public class EmployeeService {
         employeeImpl.delete(employee);
     }
 
-    public void updateEntity(Employee employee){
+    public void updateEntity(Employee employee,Long id){
         try {
-            employeeImpl.update(employee);
+            employeeImpl.update(employee, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

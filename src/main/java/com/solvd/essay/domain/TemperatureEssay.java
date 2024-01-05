@@ -7,7 +7,6 @@ public class TemperatureEssay {
     private boolean essayResult;
     private LabTestReport labTestReport;
 
-    private Long labTestReportId;
     private double leftSideMeasurement;
 
 
@@ -53,21 +52,22 @@ public class TemperatureEssay {
         this.essayResult = essayResult;
     }
 
-    public Long getLabTestReportId() {
-        return labTestReportId;
-    }
-
-    public void setLabTestReportId(Long labTestReportId) {
-        this.labTestReportId = labTestReportId;
-    }
 
     @Override
     public String toString() {
+        String labTestReportValue=null;
+
+        if (labTestReport==null){
+            labTestReportValue="null";
+        }else {
+            labTestReportValue= labTestReport.toString();
+        }
+
         return "TemperatureEssay{" +
                 "id=" + id +
                 ", frontMeasurement=" + frontMeasurement +
                 ", essayResult=" + essayResult +
-                ", labTestReport=" + labTestReport.toString() +
+                ", labTestReport=" + labTestReportValue +
                 ", leftSideMeasurement=" + leftSideMeasurement +
                 '}';
     }

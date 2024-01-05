@@ -41,9 +41,9 @@ public class LaboratoryToolService {
         laboratoryToolImpl.delete(laboratoryTool);
     }
 
-    public void updateEntity(LaboratoryTool laboratoryTool){
+    public void updateEntity(LaboratoryTool laboratoryTool,Long id){
         try {
-            laboratoryToolImpl.update(laboratoryTool);
+            laboratoryToolImpl.update(laboratoryTool, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

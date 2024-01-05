@@ -12,10 +12,10 @@ public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLa
     public EmployeeLaboratoryToolsRepositoryImpl() {}
 
     @Override
-    protected String getUpdateQuery(EmployeeLaboratoryTools newThingToUpdate) {
+    protected String getUpdateQuery(EmployeeLaboratoryTools newThingToUpdate,Long id) {
         String updateQuery=String.format("update %s set employee_id= %s,laboratory_tool_id= %s where id=%s"
                 ,getTableName(),newThingToUpdate.getEmployeeId(),
-                newThingToUpdate.getLaboratoryToolId(),newThingToUpdate.getId());
+                newThingToUpdate.getLaboratoryToolId(),id);
         return updateQuery;
 
     }
@@ -58,5 +58,10 @@ public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLa
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    protected EmployeeLaboratoryTools returnVoidInstance() {
+        return new EmployeeLaboratoryTools();
     }
 }

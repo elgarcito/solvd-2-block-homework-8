@@ -23,6 +23,7 @@ public class LabTestReportService {
     }
     public List<LabTestReport> findAll() throws SQLException {
         List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
+        /*
 
         AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
@@ -42,6 +43,8 @@ public class LabTestReportService {
             labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
             labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
         }
+
+         */
             return labTestReportList;
     }
 
@@ -52,7 +55,7 @@ public class LabTestReportService {
         if (labTestReport==null){
             return new LabTestReport();
         }
-
+        /*
         AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
@@ -62,13 +65,25 @@ public class LabTestReportService {
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
+          AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+
+         */
+
+
+
+
+
+        /*
 
         labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
         labTestReport.setBatchInfo(newBatchInfoService.findOne(labTestReport.getBatchInfoId()));
         labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
         labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
+         */
+
+
+
 
         return labTestReport;
     }
@@ -81,9 +96,9 @@ public class LabTestReportService {
         labTestReportImpl.delete(labTestReport);
     }
 
-    public void updateEntity(LabTestReport labTestReport){
+    public void updateEntity(LabTestReport labTestReport,Long id){
         try {
-            labTestReportImpl.update(labTestReport);
+            labTestReportImpl.update(labTestReport, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

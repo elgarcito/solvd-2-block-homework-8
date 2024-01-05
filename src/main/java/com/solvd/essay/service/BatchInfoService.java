@@ -40,9 +40,9 @@ public class BatchInfoService {
         batchInfoImpl.delete(batchInfo);
     }
 
-    public void updateEntity(BatchInfo batchInfo){
+    public void updateEntity(BatchInfo batchInfo,Long id){
         try {
-            batchInfoImpl.update(batchInfo);
+            batchInfoImpl.update(batchInfo,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

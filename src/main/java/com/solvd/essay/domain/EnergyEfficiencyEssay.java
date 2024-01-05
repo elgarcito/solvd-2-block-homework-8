@@ -8,7 +8,7 @@ public class EnergyEfficiencyEssay {
 
     private boolean essayResult;
 
-    private Long labTestReportId;
+
     private LabTestReport labTestReport;
 
 
@@ -51,14 +51,6 @@ public class EnergyEfficiencyEssay {
     }
 
 
-    public Long getLabTestReportId() {
-        return labTestReportId;
-    }
-
-    public void setLabTestReportId(Long labTestReportId) {
-        this.labTestReportId = labTestReportId;
-    }
-
     public boolean getEssayResult(){
         return essayResult;
     }
@@ -69,12 +61,20 @@ public class EnergyEfficiencyEssay {
 
     @Override
     public String toString() {
+        String labTestReportValue=null;
+
+        if (labTestReport==null){
+            labTestReportValue="null";
+        }else {
+            labTestReportValue= labTestReport.toString();
+        }
+
         return "EnergyEfficiencyEssay{" +
                 "id=" + id +
                 ", valueOfEssay=" + valueOfEssay +
                 ", category='" + category + '\'' +
                 ", essayResult=" + essayResult +
-                ", labTestReport=" + labTestReport.toString() +
+                ", labTestReport=" + labTestReportValue +
                 '}';
     }
 }

@@ -12,9 +12,9 @@ public class LaboratoryToolRepositoryImpl extends AbstracDao<LaboratoryTool> {
     }
 
     @Override
-    protected String getUpdateQuery(LaboratoryTool newThingToUpdate) {
+    protected String getUpdateQuery(LaboratoryTool newThingToUpdate,Long id) {
         String updateQuery=String.format("update %s set tool_name=\"%s\", tool_description=\"%s\" where id=%s",
-                getTableName(),newThingToUpdate.getToolName(),newThingToUpdate.getToolDescription(),newThingToUpdate.getId());
+                getTableName(),newThingToUpdate.getToolName(),newThingToUpdate.getToolDescription(),id);
         return updateQuery;
     }
 
@@ -56,5 +56,10 @@ public class LaboratoryToolRepositoryImpl extends AbstracDao<LaboratoryTool> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    protected LaboratoryTool returnVoidInstance() {
+        return new LaboratoryTool();
     }
 }
