@@ -30,8 +30,7 @@ public class Main {
         conn.setAutoCommit(false);
 
         //EssayModule class implementation and service creation
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
-        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+        EssayModuleService newEssayModuleService= new EssayModuleService();
 
         EssayModule essayModule=newEssayModuleService.findOne(1L);
         LOGGER.info(essayModule.toString());
@@ -50,8 +49,7 @@ public class Main {
 
 
         //BatchInfo class implementation and service creation
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
-        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
+        BatchInfoService newBatchInfoService= new BatchInfoService();
 
         //Usage of the service
         BatchInfo found1=newBatchInfoService.findOne(500L);
@@ -71,8 +69,7 @@ public class Main {
         System.out.println();
 
         //Employee class implementation and service creation
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
+        EmployeeService newEmployeeService= new EmployeeService();
 
         //Usage of the service
         Employee employee1=newEmployeeService.findOne(2L);
@@ -100,8 +97,7 @@ public class Main {
 
 
         //EmployeeWorkArea class implementation and service creation
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
-        EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
+        EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService();
 
         //Usage of the service
         EmployeeWorkArea area1= newEmployeeWorkAreaService.findOne(3L);
@@ -122,8 +118,7 @@ public class Main {
         System.out.println();
 
         //EnergyEfficiencyEssay class implementation and service creation
-        AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl= new EnergyEfficiencyEssayRepositoryImpl();
-        EnergyEfficiencyEssayService newEnergyEfficiencyEssayService= new EnergyEfficiencyEssayService(energyEfficiencyEssayImpl);
+        EnergyEfficiencyEssayService newEnergyEfficiencyEssayService= new EnergyEfficiencyEssayService();
 
         //Usage of the service
         EnergyEfficiencyEssay eeEssay2= newEnergyEfficiencyEssayService.findOne(5L);
@@ -144,8 +139,7 @@ public class Main {
 
         //GasConsumptionEssay class implementation and service creation
 
-        AbstracDao<GasConsumptionEssay> newGasConsumptionEssayImpl=new GasConsumptionEssayRepositoryImpl();
-        GasConsumptionEssayService newGasConsumptionEssayService=new GasConsumptionEssayService(newGasConsumptionEssayImpl);
+        GasConsumptionEssayService newGasConsumptionEssayService=new GasConsumptionEssayService();
 
         //Usage of the service
         GasConsumptionEssay gcEssay2= newGasConsumptionEssayService.findOne(5L);
@@ -169,8 +163,7 @@ public class Main {
         System.out.println();
 
         //TemperatureEssay class implementation and service creation
-        AbstracDao<TemperatureEssay> temperatureEssayImpl = new TemperatureEssayRepositoryImpl();
-        TemperatureEssayService newTemperatureEssayService= new TemperatureEssayService(temperatureEssayImpl);
+        TemperatureEssayService newTemperatureEssayService= new TemperatureEssayService();
 
         //Usage of the service
         TemperatureEssay temperatureEssay1=newTemperatureEssayService.findOne(4L);
@@ -193,8 +186,7 @@ public class Main {
         System.out.println();
 
         //LaboratoryTool class implementation and service creation
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl();
-        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
+        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService();
 
         //Usage of the service
         LaboratoryTool laboratoryTool=newLaboratoryToolService.findOne(1L);
@@ -215,8 +207,8 @@ public class Main {
         System.out.println();
 
         //LabTestReport class implementation and service creation
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+
+        LabTestReportService newLabTestReportService= new LabTestReportService();
 
         //Usage of the service
         LabTestReport labTestReport1=newLabTestReportService.findOne(100L);
@@ -238,8 +230,7 @@ public class Main {
         System.out.println();
 
         //EquipmentForTestModel class implementation and service creation
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
-        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
+        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService();
 
         //Usage of the service
         EquipmentForTestModel equipmentForTestModel1=newEquipmentForTestModelService.findOne(3L);
@@ -261,10 +252,10 @@ public class Main {
         System.out.println();
         System.out.println();
         System.out.println();
+
         //Intermediate tables
         //EmployeeEmployeeWorkAreas class implementation and service creation
-        AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasImpl =new EmployeeEmployeeWorkAreasRepositoryImpl();
-        EmployeeEmployeeWorkAreasService newEmployeeEmployeeWorkAreasService =new EmployeeEmployeeWorkAreasService(employeeEmployeeWorkAreasImpl);
+        EmployeeEmployeeWorkAreasService newEmployeeEmployeeWorkAreasService =new EmployeeEmployeeWorkAreasService();
         //Usage of the service
         EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas= newEmployeeEmployeeWorkAreasService.findOne(1L);
         LOGGER.info(employeeEmployeeWorkAreas);
@@ -281,8 +272,7 @@ public class Main {
         System.out.println();
 
         //EmployeeLaboratoryTools class implementation and service creation
-        AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolImpl =new EmployeeLaboratoryToolsRepositoryImpl();
-        EmployeeLaboratoryToolsService newEmployeeLaboratoryToolService =new EmployeeLaboratoryToolsService(employeeLaboratoryToolImpl);
+        EmployeeLaboratoryToolsService newEmployeeLaboratoryToolService =new EmployeeLaboratoryToolsService();
 
 
         //Usage of the service

@@ -4,21 +4,14 @@ import com.solvd.essay.domain.Employee;
 import com.solvd.essay.domain.EmployeeLaboratoryTools;
 import com.solvd.essay.domain.EmployeeWorkArea;
 import com.solvd.essay.domain.LaboratoryTool;
-import com.solvd.essay.persistence.impl.AbstracDao;
-import com.solvd.essay.persistence.impl.EmployeeRepositoryImpl;
-import com.solvd.essay.persistence.impl.EmployeeWorkAreaRepositoryImpl;
-import com.solvd.essay.persistence.impl.LaboratoryToolRepositoryImpl;
+import com.solvd.essay.persistence.impl.*;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeLaboratoryToolsService {
-    private final AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsImpl;
-
-    public EmployeeLaboratoryToolsService(AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsAbstracDao){
-        this.employeeLaboratoryToolsImpl =employeeLaboratoryToolsAbstracDao;
-    }
+    private final AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsImpl=new EmployeeLaboratoryToolsRepositoryImpl();
 
     public void create(EmployeeLaboratoryTools employeeLaboratoryTools){
         try {

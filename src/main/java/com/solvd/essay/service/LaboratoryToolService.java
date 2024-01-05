@@ -3,16 +3,14 @@ package com.solvd.essay.service;
 import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.domain.LaboratoryTool;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.LaboratoryToolRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class LaboratoryToolService {
-    private final AbstracDao<LaboratoryTool> laboratoryToolImpl;
+    private final AbstracDao<LaboratoryTool> laboratoryToolImpl= new LaboratoryToolRepositoryImpl();
 
-    public LaboratoryToolService(AbstracDao<LaboratoryTool> laboratoryToolAbstracDao){
-        this.laboratoryToolImpl =laboratoryToolAbstracDao;
-    }
 
     public void create(LaboratoryTool laboratoryTool){
         try {

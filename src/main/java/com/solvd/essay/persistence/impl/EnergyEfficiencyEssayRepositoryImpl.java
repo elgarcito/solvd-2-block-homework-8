@@ -52,8 +52,8 @@ public class EnergyEfficiencyEssayRepositoryImpl extends AbstracDao<EnergyEffici
         entity.setCategory(resultSet.getString("category"));
         entity.setEssayResult(resultSet.getBoolean("essay_result"));
 
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+
+        LabTestReportService newLabTestReportService= new LabTestReportService();
         entity.setLabTestReport(newLabTestReportService.findOne(resultSet.getLong("lab_test_report_id")));
 
         return  entity;

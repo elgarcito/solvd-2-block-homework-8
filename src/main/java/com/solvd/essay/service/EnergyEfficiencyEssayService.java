@@ -3,6 +3,7 @@ package com.solvd.essay.service;
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
 import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.EnergyEfficiencyEssayRepositoryImpl;
 import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
 
 import java.sql.Connection;
@@ -10,11 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EnergyEfficiencyEssayService {
-    private final AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl;
-
-    public EnergyEfficiencyEssayService(AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayAbstracDao){
-        this.energyEfficiencyEssayImpl =energyEfficiencyEssayAbstracDao;
-    }
+    private final AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl = new EnergyEfficiencyEssayRepositoryImpl();
 
     public void create(EnergyEfficiencyEssay energyEfficiencyEssay){
         try {

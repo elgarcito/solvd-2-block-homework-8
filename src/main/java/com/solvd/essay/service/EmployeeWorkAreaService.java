@@ -4,16 +4,13 @@ import com.solvd.essay.domain.Employee;
 import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
 import com.solvd.essay.domain.EmployeeWorkArea;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.EmployeeWorkAreaRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeWorkAreaService {
-    private final AbstracDao<EmployeeWorkArea> employeeWorkAreaImpl;
-
-    public EmployeeWorkAreaService(AbstracDao<EmployeeWorkArea> employeeWorkAreaAbstracDao){
-        this.employeeWorkAreaImpl =employeeWorkAreaAbstracDao;
-    }
+    private final AbstracDao<EmployeeWorkArea> employeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
 
     public void create(EmployeeWorkArea employeeWorkArea){
         try {

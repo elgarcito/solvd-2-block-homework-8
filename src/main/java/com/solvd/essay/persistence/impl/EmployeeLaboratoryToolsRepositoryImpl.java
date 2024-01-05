@@ -53,11 +53,9 @@ public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLa
         entity.setId(resultSet.getLong("id"));
 
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
+        EmployeeService newEmployeeService= new EmployeeService();
 
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl();
-        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
+        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService();
 
         entity.setEmployee(newEmployeeService.findOne(resultSet.getLong("employee_id")));
         entity.setLaboratoryTool(newLaboratoryToolService.findOne(resultSet.getLong("laboratory_tool_id")));

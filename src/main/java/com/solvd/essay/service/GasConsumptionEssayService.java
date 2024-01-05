@@ -3,6 +3,7 @@ package com.solvd.essay.service;
 import com.solvd.essay.domain.GasConsumptionEssay;
 import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl;
 import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
 
 import java.sql.Connection;
@@ -10,11 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class GasConsumptionEssayService {
-    private final AbstracDao<GasConsumptionEssay> gasConsumptionEssayImpl;
-
-    public GasConsumptionEssayService(AbstracDao<GasConsumptionEssay> gasConsumptionEssayAbstracDao){
-        this.gasConsumptionEssayImpl =gasConsumptionEssayAbstracDao;
-    }
+    private final AbstracDao<GasConsumptionEssay> gasConsumptionEssayImpl=new GasConsumptionEssayRepositoryImpl();;
 
     public void create(GasConsumptionEssay gasConsumptionEssay){
         try {

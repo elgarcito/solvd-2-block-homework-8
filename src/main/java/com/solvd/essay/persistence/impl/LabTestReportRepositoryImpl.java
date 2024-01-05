@@ -64,22 +64,21 @@ public class LabTestReportRepositoryImpl extends AbstracDao<LabTestReport> {
         entity.setEssayModuleId(resultSet.getLong("essay_module_id"));
          */
 
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
-        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
+
+        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService();
 
         entity.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(resultSet.getLong("equipment_for_test_model_id")));
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
-        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
+        BatchInfoService newBatchInfoService= new BatchInfoService();
 
         entity.setBatchInfo(newBatchInfoService.findOne(resultSet.getLong("batch_info_id")));
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
+
+        EmployeeService newEmployeeService= new EmployeeService();
         entity.setEmployee(newEmployeeService.findOne(resultSet.getLong("employee_id")));
 
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
-        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+        //AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
+        EssayModuleService newEssayModuleService= new EssayModuleService();
 
         entity.setEssayModule(newEssayModuleService.findOne(resultSet.getLong("essay_module_id")));
 

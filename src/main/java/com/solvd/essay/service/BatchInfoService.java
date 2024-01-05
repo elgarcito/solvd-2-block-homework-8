@@ -2,16 +2,13 @@ package com.solvd.essay.service;
 
 import com.solvd.essay.domain.BatchInfo;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.BatchInfoRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class BatchInfoService {
-    private final AbstracDao<BatchInfo> batchInfoImpl;
-
-    public BatchInfoService(AbstracDao<BatchInfo> batchInfoAbstracDao){
-        this.batchInfoImpl =batchInfoAbstracDao;
-    }
+    private final AbstracDao<BatchInfo> batchInfoImpl=new BatchInfoRepositoryImpl();
 
     public void create(BatchInfo batchInfo){
         try {

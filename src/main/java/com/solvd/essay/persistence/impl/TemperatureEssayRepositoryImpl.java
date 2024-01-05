@@ -53,8 +53,7 @@ public class TemperatureEssayRepositoryImpl extends AbstracDao<TemperatureEssay>
         entity.setFrontMeasurement(resultSet.getDouble("front_measurement"));
         entity.setEssayResult(resultSet.getBoolean("essay_result"));
         //entity.setLabTestReportId(resultSet.getLong("lab_test_report_id"));
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+        LabTestReportService newLabTestReportService= new LabTestReportService();
         entity.setLabTestReport(newLabTestReportService.findOne(resultSet.getLong("lab_test_report_id")));
         entity.setLeftSideMeasurement(resultSet.getDouble("left_side_measurement"));
         return entity;

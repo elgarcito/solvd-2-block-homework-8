@@ -54,8 +54,8 @@ public class GasConsumptionEssayRepositoryImpl extends AbstracDao<GasConsumption
         entity.setEssayResult(resultSet.getBoolean("essay_result"));
 
         //entity.setLabTestReportId(resultSet.getLong("lab_test_report_id"));
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
+
+        LabTestReportService newLabTestReportService= new LabTestReportService();
         entity.setLabTestReport(newLabTestReportService.findOne(resultSet.getLong("lab_test_report_id")));
 
 

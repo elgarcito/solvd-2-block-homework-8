@@ -6,17 +6,14 @@ import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.domain.TemperatureEssay;
 import com.solvd.essay.persistence.impl.AbstracDao;
 import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
+import com.solvd.essay.persistence.impl.TemperatureEssayRepositoryImpl;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class TemperatureEssayService {
-    private final AbstracDao<TemperatureEssay> temperatureEssayImpl;
-
-    public TemperatureEssayService(AbstracDao<TemperatureEssay> temperatureEssayAbstracDao){
-        this.temperatureEssayImpl =temperatureEssayAbstracDao;
-    }
+    private final AbstracDao<TemperatureEssay> temperatureEssayImpl= new TemperatureEssayRepositoryImpl();
 
     public void create(TemperatureEssay temperatureEssay){
         try {

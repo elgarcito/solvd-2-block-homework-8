@@ -53,11 +53,9 @@ public class EmployeeEmployeeWorkAreasRepositoryImpl extends AbstracDao<Employee
         //entity.setEmployeeId(resultSet.getLong("employee_id"));
         //entity.setEmployeeworkAreaId(resultSet.getLong("employee_work_area_id"));
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
+        EmployeeService newEmployeeService= new EmployeeService();
 
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
-        EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
+        EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService();
 
         entity.setEmployee(newEmployeeService.findOne(resultSet.getLong("employee_id")));
         entity.setEmployeeWorkArea(newEmployeeWorkAreaService.findOne(resultSet.getLong("employee_work_area_id")));

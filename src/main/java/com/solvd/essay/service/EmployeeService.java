@@ -3,16 +3,14 @@ package com.solvd.essay.service;
 import com.solvd.essay.domain.BatchInfo;
 import com.solvd.essay.domain.Employee;
 import com.solvd.essay.persistence.impl.AbstracDao;
+import com.solvd.essay.persistence.impl.EmployeeRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeService {
-    private final AbstracDao<Employee> employeeImpl;
+    private final AbstracDao<Employee> employeeImpl= new EmployeeRepositoryImpl();;
 
-    public EmployeeService(AbstracDao<Employee> employeeAbstracDao){
-        this.employeeImpl =employeeAbstracDao;
-    }
 
     public void create(Employee employee){
         try {

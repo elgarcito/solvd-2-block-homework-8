@@ -8,11 +8,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class LabTestReportService {
-    private final AbstracDao<LabTestReport> labTestReportImpl;
-
-    public LabTestReportService(AbstracDao<LabTestReport> labTestReportAbstracDao){
-        this.labTestReportImpl =labTestReportAbstracDao;
-    }
+    private final AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
 
     public void create(LabTestReport labTestReport){
         try {
