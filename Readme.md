@@ -4,6 +4,7 @@ The structure of the databases
 
 Exercises
 
+
 ### 19/12/2023
 Build hierarchy for Schema from the below course.
 Create DAO classes with necessary interfaces, abstract classes, and Generics.
