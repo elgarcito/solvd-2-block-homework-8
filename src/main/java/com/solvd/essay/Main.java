@@ -2,21 +2,17 @@ package com.solvd.essay;
 
 
 import com.solvd.essay.domain.*;
-import com.solvd.essay.domain.exceptions.ResourceNotFoundException;
-import com.solvd.essay.persistence.BatchInfoRepository;
 import com.solvd.essay.service.*;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.xml.sax.SAXException;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
 import java.io.IOException;
-import java.io.InputStream;
 import java.sql.SQLException;
-import java.util.List;
-import java.util.Optional;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -98,6 +94,48 @@ public class Main {
       //Gas consumption
         //gasConsumptionEssayService.findAll().forEach(x-> System.out.println(x.getLabTestReport().getEssayDescription()));
     //employeeLaboratoryToolsService.findAll().forEach(x-> System.out.println(x.getEmployee().getFirstName()));
+
+
+        //Sax parse implementation
+        File file =new File("src/main/resources/xmlFiles/batchInfo.xml");
+        File file1=new File("src/main/resources/xmlFiles/equipmentForTestModel.xml");
+        File file2=new File("src/main/resources/xmlFiles/employee.xml");
+        File file3=new File("src/main/resources/xmlFiles/essayModule.xml");
+        File file4=new File("src/main/resources/xmlFiles/labTestReport.xml");
+        try {
+            SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
+            SAXParser parser =saxParserFactory.newSAXParser();
+            BatchInfoHandler handler=new BatchInfoHandler();
+            EquipmentForTestModelHandler handler1=new EquipmentForTestModelHandler();
+            EmployeeHandler handler2=new EmployeeHandler();
+            EssayModuleHandler handler3 =new EssayModuleHandler();
+            LabTestReportHandler handler4=new LabTestReportHandler();
+            parser.parse(file4,handler4);
+            parser.parse(file,handler);
+            parser.parse(file1,handler1);
+            parser.parse(file2,handler2);
+            parser.parse(file3,handler3);
+
+            BatchInfo batchInfo=handler.getBatchInfo();
+            EquipmentForTestModel equipmentForTestModel= handler1.getEquipmentForTestModel();
+            Employee employee=handler2.getEmployee();
+            EssayModule essayModule= handler3.getEssayModule();
+
+            LabTestReport labTestReport= handler4.getLabTestReport();
+            Long id=1L;
+
+            System.out.println(batchInfo.toString());
+            System.out.println(equipmentForTestModel.toString());
+            System.out.println(employee.toString());
+            System.out.println(essayModule.toString());
+
+
+            System.out.println(labTestReport.toString());
+
+        } catch (ParserConfigurationException | SAXException | IOException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 }

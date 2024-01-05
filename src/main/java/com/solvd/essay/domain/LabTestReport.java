@@ -85,5 +85,20 @@ public class LabTestReport {
     public void setLabTestReportList(List<LabTestReport> labTestReportList) {
         this.labTestReportList = labTestReportList;
     }
+
+    @Override
+    public String toString() {
+        return "LabTestReport{" +
+                "id=" + id +
+                ", essayCode='" + essayCode + '\'' +
+                ", dateOfEssay=" + dateOfEssay +
+                ", essayDescription='" + essayDescription + '\'' +
+                ", equipmentForTestModel=" + equipmentForTestModel.toString() +
+                ", batchInfo=" + batchInfo.toString() +
+                ", employee=" + employee.toString() +
+                ", essayModule=" + essayModule.toString() +
+                ", labTestReportList=" + labTestReportList +
+                '}';
+    }
 }
 

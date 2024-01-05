@@ -32,4 +32,13 @@ public class BatchInfo {
     public void setMyBatchInfoList(List<BatchInfo> myBatchInfoList) {
         this.myBatchInfoList = myBatchInfoList;
     }
+
+    @Override
+    public String toString() {
+        return "BatchInfo{" +
+                "id=" + id +
+                ", batchNumber='" + batchNumber + '\'' +
+                ", myBatchInfoList=" + myBatchInfoList +
+                '}';
+    }
 }

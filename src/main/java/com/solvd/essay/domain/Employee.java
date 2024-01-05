@@ -71,4 +71,17 @@ public class Employee {
     public void setEmployeeList(List<Employee> employeeList) {
         this.employeeList = employeeList;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", personalId='" + personalId + '\'' +
+                ", birthDate=" + birthDate +
+                ", salary=" + salary +
+                ", employeeList=" + employeeList +
+                '}';
+    }
 }

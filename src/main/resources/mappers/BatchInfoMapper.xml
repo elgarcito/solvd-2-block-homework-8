@@ -41,5 +41,4 @@
         <collection property="myBatchInfoList" javaType="ArrayList" ofType="com.solvd.essay.domain.BatchInfo"/>
     </resultMap>
 
-    
 </mapper>

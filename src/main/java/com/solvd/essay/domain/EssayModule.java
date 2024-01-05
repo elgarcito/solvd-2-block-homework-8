@@ -33,4 +33,13 @@ public class EssayModule {
     public void setEssayModuleList(List<EssayModule> essayModuleList) {
         this.essayModuleList = essayModuleList;
     }
+
+    @Override
+    public String toString() {
+        return "EssayModule{" +
+                "id=" + id +
+                ", moduleDescription='" + moduleDescription + '\'' +
+                ", essayModuleList=" + essayModuleList +
+                '}';
+    }
 }

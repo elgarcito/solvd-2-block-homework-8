@@ -57,3 +57,4 @@
 19:03:39.631 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
 21:08:49.554 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
 21:20:58.346 [main] INFO  com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl - List returned successfully
+19:17:48.678 [main] INFO  com.solvd.essay.service.LabTestReportService - List returned successfully
