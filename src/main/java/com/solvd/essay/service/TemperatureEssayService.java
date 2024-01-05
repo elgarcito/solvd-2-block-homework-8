@@ -1,7 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.TemperatureEssay;
-import com.solvd.essay.persistence.impl.TemperatureEssayRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.TemperatureEssayRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.TemperatureEssayRepositoryImpl;
 

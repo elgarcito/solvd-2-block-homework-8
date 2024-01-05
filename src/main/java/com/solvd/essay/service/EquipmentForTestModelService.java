@@ -1,7 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EquipmentForTestModel;
-import com.solvd.essay.persistence.impl.EquipmentForTestModelRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.EquipmentForTestModelRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.EquipmentForTestModelRepositoryImpl;
 

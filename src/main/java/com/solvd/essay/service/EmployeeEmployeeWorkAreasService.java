@@ -1,8 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
-import com.solvd.essay.persistence.EmployeeEmployeeWorkAreasRepository;
-import com.solvd.essay.persistence.impl.EmployeeEmployeeWorkAreasRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.EmployeeEmployeeWorkAreasRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.EmployeeEmployeeWorkAreasRepositoryImpl;
 

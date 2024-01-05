@@ -1,7 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.LaboratoryTool;
-import com.solvd.essay.persistence.impl.LaboratoryToolRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.LaboratoryToolRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.LaboratoryToolRepositoryImpl;
 

@@ -1,7 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EmployeeLaboratoryTools;
-import com.solvd.essay.persistence.impl.EmployeeLaboratoryToolsRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.EmployeeLaboratoryToolsRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.*;
 
 import java.sql.SQLException;

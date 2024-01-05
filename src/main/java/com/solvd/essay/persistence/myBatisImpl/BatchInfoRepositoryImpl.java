@@ -1,18 +1,12 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.myBatisImpl;
 
 import com.solvd.essay.domain.BatchInfo;
-import com.solvd.essay.domain.EssayModule;
-import com.solvd.essay.domain.exceptions.ResourceNotFoundException;
 import com.solvd.essay.persistence.BatchInfoRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
 import org.apache.ibatis.session.SqlSession;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 
 public class BatchInfoRepositoryImpl  implements  BatchInfoRepository{
 

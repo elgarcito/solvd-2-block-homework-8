@@ -1,7 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
-import com.solvd.essay.persistence.impl.EnergyEfficiencyEssayRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.EnergyEfficiencyEssayRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.EnergyEfficiencyEssayRepositoryImpl;
 

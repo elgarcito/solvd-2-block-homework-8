@@ -1,7 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.GasConsumptionEssay;
-import com.solvd.essay.persistence.impl.GasConsumptionEssayRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.GasConsumptionEssayRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.GasConsumptionEssayRepositoryImpl;
 

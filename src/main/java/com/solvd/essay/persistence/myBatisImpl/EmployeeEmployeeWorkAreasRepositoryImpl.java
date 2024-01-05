@@ -1,18 +1,13 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.myBatisImpl;
 
 import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
-import com.solvd.essay.domain.EmployeeWorkArea;
 import com.solvd.essay.persistence.EmployeeEmployeeWorkAreasRepository;
-import com.solvd.essay.persistence.EmployeeRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 

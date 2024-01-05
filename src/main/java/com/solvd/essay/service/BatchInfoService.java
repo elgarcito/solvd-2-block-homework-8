@@ -1,8 +1,7 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.BatchInfo;
-import com.solvd.essay.persistence.BatchInfoRepository;
-import com.solvd.essay.persistence.impl.BatchInfoRepositoryImpl;
+import com.solvd.essay.persistence.myBatisImpl.BatchInfoRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.BatchInfoRepositoryImpl;
 

@@ -1,7 +1,6 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.myBatisImpl;
 
 import com.solvd.essay.domain.EssayModule;
-import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
 import com.solvd.essay.persistence.EssayModuleRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
 import org.apache.ibatis.exceptions.PersistenceException;
