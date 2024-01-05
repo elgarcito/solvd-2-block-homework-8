@@ -4,27 +4,6 @@ The structure of the databases
 
 Exercises
 
-### 26/12/2023
-Add MyBatis DAOs to the existing hierarchy with the same requirements. Choose any XML or interface mapping.
-Switch service classes to MyBatis.
-
-* All added all necessary files to configure myBatis , these were:
-  * BatchInfoMapper.xml
-  * EmployeeEmployeeLaboratoryToolsMapper.xml
-  * EmployeeEmployeeWorkAreasMapper.xml
-  * EmployeeMapper.xml
-  * EmployeeWorkAreaMapper.xml
-  * EnergyEfficiencyEssayMapper.xml
-  * EquipmentForTestModelMapper.xml
-  * EssayModuleMapper.xml
-  * GasConsumptionEssayMapper.xml
-  * LaboratoryToolMapper.xml
-  * LabTestReportMapper.xml
-  * TemperatureEssayMapper.xml
-  * myBatis-config.xml
-
-  This configuration was implemented in myBatisBranch
-
 ### 19/12/2023
 Build hierarchy for Schema from the below course.
 Create DAO classes with necessary interfaces, abstract classes, and Generics.
