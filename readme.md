@@ -23,7 +23,7 @@ It also contains the AbstracDao and the abstract interface InterfaceGenericDao.
 The ConnectionPool clas is implemented for each method in the abstract class.The source of this file is in:
 src/main/java/com/solvd/essay/persistence/ConnectionPool.java
 
-14/12/2024
+### 14/12/2024
 Exercises
 
 10 statements for insertion.
@@ -36,7 +36,7 @@ Exercises
 7 statements with aggregate functions and group by and with having.
 There were added all the queries in the essay project folder. Each file has the name of the asked queries.
 
-12/12/2024
+### 12/12/2024
 Create a database schema using Mysql Workbench for the new hierarchy with at least 12 tables and all relations. The schema should satisfy the 3 Normal Forms.
 
 The schema was created and satisfy the 3 normal forms. The tables created were:
