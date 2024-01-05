@@ -9,7 +9,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BatchInfoService {
-    private final BatchInfoRepositoryImpl batchInfoRepositoryImpl =new BatchInfoRepositoryImpl();
+    final BatchInfoRepositoryImpl batchInfoRepositoryImpl =new BatchInfoRepositoryImpl();
+    //final AbstracDao<BatchInfo> batchInfoRepositoryImpl =new BatchInfoRepositoryImpl();
+
+
+
     public void create(BatchInfo batchInfo)  {
             batchInfoRepositoryImpl.create(batchInfo);
     }

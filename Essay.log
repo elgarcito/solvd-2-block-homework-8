@@ -1795,3 +1795,225 @@
 ### The error occurred while setting parameters
 ### SQL: insert into employee_laboratory_tools(employee_id, laboratory_tool_id) value (?,         ?)
 ### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+20:02:40.948 [main] INFO  com.solvd.essay.Main - EssayModule{id=1, moduleDescription='Big equipment module'}
+20:02:40.961 [main] INFO  com.solvd.essay.Main - EssayModule{id=1, moduleDescription='Big equipment module'}
+20:02:40.962 [main] INFO  com.solvd.essay.Main - EssayModule{id=2, moduleDescription='Small equipment module'}
+20:02:40.962 [main] INFO  com.solvd.essay.Main - EssayModule{id=3, moduleDescription='Intermediate equipment module'}
+20:02:40.962 [main] INFO  com.solvd.essay.Main - EssayModule{id=5, moduleDescription='module 125'}
+20:02:40.962 [main] INFO  com.solvd.essay.Main - EssayModule{id=6, moduleDescription='module 125'}
+20:02:40.962 [main] INFO  com.solvd.essay.Main - EssayModule{id=7, moduleDescription='module 125'}
+20:02:40.962 [main] INFO  com.solvd.essay.Main - EssayModule{id=8, moduleDescription='module 125'}
+20:02:40.963 [main] INFO  com.solvd.essay.Main - EssayModule{id=9, moduleDescription='module 125'}
+20:02:40.963 [main] INFO  com.solvd.essay.Main - EssayModule{id=10, moduleDescription='module 125'}
+20:02:40.963 [main] INFO  com.solvd.essay.Main - EssayModule{id=11, moduleDescription='module 125'}
+20:02:40.963 [main] INFO  com.solvd.essay.Main - EssayModule{id=12, moduleDescription='module 125'}
+20:02:40.963 [main] INFO  com.solvd.essay.Main - EssayModule{id=13, moduleDescription='module 125'}
+20:02:40.963 [main] INFO  com.solvd.essay.Main - EssayModule{id=14, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=15, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=16, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=17, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=18, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=19, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=20, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=21, moduleDescription='module 125'}
+20:02:40.964 [main] INFO  com.solvd.essay.Main - EssayModule{id=22, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=23, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=24, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=25, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=26, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=27, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=28, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=29, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=30, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=31, moduleDescription='module 125'}
+20:02:40.965 [main] INFO  com.solvd.essay.Main - EssayModule{id=32, moduleDescription='module 125'}
+20:02:40.966 [main] INFO  com.solvd.essay.Main - EssayModule{id=33, moduleDescription='module 125'}
+20:02:40.966 [main] INFO  com.solvd.essay.Main - EssayModule{id=34, moduleDescription='module 125'}
+20:02:40.966 [main] INFO  com.solvd.essay.Main - EssayModule{id=35, moduleDescription='module 125'}
+20:02:40.966 [main] INFO  com.solvd.essay.Main - EssayModule{id=36, moduleDescription='module 125'}
+20:02:40.966 [main] INFO  com.solvd.essay.Main - EssayModule{id=37, moduleDescription='module 125'}
+20:02:40.966 [main] INFO  com.solvd.essay.Main - EssayModule{id=38, moduleDescription='module 125'}
+20:02:40.989 [main] INFO  com.solvd.essay.Main - BatchInfo{id=null, batchNumber='null'}
+20:02:40.999 [main] INFO  com.solvd.essay.Main - BatchInfo{id=1, batchNumber='PR1001'}
+20:02:41.000 [main] INFO  com.solvd.essay.Main - BatchInfo{id=2, batchNumber='PR1002'}
+20:02:41.000 [main] INFO  com.solvd.essay.Main - BatchInfo{id=3, batchNumber='PR1003'}
+20:02:41.000 [main] INFO  com.solvd.essay.Main - BatchInfo{id=4, batchNumber='l584adf555'}
+20:02:41.000 [main] INFO  com.solvd.essay.Main - BatchInfo{id=6, batchNumber='l584adf555'}
+20:02:41.000 [main] INFO  com.solvd.essay.Main - BatchInfo{id=7, batchNumber='l584adf555'}
+20:02:41.000 [main] INFO  com.solvd.essay.Main - BatchInfo{id=8, batchNumber='l584adf555'}
+20:02:41.001 [main] INFO  com.solvd.essay.Main - BatchInfo{id=9, batchNumber='l584adf555'}
+20:02:41.001 [main] INFO  com.solvd.essay.Main - BatchInfo{id=10, batchNumber='l584adf555'}
+20:02:41.001 [main] INFO  com.solvd.essay.Main - BatchInfo{id=11, batchNumber='ksff14485'}
+20:02:41.001 [main] INFO  com.solvd.essay.Main - BatchInfo{id=13, batchNumber='l584adf555'}
+20:02:41.001 [main] INFO  com.solvd.essay.Main - BatchInfo{id=14, batchNumber='l584adf555'}
+20:02:41.001 [main] INFO  com.solvd.essay.Main - BatchInfo{id=15, batchNumber='l584adf555'}
+20:02:41.002 [main] INFO  com.solvd.essay.Main - BatchInfo{id=16, batchNumber='l584adf555'}
+20:02:41.003 [main] INFO  com.solvd.essay.Main - BatchInfo{id=17, batchNumber='l584adf555'}
+20:02:41.003 [main] INFO  com.solvd.essay.Main - BatchInfo{id=18, batchNumber='l584adf555'}
+20:02:41.003 [main] INFO  com.solvd.essay.Main - BatchInfo{id=19, batchNumber='l584adf555'}
+20:02:41.003 [main] INFO  com.solvd.essay.Main - BatchInfo{id=20, batchNumber='l584adf555'}
+20:02:41.004 [main] INFO  com.solvd.essay.Main - BatchInfo{id=21, batchNumber='l584adf555'}
+20:02:41.004 [main] INFO  com.solvd.essay.Main - BatchInfo{id=22, batchNumber='l584adf555'}
+20:02:41.004 [main] INFO  com.solvd.essay.Main - BatchInfo{id=23, batchNumber='l584adf555'}
+20:02:41.004 [main] INFO  com.solvd.essay.Main - BatchInfo{id=24, batchNumber='l584adf555'}
+20:02:41.004 [main] INFO  com.solvd.essay.Main - BatchInfo{id=25, batchNumber='l584adf555'}
+20:02:41.004 [main] INFO  com.solvd.essay.Main - BatchInfo{id=26, batchNumber='l584adf555'}
+20:02:41.005 [main] INFO  com.solvd.essay.Main - BatchInfo{id=27, batchNumber='l584adf555'}
+20:02:41.005 [main] INFO  com.solvd.essay.Main - BatchInfo{id=28, batchNumber='ksff14'}
+20:02:41.005 [main] INFO  com.solvd.essay.Main - BatchInfo{id=29, batchNumber='ksff14'}
+20:02:41.005 [main] INFO  com.solvd.essay.Main - BatchInfo{id=30, batchNumber='ksff14'}
+20:02:41.005 [main] INFO  com.solvd.essay.Main - BatchInfo{id=31, batchNumber='l584adf555'}
+20:02:41.005 [main] INFO  com.solvd.essay.Main - BatchInfo{id=32, batchNumber='ksff14'}
+20:02:41.005 [main] INFO  com.solvd.essay.Main - BatchInfo{id=33, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=34, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=35, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=36, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=37, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=38, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=39, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=40, batchNumber='ksff14'}
+20:02:41.006 [main] INFO  com.solvd.essay.Main - BatchInfo{id=41, batchNumber='ksff14'}
+20:02:41.007 [main] INFO  com.solvd.essay.Main - BatchInfo{id=42, batchNumber='ksff14'}
+20:02:41.007 [main] INFO  com.solvd.essay.Main - BatchInfo{id=43, batchNumber='ksff14'}
+20:02:41.007 [main] INFO  com.solvd.essay.Main - BatchInfo{id=44, batchNumber='ksff14'}
+20:02:41.007 [main] INFO  com.solvd.essay.Main - BatchInfo{id=45, batchNumber='l584adf555'}
+20:02:41.007 [main] INFO  com.solvd.essay.Main - BatchInfo{id=46, batchNumber='l584adf555'}
+20:02:41.007 [main] INFO  com.solvd.essay.Main - BatchInfo{id=47, batchNumber='l584adf555'}
+20:02:41.007 [main] INFO  com.solvd.essay.Main - BatchInfo{id=48, batchNumber='l584adf555'}
+20:02:41.008 [main] INFO  com.solvd.essay.Main - BatchInfo{id=49, batchNumber='l584adf555'}
+20:02:41.008 [main] INFO  com.solvd.essay.Main - BatchInfo{id=50, batchNumber='l584adf555'}
+20:02:41.008 [main] INFO  com.solvd.essay.Main - BatchInfo{id=51, batchNumber='l584adf555'}
+20:02:41.008 [main] INFO  com.solvd.essay.Main - BatchInfo{id=52, batchNumber='l584adf555'}
+20:02:41.008 [main] INFO  com.solvd.essay.Main - BatchInfo{id=53, batchNumber='l584adf555'}
+20:02:41.044 [main] INFO  com.solvd.essay.Main - Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}
+20:02:41.047 [main] INFO  com.solvd.essay.Main - Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}
+20:02:41.048 [main] INFO  com.solvd.essay.Main - Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}
+20:02:41.048 [main] INFO  com.solvd.essay.Main - Employee{id=4, firstName='seth', lastName='Roger', personalId='L145', birthDate=Fri Jan 20 00:00:00 ART 1995, salary=1000.0}
+20:02:41.048 [main] INFO  com.solvd.essay.Main - Employee{id=5, firstName='seth', lastName='Roger', personalId='', birthDate=Wed Sep 22 00:00:00 ART 1993, salary=1000.0}
+20:02:41.076 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '' for key 'employee.personal_id'
+### The error may exist in mappers/EmployeeMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee(first_name, last_name, personal_id, birth_date, salary)         value (?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '' for key 'employee.personal_id'
+20:02:41.092 [main] INFO  com.solvd.essay.Main - EmployeeWorkArea{id=3, areaName='Essay Laboratory', areaCode='null'}
+20:02:41.094 [main] INFO  com.solvd.essay.Main - EmployeeWorkArea{id=2, areaName='Line production', areaCode='02-area B'}
+20:02:41.094 [main] INFO  com.solvd.essay.Main - EmployeeWorkArea{id=3, areaName='Essay Laboratory', areaCode='null'}
+20:02:41.095 [main] INFO  com.solvd.essay.Main - EmployeeWorkArea{id=5, areaName='area new1', areaCode='area 2256'}
+20:02:41.098 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeWorkAreaRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'area new1' for key 'employee_work_area.area_name'
+### The error may exist in mappers/EmployeeWorkAreaMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee_work_area(area_name,area_code) value (?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'area new1' for key 'employee_work_area.area_name'
+20:02:41.145 [main] INFO  com.solvd.essay.Main - EnergyEfficiencyEssay{id=5, valueOfEssay=71.0, category='A', essayResult=true, labTestReport=LabTestReport{id=5, essayCode='EA13', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='intermediate equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}}
+20:02:41.162 [main] INFO  com.solvd.essay.Main - EnergyEfficiencyEssay{id=1, valueOfEssay=74.0, category='A', essayResult=true, labTestReport=LabTestReport{id=1, essayCode='EA3', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}}
+20:02:41.163 [main] INFO  com.solvd.essay.Main - EnergyEfficiencyEssay{id=2, valueOfEssay=61.0, category='C', essayResult=false, labTestReport=LabTestReport{id=2, essayCode='EA4', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}}
+20:02:41.164 [main] INFO  com.solvd.essay.Main - EnergyEfficiencyEssay{id=4, valueOfEssay=65.0, category='B', essayResult=false, labTestReport=LabTestReport{id=4, essayCode='EA12.1', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}}
+20:02:41.164 [main] INFO  com.solvd.essay.Main - EnergyEfficiencyEssay{id=5, valueOfEssay=71.0, category='A', essayResult=true, labTestReport=LabTestReport{id=5, essayCode='EA13', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='intermediate equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}}
+20:02:41.165 [main] INFO  com.solvd.essay.Main - EnergyEfficiencyEssay{id=6, valueOfEssay=71.1, category='A', essayResult=true, labTestReport=LabTestReport{id=6, essayCode='EA14', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}}
+20:02:41.176 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EnergyEfficiencyEssayRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+### The error may exist in mappers/EnergyEfficiencyEssayMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into energy_efficiency_essay(value_of_essay,category ,essay_result,lab_test_report_id)         values (?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+20:02:41.223 [main] INFO  com.solvd.essay.Main - GasConsumptionEssay{id=5, maxConsume=1.7, standardMean=0.2, measurementError=0.1, essayResult=false, labTestReport=LabTestReport{id=5, essayCode='EA12', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='intermediate equipment gas consumption essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}}
+20:02:41.265 [main] INFO  com.solvd.essay.Main - GasConsumptionEssay{id=1, maxConsume=2.1, standardMean=0.1, measurementError=0.1, essayResult=false, labTestReport=LabTestReport{id=1, essayCode='EA1', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment gas compsumption essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}}
+20:02:41.265 [main] INFO  com.solvd.essay.Main - GasConsumptionEssay{id=2, maxConsume=1.5, standardMean=0.1, measurementError=0.1, essayResult=false, labTestReport=LabTestReport{id=2, essayCode='EA2', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment gas consumption essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}}
+20:02:41.265 [main] INFO  com.solvd.essay.Main - GasConsumptionEssay{id=3, maxConsume=1.8, standardMean=0.1, measurementError=0.1, essayResult=false, labTestReport=LabTestReport{id=3, essayCode='EA10', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}}
+20:02:41.266 [main] INFO  com.solvd.essay.Main - GasConsumptionEssay{id=4, maxConsume=2.0, standardMean=0.05, measurementError=0.2, essayResult=false, labTestReport=LabTestReport{id=4, essayCode='EA11', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment gas consumption essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}}
+20:02:41.266 [main] INFO  com.solvd.essay.Main - GasConsumptionEssay{id=5, maxConsume=1.7, standardMean=0.2, measurementError=0.1, essayResult=false, labTestReport=LabTestReport{id=5, essayCode='EA12', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='intermediate equipment gas consumption essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}}
+20:02:41.271 [main] ERROR com.solvd.essay.persistence.myBatisImpl.GasConsumptionEssayRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+### The error may exist in mappers/GasConsumptionEssayMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into gas_consumption_essay(max_consume,standard_mean,measurement_error,essay_result,lab_test_report_id)         values (?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+20:02:41.294 [main] INFO  com.solvd.essay.Main - TemperatureEssay{id=4, frontMeasurement=60.1, essayResult=false, labTestReport=LabTestReport{id=4, essayCode='EA15', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Intermediate equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}, leftSideMeasurement=0.0}
+20:02:41.306 [main] INFO  com.solvd.essay.Main - TemperatureEssay{id=1, frontMeasurement=30.5, essayResult=true, labTestReport=LabTestReport{id=1, essayCode='EA6', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Small equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}, leftSideMeasurement=0.0}
+20:02:41.306 [main] INFO  com.solvd.essay.Main - TemperatureEssay{id=2, frontMeasurement=38.0, essayResult=false, labTestReport=LabTestReport{id=2, essayCode='EA7', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}, leftSideMeasurement=0.0}
+20:02:41.306 [main] INFO  com.solvd.essay.Main - TemperatureEssay{id=4, frontMeasurement=60.1, essayResult=false, labTestReport=LabTestReport{id=4, essayCode='EA15', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Intermediate equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}, leftSideMeasurement=0.0}
+20:02:41.307 [main] INFO  com.solvd.essay.Main - TemperatureEssay{id=5, frontMeasurement=30.0, essayResult=true, labTestReport=LabTestReport{id=5, essayCode='EA16', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}, leftSideMeasurement=0.0}
+20:02:41.307 [main] INFO  com.solvd.essay.Main - TemperatureEssay{id=6, frontMeasurement=28.0, essayResult=true, labTestReport=LabTestReport{id=6, essayCode='EA17', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Small equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}, leftSideMeasurement=0.0}
+20:02:41.310 [main] ERROR com.solvd.essay.persistence.myBatisImpl.TemperatureEssayRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+### The error may exist in mappers/TemperatureEssayMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into temperature_essay(front_measurement, essay_result,lab_test_report_id, left_side_measurement)         values (?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+20:02:41.317 [main] INFO  com.solvd.essay.Main - LaboratoryTool{id=1, toolName='gas reader', toolDescription='0.1 m^3 precition gas reader'}
+20:02:41.320 [main] INFO  com.solvd.essay.Main - LaboratoryTool{id=1, toolName='gas reader', toolDescription='0.1 m^3 precition gas reader'}
+20:02:41.320 [main] INFO  com.solvd.essay.Main - LaboratoryTool{id=2, toolName='termometer1', toolDescription='100°C termometer'}
+20:02:41.321 [main] INFO  com.solvd.essay.Main - LaboratoryTool{id=5, toolName='tool5', toolDescription='usefully tool'}
+20:02:41.321 [main] INFO  com.solvd.essay.Main - LaboratoryTool{id=7, toolName='tool1', toolDescription='usefully tool'}
+20:02:41.324 [main] ERROR com.solvd.essay.persistence.myBatisImpl.LaboratoryToolRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'tool1' for key 'laboratory_tool.tool_name'
+### The error may exist in mappers/LaboratoryToolMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into laboratory_tool(tool_name,tool_description) value (?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'tool1' for key 'laboratory_tool.tool_name'
+20:02:41.334 [main] INFO  com.solvd.essay.Main - LabTestReport{id=null, essayCode='null', dateOfEssay=null, essayDescription='null', equipmentForTestModel=null, batchInfo=null, employee=null, essayModule=null}
+20:02:41.343 [main] INFO  com.solvd.essay.Main - LabTestReport{id=1, essayCode='EA1', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment gas compsumption essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}
+20:02:41.344 [main] INFO  com.solvd.essay.Main - LabTestReport{id=2, essayCode='EA2', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment gas consumption essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.344 [main] INFO  com.solvd.essay.Main - LabTestReport{id=3, essayCode='EA3', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}
+20:02:41.344 [main] INFO  com.solvd.essay.Main - LabTestReport{id=4, essayCode='EA4', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.345 [main] INFO  com.solvd.essay.Main - LabTestReport{id=6, essayCode='EA6', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Small equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.345 [main] INFO  com.solvd.essay.Main - LabTestReport{id=7, essayCode='EA7', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.345 [main] INFO  com.solvd.essay.Main - LabTestReport{id=9, essayCode='EA10', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}
+20:02:41.345 [main] INFO  com.solvd.essay.Main - LabTestReport{id=10, essayCode='EA11', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment gas consumption essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.346 [main] INFO  com.solvd.essay.Main - LabTestReport{id=11, essayCode='EA12', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='intermediate equipment gas consumption essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}
+20:02:41.346 [main] INFO  com.solvd.essay.Main - LabTestReport{id=12, essayCode='EA12.1', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}
+20:02:41.346 [main] INFO  com.solvd.essay.Main - LabTestReport{id=13, essayCode='EA13', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='intermediate equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}
+20:02:41.346 [main] INFO  com.solvd.essay.Main - LabTestReport{id=14, essayCode='EA14', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='small equipment energy efficiency essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.346 [main] INFO  com.solvd.essay.Main - LabTestReport{id=15, essayCode='EA15', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Intermediate equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, essayModule=EssayModule{id=3, moduleDescription='Intermediate equipment module'}}
+20:02:41.347 [main] INFO  com.solvd.essay.Main - LabTestReport{id=16, essayCode='EA16', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Big equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=1, moduleDescription='Big equipment module'}}
+20:02:41.347 [main] INFO  com.solvd.essay.Main - LabTestReport{id=17, essayCode='EA17', dateOfEssay=Fri Jan 05 00:00:00 ART 2024, essayDescription='Small equipment temperature essay', equipmentForTestModel=EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=1, batchNumber='PR1001'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.347 [main] INFO  com.solvd.essay.Main - LabTestReport{id=18, essayCode='EA32', dateOfEssay=Fri Dec 29 00:00:00 ART 2023, essayDescription='essay from java', equipmentForTestModel=EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}, batchInfo=BatchInfo{id=2, batchNumber='PR1002'}, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, essayModule=EssayModule{id=2, moduleDescription='Small equipment module'}}
+20:02:41.350 [main] ERROR com.solvd.essay.persistence.myBatisImpl.LabTestReportRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'equipment_for_test_model_id' cannot be null
+### The error may exist in mappers/LabTestReportMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into lab_test_report(essay_code, date_of_essay, essay_description,equipment_for_test_model_id         ,batch_info_id,employee_id,essay_module_id)         values (?,?,?,?,         ?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'equipment_for_test_model_id' cannot be null
+20:02:41.358 [main] INFO  com.solvd.essay.Main - EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}
+20:02:41.361 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EquipmentForTestModelRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'model 11' for key 'equipment_for_test_model.model_name'
+### The error may exist in mappers/EquipmentForTestModelMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into equipment_for_test_model(model_name, model_description, release_date)         value (?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'model 11' for key 'equipment_for_test_model.model_name'
+20:02:41.379 [main] INFO  com.solvd.essay.Main - EquipmentForTestModel{id=1, modelName='model 1', modelDescription='Big equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}
+20:02:41.379 [main] INFO  com.solvd.essay.Main - EquipmentForTestModel{id=2, modelName='model 2', modelDescription='Small equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}
+20:02:41.379 [main] INFO  com.solvd.essay.Main - EquipmentForTestModel{id=3, modelName='model 3', modelDescription='Medium size equipment', releaseDate=Sun Jan 01 00:00:00 ART 2023}
+20:02:41.379 [main] INFO  com.solvd.essay.Main - EquipmentForTestModel{id=5, modelName='model 11', modelDescription='rare model5', releaseDate=Fri Dec 29 00:00:00 ART 2023}
+20:02:41.404 [main] INFO  com.solvd.essay.Main - EmployeeEmployeeWorkAreas{id=1, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, employeeWorkArea=EmployeeWorkArea{id=2, areaName='Line production', areaCode='02-area B'}}
+20:02:41.412 [main] INFO  com.solvd.essay.Main - EmployeeEmployeeWorkAreas{id=1, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, employeeWorkArea=EmployeeWorkArea{id=2, areaName='Line production', areaCode='02-area B'}}
+20:02:41.415 [main] INFO  com.solvd.essay.Main - EmployeeEmployeeWorkAreas{id=2, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, employeeWorkArea=EmployeeWorkArea{id=2, areaName='Line production', areaCode='02-area B'}}
+20:02:41.420 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeEmployeeWorkAreasRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+### The error may exist in mappers/EmployeeEmployeeWorkAreasMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee_employee_work_areas(employee_id, employee_work_area_id) value (?,         ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+20:02:41.427 [main] INFO  com.solvd.essay.Main - EmployeeLaboratoryTools{id=1, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, laboratoryTool=LaboratoryTool{id=1, toolName='gas reader', toolDescription='0.1 m^3 precition gas reader'}}
+20:02:41.432 [main] INFO  com.solvd.essay.Main - EmployeeLaboratoryTools{id=1, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, laboratoryTool=LaboratoryTool{id=1, toolName='gas reader', toolDescription='0.1 m^3 precition gas reader'}}
+20:02:41.433 [main] INFO  com.solvd.essay.Main - EmployeeLaboratoryTools{id=2, employee=Employee{id=1, firstName='john', lastName='smith', personalId='Abc123', birthDate=Fri Dec 15 00:00:00 ART 2000, salary=1000.0}, laboratoryTool=LaboratoryTool{id=2, toolName='termometer1', toolDescription='100°C termometer'}}
+20:02:41.436 [main] INFO  com.solvd.essay.Main - EmployeeLaboratoryTools{id=3, employee=Employee{id=2, firstName='mary', lastName='jane', personalId='def236', birthDate=Mon May 15 00:00:00 ART 2000, salary=1200.0}, laboratoryTool=LaboratoryTool{id=2, toolName='termometer1', toolDescription='100°C termometer'}}
+20:02:41.437 [main] INFO  com.solvd.essay.Main - EmployeeLaboratoryTools{id=5, employee=Employee{id=5, firstName='seth', lastName='Roger', personalId='', birthDate=Wed Sep 22 00:00:00 ART 1993, salary=1000.0}, laboratoryTool=LaboratoryTool{id=2, toolName='termometer1', toolDescription='100°C termometer'}}
+20:02:41.440 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeLaboratoryToolsRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+### The error may exist in mappers/EmployeeEmployeeLaboratoryToolsMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee_laboratory_tools(employee_id, laboratory_tool_id) value (?,         ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
