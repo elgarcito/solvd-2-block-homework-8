@@ -32,7 +32,7 @@ DAO should be scalable and flexible to support another framework and another dat
 All CRUD operations should be supported using JDBC. Use connection pool from the below block.
 Implement Service layer with necessary abstraction to be able to switch between databases and frameworks.
 
-* All Crud operation with this requirements were done in master branch
+* All Crud operations with these requirements were done in the master branch
 
 ### 14/12/2024
 Exercises

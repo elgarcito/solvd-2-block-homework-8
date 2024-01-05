@@ -60,4 +60,15 @@ public class TemperatureEssay {
     public void setLabTestReportId(Long labTestReportId) {
         this.labTestReportId = labTestReportId;
     }
+
+    @Override
+    public String toString() {
+        return "TemperatureEssay{" +
+                "id=" + id +
+                ", frontMeasurement=" + frontMeasurement +
+                ", essayResult=" + essayResult +
+                ", labTestReport=" + labTestReport.toString() +
+                ", leftSideMeasurement=" + leftSideMeasurement +
+                '}';
+    }
 }

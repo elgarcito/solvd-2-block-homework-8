@@ -1,5 +1,6 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.domain.LaboratoryTool;
 import com.solvd.essay.persistence.impl.AbstracDao;
 
@@ -25,7 +26,11 @@ public class LaboratoryToolService {
     }
 
     public LaboratoryTool findOne(Long id) throws SQLException {
-        return laboratoryToolImpl.findById(id);
+        LaboratoryTool result= laboratoryToolImpl.findById(id);
+        if (result==null){
+            return new LaboratoryTool();
+        }
+        return result;
     }
 
     public void deleteOne(Long id) throws SQLException {

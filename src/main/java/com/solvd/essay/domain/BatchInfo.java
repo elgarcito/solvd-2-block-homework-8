@@ -20,4 +20,12 @@ public class BatchInfo {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "BatchInfo{" +
+                "id=" + id +
+                ", batchNumber='" + batchNumber + '\'' +
+                '}';
+    }
 }

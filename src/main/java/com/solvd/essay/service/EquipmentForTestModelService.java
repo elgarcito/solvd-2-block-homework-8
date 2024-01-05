@@ -1,5 +1,6 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.Employee;
 import com.solvd.essay.domain.EquipmentForTestModel;
 import com.solvd.essay.persistence.impl.AbstracDao;
 
@@ -25,7 +26,11 @@ public class EquipmentForTestModelService {
     }
 
     public EquipmentForTestModel findOne(Long id) throws SQLException {
-        return equipmentForTestModelImpl.findById(id);
+        EquipmentForTestModel result= equipmentForTestModelImpl.findById(id);
+        if (result==null){
+            return new EquipmentForTestModel();
+        }
+        return result;
     }
 
     public void deleteOne(Long id) throws SQLException {

@@ -30,4 +30,13 @@ public class LaboratoryTool {
     public void setToolDescription(String toolDescription) {
         this.toolDescription = toolDescription;
     }
+
+    @Override
+    public String toString() {
+        return "LaboratoryTool{" +
+                "id=" + id +
+                ", toolName='" + toolName + '\'' +
+                ", toolDescription='" + toolDescription + '\'' +
+                '}';
+    }
 }

@@ -113,4 +113,18 @@ public class LabTestReport {
     public void setEssayModuleId(Long essayModuleId) {
         this.essayModuleId = essayModuleId;
     }
+
+    @Override
+    public String toString() {
+        return "LabTestReport{" +
+                "id=" + id +
+                ", essayCode='" + essayCode + '\'' +
+                ", dateOfEssay=" + dateOfEssay +
+                ", essayDescription='" + essayDescription + '\'' +
+                ", equipmentForTestModel=" + equipmentForTestModel.toString() +
+                ", batchInfo=" + batchInfo.toString() +
+                ", employee=" + employee.toString() +
+                ", essayModule=" + essayModule.toString() +
+                '}';
+    }
 }

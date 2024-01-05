@@ -14,8 +14,8 @@ public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentFor
 
     @Override
     protected String getUpdateQuery(EquipmentForTestModel newThingToUpdate) {
-        String updateQuery=String.format("update %s set model_name=\"%s\",model_description=\"%s\",release_date=\"%s\" where id= %s",
-                getTableName(),newThingToUpdate.getModelName(),newThingToUpdate.getModelDescription(),
+        String updateQuery=String.format("update %s set model_description=\"%s\",release_date=\"%s\" where id= %s",
+                getTableName(),newThingToUpdate.getModelDescription(),
                 newThingToUpdate.getReleaseDate(),newThingToUpdate.getId());
         return updateQuery;
     }

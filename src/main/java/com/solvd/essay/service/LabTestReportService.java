@@ -21,7 +21,7 @@ public class LabTestReportService {
             throw new RuntimeException(e);
         }
     }
-    public List<LabTestReport> findAll(Connection conn) throws SQLException {
+    public List<LabTestReport> findAll() throws SQLException {
         List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
 
         AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
@@ -45,9 +45,13 @@ public class LabTestReportService {
             return labTestReportList;
     }
 
-    public LabTestReport findOne(Long id,Connection conn) throws SQLException {
+    public LabTestReport findOne(Long id) throws SQLException {
 
         LabTestReport labTestReport=labTestReportImpl.findById(id);
+
+        if (labTestReport==null){
+            return new LabTestReport();
+        }
 
         AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);

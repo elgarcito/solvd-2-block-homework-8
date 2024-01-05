@@ -66,4 +66,15 @@ public class EnergyEfficiencyEssay {
     public void setEssayResult(boolean essayResult) {
         this.essayResult = essayResult;
     }
+
+    @Override
+    public String toString() {
+        return "EnergyEfficiencyEssay{" +
+                "id=" + id +
+                ", valueOfEssay=" + valueOfEssay +
+                ", category='" + category + '\'' +
+                ", essayResult=" + essayResult +
+                ", labTestReport=" + labTestReport.toString() +
+                '}';
+    }
 }

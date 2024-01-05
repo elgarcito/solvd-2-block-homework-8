@@ -41,4 +41,14 @@ public class EquipmentForTestModel {
     public void setReleaseDate(Date releaseDate) {
         this.releaseDate = releaseDate;
     }
+
+    @Override
+    public String toString() {
+        return "EquipmentForTestModel{" +
+                "id=" + id +
+                ", modelName='" + modelName + '\'' +
+                ", modelDescription='" + modelDescription + '\'' +
+                ", releaseDate=" + releaseDate +
+                '}';
+    }
 }

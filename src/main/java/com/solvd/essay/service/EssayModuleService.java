@@ -1,5 +1,6 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.EquipmentForTestModel;
 import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.persistence.impl.AbstracDao;
 
@@ -25,7 +26,11 @@ public class EssayModuleService {
     }
 
     public EssayModule findOne(Long id) throws SQLException {
-        return essayModuleImpl.findById(id);
+        EssayModule result= essayModuleImpl.findById(id);
+        if (result==null){
+            return new EssayModule();
+        }
+        return result;
     }
 
     public void deleteOne(Long id) throws SQLException {

@@ -25,7 +25,7 @@ public class EmployeeEmployeeWorkAreasService {
             throw new RuntimeException(e);
         }
     }
-    public List<EmployeeEmployeeWorkAreas> findAll(Connection conn) throws SQLException {
+    public List<EmployeeEmployeeWorkAreas> findAll() throws SQLException {
         List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList=employeeEmployeeWorkAreasImpl.getAll();
 
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
@@ -41,8 +41,11 @@ public class EmployeeEmployeeWorkAreasService {
         return employeeEmployeeWorkAreasList;
     }
 
-    public EmployeeEmployeeWorkAreas findOne(Long id,Connection conn) throws SQLException {
+    public EmployeeEmployeeWorkAreas findOne(Long id) throws SQLException {
         EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas= employeeEmployeeWorkAreasImpl.findById(id);
+        if (employeeEmployeeWorkAreas==null){
+            return new EmployeeEmployeeWorkAreas();
+        }
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 

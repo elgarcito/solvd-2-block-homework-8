@@ -1,5 +1,7 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.Employee;
+import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
 import com.solvd.essay.domain.EmployeeWorkArea;
 import com.solvd.essay.persistence.impl.AbstracDao;
 
@@ -25,7 +27,11 @@ public class EmployeeWorkAreaService {
     }
 
     public EmployeeWorkArea findOne(Long id) throws SQLException {
-        return employeeWorkAreaImpl.findById(id);
+        EmployeeWorkArea result= employeeWorkAreaImpl.findById(id);
+        if (result==null){
+            return new EmployeeWorkArea();
+        }
+        return result;
     }
 
     public void deleteOne(Long id) throws SQLException {

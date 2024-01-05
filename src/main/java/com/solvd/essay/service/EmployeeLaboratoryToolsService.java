@@ -27,8 +27,9 @@ public class EmployeeLaboratoryToolsService {
             throw new RuntimeException(e);
         }
     }
-    public List<EmployeeLaboratoryTools> findAll(Connection conn) throws SQLException {
+    public List<EmployeeLaboratoryTools> findAll() throws SQLException {
         List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsImpl.getAll();
+
 
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
@@ -44,8 +45,11 @@ public class EmployeeLaboratoryToolsService {
         return employeeLaboratoryToolsList;
     }
 
-    public EmployeeLaboratoryTools findOne(Long id,Connection conn) throws SQLException {
+    public EmployeeLaboratoryTools findOne(Long id) throws SQLException {
         EmployeeLaboratoryTools employeeLaboratoryTools = employeeLaboratoryToolsImpl.findById(id);
+        if(employeeLaboratoryTools==null){
+            return new EmployeeLaboratoryTools();
+        }
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 

@@ -1,6 +1,0 @@
-<equipmentForTestModel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:noNamespaceSchemaLocation="../xsdFiles/equipmentForTestModel.xsd" id="1">
-    <modelName>model 1</modelName>
-    <modelDescription>Big equipment</modelDescription>
-    <releaseDate>2023-01-01</releaseDate>
-</equipmentForTestModel>

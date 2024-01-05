@@ -1,5 +1,6 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.BatchInfo;
 import com.solvd.essay.domain.Employee;
 import com.solvd.essay.persistence.impl.AbstracDao;
 
@@ -25,7 +26,11 @@ public class EmployeeService {
     }
 
     public Employee findOne(Long id) throws SQLException {
-        return employeeImpl.findById(id);
+        Employee result= employeeImpl.findById(id);
+        if (result==null){
+            return new Employee();
+        }
+        return result;
     }
 
     public void deleteOne(Long id) throws SQLException {

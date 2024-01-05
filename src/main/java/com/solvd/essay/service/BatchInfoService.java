@@ -25,7 +25,11 @@ public class BatchInfoService {
     }
 
     public BatchInfo findOne(Long id) throws SQLException {
-        return batchInfoImpl.findById(id);
+        BatchInfo result= batchInfoImpl.findById(id);
+        if (result==null){
+            return new BatchInfo();
+        }
+        return result;
     }
 
     public void deleteOne(Long id) throws SQLException {

@@ -29,4 +29,13 @@ public class EmployeeWorkArea {
     public void setId(Long id) {
         this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "EmployeeWorkArea{" +
+                "id=" + id +
+                ", areaName='" + areaName + '\'' +
+                ", areaCode='" + areaCode + '\'' +
+                '}';
+    }
 }

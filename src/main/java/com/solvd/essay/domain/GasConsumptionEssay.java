@@ -68,4 +68,15 @@ public class GasConsumptionEssay {
         this.labTestReportId = labTestReportId;
     }
 
+    @Override
+    public String toString() {
+        return "GasConsumptionEssay{" +
+                "id=" + id +
+                ", maxConsume=" + maxConsume +
+                ", standardMean=" + standardMean +
+                ", measurementError=" + measurementError +
+                ", essayResult=" + essayResult +
+                ", labTestReport=" + labTestReport.toString() +
+                '}';
+    }
 }

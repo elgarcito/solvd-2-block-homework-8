@@ -25,21 +25,24 @@ public class TemperatureEssayService {
             throw new RuntimeException(e);
         }
     }
-    public List<TemperatureEssay> findAll(Connection conn) throws SQLException {
+    public List<TemperatureEssay> findAll() throws SQLException {
         List<TemperatureEssay> temperatureEssaysList=temperatureEssayImpl.getAll();
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         for (TemperatureEssay tempEssay:temperatureEssaysList) {
-            tempEssay.setLabTestReport(newLabTestReportService.findOne(tempEssay.getLabTestReportId(),conn));
+            tempEssay.setLabTestReport(newLabTestReportService.findOne(tempEssay.getLabTestReportId()));
         }
             return temperatureEssaysList;
     }
 
-    public TemperatureEssay findOne(Long id,Connection conn) throws SQLException {
+    public TemperatureEssay findOne(Long id) throws SQLException {
         TemperatureEssay essay=temperatureEssayImpl.findById(id);
+        if (essay==null){
+            return new TemperatureEssay();
+        }
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
-        essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId(),conn));
+        essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId()));
         return  essay;
     }
 

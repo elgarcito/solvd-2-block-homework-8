@@ -22,4 +22,12 @@ public class EssayModule {
     public void setModuleDescription(String moduleDescription) {
         this.moduleDescription = moduleDescription;
     }
+
+    @Override
+    public String toString() {
+        return "EssayModule{" +
+                "id=" + id +
+                ", moduleDescription='" + moduleDescription + '\'' +
+                '}';
+    }
 }
