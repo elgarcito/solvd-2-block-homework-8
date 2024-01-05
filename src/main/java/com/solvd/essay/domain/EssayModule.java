@@ -7,8 +7,7 @@ public class EssayModule {
 
     private Long id;
    private String moduleDescription;
-
-   private List<EssayModule> essayModuleList;
+    private List<EssayModule> essayModuleList;
 
     public Long getId() {
         return id;
@@ -39,7 +38,6 @@ public class EssayModule {
         return "EssayModule{" +
                 "id=" + id +
                 ", moduleDescription='" + moduleDescription + '\'' +
-                ", essayModuleList=" + essayModuleList +
                 '}';
     }
 }

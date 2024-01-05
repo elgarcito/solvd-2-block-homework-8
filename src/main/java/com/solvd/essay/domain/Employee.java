@@ -1,7 +1,5 @@
 package com.solvd.essay.domain;
 
-import com.solvd.essay.service.EmployeeService;
-
 import java.util.Date;
 import java.util.List;
 
@@ -12,7 +10,6 @@ public class Employee {
     private String personalId;
     private Date birthDate;
     private Double salary;
-
     private List<Employee> employeeList;
 
 
@@ -63,7 +60,6 @@ public class Employee {
     public void setId(Long id) {
         this.id = id;
     }
-
     public List<Employee> getEmployeeList() {
         return employeeList;
     }
@@ -81,7 +77,6 @@ public class Employee {
                 ", personalId='" + personalId + '\'' +
                 ", birthDate=" + birthDate +
                 ", salary=" + salary +
-                ", employeeList=" + employeeList +
                 '}';
     }
 }

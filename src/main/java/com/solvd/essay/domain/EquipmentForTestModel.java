@@ -10,7 +10,6 @@ public class EquipmentForTestModel {
     private String modelDescription;
 
     private Date releaseDate;
-
     private List<EquipmentForTestModel> equipmentForTestModelList;
 
     public Long getId() {
@@ -60,7 +59,6 @@ public class EquipmentForTestModel {
                 ", modelName='" + modelName + '\'' +
                 ", modelDescription='" + modelDescription + '\'' +
                 ", releaseDate=" + releaseDate +
-                ", equipmentForTestModelList=" + equipmentForTestModelList +
                 '}';
     }
 }

@@ -40,4 +40,13 @@ public class EmployeeWorkArea {
     public void setEmployeeWorkAreaList(List<EmployeeWorkArea> employeeWorkAreaList) {
         this.employeeWorkAreaList = employeeWorkAreaList;
     }
+
+    @Override
+    public String toString() {
+        return "EmployeeWorkArea{" +
+                "id=" + id +
+                ", areaName='" + areaName + '\'' +
+                ", areaCode='" + areaCode + '\'' +
+                '}';
+    }
 }

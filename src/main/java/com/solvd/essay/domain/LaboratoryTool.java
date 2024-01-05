@@ -41,4 +41,13 @@ public class LaboratoryTool {
     public void setLaboratoryToolList(List<LaboratoryTool> laboratoryToolList) {
         this.laboratoryToolList = laboratoryToolList;
     }
+
+    @Override
+    public String toString() {
+        return "LaboratoryTool{" +
+                "id=" + id +
+                ", toolName='" + toolName + '\'' +
+                ", toolDescription='" + toolDescription + '\'' +
+                '}';
+    }
 }

@@ -5,10 +5,10 @@ import java.util.List;
 public class EmployeeEmployeeWorkAreas {
     private Long id;
     private Employee employee;
+
     private EmployeeWorkArea employeeWorkArea;
 
     private List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList;
-
 
     public Employee getEmployee() {
         return employee;
@@ -26,6 +26,7 @@ public class EmployeeEmployeeWorkAreas {
         this.employeeWorkArea = employeeWorkArea;
     }
 
+
     public Long getId() {
         return id;
     }
@@ -41,4 +42,14 @@ public class EmployeeEmployeeWorkAreas {
     public void setEmployeeEmployeeWorkAreasList(List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList) {
         this.employeeEmployeeWorkAreasList = employeeEmployeeWorkAreasList;
     }
+
+    @Override
+    public String toString() {
+        return "EmployeeEmployeeWorkAreas{" +
+                "id=" + id +
+                ", employee=" + employee.toString() +
+                ", employeeWorkArea=" + employeeWorkArea.toString() +
+                '}';
+    }
+
 }

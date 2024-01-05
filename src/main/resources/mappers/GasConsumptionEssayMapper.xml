@@ -39,7 +39,7 @@
         standard_mean=#{thingToUpdate.standardMean},
         measurement_error=#{thingToUpdate.measurementError},
         essay_result=#{thingToUpdate.essayResult},
-        lab_test_report_id=#{thingToUpdate.labTestReport.getId()},
+        lab_test_report_id=#{thingToUpdate.labTestReport.getId()}
         where gas_consumption_essay.id=#{id}
     </update>
 

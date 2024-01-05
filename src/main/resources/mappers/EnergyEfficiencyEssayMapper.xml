@@ -38,7 +38,7 @@
         update energy_efficiency_essay set value_of_essay=#{thingToUpdate.valueOfEssay},
         category=#{thingToUpdate.category},
         essay_result=#{thingToUpdate.essayResult},
-        lab_test_report_id=#{thingToUpdate.labTestReport.getId()},
+        lab_test_report_id=#{thingToUpdate.labTestReport.getId()}
         where energy_efficiency_essay.id=#{id}
     </update>
 

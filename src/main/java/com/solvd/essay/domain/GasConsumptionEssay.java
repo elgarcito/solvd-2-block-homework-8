@@ -15,6 +15,7 @@ public class GasConsumptionEssay {
 
 
 
+
     public Long getId() {
         return id;
     }
@@ -62,15 +63,31 @@ public class GasConsumptionEssay {
         this.essayResult = essayResult;
     }
 
-    public boolean isEssayResult() {
-        return essayResult;
-    }
-
     public List<GasConsumptionEssay> getGasConsumptionEssayList() {
         return gasConsumptionEssayList;
     }
 
     public void setGasConsumptionEssayList(List<GasConsumptionEssay> gasConsumptionEssayList) {
         this.gasConsumptionEssayList = gasConsumptionEssayList;
+    }
+
+    @Override
+    public String toString() {
+        String labTestReportValue=null;
+
+        if (labTestReport==null){
+            labTestReportValue="null";
+        }else {
+            labTestReportValue= labTestReport.toString();
+        }
+
+        return "GasConsumptionEssay{" +
+                "id=" + id +
+                ", maxConsume=" + maxConsume +
+                ", standardMean=" + standardMean +
+                ", measurementError=" + measurementError +
+                ", essayResult=" + essayResult +
+                ", labTestReport=" + labTestReportValue +
+                '}';
     }
 }

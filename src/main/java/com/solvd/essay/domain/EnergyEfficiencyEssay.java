@@ -7,9 +7,11 @@ public class EnergyEfficiencyEssay {
     private Long id;
     private double valueOfEssay;
     private String category;
+
     private boolean essayResult;
     private LabTestReport labTestReport;
     private List<EnergyEfficiencyEssay> energyEfficiencyEssayList;
+
 
 
 
@@ -49,6 +51,8 @@ public class EnergyEfficiencyEssay {
     public void setId(Long id) {
         this.id = id;
     }
+
+
     public boolean getEssayResult(){
         return essayResult;
     }
@@ -63,5 +67,24 @@ public class EnergyEfficiencyEssay {
 
     public void setEnergyEfficiencyEssayList(List<EnergyEfficiencyEssay> energyEfficiencyEssayList) {
         this.energyEfficiencyEssayList = energyEfficiencyEssayList;
+    }
+
+    @Override
+    public String toString() {
+        String labTestReportValue=null;
+
+        if (labTestReport==null){
+            labTestReportValue="null";
+        }else {
+            labTestReportValue= labTestReport.toString();
+        }
+
+        return "EnergyEfficiencyEssay{" +
+                "id=" + id +
+                ", valueOfEssay=" + valueOfEssay +
+                ", category='" + category + '\'' +
+                ", essayResult=" + essayResult +
+                ", labTestReport=" + labTestReportValue +
+                '}';
     }
 }

@@ -5,6 +5,7 @@ import com.solvd.essay.domain.LaboratoryTool;
 import com.solvd.essay.persistence.BatchInfoRepository;
 import com.solvd.essay.persistence.LaboratoryToolRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,11 +19,11 @@ import java.util.List;
 public class LaboratoryToolRepositoryImpl implements LaboratoryToolRepository {
     private static final Logger LOGGER = LogManager.getLogger(LaboratoryToolRepositoryImpl.class);
     @Override
-    public void create(LaboratoryTool thingToCreate) throws SQLException {
+    public void create(LaboratoryTool thingToCreate)  {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
             LaboratoryToolRepository laboratoryToolRepository= sqlSession.getMapper(LaboratoryToolRepository.class);
             laboratoryToolRepository.create(thingToCreate);
-        }catch (SQLException e){
+        }catch (SQLException | PersistenceException e){
             LOGGER.error(e.getMessage());
         }
     }

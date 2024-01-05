@@ -4,6 +4,7 @@ import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
 import com.solvd.essay.persistence.LabTestReportRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,11 +19,11 @@ public class LabTestReportRepositoryImpl implements LabTestReportRepository {
     private static final Logger LOGGER = LogManager.getLogger(LabTestReportRepositoryImpl.class);
 
     @Override
-    public void create(LabTestReport thingToCreate) throws SQLException {
+    public void create(LabTestReport thingToCreate) {
         try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
             LabTestReportRepository labTestReportRepository = sqlSession.getMapper(LabTestReportRepository.class);
             labTestReportRepository.create(thingToCreate);
-        } catch (SQLException e) {
+        } catch (SQLException |PersistenceException e) {
             LOGGER.error(e.getMessage());
         }
     }

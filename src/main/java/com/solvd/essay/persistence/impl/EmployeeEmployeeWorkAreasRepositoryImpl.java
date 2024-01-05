@@ -5,6 +5,7 @@ import com.solvd.essay.domain.EmployeeWorkArea;
 import com.solvd.essay.persistence.EmployeeEmployeeWorkAreasRepository;
 import com.solvd.essay.persistence.EmployeeRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,11 +20,11 @@ public class EmployeeEmployeeWorkAreasRepositoryImpl implements EmployeeEmployee
 
     private static final Logger LOGGER = LogManager.getLogger(EmployeeEmployeeWorkAreasRepositoryImpl.class);
     @Override
-    public void create(EmployeeEmployeeWorkAreas thingToCreate) throws SQLException {
+    public void create(EmployeeEmployeeWorkAreas thingToCreate)  {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
            EmployeeEmployeeWorkAreasRepository employeeEmployeeWorkAreasRepository= sqlSession.getMapper(EmployeeEmployeeWorkAreasRepository.class);
             employeeEmployeeWorkAreasRepository.create(thingToCreate);
-        }catch (SQLException e){
+        }catch (SQLException | PersistenceException e){
             LOGGER.error(e.getMessage());
         }
     }

@@ -4,6 +4,7 @@ import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
 import com.solvd.essay.persistence.EssayModuleRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,11 +15,11 @@ import java.util.List;
 public class EssayModuleRepositoryImpl implements EssayModuleRepository {
     private static final Logger LOGGER = LogManager.getLogger(EssayModuleRepositoryImpl.class);
     @Override
-    public void create(EssayModule thingToCreate) throws SQLException {
+    public void create(EssayModule thingToCreate)  {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
             EssayModuleRepository essayModuleRepository= sqlSession.getMapper(EssayModuleRepository.class);
             essayModuleRepository.create(thingToCreate);
-        }catch (SQLException e){
+        }catch (SQLException | PersistenceException e){
             LOGGER.error(e.getMessage());
         }
     }

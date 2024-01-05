@@ -5,6 +5,7 @@ import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
 import com.solvd.essay.persistence.GasConsumptionRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
 import com.solvd.essay.service.EmployeeWorkAreaService;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,10 +20,12 @@ public class GasConsumptionEssayRepositoryImpl implements GasConsumptionReposito
     private static final Logger LOGGER = LogManager.getLogger(GasConsumptionEssayRepositoryImpl.class);
 
     @Override
-    public void create(GasConsumptionEssay thingToCreate) throws SQLException {
+    public void create(GasConsumptionEssay thingToCreate) {
         try (SqlSession sqlSession = MyPersistenceConfig.getSessionFactory().openSession(true)) {
             GasConsumptionRepository gasConsumptionRepository = sqlSession.getMapper(GasConsumptionRepository.class);
             gasConsumptionRepository.create(thingToCreate);
+        } catch (SQLException | PersistenceException e) {
+            LOGGER.error(e.getMessage());
         }
     }
 

@@ -4,6 +4,7 @@ import com.solvd.essay.domain.TemperatureEssay;
 import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
 import com.solvd.essay.persistence.TemperatureEssayRepository;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,11 +18,11 @@ import java.util.List;
 public class TemperatureEssayRepositoryImpl implements TemperatureEssayRepository {
     private static final Logger LOGGER = LogManager.getLogger(TemperatureEssayRepositoryImpl.class);
     @Override
-    public void create(TemperatureEssay thingToCreate) throws SQLException {
+    public void create(TemperatureEssay thingToCreate)  {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
             TemperatureEssayRepository temperatureEssayRepository= sqlSession.getMapper(TemperatureEssayRepository.class);
             temperatureEssayRepository.create(thingToCreate);
-        }catch (SQLException e){
+        }catch (SQLException | PersistenceException e){
             LOGGER.error(e.getMessage());
         }
 

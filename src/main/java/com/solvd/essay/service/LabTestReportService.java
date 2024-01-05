@@ -1,46 +1,74 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.*;
-import com.solvd.essay.persistence.impl.*;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.solvd.essay.persistence.LaboratoryToolRepository;
+import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
+import com.solvd.essay.persistence.impl.LaboratoryToolRepositoryImpl;
+//import com.solvd.essay.persistence.jdbcImpl.*;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 
 public class LabTestReportService {
-    private static final Logger LOGGER = LogManager.getLogger(LabTestReportService.class);
-    private final LabTestReportRepositoryImpl labTestReportRepositoryImpl = new LabTestReportRepositoryImpl();
+   // private final AbstracDao<LabTestReport> labTestReportRepositoryImpl =new LabTestReportRepositoryImpl();
+    private final LabTestReportRepositoryImpl labTestReportRepositoryImpl =new LabTestReportRepositoryImpl();
+
     public void create(LabTestReport labTestReport){
-        try {
             labTestReportRepositoryImpl.create(labTestReport);
-            LOGGER.info("Object added successfully");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<LabTestReport> findAll() throws SQLException {
         List<LabTestReport> labTestReportList= labTestReportRepositoryImpl.getAll();
-        LOGGER.info("List returned successfully");
-        return labTestReportList;
+            return labTestReportList;
     }
 
-    public Optional<LabTestReport> findOne(Long id) throws SQLException {
+    public LabTestReport findOne(Long id) throws SQLException {
+
         LabTestReport labTestReport= labTestReportRepositoryImpl.findById(id);
-        return Optional.ofNullable(labTestReport);
+
+        if (labTestReport==null){
+            return new LabTestReport();
+        }
+        /*
+        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
+        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
+
+        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
+        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
+
+        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
+        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
+
+          AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
+        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
+
+         */
+
+
+
+
+
+        /*
+
+        labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
+        labTestReport.setBatchInfo(newBatchInfoService.findOne(labTestReport.getBatchInfoId()));
+        labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
+        labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
+         */
+
+
+
+
+        return labTestReport;
     }
 
     public void deleteOne(Long id) throws SQLException {
         labTestReportRepositoryImpl.deleteById(id);
-        LOGGER.info("Object deleted successfully");
     }
+
 
     public void updateEntity(LabTestReport labTestReport,Long id){
         try {
-            labTestReportRepositoryImpl.updateById(labTestReport,id);
-            LOGGER.info("Object updated successfully");
+            labTestReportRepositoryImpl.updateById(labTestReport, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

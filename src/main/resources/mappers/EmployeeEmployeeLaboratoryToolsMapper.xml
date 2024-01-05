@@ -32,7 +32,7 @@
 
     <select id="findById" resultMap="employeeLaboratoryToolsResult" >
         <include refid="employeeLaboratoryToolsSelect"/>
-        where employee_employee_work_areas.id=#{id}
+        where employee_laboratory_tools.id=#{id}
     </select>
     
     <delete id="deleteById">

@@ -15,8 +15,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class BatchInfoRepositoryImpl  implements  BatchInfoRepository{
+
     @Override
-    public void create(BatchInfo thingToCreate) {
+    public void create(BatchInfo thingToCreate)  {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
             BatchInfoRepository batchInfoRepository= sqlSession.getMapper(BatchInfoRepository.class);
             batchInfoRepository.create(thingToCreate);

@@ -4,6 +4,7 @@ import com.solvd.essay.domain.EmployeeLaboratoryTools;
 import com.solvd.essay.persistence.EmployeeLaboratoryToolsRepository;
 import com.solvd.essay.persistence.EmployeeRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,11 +18,11 @@ import java.util.List;
 public class EmployeeLaboratoryToolsRepositoryImpl implements EmployeeLaboratoryToolsRepository {
     private static final Logger LOGGER = LogManager.getLogger(EmployeeLaboratoryToolsRepositoryImpl.class);
     @Override
-    public void create(EmployeeLaboratoryTools thingToCreate) throws SQLException {
+    public void create(EmployeeLaboratoryTools thingToCreate) {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
             EmployeeLaboratoryToolsRepository employeeLaboratoryToolsRepository = sqlSession.getMapper(EmployeeLaboratoryToolsRepository.class);
             employeeLaboratoryToolsRepository.create(thingToCreate);
-        }catch (SQLException e){
+        }catch (SQLException | PersistenceException e){
             LOGGER.error(e.getMessage());
         }
     }

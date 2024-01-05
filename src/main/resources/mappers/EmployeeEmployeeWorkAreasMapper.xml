@@ -6,13 +6,13 @@
 <mapper namespace="com.solvd.essay.persistence.EmployeeEmployeeWorkAreasRepository">
 
     <sql id="employeeEmployeeWorkAreasSelect">
-        SELECT employee_employee_work_areas.id as id,
-        employee_work_area.id as ewa_id, area_name, area_code,
-        employee.id as em_id, first_name, last_name, personal_id, birth_date, salary
+        SELECT employee_employee_work_areas.id,
+        employee_work_area.id as ewa_id, area_name, area_code, employee.id as emp_id,
+        first_name, last_name, personal_id, birth_date, salary
         FROM employee_employee_work_areas inner join employee_work_area
         on employee_employee_work_areas.employee_work_area_id=employee_work_area.id
         inner join employee
-        on employee_employee_work_areas.employee_id=employee.id;
+        on employee_employee_work_areas.employee_id=employee.id
     </sql>
 
     <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
@@ -60,7 +60,7 @@
     </resultMap>
 
     <resultMap id="employeeResult" type="com.solvd.essay.domain.Employee" >
-        <id property="id" column="em_id" />
+        <id property="id" column="emp_id" />
         <result property="firstName" column="first_name"/>
         <result property="lastName" column="last_name"/>
         <result property="personalId" column="personal_id"/>

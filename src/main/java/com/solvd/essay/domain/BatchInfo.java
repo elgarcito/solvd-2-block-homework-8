@@ -5,7 +5,6 @@ import java.util.List;
 public class BatchInfo {
     private Long id;
     private String batchNumber;
-
     private List<BatchInfo> myBatchInfoList;
 
 
@@ -38,7 +37,6 @@ public class BatchInfo {
         return "BatchInfo{" +
                 "id=" + id +
                 ", batchNumber='" + batchNumber + '\'' +
-                ", myBatchInfoList=" + myBatchInfoList +
                 '}';
     }
 }

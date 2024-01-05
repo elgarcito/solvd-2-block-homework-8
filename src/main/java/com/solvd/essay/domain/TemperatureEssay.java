@@ -8,9 +8,7 @@ public class TemperatureEssay {
     private double frontMeasurement;
     private boolean essayResult;
     private LabTestReport labTestReport;
-
     private double leftSideMeasurement;
-
     private List<TemperatureEssay> temperatureEssayList;
 
 
@@ -56,12 +54,30 @@ public class TemperatureEssay {
         this.essayResult = essayResult;
     }
 
-
     public List<TemperatureEssay> getTemperatureEssayList() {
         return temperatureEssayList;
     }
 
     public void setTemperatureEssayList(List<TemperatureEssay> temperatureEssayList) {
         this.temperatureEssayList = temperatureEssayList;
+    }
+
+    @Override
+    public String toString() {
+        String labTestReportValue=null;
+
+        if (labTestReport==null){
+            labTestReportValue="null";
+        }else {
+            labTestReportValue= labTestReport.toString();
+        }
+
+        return "TemperatureEssay{" +
+                "id=" + id +
+                ", frontMeasurement=" + frontMeasurement +
+                ", essayResult=" + essayResult +
+                ", labTestReport=" + labTestReportValue +
+                ", leftSideMeasurement=" + leftSideMeasurement +
+                '}';
     }
 }

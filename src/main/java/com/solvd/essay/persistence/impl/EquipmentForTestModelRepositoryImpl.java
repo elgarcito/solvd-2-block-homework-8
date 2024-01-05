@@ -4,6 +4,7 @@ import com.solvd.essay.domain.EquipmentForTestModel;
 import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
 import com.solvd.essay.persistence.EquipmentForTestModelRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,11 +18,11 @@ import java.util.List;
 public class EquipmentForTestModelRepositoryImpl implements EquipmentForTestModelRepository {
     private static final Logger LOGGER = LogManager.getLogger(EquipmentForTestModelRepositoryImpl.class);
     @Override
-    public void create(EquipmentForTestModel thingToCreate) throws SQLException {
+    public void create(EquipmentForTestModel thingToCreate) {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
             EquipmentForTestModelRepository equipmentForTestModelRepository= sqlSession.getMapper(EquipmentForTestModelRepository.class);
             equipmentForTestModelRepository.create(thingToCreate);
-        }catch (SQLException e){
+        }catch (SQLException | PersistenceException e){
             LOGGER.error(e.getMessage());
         }
     }

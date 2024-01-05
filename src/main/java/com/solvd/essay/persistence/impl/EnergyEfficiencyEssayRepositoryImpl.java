@@ -4,6 +4,7 @@ import com.solvd.essay.domain.EnergyEfficiencyEssay;
 import com.solvd.essay.persistence.EmployeeWorkAreaRepository;
 import com.solvd.essay.persistence.EnergyEfficiencyEssayRepository;
 import com.solvd.essay.persistence.MyPersistenceConfig;
+import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,11 +18,11 @@ import java.util.List;
 public class EnergyEfficiencyEssayRepositoryImpl implements EnergyEfficiencyEssayRepository {
     private static final Logger LOGGER = LogManager.getLogger(EnergyEfficiencyEssayRepositoryImpl.class);
     @Override
-    public void create(EnergyEfficiencyEssay thingToCreate) throws SQLException {
+    public void create(EnergyEfficiencyEssay thingToCreate)  {
         try(SqlSession sqlSession= MyPersistenceConfig.getSessionFactory().openSession(true)){
             EnergyEfficiencyEssayRepository energyEfficiencyEssayRepository= sqlSession.getMapper(EnergyEfficiencyEssayRepository.class);
             energyEfficiencyEssayRepository.create(thingToCreate);
-        }catch (SQLException e){
+        }catch (SQLException | PersistenceException e){
             LOGGER.error(e.getMessage());
         }
 

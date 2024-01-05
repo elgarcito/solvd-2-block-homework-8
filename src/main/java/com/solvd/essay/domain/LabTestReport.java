@@ -4,15 +4,20 @@ import java.util.Date;
 import java.util.List;
 
 public class LabTestReport {
+
     private Long id;
     private String essayCode;
     private Date dateOfEssay;
     private String essayDescription;
+
     private EquipmentForTestModel equipmentForTestModel;
+
     private BatchInfo batchInfo;
     private Employee employee;
     private EssayModule essayModule;
     private List<LabTestReport> labTestReportList;
+
+
 
     public Long getId() {
         return id;
@@ -88,17 +93,42 @@ public class LabTestReport {
 
     @Override
     public String toString() {
+        String equipmentForTestModelValue=null;
+        String batchInfoValue=null;
+        String employeeValue=null;
+        String essayModuleValue=null;
+
+        if (equipmentForTestModel==null){
+            equipmentForTestModelValue="null";
+        }else {
+            equipmentForTestModelValue= equipmentForTestModel.toString();
+        }
+        if (batchInfo==null){
+            batchInfoValue="null";
+        }else {
+            batchInfoValue= batchInfo.toString();
+        }
+        if (employee==null){
+            employeeValue="null";
+        }else {
+            employeeValue= employee.toString();
+        }
+        if (essayModule==null){
+            essayModuleValue="null";
+        }else {
+            essayModuleValue= essayModule.toString();
+        }
+
+
         return "LabTestReport{" +
                 "id=" + id +
                 ", essayCode='" + essayCode + '\'' +
                 ", dateOfEssay=" + dateOfEssay +
                 ", essayDescription='" + essayDescription + '\'' +
-                ", equipmentForTestModel=" + equipmentForTestModel.toString() +
-                ", batchInfo=" + batchInfo.toString() +
-                ", employee=" + employee.toString() +
-                ", essayModule=" + essayModule.toString() +
-                ", labTestReportList=" + labTestReportList +
+                ", equipmentForTestModel=" + equipmentForTestModelValue +
+                ", batchInfo=" +batchInfoValue+
+                ", employee=" + employeeValue +
+                ", essayModule=" + essayModuleValue +
                 '}';
     }
 }
-
