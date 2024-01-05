@@ -280,6 +280,5 @@ public class Main {
         newEmployeeLaboratoryToolService.create(emlt1);
         newEmployeeLaboratoryToolService.deleteOne(4L);
 
-
     }
 }
