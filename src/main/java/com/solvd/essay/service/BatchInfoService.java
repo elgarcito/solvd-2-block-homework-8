@@ -8,21 +8,21 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BatchInfoService {
-    private final AbstracDao<BatchInfo> batchInfoImpl=new BatchInfoRepositoryImpl();
+    private final AbstracDao<BatchInfo> batchInfoRepositoryImpl =new BatchInfoRepositoryImpl();
 
     public void create(BatchInfo batchInfo){
         try {
-            batchInfoImpl.create(batchInfo);
+            batchInfoRepositoryImpl.create(batchInfo);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<BatchInfo> findAll() throws SQLException {
-            return batchInfoImpl.getAll();
+            return batchInfoRepositoryImpl.getAll();
     }
 
     public BatchInfo findOne(Long id) throws SQLException {
-        BatchInfo result= batchInfoImpl.findById(id);
+        BatchInfo result= batchInfoRepositoryImpl.findById(id);
         if (result==null){
             return new BatchInfo();
         }
@@ -30,16 +30,16 @@ public class BatchInfoService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        batchInfoImpl.deleteById(id);
+        batchInfoRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(BatchInfo batchInfo){
-        batchInfoImpl.delete(batchInfo);
+        batchInfoRepositoryImpl.delete(batchInfo);
     }
 
     public void updateEntity(BatchInfo batchInfo,Long id){
         try {
-            batchInfoImpl.update(batchInfo,id);
+            batchInfoRepositoryImpl.update(batchInfo,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

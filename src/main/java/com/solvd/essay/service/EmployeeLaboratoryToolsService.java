@@ -7,17 +7,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeLaboratoryToolsService {
-    private final AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsImpl=new EmployeeLaboratoryToolsRepositoryImpl();
+    private final AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsRepositoryImpl =new EmployeeLaboratoryToolsRepositoryImpl();
 
     public void create(EmployeeLaboratoryTools employeeLaboratoryTools){
         try {
-            employeeLaboratoryToolsImpl.create(employeeLaboratoryTools);
+            employeeLaboratoryToolsRepositoryImpl.create(employeeLaboratoryTools);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<EmployeeLaboratoryTools> findAll() throws SQLException {
-        List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsImpl.getAll();
+        List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsRepositoryImpl.getAll();
 
         /*
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
@@ -37,7 +37,7 @@ public class EmployeeLaboratoryToolsService {
     }
 
     public EmployeeLaboratoryTools findOne(Long id) throws SQLException {
-        EmployeeLaboratoryTools employeeLaboratoryTools = employeeLaboratoryToolsImpl.findById(id);
+        EmployeeLaboratoryTools employeeLaboratoryTools = employeeLaboratoryToolsRepositoryImpl.findById(id);
         if(employeeLaboratoryTools==null){
             return new EmployeeLaboratoryTools();
         }
@@ -56,16 +56,16 @@ public class EmployeeLaboratoryToolsService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        employeeLaboratoryToolsImpl.deleteById(id);
+        employeeLaboratoryToolsRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(EmployeeLaboratoryTools employeeLaboratoryTools){
-        employeeLaboratoryToolsImpl.delete(employeeLaboratoryTools);
+        employeeLaboratoryToolsRepositoryImpl.delete(employeeLaboratoryTools);
     }
 
     public void updateEntity(EmployeeLaboratoryTools employeeLaboratoryTools,Long id){
         try {
-            employeeLaboratoryToolsImpl.update(employeeLaboratoryTools,id);
+            employeeLaboratoryToolsRepositoryImpl.update(employeeLaboratoryTools,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

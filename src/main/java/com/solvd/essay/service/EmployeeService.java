@@ -8,22 +8,22 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeService {
-    private final AbstracDao<Employee> employeeImpl= new EmployeeRepositoryImpl();;
+    private final AbstracDao<Employee> employeeRepositoryImpl = new EmployeeRepositoryImpl();;
 
 
     public void create(Employee employee){
         try {
-            employeeImpl.create(employee);
+            employeeRepositoryImpl.create(employee);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<Employee> findAll() throws SQLException {
-            return employeeImpl.getAll();
+            return employeeRepositoryImpl.getAll();
     }
 
     public Employee findOne(Long id) throws SQLException {
-        Employee result= employeeImpl.findById(id);
+        Employee result= employeeRepositoryImpl.findById(id);
         if (result==null){
             return new Employee();
         }
@@ -31,16 +31,16 @@ public class EmployeeService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        employeeImpl.deleteById(id);
+        employeeRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(Employee employee){
-        employeeImpl.delete(employee);
+        employeeRepositoryImpl.delete(employee);
     }
 
     public void updateEntity(Employee employee,Long id){
         try {
-            employeeImpl.update(employee, id);
+            employeeRepositoryImpl.update(employee, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

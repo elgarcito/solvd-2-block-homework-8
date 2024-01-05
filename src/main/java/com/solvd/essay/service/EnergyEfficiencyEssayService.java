@@ -8,17 +8,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EnergyEfficiencyEssayService {
-    private final AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayImpl = new EnergyEfficiencyEssayRepositoryImpl();
+    private final AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayRepositoryImpl = new EnergyEfficiencyEssayRepositoryImpl();
 
     public void create(EnergyEfficiencyEssay energyEfficiencyEssay){
         try {
-            energyEfficiencyEssayImpl.create(energyEfficiencyEssay);
+            energyEfficiencyEssayRepositoryImpl.create(energyEfficiencyEssay);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<EnergyEfficiencyEssay> findAll() throws SQLException {
-        List<EnergyEfficiencyEssay> eeList=energyEfficiencyEssayImpl.getAll();
+        List<EnergyEfficiencyEssay> eeList= energyEfficiencyEssayRepositoryImpl.getAll();
         /*
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
@@ -31,7 +31,7 @@ public class EnergyEfficiencyEssayService {
     }
 
     public EnergyEfficiencyEssay findOne(Long id) throws SQLException {
-        EnergyEfficiencyEssay essay= energyEfficiencyEssayImpl.findById(id);
+        EnergyEfficiencyEssay essay= energyEfficiencyEssayRepositoryImpl.findById(id);
         if (essay==null){
             return new EnergyEfficiencyEssay();
         }
@@ -45,16 +45,16 @@ public class EnergyEfficiencyEssayService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        energyEfficiencyEssayImpl.deleteById(id);
+        energyEfficiencyEssayRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(EnergyEfficiencyEssay energyEfficiencyEssay){
-        energyEfficiencyEssayImpl.delete(energyEfficiencyEssay);
+        energyEfficiencyEssayRepositoryImpl.delete(energyEfficiencyEssay);
     }
 
     public void updateEntity(EnergyEfficiencyEssay energyEfficiencyEssay, Long id){
         try {
-            energyEfficiencyEssayImpl.update(energyEfficiencyEssay,id);
+            energyEfficiencyEssayRepositoryImpl.update(energyEfficiencyEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

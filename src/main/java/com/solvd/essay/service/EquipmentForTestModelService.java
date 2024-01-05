@@ -8,21 +8,21 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EquipmentForTestModelService {
-    private final AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
+    private final AbstracDao<EquipmentForTestModel> equipmentForTestModelRepositoryImpl = new EquipmentForTestModelRepositoryImpl();
 
     public void create(EquipmentForTestModel equipmentForTestModel){
         try {
-            equipmentForTestModelImpl.create(equipmentForTestModel);
+            equipmentForTestModelRepositoryImpl.create(equipmentForTestModel);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<EquipmentForTestModel> findAll() throws SQLException {
-            return equipmentForTestModelImpl.getAll();
+            return equipmentForTestModelRepositoryImpl.getAll();
     }
 
     public EquipmentForTestModel findOne(Long id) throws SQLException {
-        EquipmentForTestModel result= equipmentForTestModelImpl.findById(id);
+        EquipmentForTestModel result= equipmentForTestModelRepositoryImpl.findById(id);
         if (result==null){
             return new EquipmentForTestModel();
         }
@@ -30,16 +30,16 @@ public class EquipmentForTestModelService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        equipmentForTestModelImpl.deleteById(id);
+        equipmentForTestModelRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(EquipmentForTestModel equipmentForTestModel){
-        equipmentForTestModelImpl.delete(equipmentForTestModel);
+        equipmentForTestModelRepositoryImpl.delete(equipmentForTestModel);
     }
 
     public void updateEntity(EquipmentForTestModel equipmentForTestModel,Long id){
         try {
-            equipmentForTestModelImpl.update(equipmentForTestModel, id);
+            equipmentForTestModelRepositoryImpl.update(equipmentForTestModel, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

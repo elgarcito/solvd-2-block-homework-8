@@ -8,22 +8,22 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class LaboratoryToolService {
-    private final AbstracDao<LaboratoryTool> laboratoryToolImpl= new LaboratoryToolRepositoryImpl();
+    private final AbstracDao<LaboratoryTool> laboratoryToolRepositoryImpl = new LaboratoryToolRepositoryImpl();
 
 
     public void create(LaboratoryTool laboratoryTool){
         try {
-            laboratoryToolImpl.create(laboratoryTool);
+            laboratoryToolRepositoryImpl.create(laboratoryTool);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<LaboratoryTool> findAll() throws SQLException {
-            return laboratoryToolImpl.getAll();
+            return laboratoryToolRepositoryImpl.getAll();
     }
 
     public LaboratoryTool findOne(Long id) throws SQLException {
-        LaboratoryTool result= laboratoryToolImpl.findById(id);
+        LaboratoryTool result= laboratoryToolRepositoryImpl.findById(id);
         if (result==null){
             return new LaboratoryTool();
         }
@@ -31,16 +31,16 @@ public class LaboratoryToolService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        laboratoryToolImpl.deleteById(id);
+        laboratoryToolRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(LaboratoryTool laboratoryTool){
-        laboratoryToolImpl.delete(laboratoryTool);
+        laboratoryToolRepositoryImpl.delete(laboratoryTool);
     }
 
     public void updateEntity(LaboratoryTool laboratoryTool,Long id){
         try {
-            laboratoryToolImpl.update(laboratoryTool, id);
+            laboratoryToolRepositoryImpl.update(laboratoryTool, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -7,17 +7,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class LabTestReportService {
-    private final AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
+    private final AbstracDao<LabTestReport> labTestReportRepositoryImpl =new LabTestReportRepositoryImpl();
 
     public void create(LabTestReport labTestReport){
         try {
-            labTestReportImpl.create(labTestReport);
+            labTestReportRepositoryImpl.create(labTestReport);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<LabTestReport> findAll() throws SQLException {
-        List<LabTestReport> labTestReportList=labTestReportImpl.getAll();
+        List<LabTestReport> labTestReportList= labTestReportRepositoryImpl.getAll();
         /*
 
         AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
@@ -45,7 +45,7 @@ public class LabTestReportService {
 
     public LabTestReport findOne(Long id) throws SQLException {
 
-        LabTestReport labTestReport=labTestReportImpl.findById(id);
+        LabTestReport labTestReport= labTestReportRepositoryImpl.findById(id);
 
         if (labTestReport==null){
             return new LabTestReport();
@@ -84,16 +84,16 @@ public class LabTestReportService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        labTestReportImpl.deleteById(id);
+        labTestReportRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(LabTestReport labTestReport){
-        labTestReportImpl.delete(labTestReport);
+        labTestReportRepositoryImpl.delete(labTestReport);
     }
 
     public void updateEntity(LabTestReport labTestReport,Long id){
         try {
-            labTestReportImpl.update(labTestReport, id);
+            labTestReportRepositoryImpl.update(labTestReport, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

@@ -8,17 +8,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class TemperatureEssayService {
-    private final AbstracDao<TemperatureEssay> temperatureEssayImpl= new TemperatureEssayRepositoryImpl();
+    private final AbstracDao<TemperatureEssay> temperatureEssayRepositoryImpl = new TemperatureEssayRepositoryImpl();
 
     public void create(TemperatureEssay temperatureEssay){
         try {
-            temperatureEssayImpl.create(temperatureEssay);
+            temperatureEssayRepositoryImpl.create(temperatureEssay);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<TemperatureEssay> findAll() throws SQLException {
-        List<TemperatureEssay> temperatureEssaysList=temperatureEssayImpl.getAll();
+        List<TemperatureEssay> temperatureEssaysList= temperatureEssayRepositoryImpl.getAll();
         /*
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
@@ -31,7 +31,7 @@ public class TemperatureEssayService {
     }
 
     public TemperatureEssay findOne(Long id) throws SQLException {
-        TemperatureEssay essay=temperatureEssayImpl.findById(id);
+        TemperatureEssay essay= temperatureEssayRepositoryImpl.findById(id);
         if (essay==null){
             return new TemperatureEssay();
         }
@@ -45,16 +45,16 @@ public class TemperatureEssayService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        temperatureEssayImpl.deleteById(id);
+        temperatureEssayRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(TemperatureEssay temperatureEssay){
-        temperatureEssayImpl.delete(temperatureEssay);
+        temperatureEssayRepositoryImpl.delete(temperatureEssay);
     }
 
     public void updateEntity(TemperatureEssay temperatureEssay, Long id){
         try {
-            temperatureEssayImpl.update(temperatureEssay,id);
+            temperatureEssayRepositoryImpl.update(temperatureEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

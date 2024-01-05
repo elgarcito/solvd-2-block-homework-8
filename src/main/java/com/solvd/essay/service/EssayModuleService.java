@@ -8,20 +8,20 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EssayModuleService {
-    private final AbstracDao<EssayModule> essayModuleImpl=new EssayModuleRepositoryImpl();
+    private final AbstracDao<EssayModule> essayModuleRepositoryImpl =new EssayModuleRepositoryImpl();
     public void create(EssayModule essayModule){
         try {
-            essayModuleImpl.create(essayModule);
+            essayModuleRepositoryImpl.create(essayModule);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<EssayModule> findAll() throws SQLException {
-            return essayModuleImpl.getAll();
+            return essayModuleRepositoryImpl.getAll();
     }
 
     public EssayModule findOne(Long id) throws SQLException {
-        EssayModule result= essayModuleImpl.findById(id);
+        EssayModule result= essayModuleRepositoryImpl.findById(id);
         if (result==null){
             return new EssayModule();
         }
@@ -29,16 +29,16 @@ public class EssayModuleService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        essayModuleImpl.deleteById(id);
+        essayModuleRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(EssayModule essayModule){
-        essayModuleImpl.delete(essayModule);
+        essayModuleRepositoryImpl.delete(essayModule);
     }
 
     public void updateEntity(EssayModule essayModule, Long id){
         try {
-            essayModuleImpl.update(essayModule,id);
+            essayModuleRepositoryImpl.update(essayModule,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

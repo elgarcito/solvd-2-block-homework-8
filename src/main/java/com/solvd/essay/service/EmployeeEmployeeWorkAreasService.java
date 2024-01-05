@@ -8,17 +8,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeEmployeeWorkAreasService {
-    private final AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasImpl=new EmployeeEmployeeWorkAreasRepositoryImpl();
+    private final AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl =new EmployeeEmployeeWorkAreasRepositoryImpl();
 
     public void create(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas){
         try {
-            employeeEmployeeWorkAreasImpl.create(employeeEmployeeWorkAreas);
+            employeeEmployeeWorkAreasRepositoryImpl.create(employeeEmployeeWorkAreas);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<EmployeeEmployeeWorkAreas> findAll() throws SQLException {
-        List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList=employeeEmployeeWorkAreasImpl.getAll();
+        List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList= employeeEmployeeWorkAreasRepositoryImpl.getAll();
         /*
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
@@ -36,7 +36,7 @@ public class EmployeeEmployeeWorkAreasService {
     }
 
     public EmployeeEmployeeWorkAreas findOne(Long id) throws SQLException {
-        EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas= employeeEmployeeWorkAreasImpl.findById(id);
+        EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas= employeeEmployeeWorkAreasRepositoryImpl.findById(id);
         if (employeeEmployeeWorkAreas==null){
             return new EmployeeEmployeeWorkAreas();
         }
@@ -55,16 +55,16 @@ public class EmployeeEmployeeWorkAreasService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        employeeEmployeeWorkAreasImpl.deleteById(id);
+        employeeEmployeeWorkAreasRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas){
-        employeeEmployeeWorkAreasImpl.delete(employeeEmployeeWorkAreas);
+        employeeEmployeeWorkAreasRepositoryImpl.delete(employeeEmployeeWorkAreas);
     }
 
     public void updateEntity(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas, Long id){
         try {
-            employeeEmployeeWorkAreasImpl.update(employeeEmployeeWorkAreas, id);
+            employeeEmployeeWorkAreasRepositoryImpl.update(employeeEmployeeWorkAreas, id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

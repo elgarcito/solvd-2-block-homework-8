@@ -8,17 +8,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class GasConsumptionEssayService {
-    private final AbstracDao<GasConsumptionEssay> gasConsumptionEssayImpl=new GasConsumptionEssayRepositoryImpl();;
+    private final AbstracDao<GasConsumptionEssay> gasConsumptionEssayRepositoryImpl =new GasConsumptionEssayRepositoryImpl();;
 
     public void create(GasConsumptionEssay gasConsumptionEssay){
         try {
-            gasConsumptionEssayImpl.create(gasConsumptionEssay);
+            gasConsumptionEssayRepositoryImpl.create(gasConsumptionEssay);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
     public List<GasConsumptionEssay> findAll() throws SQLException {
-        List<GasConsumptionEssay> listOfGasEssays=gasConsumptionEssayImpl.getAll();
+        List<GasConsumptionEssay> listOfGasEssays= gasConsumptionEssayRepositoryImpl.getAll();
         /*
         AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
@@ -32,7 +32,7 @@ public class GasConsumptionEssayService {
     }
 
     public GasConsumptionEssay findOne(Long id) throws SQLException {
-        GasConsumptionEssay gasConEssay= gasConsumptionEssayImpl.findById(id);
+        GasConsumptionEssay gasConEssay= gasConsumptionEssayRepositoryImpl.findById(id);
         if (gasConEssay==null){
             return new GasConsumptionEssay();
         }
@@ -46,16 +46,16 @@ public class GasConsumptionEssayService {
     }
 
     public void deleteOne(Long id) throws SQLException {
-        gasConsumptionEssayImpl.deleteById(id);
+        gasConsumptionEssayRepositoryImpl.deleteById(id);
     }
 
     public void deleteEntity(GasConsumptionEssay gasConsumptionEssay){
-        gasConsumptionEssayImpl.delete(gasConsumptionEssay);
+        gasConsumptionEssayRepositoryImpl.delete(gasConsumptionEssay);
     }
 
     public void updateEntity(GasConsumptionEssay gasConsumptionEssay,Long id){
         try {
-            gasConsumptionEssayImpl.update(gasConsumptionEssay,id);
+            gasConsumptionEssayRepositoryImpl.update(gasConsumptionEssay,id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
