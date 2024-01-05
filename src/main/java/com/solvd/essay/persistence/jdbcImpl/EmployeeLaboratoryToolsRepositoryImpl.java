@@ -1,9 +1,6 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.jdbcImpl;
 
-import com.solvd.essay.domain.Employee;
-import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
 import com.solvd.essay.domain.EmployeeLaboratoryTools;
-import com.solvd.essay.domain.LaboratoryTool;
 import com.solvd.essay.service.EmployeeService;
 import com.solvd.essay.service.LaboratoryToolService;
 import org.apache.logging.log4j.LogManager;

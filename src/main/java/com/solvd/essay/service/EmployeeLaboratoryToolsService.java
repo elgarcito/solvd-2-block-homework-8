@@ -1,12 +1,8 @@
 package com.solvd.essay.service;
 
-import com.solvd.essay.domain.Employee;
 import com.solvd.essay.domain.EmployeeLaboratoryTools;
-import com.solvd.essay.domain.EmployeeWorkArea;
-import com.solvd.essay.domain.LaboratoryTool;
-import com.solvd.essay.persistence.impl.*;
+import com.solvd.essay.persistence.jdbcImpl.*;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 

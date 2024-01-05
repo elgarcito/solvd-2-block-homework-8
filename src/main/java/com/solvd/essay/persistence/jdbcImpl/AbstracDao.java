@@ -1,17 +1,13 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.jdbcImpl;
 
-import com.solvd.essay.Main;
 import com.solvd.essay.persistence.ConnectionPool;
 import com.solvd.essay.persistence.InterfaceGenerericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.lang.reflect.Constructor;
-import java.lang.reflect.InvocationTargetException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 

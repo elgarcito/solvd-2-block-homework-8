@@ -1,9 +1,8 @@
 package com.solvd.essay.service;
 
-import com.solvd.essay.domain.BatchInfo;
 import com.solvd.essay.domain.Employee;
-import com.solvd.essay.persistence.impl.AbstracDao;
-import com.solvd.essay.persistence.impl.EmployeeRepositoryImpl;
+import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
+import com.solvd.essay.persistence.jdbcImpl.EmployeeRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;

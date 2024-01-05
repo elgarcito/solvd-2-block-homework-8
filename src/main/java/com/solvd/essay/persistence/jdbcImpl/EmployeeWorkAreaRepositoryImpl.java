@@ -1,4 +1,4 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.jdbcImpl;
 
 import com.solvd.essay.domain.EmployeeWorkArea;
 

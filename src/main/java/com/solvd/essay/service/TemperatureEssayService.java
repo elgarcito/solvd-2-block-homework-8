@@ -1,14 +1,9 @@
 package com.solvd.essay.service;
 
-import com.solvd.essay.domain.EnergyEfficiencyEssay;
-import com.solvd.essay.domain.GasConsumptionEssay;
-import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.domain.TemperatureEssay;
-import com.solvd.essay.persistence.impl.AbstracDao;
-import com.solvd.essay.persistence.impl.LabTestReportRepositoryImpl;
-import com.solvd.essay.persistence.impl.TemperatureEssayRepositoryImpl;
+import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
+import com.solvd.essay.persistence.jdbcImpl.TemperatureEssayRepositoryImpl;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 

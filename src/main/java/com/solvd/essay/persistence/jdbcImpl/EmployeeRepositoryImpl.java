@@ -1,10 +1,8 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.jdbcImpl;
 
 import com.solvd.essay.domain.Employee;
-import com.solvd.essay.domain.EssayModule;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 
 public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
 

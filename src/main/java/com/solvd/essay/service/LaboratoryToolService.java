@@ -1,9 +1,8 @@
 package com.solvd.essay.service;
 
-import com.solvd.essay.domain.EssayModule;
 import com.solvd.essay.domain.LaboratoryTool;
-import com.solvd.essay.persistence.impl.AbstracDao;
-import com.solvd.essay.persistence.impl.LaboratoryToolRepositoryImpl;
+import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
+import com.solvd.essay.persistence.jdbcImpl.LaboratoryToolRepositoryImpl;
 
 import java.sql.SQLException;
 import java.util.List;

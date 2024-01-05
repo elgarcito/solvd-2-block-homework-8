@@ -2,17 +2,13 @@ package com.solvd.essay;
 
 
 import com.solvd.essay.domain.*;
-import com.solvd.essay.persistence.impl.*;
 import com.solvd.essay.service.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-import java.util.Optional;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.

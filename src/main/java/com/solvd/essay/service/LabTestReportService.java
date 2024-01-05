@@ -1,9 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.*;
-import com.solvd.essay.persistence.impl.*;
+import com.solvd.essay.persistence.jdbcImpl.*;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 

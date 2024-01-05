@@ -1,7 +1,6 @@
-package com.solvd.essay.persistence.impl;
+package com.solvd.essay.persistence.jdbcImpl;
 
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
-import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.service.LabTestReportService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
