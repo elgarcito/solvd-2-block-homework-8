@@ -30,7 +30,7 @@ public class EmployeeLaboratoryToolsService {
     public List<EmployeeLaboratoryTools> findAll() throws SQLException {
         List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsImpl.getAll();
 
-
+        /*
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
@@ -42,6 +42,8 @@ public class EmployeeLaboratoryToolsService {
             employeeLaboratoryTools.setEmployee(newEmployeeService.findOne(employeeLaboratoryTools.getEmployeeId()));
             employeeLaboratoryTools.setLaboratoryTool(newLaboratoryToolService.findOne(employeeLaboratoryTools.getLaboratoryToolId()));
         }
+
+         */
         return employeeLaboratoryToolsList;
     }
 
@@ -50,6 +52,7 @@ public class EmployeeLaboratoryToolsService {
         if(employeeLaboratoryTools==null){
             return new EmployeeLaboratoryTools();
         }
+        /*
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
@@ -58,6 +61,8 @@ public class EmployeeLaboratoryToolsService {
 
         employeeLaboratoryTools.setEmployee(newEmployeeService.findOne(employeeLaboratoryTools.getEmployeeId()));
         employeeLaboratoryTools.setLaboratoryTool(newLaboratoryToolService.findOne(employeeLaboratoryTools.getLaboratoryToolId()));
+
+         */
         return employeeLaboratoryTools;
     }
 

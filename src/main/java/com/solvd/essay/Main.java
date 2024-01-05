@@ -291,8 +291,6 @@ public class Main {
         List<EmployeeLaboratoryTools> emltList= newEmployeeLaboratoryToolService.findAll();
         emltList.forEach(x->LOGGER.info(x.toString()));
         EmployeeLaboratoryTools emlt1=new EmployeeLaboratoryTools();
-        emlt1.setEmployeeId(5L);
-        emlt1.setLaboratoryToolId(2L);
         newEmployeeLaboratoryToolService.create(emlt1);
         newEmployeeLaboratoryToolService.deleteOne(4L);
 

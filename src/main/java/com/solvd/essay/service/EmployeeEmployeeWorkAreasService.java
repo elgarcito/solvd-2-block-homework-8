@@ -27,7 +27,7 @@ public class EmployeeEmployeeWorkAreasService {
     }
     public List<EmployeeEmployeeWorkAreas> findAll() throws SQLException {
         List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList=employeeEmployeeWorkAreasImpl.getAll();
-
+        /*
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
@@ -38,6 +38,8 @@ public class EmployeeEmployeeWorkAreasService {
             employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));
             employeeEmployeeWorkAreas.setEmployeeWorkArea(newEmployeeWorkAreaService.findOne(employeeEmployeeWorkAreas.getEmployeeworkAreaId()));
         }
+
+         */
         return employeeEmployeeWorkAreasList;
     }
 
@@ -46,6 +48,7 @@ public class EmployeeEmployeeWorkAreasService {
         if (employeeEmployeeWorkAreas==null){
             return new EmployeeEmployeeWorkAreas();
         }
+        /*
         AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
@@ -54,6 +57,8 @@ public class EmployeeEmployeeWorkAreasService {
 
         employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));
         employeeEmployeeWorkAreas.setEmployeeWorkArea(newEmployeeWorkAreaService.findOne(employeeEmployeeWorkAreas.getEmployeeworkAreaId()));
+
+         */
         return employeeEmployeeWorkAreas;
     }
 

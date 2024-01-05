@@ -5,9 +5,28 @@ n this progressive project, we are going to model a lab essay management databas
 Exercises
 
 19/12/2023
-Build hierarchy for Schema from the below course. Create DAO classes with necessary interfaces, abstract classes, and Generics. DAO should be scalable and flexible to support another framework and another database as well. All CRUD operations should be supported using JDBC. Use connection pool from the below block. Implement Service layer with necessary abstraction to be able to switch between databases and frameworks.
+Build hierarchy for Schema from the below course.
 
-All Crud operations with these requirements were done in the master branch
+Create DAO classes with necessary interfaces, abstract classes, and Generics.  
+
+DAO should be scalable and flexible to support another framework and another database as well. All CRUD operations should be supported using JDBC. Use connection pool from the below block.
+Implement Service layer with necessary abstraction to be able to switch between databases and frameworks.
+
+## Solution:
+
+The packages:
+* Domain: that contains the 12 classes that represent the tables for the mySQL database:
+* BatchInfo.java ,Employee.java, EmployeeEmployeeWorkAreas.java, EmployeeLaboratoryTools.java, 
+EmployeeWorkArea.java, EnergyEfficiencyEssay.java,
+  EquipmentForTestModel.java, EssayModule.java, GasConsumptionEssay.java, 
+LaboratoryTool.java, LabTestReport.java, TemperatureEssay.java.
+* Persistence: that contains the DAO clasess for each class with the CRUD operations for each class.
+It also contains the AbstracDao and the abstract interface InterfaceGenericDao.
+* Service that contains the service for each class.
+
+The ConnectionPool clas is implemented for each method in the abstract class.The source of this file is in:
+src/main/java/com/solvd/essay/persistence/ConnectionPool.java
+
 14/12/2024
 Exercises
 
