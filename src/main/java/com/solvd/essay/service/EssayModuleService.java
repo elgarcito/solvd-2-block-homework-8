@@ -10,11 +10,7 @@ import java.util.List;
 public class EssayModuleService {
     private final AbstracDao<EssayModule> essayModuleRepositoryImpl =new EssayModuleRepositoryImpl();
     public void create(EssayModule essayModule){
-        try {
             essayModuleRepositoryImpl.create(essayModule);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<EssayModule> findAll() throws SQLException {
             return essayModuleRepositoryImpl.getAll();

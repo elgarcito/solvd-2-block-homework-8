@@ -10,11 +10,7 @@ public class EmployeeLaboratoryToolsService {
     private final AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsRepositoryImpl =new EmployeeLaboratoryToolsRepositoryImpl();
 
     public void create(EmployeeLaboratoryTools employeeLaboratoryTools){
-        try {
             employeeLaboratoryToolsRepositoryImpl.create(employeeLaboratoryTools);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<EmployeeLaboratoryTools> findAll() throws SQLException {
         List<EmployeeLaboratoryTools> employeeLaboratoryToolsList= employeeLaboratoryToolsRepositoryImpl.getAll();

@@ -12,11 +12,8 @@ public class EmployeeService {
 
 
     public void create(Employee employee){
-        try {
             employeeRepositoryImpl.create(employee);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
     }
     public List<Employee> findAll() throws SQLException {
             return employeeRepositoryImpl.getAll();

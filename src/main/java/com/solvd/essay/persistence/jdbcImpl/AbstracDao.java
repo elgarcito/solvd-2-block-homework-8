@@ -16,7 +16,7 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
 
     @Override
-    public void create(T thingToCreate) throws SQLException {
+    public void create(T thingToCreate) {
         Connection conn1;
         try {
             conn1 = ConnectionPool.getConnection();
@@ -38,10 +38,18 @@ public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
 
         } catch (Exception e) {
             LOGGER.error(e.getMessage()) ;
-            conn1.rollback();
+            try {
+                conn1.rollback();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
         }
         finally {
-            conn1.setAutoCommit(true);
+            try {
+                conn1.setAutoCommit(true);
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
             ConnectionPool.releaseConnection(conn1);
         }
     }

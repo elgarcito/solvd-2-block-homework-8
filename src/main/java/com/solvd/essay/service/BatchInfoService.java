@@ -11,11 +11,7 @@ public class BatchInfoService {
     private final AbstracDao<BatchInfo> batchInfoRepositoryImpl =new BatchInfoRepositoryImpl();
 
     public void create(BatchInfo batchInfo){
-        try {
             batchInfoRepositoryImpl.create(batchInfo);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<BatchInfo> findAll() throws SQLException {
             return batchInfoRepositoryImpl.getAll();

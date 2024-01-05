@@ -10,11 +10,7 @@ public class LabTestReportService {
     private final AbstracDao<LabTestReport> labTestReportRepositoryImpl =new LabTestReportRepositoryImpl();
 
     public void create(LabTestReport labTestReport){
-        try {
             labTestReportRepositoryImpl.create(labTestReport);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<LabTestReport> findAll() throws SQLException {
         List<LabTestReport> labTestReportList= labTestReportRepositoryImpl.getAll();

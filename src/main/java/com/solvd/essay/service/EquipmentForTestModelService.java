@@ -11,11 +11,7 @@ public class EquipmentForTestModelService {
     private final AbstracDao<EquipmentForTestModel> equipmentForTestModelRepositoryImpl = new EquipmentForTestModelRepositoryImpl();
 
     public void create(EquipmentForTestModel equipmentForTestModel){
-        try {
             equipmentForTestModelRepositoryImpl.create(equipmentForTestModel);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<EquipmentForTestModel> findAll() throws SQLException {
             return equipmentForTestModelRepositoryImpl.getAll();

@@ -12,11 +12,7 @@ public class LaboratoryToolService {
 
 
     public void create(LaboratoryTool laboratoryTool){
-        try {
             laboratoryToolRepositoryImpl.create(laboratoryTool);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<LaboratoryTool> findAll() throws SQLException {
             return laboratoryToolRepositoryImpl.getAll();

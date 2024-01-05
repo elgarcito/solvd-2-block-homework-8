@@ -11,11 +11,9 @@ public class EmployeeWorkAreaService {
     private final AbstracDao<EmployeeWorkArea> employeeWorkAreaRepositoryImpl = new EmployeeWorkAreaRepositoryImpl();
 
     public void create(EmployeeWorkArea employeeWorkArea){
-        try {
+
             employeeWorkAreaRepositoryImpl.create(employeeWorkArea);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
     }
     public List<EmployeeWorkArea> findAll() throws SQLException {
             return employeeWorkAreaRepositoryImpl.getAll();

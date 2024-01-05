@@ -11,11 +11,8 @@ public class TemperatureEssayService {
     private final AbstracDao<TemperatureEssay> temperatureEssayRepositoryImpl = new TemperatureEssayRepositoryImpl();
 
     public void create(TemperatureEssay temperatureEssay){
-        try {
             temperatureEssayRepositoryImpl.create(temperatureEssay);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
     }
     public List<TemperatureEssay> findAll() throws SQLException {
         List<TemperatureEssay> temperatureEssaysList= temperatureEssayRepositoryImpl.getAll();

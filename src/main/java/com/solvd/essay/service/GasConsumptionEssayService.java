@@ -11,11 +11,7 @@ public class GasConsumptionEssayService {
     private final AbstracDao<GasConsumptionEssay> gasConsumptionEssayRepositoryImpl =new GasConsumptionEssayRepositoryImpl();;
 
     public void create(GasConsumptionEssay gasConsumptionEssay){
-        try {
             gasConsumptionEssayRepositoryImpl.create(gasConsumptionEssay);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
     }
     public List<GasConsumptionEssay> findAll() throws SQLException {
         List<GasConsumptionEssay> listOfGasEssays= gasConsumptionEssayRepositoryImpl.getAll();

@@ -11,11 +11,7 @@ public class EmployeeEmployeeWorkAreasService {
     private final AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl =new EmployeeEmployeeWorkAreasRepositoryImpl();
 
     public void create(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas){
-        try {
-            employeeEmployeeWorkAreasRepositoryImpl.create(employeeEmployeeWorkAreas);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+        employeeEmployeeWorkAreasRepositoryImpl.create(employeeEmployeeWorkAreas);
     }
     public List<EmployeeEmployeeWorkAreas> findAll() throws SQLException {
         List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList= employeeEmployeeWorkAreasRepositoryImpl.getAll();

@@ -11,11 +11,9 @@ public class EnergyEfficiencyEssayService {
     private final AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayRepositoryImpl = new EnergyEfficiencyEssayRepositoryImpl();
 
     public void create(EnergyEfficiencyEssay energyEfficiencyEssay){
-        try {
+
             energyEfficiencyEssayRepositoryImpl.create(energyEfficiencyEssay);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+
     }
     public List<EnergyEfficiencyEssay> findAll() throws SQLException {
         List<EnergyEfficiencyEssay> eeList= energyEfficiencyEssayRepositoryImpl.getAll();
