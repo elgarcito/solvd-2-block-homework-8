@@ -1,5 +1,6 @@
 package com.solvd.essay.domain;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
@@ -13,6 +14,7 @@ public class BatchInfo {
     @XmlAttribute(name="id")
 
     private Long id;
+    @JsonProperty("batch")
     private String batchNumber;
     private List<BatchInfo> myBatchInfoList;
 

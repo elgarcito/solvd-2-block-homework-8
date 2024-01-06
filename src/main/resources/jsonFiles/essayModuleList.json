@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "essayModuleList":[
+    {
+      "id": 1,
+      "moduleDescription": "Big equipment module"
+    },
+    {
+      "id": 2,
+      "moduleDescription": "Intermediate module"
+    },
+    {
+      "id": 3,
+      "moduleDescription": "Small module"
+    }
+  ]
+}

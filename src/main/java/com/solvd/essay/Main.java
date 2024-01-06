@@ -1,6 +1,8 @@
 package com.solvd.essay;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.solvd.essay.domain.*;
 import com.solvd.essay.service.*;
 import jakarta.xml.bind.JAXBContext;
@@ -36,8 +38,8 @@ public class Main {
 
         EssayModule essayModule=newEssayModuleService.findOne(1L);
         LOGGER.info(essayModule.toString());
-        List<EssayModule> essayModuleList.xml= newEssayModuleService.findAll();
-        essayModuleList.xml.forEach(x->LOGGER.info(x.toString()));
+        List<EssayModule> essayModuleList.json.xml= newEssayModuleService.findAll();
+        essayModuleList.json.xml.forEach(x->LOGGER.info(x.toString()));
         EssayModule essayModule1=new EssayModule();
         essayModule1.setModuleDescription("module 125");
         newEssayModuleService.create(essayModule1);
@@ -290,12 +292,15 @@ public class Main {
 
 
 
+        /*
         File file =new File("src/main/resources/xmlFiles/batchInfo.xml");
         File file1=new File("src/main/resources/xmlFiles/equipmentForTestModel.xml");
         File file2=new File("src/main/resources/xmlFiles/employee.xml");
         File file3=new File("src/main/resources/xmlFiles/essayModule.xml");
         File file4=new File("src/main/resources/xmlFiles/labTestReport.xml");
-        File file5=new File("src/main/resources/xmlFiles/essayModuleList.xml");
+        File file5=new File("src/main/resources/xmlFiles/essayModuleList.json.xml");
+
+         */
 
         //Sax parse implementation
         /*
@@ -336,6 +341,7 @@ public class Main {
 
         //JaxB implementation
 
+        /*
         try {
             JAXBContext context=JAXBContext.newInstance(BatchInfo.class);
             JAXBContext context1=JAXBContext.newInstance(EquipmentForTestModel.class);
@@ -364,6 +370,34 @@ public class Main {
             essayModuleListJaxb.getEssayModuleList().forEach(x-> System.out.println(x.toString()));
 
         } catch (JAXBException e) {
+            throw new RuntimeException(e);
+        }
+
+         */
+        File file6 =new File("src/main/resources/jsonFiles/batchInfo.json");
+        File file7=new File("src/main/resources/jsonFiles/equipmentForTestModel.json");
+        File file8=new File("src/main/resources/jsonFiles/employee.json");
+        File file9=new File("src/main/resources/jsonFiles/essayModule.json");
+        File file10=new File("src/main/resources/jsonFiles/labTestReport.json");
+        File file11=new File("src/main/resources/jsonFiles/essayModuleList.json");
+        ObjectMapper mapper=new ObjectMapper();
+        mapper.registerModule(new JavaTimeModule());
+
+        try {
+
+           BatchInfo batchInfoJackson= mapper.readValue(file6,BatchInfo.class);
+           EquipmentForTestModel equipmentForTestModelJackson= mapper.readValue(file7,EquipmentForTestModel.class);
+           Employee employeeJackson= mapper.readValue(file8,Employee.class);
+           EssayModule essayModuleJackson= mapper.readValue(file9,EssayModule.class);
+           LabTestReport labTestReportJackson= mapper.readValue(file10,LabTestReport.class);
+           EssayModuleList essayModuleListJackson= mapper.readValue(file11,EssayModuleList.class);
+           LOGGER.info(batchInfoJackson.toString());
+           LOGGER.info(equipmentForTestModelJackson.toString());
+           LOGGER.info(employeeJackson.toString());
+           LOGGER.info(essayModuleJackson.toString());
+           LOGGER.info(labTestReportJackson.toString());
+           essayModuleListJackson.getEssayModuleList().forEach(x->LOGGER.info(x.toString()));
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
 

@@ -1,6 +1,9 @@
 package com.solvd.essay.domain;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.solvd.essay.JacksonAdapter;
 import com.solvd.essay.LocalDateTimeAdapter;
 import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -14,6 +17,7 @@ public class EquipmentForTestModel {
     private Long id;
     private String modelName;
     private String modelDescription;
+    @JsonDeserialize(using = JacksonAdapter.class)
     @XmlJavaTypeAdapter(value= LocalDateTimeAdapter.class)
     private LocalDate releaseDate;
     private List<EquipmentForTestModel> equipmentForTestModelList;

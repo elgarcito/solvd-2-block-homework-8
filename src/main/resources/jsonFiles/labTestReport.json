@@ -1,0 +1,28 @@
+{
+  "id": 1,
+  "essayCode":"EA100",
+  "dateOfEssay":"2100-12-22",
+  "essayDescription": "Big equipment essay",
+  "equipmentForTestModel":{
+    "id":1,
+    "modelName": "model1",
+    "modelDescription": "big Equipment",
+    "releaseDate": "2023-01-20"
+  },
+  "batchInfo": {
+  "id": 1,
+  "batch":"PR1001"
+  },
+  "employee": {
+    "id":1,
+    "firstName":"john",
+    "lastName":"smith",
+    "personalId":"Abc123",
+    "birthDate": "2000-12-15",
+    "salary": 1000.0
+  },
+  "essayModule": {
+    "id": 1,
+    "moduleDescription": "Big equipment module"
+  }
+}

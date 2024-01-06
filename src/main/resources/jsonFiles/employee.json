@@ -1,0 +1,8 @@
+{
+  "id":1,
+  "firstName":"john",
+  "lastName":"smith",
+  "personalId":"Abc123",
+  "birthDate": "2000-12-15",
+  "salary": 1000.0
+}

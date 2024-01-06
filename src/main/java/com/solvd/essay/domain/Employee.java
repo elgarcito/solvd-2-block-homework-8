@@ -1,11 +1,14 @@
 package com.solvd.essay.domain;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.solvd.essay.JacksonAdapter;
 import com.solvd.essay.LocalDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
 import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,6 +20,7 @@ public class Employee {
     private String firstName;
     private String lastName;
     private String personalId;
+    @JsonDeserialize(using = JacksonAdapter.class)
     @XmlJavaTypeAdapter(value= LocalDateTimeAdapter.class)
     private LocalDate birthDate;
     private Double salary;
