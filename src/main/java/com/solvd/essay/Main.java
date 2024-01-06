@@ -36,8 +36,8 @@ public class Main {
 
         EssayModule essayModule=newEssayModuleService.findOne(1L);
         LOGGER.info(essayModule.toString());
-        List<EssayModule> essayModuleList= newEssayModuleService.findAll();
-        essayModuleList.forEach(x->LOGGER.info(x.toString()));
+        List<EssayModule> essayModuleList.xml= newEssayModuleService.findAll();
+        essayModuleList.xml.forEach(x->LOGGER.info(x.toString()));
         EssayModule essayModule1=new EssayModule();
         essayModule1.setModuleDescription("module 125");
         newEssayModuleService.create(essayModule1);
@@ -295,6 +295,7 @@ public class Main {
         File file2=new File("src/main/resources/xmlFiles/employee.xml");
         File file3=new File("src/main/resources/xmlFiles/essayModule.xml");
         File file4=new File("src/main/resources/xmlFiles/labTestReport.xml");
+        File file5=new File("src/main/resources/xmlFiles/essayModuleList.xml");
 
         //Sax parse implementation
         /*
@@ -341,23 +342,27 @@ public class Main {
             JAXBContext context2=JAXBContext.newInstance(Employee.class);
             JAXBContext context3=JAXBContext.newInstance(EssayModule.class);
             JAXBContext context4=JAXBContext.newInstance(LabTestReport.class);
+            JAXBContext context5=JAXBContext.newInstance(EssayModuleList.class);
             Unmarshaller unmarshaller =context.createUnmarshaller();
             Unmarshaller unmarshaller1 =context1.createUnmarshaller();
             Unmarshaller unmarshaller2 =context2.createUnmarshaller();
             Unmarshaller unmarshaller3 =context3.createUnmarshaller();
             Unmarshaller unmarshaller4 =context4.createUnmarshaller();
+            Unmarshaller unmarshaller5 =context5.createUnmarshaller();
             BatchInfo batchInfoJaxb= (BatchInfo) unmarshaller.unmarshal(file);
             EquipmentForTestModel equipmentForTestModelJaxb= (EquipmentForTestModel) unmarshaller1.unmarshal(file1);
             Employee employeeJaxb=(Employee)unmarshaller2.unmarshal(file2);
             EssayModule essayModuleJaxb=(EssayModule) unmarshaller3.unmarshal(file3);
             LabTestReport labTestReportJaxb=(LabTestReport) unmarshaller4.unmarshal(file4);
+            EssayModuleList essayModuleListJaxb=(EssayModuleList) unmarshaller5.unmarshal(file5);
             System.out.println();
             LOGGER.info(batchInfoJaxb.toString());
             LOGGER.info(equipmentForTestModelJaxb.toString());
             LOGGER.info(employeeJaxb.toString());
             LOGGER.info(essayModuleJaxb.toString());
             LOGGER.info(labTestReportJaxb.toString());
-            
+            essayModuleListJaxb.getEssayModuleList().forEach(x-> System.out.println(x.toString()));
+
         } catch (JAXBException e) {
             throw new RuntimeException(e);
         }

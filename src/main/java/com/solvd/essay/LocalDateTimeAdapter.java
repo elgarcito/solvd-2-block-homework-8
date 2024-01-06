@@ -1,4 +1,4 @@
-package com.solvd.essay.domain;
+package com.solvd.essay;
 
 import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 

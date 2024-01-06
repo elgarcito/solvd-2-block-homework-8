@@ -1,5 +1,6 @@
 package com.solvd.essay.domain;
 
+import com.solvd.essay.LocalDateTimeAdapter;
 import jakarta.xml.bind.annotation.XmlAccessType;
 import jakarta.xml.bind.annotation.XmlAccessorType;
 import jakarta.xml.bind.annotation.XmlAttribute;
@@ -7,7 +8,6 @@ import jakarta.xml.bind.annotation.XmlRootElement;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 @XmlRootElement(name="employee")
 @XmlAccessorType(XmlAccessType.FIELD)

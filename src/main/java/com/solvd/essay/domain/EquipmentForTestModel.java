@@ -1,11 +1,11 @@
 package com.solvd.essay.domain;
 
 
+import com.solvd.essay.LocalDateTimeAdapter;
 import jakarta.xml.bind.annotation.*;
 import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 @XmlRootElement(name="equipmentForTestModel")
 @XmlAccessorType(XmlAccessType.FIELD)

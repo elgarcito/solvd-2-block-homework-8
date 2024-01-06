@@ -9,7 +9,21 @@ Add JAXB annotations to the hierarchy.
 Date, List, and complex objects should be covered.
 Parse XML using JAXB.
 
+### Solution:
+The JAXB annotations were added in order to parse xml file.
 
+The annotations are in the classes:
+* batchInfo.java, employee.java, equipmentForTestModel.java, essayModule.java, 
+labTestReport.java
+
+The date annotations are in classes:
+employee.java, equipmentForTestModel.java, labTestReport.java
+
+Because of the nature of our project, any of the objects contains a list of other objects, 
+so the class EssayModuleList is created with essayModuleList.xml
+and essayModuleList.xsd.
+This class contains a list of the type EssayModule class 
+and also contains the annotations required for a list type in JAXB
 
 ### 28/12/2023
 Create one XML file and XSD schema for at least 5 classes from the below hierarchy.

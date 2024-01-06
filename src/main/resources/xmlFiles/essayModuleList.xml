@@ -1,0 +1,15 @@
+<essayModuleList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="../xsdFiles/essayModuleList.xsd"  id="1">
+    <essayModules>
+
+    <essayModule id="1">
+        <moduleDescription>"Big module"</moduleDescription>
+    </essayModule>
+    <essayModule id="2">
+        <moduleDescription>"medium module"</moduleDescription>
+    </essayModule>
+    <essayModule id="3">
+        <moduleDescription>"small module"</moduleDescription>
+    </essayModule>
+    </essayModules>
+</essayModuleList>
