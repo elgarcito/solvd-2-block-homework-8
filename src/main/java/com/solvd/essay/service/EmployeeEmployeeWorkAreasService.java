@@ -1,6 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.EmployeeEmployeeWorkAreasRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.EmployeeEmployeeWorkAreasRepositoryImpl;
@@ -9,10 +11,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeEmployeeWorkAreasService {
-    //private final AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl =new EmployeeEmployeeWorkAreasRepositoryImpl();
-    private final EmployeeEmployeeWorkAreasRepositoryImpl employeeEmployeeWorkAreasRepositoryImpl =new EmployeeEmployeeWorkAreasRepositoryImpl();
+    final InterfaceGenericDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl = Factory.getEmployeeEmployeeWorkAreasRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
 
-    public void create(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas){
+    public void create(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas) throws SQLException {
         employeeEmployeeWorkAreasRepositoryImpl.create(employeeEmployeeWorkAreas);
     }
     public List<EmployeeEmployeeWorkAreas> findAll() throws SQLException {

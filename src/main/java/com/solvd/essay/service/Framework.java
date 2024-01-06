@@ -1,6 +1,9 @@
 package com.solvd.essay.service;
 
 public enum Framework {
+    //Change the name of the framework used to
+    // jdbc
+    // myBatis
     FRAMEWORK_USED_NAME("myBatis");
     private final String FRAMEWORK_USED;
 

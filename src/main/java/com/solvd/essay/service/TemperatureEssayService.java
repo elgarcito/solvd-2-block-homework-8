@@ -1,6 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.TemperatureEssay;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.TemperatureEssayRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.TemperatureEssayRepositoryImpl;
@@ -9,10 +11,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class TemperatureEssayService {
-    //private final AbstracDao<TemperatureEssay> temperatureEssayRepositoryImpl = new TemperatureEssayRepositoryImpl();
-    private final TemperatureEssayRepositoryImpl temperatureEssayRepositoryImpl = new TemperatureEssayRepositoryImpl();
-
-    public void create(TemperatureEssay temperatureEssay){
+    final InterfaceGenericDao<TemperatureEssay> temperatureEssayRepositoryImpl = Factory.getTemperatureEssayRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(TemperatureEssay temperatureEssay) throws SQLException {
             temperatureEssayRepositoryImpl.create(temperatureEssay);
 
     }

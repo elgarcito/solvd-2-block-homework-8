@@ -1,6 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EnergyEfficiencyEssay;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.EnergyEfficiencyEssayRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.EnergyEfficiencyEssayRepositoryImpl;
@@ -9,24 +11,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EnergyEfficiencyEssayService {
-  //  private final AbstracDao<EnergyEfficiencyEssay> energyEfficiencyEssayRepositoryImpl = new EnergyEfficiencyEssayRepositoryImpl();
-    private final EnergyEfficiencyEssayRepositoryImpl energyEfficiencyEssayRepositoryImpl = new EnergyEfficiencyEssayRepositoryImpl();
-
-    public void create(EnergyEfficiencyEssay energyEfficiencyEssay){
-
-            energyEfficiencyEssayRepositoryImpl.create(energyEfficiencyEssay);
-
+    final InterfaceGenericDao<EnergyEfficiencyEssay> energyEfficiencyEssayRepositoryImpl = Factory.getEnergyEfficiencyEssayRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(EnergyEfficiencyEssay energyEfficiencyEssay) throws SQLException {
+        energyEfficiencyEssayRepositoryImpl.create(energyEfficiencyEssay);
     }
     public List<EnergyEfficiencyEssay> findAll() throws SQLException {
         List<EnergyEfficiencyEssay> eeList= energyEfficiencyEssayRepositoryImpl.getAll();
-        /*
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
-        for (EnergyEfficiencyEssay enEfEssay:eeList) {
-            enEfEssay.setLabTestReport(newLabTestReportService.findOne(enEfEssay.getLabTestReportId()));
-        }
-
-         */
             return eeList;
     }
 

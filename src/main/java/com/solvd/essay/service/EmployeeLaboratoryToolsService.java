@@ -1,6 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EmployeeLaboratoryTools;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.EmployeeLaboratoryToolsRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.*;
 
@@ -8,10 +10,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeLaboratoryToolsService {
-  //  private final AbstracDao<EmployeeLaboratoryTools> employeeLaboratoryToolsRepositoryImpl =new EmployeeLaboratoryToolsRepositoryImpl();
-    private final EmployeeLaboratoryToolsRepositoryImpl employeeLaboratoryToolsRepositoryImpl =new EmployeeLaboratoryToolsRepositoryImpl();
-
-    public void create(EmployeeLaboratoryTools employeeLaboratoryTools){
+    final InterfaceGenericDao<EmployeeLaboratoryTools> employeeLaboratoryToolsRepositoryImpl = Factory.getEmployeeLaboratoryToolsRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(EmployeeLaboratoryTools employeeLaboratoryTools) throws SQLException {
             employeeLaboratoryToolsRepositoryImpl.create(employeeLaboratoryTools);
     }
     public List<EmployeeLaboratoryTools> findAll() throws SQLException {
@@ -24,17 +24,6 @@ public class EmployeeLaboratoryToolsService {
         if(employeeLaboratoryTools==null){
             return new EmployeeLaboratoryTools();
         }
-        /*
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
-
-        AbstracDao<LaboratoryTool> laboratoryTooImpl = new LaboratoryToolRepositoryImpl();
-        LaboratoryToolService newLaboratoryToolService= new LaboratoryToolService(laboratoryTooImpl);
-
-        employeeLaboratoryTools.setEmployee(newEmployeeService.findOne(employeeLaboratoryTools.getEmployeeId()));
-        employeeLaboratoryTools.setLaboratoryTool(newLaboratoryToolService.findOne(employeeLaboratoryTools.getLaboratoryToolId()));
-
-         */
         return employeeLaboratoryTools;
     }
 

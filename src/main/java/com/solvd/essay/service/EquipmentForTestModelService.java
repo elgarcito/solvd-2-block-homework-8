@@ -1,6 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EquipmentForTestModel;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.EquipmentForTestModelRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.EquipmentForTestModelRepositoryImpl;
@@ -9,10 +11,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EquipmentForTestModelService {
-    //private final AbstracDao<EquipmentForTestModel> equipmentForTestModelRepositoryImpl = new EquipmentForTestModelRepositoryImpl();
-    private final EquipmentForTestModelRepositoryImpl equipmentForTestModelRepositoryImpl = new EquipmentForTestModelRepositoryImpl();
-
-    public void create(EquipmentForTestModel equipmentForTestModel){
+    final InterfaceGenericDao<EquipmentForTestModel> equipmentForTestModelRepositoryImpl = Factory.getEquipmentForTestModelRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(EquipmentForTestModel equipmentForTestModel) throws SQLException {
             equipmentForTestModelRepositoryImpl.create(equipmentForTestModel);
     }
     public List<EquipmentForTestModel> findAll() throws SQLException {

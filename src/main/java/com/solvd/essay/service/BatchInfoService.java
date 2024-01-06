@@ -1,6 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.BatchInfo;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.BatchInfoRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
 //import com.solvd.essay.persistence.jdbcImpl.BatchInfoRepositoryImpl;
@@ -9,12 +11,10 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class BatchInfoService {
-    final BatchInfoRepositoryImpl batchInfoRepositoryImpl =new BatchInfoRepositoryImpl();
-    //final AbstracDao<BatchInfo> batchInfoRepositoryImpl =new BatchInfoRepositoryImpl();
+    final InterfaceGenericDao<BatchInfo> batchInfoRepositoryImpl= Factory.getBatchInfoRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
 
 
-
-    public void create(BatchInfo batchInfo)  {
+    public void create(BatchInfo batchInfo) throws SQLException {
             batchInfoRepositoryImpl.create(batchInfo);
     }
     public List<BatchInfo> findAll() throws SQLException {
