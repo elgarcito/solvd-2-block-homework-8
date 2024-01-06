@@ -5,6 +5,20 @@ In this progressive project, we are going to model a lab essay
 Exercises 
 
 ### 28/12/2023
+Add Jackson’s annotation to the hierarchy. Date, List, and complex objects should be covered.
+Parse JSON using Jackson.
+
+### Solution
+The five json files were added:
+* batchInfo.json, employee.json, equipmentForTestModel.json, essayModule.json,
+essayModuleList.json, labTestReport.json
+
+The JacksonAdapter class was created to format five date annotations in classes:
+* employee.java, equipmentForTestModel.java, labTestReport.java.
+
+The parse to each object could be seen in the main method.
+
+### 28/12/2023
 Add JAXB annotations to the hierarchy.
 Date, List, and complex objects should be covered.
 Parse XML using JAXB.
