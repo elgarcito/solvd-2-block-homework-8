@@ -1,7 +1,6 @@
 
 In this progressive project, we are going to model a lab essay
- management database. 
-The structure of the databases
+ management database.
 
 Exercises 
 
