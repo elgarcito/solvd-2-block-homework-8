@@ -5,7 +5,7 @@ import com.solvd.essay.domain.EssayModule;
 import java.sql.*;
 import java.util.List;
 
-public class EssayModuleRepositoryImpl extends AbstracDao<EssayModule> {
+public class EssayModuleRepositoryImpl extends AbstractDao<EssayModule> {
     public EssayModuleRepositoryImpl() {
     }
 

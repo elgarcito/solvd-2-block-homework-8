@@ -4,7 +4,7 @@ import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
 import com.solvd.essay.persistence.Factory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.EmployeeEmployeeWorkAreasRepositoryImpl;
-//import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
+//import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
 //import com.solvd.essay.persistence.jdbcImpl.EmployeeEmployeeWorkAreasRepositoryImpl;
 
 import java.sql.SQLException;
@@ -27,10 +27,10 @@ public class EmployeeEmployeeWorkAreasService {
             return new EmployeeEmployeeWorkAreas();
         }
         /*
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
+        AbstractDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
         EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
 
         employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));

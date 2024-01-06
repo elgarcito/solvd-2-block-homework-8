@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class EmployeeWorkAreaRepositoryImpl extends AbstracDao<EmployeeWorkArea> {
+public class EmployeeWorkAreaRepositoryImpl extends AbstractDao<EmployeeWorkArea> {
     public EmployeeWorkAreaRepositoryImpl() {
     }
 

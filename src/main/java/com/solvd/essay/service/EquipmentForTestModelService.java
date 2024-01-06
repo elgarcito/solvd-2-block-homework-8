@@ -4,7 +4,7 @@ import com.solvd.essay.domain.EquipmentForTestModel;
 import com.solvd.essay.persistence.Factory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.EquipmentForTestModelRepositoryImpl;
-//import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
+//import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
 //import com.solvd.essay.persistence.jdbcImpl.EquipmentForTestModelRepositoryImpl;
 
 import java.sql.SQLException;

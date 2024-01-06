@@ -9,9 +9,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstracDao<T> implements InterfaceGenericDao<T> {
+public abstract class AbstractDao<T> implements InterfaceGenericDao<T> {
 
-    private static final Logger LOGGER = LogManager.getLogger(AbstracDao.class);
+    private static final Logger LOGGER = LogManager.getLogger(AbstractDao.class);
 
     private T newClass;
 

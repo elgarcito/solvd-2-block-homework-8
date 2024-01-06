@@ -4,7 +4,7 @@ import com.solvd.essay.domain.EnergyEfficiencyEssay;
 import com.solvd.essay.persistence.Factory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.EnergyEfficiencyEssayRepositoryImpl;
-//import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
+//import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
 //import com.solvd.essay.persistence.jdbcImpl.EnergyEfficiencyEssayRepositoryImpl;
 
 import java.sql.SQLException;
@@ -26,7 +26,7 @@ public class EnergyEfficiencyEssayService {
             return new EnergyEfficiencyEssay();
         }
         /*
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
+        AbstractDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId()));
 

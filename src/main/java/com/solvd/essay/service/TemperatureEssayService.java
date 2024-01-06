@@ -4,7 +4,7 @@ import com.solvd.essay.domain.TemperatureEssay;
 import com.solvd.essay.persistence.Factory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.persistence.myBatisImpl.TemperatureEssayRepositoryImpl;
-//import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
+//import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
 //import com.solvd.essay.persistence.jdbcImpl.TemperatureEssayRepositoryImpl;
 
 import java.sql.SQLException;
@@ -28,7 +28,7 @@ public class TemperatureEssayService {
             return new TemperatureEssay();
         }
         /*
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
+        AbstractDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId()));
 

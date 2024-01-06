@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class EnergyEfficiencyEssayRepositoryImpl extends AbstracDao<EnergyEfficiencyEssay> {
+public class EnergyEfficiencyEssayRepositoryImpl extends AbstractDao<EnergyEfficiencyEssay> {
 
     private static final Logger LOGGER = LogManager.getLogger(EnergyEfficiencyEssayRepositoryImpl.class);
     public EnergyEfficiencyEssayRepositoryImpl() {

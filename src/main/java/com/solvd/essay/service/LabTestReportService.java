@@ -27,16 +27,16 @@ public class LabTestReportService {
             return new LabTestReport();
         }
         /*
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
+        AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
+        AbstractDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
         BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-          AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
+          AbstractDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
          */

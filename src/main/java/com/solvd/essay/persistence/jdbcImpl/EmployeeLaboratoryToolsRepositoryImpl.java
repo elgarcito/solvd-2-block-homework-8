@@ -12,7 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class EmployeeLaboratoryToolsRepositoryImpl extends AbstracDao<EmployeeLaboratoryTools>{
+public class EmployeeLaboratoryToolsRepositoryImpl extends AbstractDao<EmployeeLaboratoryTools> {
     private static final Logger LOGGER = LogManager.getLogger(EmployeeLaboratoryToolsRepositoryImpl.class);
     public EmployeeLaboratoryToolsRepositoryImpl() {}
 
