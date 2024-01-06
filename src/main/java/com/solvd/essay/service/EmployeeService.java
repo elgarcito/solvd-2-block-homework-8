@@ -1,19 +1,19 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.Employee;
-import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
-import com.solvd.essay.persistence.jdbcImpl.EmployeeRepositoryImpl;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeService {
-    private final AbstracDao<Employee> employeeRepositoryImpl = new EmployeeRepositoryImpl();;
+    final InterfaceGenericDao<Employee> employeeRepositoryImpl = Factory.getEmployeeRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
 
 
-    public void create(Employee employee){
+    public void create(Employee employee) throws SQLException {
             employeeRepositoryImpl.create(employee);
-
     }
     public List<Employee> findAll() throws SQLException {
             return employeeRepositoryImpl.getAll();

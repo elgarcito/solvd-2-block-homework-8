@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class GasConsumptionEssayRepositoryImpl extends AbstracDao<GasConsumptionEssay>{
+public class GasConsumptionEssayRepositoryImpl extends AbstractDao<GasConsumptionEssay> {
     public GasConsumptionEssayRepositoryImpl() {
     }
 

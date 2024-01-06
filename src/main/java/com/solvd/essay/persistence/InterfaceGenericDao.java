@@ -1,9 +1,9 @@
-package com.solvd.essay.persistence.jdbcImpl;
+package com.solvd.essay.persistence;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public interface InterfaceGenerericDao<T> {
+public interface InterfaceGenericDao<T> {
 
     public void create(final T thingToCreate) throws SQLException;
     public List<T> getAll() throws SQLException;

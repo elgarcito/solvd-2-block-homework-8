@@ -5,7 +5,7 @@ import com.solvd.essay.domain.Employee;
 import java.sql.*;
 import java.util.List;
 
-public class EmployeeRepositoryImpl extends AbstracDao<Employee> {
+public class EmployeeRepositoryImpl extends AbstractDao<Employee> {
 
     public EmployeeRepositoryImpl() {
     }

@@ -1,6 +1,7 @@
 package com.solvd.essay.persistence.jdbcImpl;
 
 import com.solvd.essay.persistence.ConnectionPool;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -8,9 +9,9 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstracDao<T> implements InterfaceGenerericDao<T> {
+public abstract class AbstractDao<T> implements InterfaceGenericDao<T> {
 
-    private static final Logger LOGGER = LogManager.getLogger(AbstracDao.class);
+    private static final Logger LOGGER = LogManager.getLogger(AbstractDao.class);
 
     private T newClass;
 

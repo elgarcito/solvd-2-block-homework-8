@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class LabTestReportRepositoryImpl extends AbstracDao<LabTestReport> {
+public class LabTestReportRepositoryImpl extends AbstractDao<LabTestReport> {
     private static final Logger LOGGER = LogManager.getLogger(LabTestReportRepositoryImpl.class);
     public LabTestReportRepositoryImpl() {
     }
@@ -78,7 +78,7 @@ public class LabTestReportRepositoryImpl extends AbstracDao<LabTestReport> {
         EmployeeService newEmployeeService= new EmployeeService();
         entity.setEmployee(newEmployeeService.findOne(resultSet.getLong("employee_id")));
 
-        //AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
+        //AbstractDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
         EssayModuleService newEssayModuleService= new EssayModuleService();
 
         entity.setEssayModule(newEssayModuleService.findOne(resultSet.getLong("essay_module_id")));

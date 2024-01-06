@@ -1,29 +1,22 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.TemperatureEssay;
-import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
-import com.solvd.essay.persistence.jdbcImpl.TemperatureEssayRepositoryImpl;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class TemperatureEssayService {
-    private final AbstracDao<TemperatureEssay> temperatureEssayRepositoryImpl = new TemperatureEssayRepositoryImpl();
-
-    public void create(TemperatureEssay temperatureEssay){
+    final InterfaceGenericDao<TemperatureEssay> temperatureEssayRepositoryImpl = Factory.getTemperatureEssayRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(TemperatureEssay temperatureEssay) throws SQLException {
             temperatureEssayRepositoryImpl.create(temperatureEssay);
 
     }
     public List<TemperatureEssay> findAll() throws SQLException {
         List<TemperatureEssay> temperatureEssaysList= temperatureEssayRepositoryImpl.getAll();
-        /*
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
-        LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
-        for (TemperatureEssay tempEssay:temperatureEssaysList) {
-            tempEssay.setLabTestReport(newLabTestReportService.findOne(tempEssay.getLabTestReportId()));
-        }
 
-         */
             return temperatureEssaysList;
     }
 
@@ -33,7 +26,7 @@ public class TemperatureEssayService {
             return new TemperatureEssay();
         }
         /*
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
+        AbstractDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         essay.setLabTestReport(newLabTestReportService.findOne(essay.getLabTestReportId()));
 

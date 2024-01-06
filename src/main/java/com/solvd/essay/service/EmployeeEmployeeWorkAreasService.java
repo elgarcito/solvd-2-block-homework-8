@@ -1,33 +1,21 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
-import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
-import com.solvd.essay.persistence.jdbcImpl.EmployeeEmployeeWorkAreasRepositoryImpl;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeEmployeeWorkAreasService {
-    private final AbstracDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl =new EmployeeEmployeeWorkAreasRepositoryImpl();
+    final InterfaceGenericDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl = Factory.getEmployeeEmployeeWorkAreasRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
 
-    public void create(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas){
+    public void create(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas) throws SQLException {
         employeeEmployeeWorkAreasRepositoryImpl.create(employeeEmployeeWorkAreas);
     }
     public List<EmployeeEmployeeWorkAreas> findAll() throws SQLException {
         List<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasList= employeeEmployeeWorkAreasRepositoryImpl.getAll();
-        /*
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
-
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
-        EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
-
-        for (EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas: employeeEmployeeWorkAreasList) {
-            employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));
-            employeeEmployeeWorkAreas.setEmployeeWorkArea(newEmployeeWorkAreaService.findOne(employeeEmployeeWorkAreas.getEmployeeworkAreaId()));
-        }
-
-         */
         return employeeEmployeeWorkAreasList;
     }
 
@@ -37,10 +25,10 @@ public class EmployeeEmployeeWorkAreasService {
             return new EmployeeEmployeeWorkAreas();
         }
         /*
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-        AbstracDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
+        AbstractDao<EmployeeWorkArea> newEmployeeWorkAreaImpl= new EmployeeWorkAreaRepositoryImpl();
         EmployeeWorkAreaService newEmployeeWorkAreaService= new EmployeeWorkAreaService(newEmployeeWorkAreaImpl);
 
         employeeEmployeeWorkAreas.setEmployee(newEmployeeService.findOne(employeeEmployeeWorkAreas.getEmployeeId()));

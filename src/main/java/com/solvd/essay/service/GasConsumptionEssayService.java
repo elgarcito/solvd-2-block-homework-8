@@ -1,22 +1,22 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.GasConsumptionEssay;
-import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
-import com.solvd.essay.persistence.jdbcImpl.GasConsumptionEssayRepositoryImpl;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class GasConsumptionEssayService {
-    private final AbstracDao<GasConsumptionEssay> gasConsumptionEssayRepositoryImpl =new GasConsumptionEssayRepositoryImpl();;
-
-    public void create(GasConsumptionEssay gasConsumptionEssay){
+    final InterfaceGenericDao<GasConsumptionEssay> gasConsumptionEssayRepositoryImpl = Factory.getGasConsumptionEssayRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(GasConsumptionEssay gasConsumptionEssay) throws SQLException {
             gasConsumptionEssayRepositoryImpl.create(gasConsumptionEssay);
     }
     public List<GasConsumptionEssay> findAll() throws SQLException {
         List<GasConsumptionEssay> listOfGasEssays= gasConsumptionEssayRepositoryImpl.getAll();
         /*
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
+        AbstractDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         for (GasConsumptionEssay gasConEssay:listOfGasEssays) {
             gasConEssay.setLabTestReport(newLabTestReportService.findOne(gasConEssay.getLabTestReportId()));
@@ -33,7 +33,7 @@ public class GasConsumptionEssayService {
             return new GasConsumptionEssay();
         }
         /*
-        AbstracDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
+        AbstractDao<LabTestReport> labTestReportImpl=new LabTestReportRepositoryImpl();
         LabTestReportService newLabTestReportService= new LabTestReportService(labTestReportImpl);
         gasConEssay.setLabTestReport(newLabTestReportService.findOne(gasConEssay.getLabTestReportId()));
 

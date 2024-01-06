@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class TemperatureEssayRepositoryImpl extends AbstracDao<TemperatureEssay> {
+public class TemperatureEssayRepositoryImpl extends AbstractDao<TemperatureEssay> {
     private static final Logger LOGGER = LogManager.getLogger(TemperatureEssayRepositoryImpl.class);
 
     public TemperatureEssayRepositoryImpl() {

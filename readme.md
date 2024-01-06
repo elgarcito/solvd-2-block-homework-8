@@ -16,12 +16,20 @@ The packages:
 EmployeeWorkArea.java, EnergyEfficiencyEssay.java,
   EquipmentForTestModel.java, EssayModule.java, GasConsumptionEssay.java, 
 LaboratoryTool.java, LabTestReport.java, TemperatureEssay.java.
-* Persistence: that contains the DAO clasess for each class with the CRUD operations for each class.
-It also contains the AbstracDao and the abstract interface InterfaceGenericDao.
+* Persistence: that contains the DAO classes for each class with the CRUD operations for each class.
+It also contains the AbstractDao and the abstract interface InterfaceGenericDao.
 * Service that contains the service for each class.
 
-The ConnectionPool clas is implemented for each method in the abstract class.The source of this file is in:
+The ConnectionPool clas is implemented for each method in the abstract class. The source of this file is in:
 src/main/java/com/solvd/essay/persistence/ConnectionPool.java
+
+To achieve the abstraction to switch between databases, we can find the config.properties in which we can change the
+information about our database
+
+To achieve the abstraction to switch between frameworks, there were created the enum Framework in the service package.
+In this enum the implementation can be changed .Also, was created the Factory class that enables us to get access to
+the framework used.
+In this case, it only contains the jdbc implementation.
 
 ### 14/12/2024
 Exercises

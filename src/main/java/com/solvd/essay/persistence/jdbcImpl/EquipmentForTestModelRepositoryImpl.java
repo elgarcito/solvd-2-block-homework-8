@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-public class EquipmentForTestModelRepositoryImpl extends AbstracDao<EquipmentForTestModel>{
+public class EquipmentForTestModelRepositoryImpl extends AbstractDao<EquipmentForTestModel> {
     public EquipmentForTestModelRepositoryImpl() {
     }
 

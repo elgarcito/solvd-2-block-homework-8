@@ -1,15 +1,16 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EssayModule;
-import com.solvd.essay.persistence.jdbcImpl.AbstracDao;
-import com.solvd.essay.persistence.jdbcImpl.EssayModuleRepositoryImpl;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class EssayModuleService {
-    private final AbstracDao<EssayModule> essayModuleRepositoryImpl =new EssayModuleRepositoryImpl();
-    public void create(EssayModule essayModule){
+    final InterfaceGenericDao<EssayModule> essayModuleRepositoryImpl = Factory.getEssayModuleRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(EssayModule essayModule) throws SQLException {
             essayModuleRepositoryImpl.create(essayModule);
     }
     public List<EssayModule> findAll() throws SQLException {

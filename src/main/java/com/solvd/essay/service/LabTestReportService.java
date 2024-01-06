@@ -1,41 +1,20 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.*;
-import com.solvd.essay.persistence.jdbcImpl.*;
+import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
+
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class LabTestReportService {
-    private final AbstracDao<LabTestReport> labTestReportRepositoryImpl =new LabTestReportRepositoryImpl();
-
-    public void create(LabTestReport labTestReport){
+    final InterfaceGenericDao<LabTestReport> labTestReportRepositoryImpl = Factory.getLabTestReportRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    public void create(LabTestReport labTestReport) throws SQLException {
             labTestReportRepositoryImpl.create(labTestReport);
     }
     public List<LabTestReport> findAll() throws SQLException {
         List<LabTestReport> labTestReportList= labTestReportRepositoryImpl.getAll();
-        /*
-
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
-        EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
-
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
-        BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
-
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
-        EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
-
-        AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
-        EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
-
-        for (LabTestReport labTestReport: labTestReportList) {
-            labTestReport.setEquipmentForTestModel(newEquipmentForTestModelService.findOne(labTestReport.getEquipmentForTestModelId()));
-            labTestReport.setBatchInfo(newBatchInfoService.findOne(labTestReport.getBatchInfoId()));
-            labTestReport.setEmployee(newEmployeeService.findOne(labTestReport.getEmployeeId()));
-            labTestReport.setEssayModule(newEssayModuleService.findOne(labTestReport.getEssayModuleId()));
-        }
-
-         */
             return labTestReportList;
     }
 
@@ -47,16 +26,16 @@ public class LabTestReportService {
             return new LabTestReport();
         }
         /*
-        AbstracDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
+        AbstractDao<EquipmentForTestModel> equipmentForTestModelImpl= new EquipmentForTestModelRepositoryImpl();
         EquipmentForTestModelService newEquipmentForTestModelService= new EquipmentForTestModelService(equipmentForTestModelImpl);
 
-        AbstracDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
+        AbstractDao<BatchInfo> newBatchInfoImplementation= new BatchInfoRepositoryImpl();
         BatchInfoService newBatchInfoService= new BatchInfoService(newBatchInfoImplementation);
 
-        AbstracDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
+        AbstractDao<Employee> newEmployeeImplementation= new EmployeeRepositoryImpl();
         EmployeeService newEmployeeService= new EmployeeService(newEmployeeImplementation);
 
-          AbstracDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
+          AbstractDao<EssayModule> newEssayModuleImplementation = new EssayModuleRepositoryImpl();
         EssayModuleService newEssayModuleService= new EssayModuleService(newEssayModuleImplementation);
 
          */
