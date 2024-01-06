@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.essay.persistence.EnergyEfficiencyEssayRepository">
+
+    <sql id="energyEfficiencyEssaySelect">
+        select
+        lab_test_report.id as ltr_id,essay_code,date_of_essay, essay_description,
+        equipment_for_test_model.id as eq_id,model_name,model_description,release_date,
+        batch_info.id as ba_id,batch_number,
+        employee.id as em_id,first_name, last_name,personal_id,birth_date,salary
+        , essay_module.id as es_id ,module_description,
+        energy_efficiency_essay.id,
+        value_of_essay,
+        category,
+        essay_result,
+        lab_test_report_id
+        from lab_test_report left join employee
+        on lab_test_report.employee_id=employee.id
+        left join equipment_for_test_model
+        on lab_test_report.equipment_for_test_model_id=equipment_for_test_model.id
+        left join batch_info
+        on lab_test_report.batch_info_id=batch_info.id
+        left join essay_module
+        on lab_test_report.essay_module_id=essay_module.id
+        inner join energy_efficiency_essay
+        on energy_efficiency_essay.lab_test_report_id=lab_test_report.id
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        insert into energy_efficiency_essay(value_of_essay,category ,essay_result,lab_test_report_id)
+        values (#{valueOfEssay},#{category},#{essayResult},#{labTestReport.getId()})
+    </insert>
+
+    <update id="updateById" keyColumn="id" useGeneratedKeys="true">
+        update energy_efficiency_essay set value_of_essay=#{thingToUpdate.valueOfEssay},
+        category=#{thingToUpdate.category},
+        essay_result=#{thingToUpdate.essayResult},
+        lab_test_report_id=#{thingToUpdate.labTestReport.getId()}
+        where energy_efficiency_essay.id=#{id}
+    </update>
+
+    <select id="getAll" resultMap="findAllResult">
+        <include refid="energyEfficiencyEssaySelect"/>
+    </select>
+
+    <select id="findById" resultMap="energyEfficiencyEssayResult" >
+        <include refid="energyEfficiencyEssaySelect"/>
+        where energy_efficiency_essay.id=#{id}
+    </select>
+    
+    <delete id="deleteById">
+        delete from energy_efficiency_essay where energy_efficiency_essay.id=#{id}
+    </delete>
+
+    <resultMap id="energyEfficiencyEssayResult" type="com.solvd.essay.domain.EnergyEfficiencyEssay">
+        <id property="id" column="id" />
+        <result property="valueOfEssay" column="value_of_essay"/>
+        <result property="category" column="category"/>
+        <result property="essayResult" column="essay_result"/>
+        <association property="labTestReport" resultMap="labTestReportResult"/>
+    </resultMap>
+
+
+    <resultMap id="findAllResult" type="com.solvd.essay.domain.EnergyEfficiencyEssay">
+        <id property="id" column="id" />
+        <result property="valueOfEssay" column="value_of_essay"/>
+        <result property="category" column="category"/>
+        <result property="essayResult" column="essay_result"/>
+        <association property="labTestReport" resultMap="labTestReportResult"/>
+        <collection property="energyEfficiencyEssayList" javaType="ArrayList" ofType="com.solvd.essay.domain.EnergyEfficiencyEssay"/>
+    </resultMap>
+
+    <resultMap id="labTestReportResult" type="com.solvd.essay.domain.LabTestReport">
+        <id property="id" column="id" />
+        <result property="essayCode" column="essay_code"/>
+        <result property="dateOfEssay" column="date_of_essay"/>
+        <result property="essayDescription" column="essay_description"/>
+        <association property="equipmentForTestModel" resultMap="equipmentForTestModelResult"/>
+        <association property="batchInfo" resultMap="batchInfoResult"/>
+        <association property="employee" resultMap="employeeResult"/>
+        <association property="essayModule" resultMap="essayModuleResult"/>
+        <collection property="labTestReportList" javaType="ArrayList" ofType="com.solvd.essay.domain.LabTestReport"/>
+    </resultMap>
+
+
+    <resultMap id="equipmentForTestModelResult" type="com.solvd.essay.domain.EquipmentForTestModel">
+        <id property="id" column="eq_id" />
+        <result property="modelName" column="model_name"/>
+        <result property="modelDescription" column="model_description"/>
+        <result property="releaseDate" column="release_date"/>
+        <collection property="equipmentForTestModelList" javaType="ArrayList" ofType="com.solvd.essay.domain.EquipmentForTestModel"/>
+    </resultMap>
+
+    <resultMap id="batchInfoResult" type="com.solvd.essay.domain.BatchInfo">
+        <id property="id" column="ba_id" />
+        <result property="batchNumber" column="batch_number"/>
+        <collection property="myBatchInfoList" javaType="ArrayList" ofType="com.solvd.essay.domain.BatchInfo"/>
+    </resultMap>
+
+    <resultMap id="employeeResult" type="com.solvd.essay.domain.Employee" >
+        <id property="id" column="em_id" />
+        <result property="firstName" column="first_name"/>
+        <result property="lastName" column="last_name"/>
+        <result property="personalId" column="personal_id"/>
+        <result property="birthDate" column="birth_date"/>
+        <result property="salary" column="salary"/>
+        <collection property="employeeList" javaType="ArrayList" ofType="com.solvd.essay.domain.Employee"/>
+    </resultMap>
+
+    <resultMap id="essayModuleResult" type="com.solvd.essay.domain.EssayModule">
+        <id property="id" column="es_id" />
+        <result property="moduleDescription" column="module_description"/>
+        <collection property="essayModuleList" javaType="ArrayList" ofType="com.solvd.essay.domain.EssayModule"/>
+    </resultMap>
+
+</mapper>

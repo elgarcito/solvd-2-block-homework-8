@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.essay.persistence.EmployeeLaboratoryToolsRepository">
+
+    <sql id="employeeLaboratoryToolsSelect">
+        select employee_laboratory_tools.id,
+        laboratory_tool.id as lbt_id, tool_name, tool_description,
+        employee.id as em_id, first_name, last_name, personal_id, birth_date, salary
+        from employee_laboratory_tools inner join laboratory_tool
+        on employee_laboratory_tools.laboratory_tool_id=laboratory_tool.id
+        inner join employee
+        on employee_laboratory_tools.employee_id=employee.id
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        insert into employee_laboratory_tools(employee_id, laboratory_tool_id) value (#{employee.getId()},
+        #{laboratoryTool.getId()})
+    </insert>
+
+    <update id="updateById" keyColumn="id" useGeneratedKeys="true">
+        update employee_laboratory_tools set employee_id=#{thingToUpdate.employee.getId()},
+        laboratory_tool_id=#{thingToUpdate.laboratoryTool.getId()}
+        where employee_laboratory_tools.id=#{id}
+    </update>
+
+    <select id="getAll" resultMap="findAllResult">
+        <include refid="employeeLaboratoryToolsSelect"/>
+    </select>
+
+    <select id="findById" resultMap="employeeLaboratoryToolsResult" >
+        <include refid="employeeLaboratoryToolsSelect"/>
+        where employee_laboratory_tools.id=#{id}
+    </select>
+    
+    <delete id="deleteById">
+        delete from employee_laboratory_tools
+        where employee_laboratory_tools.id=#{id}
+    </delete>
+
+    <resultMap id="employeeLaboratoryToolsResult" type="com.solvd.essay.domain.EmployeeLaboratoryTools">
+        <id property="id" column="id" />
+        <association property="employee" resultMap="employeeResult"/>
+        <association property="laboratoryTool" resultMap="laboratoryToolResult"/>
+    </resultMap>
+
+    <resultMap id="findAllResult" type="com.solvd.essay.domain.EmployeeLaboratoryTools">
+        <id property="id" column="id" />
+        <association property="employee" resultMap="employeeResult"/>
+        <association property="laboratoryTool" resultMap="laboratoryToolResult"/>
+        <collection property="employeeLaboratoryToolsList" javaType="ArrayList" ofType="com.solvd.essay.domain.EmployeeLaboratoryTools"/>
+    </resultMap>
+
+    <resultMap id="laboratoryToolResult" type="com.solvd.essay.domain.LaboratoryTool">
+        <id property="id" column="lbt_id" />
+        <result property="toolName" column="tool_name"/>
+        <result property="toolDescription" column="tool_description"/>
+    </resultMap>
+
+    <resultMap id="employeeResult" type="com.solvd.essay.domain.Employee" >
+        <id property="id" column="em_id" />
+        <result property="firstName" column="first_name"/>
+        <result property="lastName" column="last_name"/>
+        <result property="personalId" column="personal_id"/>
+        <result property="birthDate" column="birth_date"/>
+        <result property="salary" column="salary"/>
+    </resultMap>
+    
+</mapper>

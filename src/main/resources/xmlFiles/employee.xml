@@ -1,0 +1,8 @@
+<employee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="../xsdFiles/employee.xsd" id="1">
+    <firstName>john</firstName>
+    <lastName>smith</lastName>
+    <personalId>Abc123</personalId>
+    <birthDate>2000-12-15</birthDate>
+    <salary>1000</salary>
+</employee>

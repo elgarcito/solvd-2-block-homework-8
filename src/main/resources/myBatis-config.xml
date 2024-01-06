@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <properties resource="config.properties"/>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${driver}"/>
+                <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="mappers/BatchInfoMapper.xml"/>
+        <mapper resource="mappers/LaboratoryToolMapper.xml"/>
+        <mapper resource="mappers/EmployeeWorkAreaMapper.xml"/>
+        <mapper resource="mappers/EmployeeMapper.xml"/>
+        <mapper resource="mappers/EssayModuleMapper.xml"/>
+        <mapper resource="mappers/EquipmentForTestModelMapper.xml"/>
+        <mapper resource="mappers/LabTestReportMapper.xml"/>
+        <mapper resource="mappers/TemperatureEssayMapper.xml"/>
+        <mapper resource="mappers/EnergyEfficiencyEssayMapper.xml"/>
+        <mapper resource="mappers/GasConsumptionEssayMapper.xml"/>
+        <mapper resource="mappers/EmployeeEmployeeLaboratoryToolsMapper.xml"/>
+        <mapper resource="mappers/EmployeeEmployeeWorkAreasMapper.xml"/>
+    </mappers>
+
+</configuration>

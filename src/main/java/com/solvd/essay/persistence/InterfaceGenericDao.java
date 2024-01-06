@@ -1,5 +1,7 @@
 package com.solvd.essay.persistence;
 
+import org.apache.ibatis.annotations.Param;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,20 +16,5 @@ public interface InterfaceGenericDao<T> {
     public void deleteById (final Long thingId) throws SQLException;
 
 
-    public void updateById(final T thingToUpdate, Long id) throws SQLException;
-
-    /*
-
-
-
-
-
-
-
-    public void setThing(Class<T> thingToSet);
-
-
-     */
-
-
+    public void updateById(@Param("thingToUpdate") T thingToUpdate,@Param("id") Long entityId) throws SQLException;
 }

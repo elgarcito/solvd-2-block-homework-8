@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.solvd.essay.persistence.EssayModuleRepository">
+
+    <sql id="essayModuleSelect">
+        select id,module_description from essay_module
+    </sql>
+
+    <insert id="create" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+        insert into essay_module(module_description) value (#{moduleDescription})
+    </insert>
+
+    <update id="updateById" keyColumn="id" useGeneratedKeys="true">
+        update essay_module set module_description=#{thingToUpdate.moduleDescription} where id=#{id}
+    </update>
+
+    <select id="getAll" resultMap="findAllResult">
+        select * from essay_module
+    </select>
+
+    <select id="findById" resultMap="essayModuleResult" >
+        <include refid="essayModuleSelect"/>
+        where id=#{id}
+    </select>
+    
+    <delete id="deleteById">
+        delete from essay_module where id=#{id}
+    </delete>
+
+    <resultMap id="essayModuleResult" type="com.solvd.essay.domain.EssayModule">
+        <id property="id" column="id" />
+        <result property="moduleDescription" column="module_description"/>
+    </resultMap>
+
+    <resultMap id="findAllResult" type="com.solvd.essay.domain.EssayModule">
+        <id property="id" column="id" />
+        <result property="moduleDescription" column="module_description"/>
+        <collection property="essayModuleList" javaType="ArrayList" ofType="com.solvd.essay.domain.EssayModule"/>
+    </resultMap>
+
+    
+</mapper>
