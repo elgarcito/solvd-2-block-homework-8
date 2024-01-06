@@ -24,7 +24,7 @@ Parse XML file using one of the parsers from the title.
 Add MyBatis DAOs to the existing hierarchy with the same requirements. Choose any XML or interface mapping.
 Switch service classes to MyBatis.
 
-* All added all necessary files to configure myBatis , these were:
+* All added all necessary files to configure myBatis, these were:
     * BatchInfoMapper.xml
     * EmployeeEmployeeLaboratoryToolsMapper.xml
     * EmployeeEmployeeWorkAreasMapper.xml
@@ -39,14 +39,39 @@ Switch service classes to MyBatis.
     * TemperatureEssayMapper.xml
     * myBatis-config.xml
 
+In the Factory class now it's possible to access to each implementation myBatis or jdbc.
+Now the framework enum is configured in "myBatis"
+
   This configuration was implemented in myBatisBranch
 
 ### 19/12/2023
 Build hierarchy for Schema from the below course.
-Create DAO classes with necessary interfaces, abstract classes, and Generics. 
-DAO should be scalable and flexible to support another framework and another database as well.
-All CRUD operations should be supported using JDBC. Use connection pool from the below block.
+
+Create DAO classes with necessary interfaces, abstract classes, and Generics.
+
+DAO should be scalable and flexible to support another framework and another database as well. All CRUD operations should be supported using JDBC. Use connection pool from the below block.
 Implement Service layer with necessary abstraction to be able to switch between databases and frameworks.
+
+The packages:
+* Domain: that contains the 12 classes that represent the tables for the mySQL database:
+* BatchInfo.java ,Employee.java, EmployeeEmployeeWorkAreas.java, EmployeeLaboratoryTools.java,
+  EmployeeWorkArea.java, EnergyEfficiencyEssay.java,
+  EquipmentForTestModel.java, EssayModule.java, GasConsumptionEssay.java,
+  LaboratoryTool.java, LabTestReport.java, TemperatureEssay.java.
+* Persistence: that contains the DAO classes for each class with the CRUD operations for each class.
+  It also contains the AbstractDao and the abstract interface InterfaceGenericDao.
+* Service that contains the service for each class.
+
+The ConnectionPool clas is implemented for each method in the abstract class. The source of this file is in:
+src/main/java/com/solvd/essay/persistence/ConnectionPool.java
+
+To achieve the abstraction to switch between databases, we can find the config.properties in which we can change the
+information about our database
+
+To achieve the abstraction to switch between frameworks, there were created the enum Framework in the service package.
+In this enum the implementation can be changed .Also, was created the Factory class that enables us to get access to
+the framework used.
+In this case, it only contains the jdbc implementation.
 
 ### 14/12/2023
 
@@ -65,12 +90,10 @@ There were added all the queries in the essay project folder. Each file
 has the name of the asked queries.
 
 
-
-
 ### 12/12/2024
 
-Create a database schema using Mysql Workbench for the 
-new hierarchy with at least 12 tables and all relations. 
+Create a database schema using Mysql Workbench for the
+new hierarchy with at least 12 tables and all relations.
 The schema should satisfy the 3 Normal Forms.
 
 The schema was created and satisfy the 3 normal forms.
@@ -85,8 +108,8 @@ The tables created were:
 * temperature_essay: the temperature essay results
 * gas_consumption_essay: the gas consumption essay results
 * energy_efficiency_essay: the energy efficiency essay results
-* employee_employee_work_areas: an intermediate table that joins 
-the employees with their different working areas
+* employee_employee_work_areas: an intermediate table that joins
+  the employees with their different working areas
 * employee_laboratory_tools: an intermediate table that joins
   the employees with the different tools that use
 
