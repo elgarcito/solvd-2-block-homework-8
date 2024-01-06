@@ -7,6 +7,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class EquipmentForTestModelHandler extends DefaultHandler {
 
@@ -69,7 +70,7 @@ public class EquipmentForTestModelHandler extends DefaultHandler {
             modelDescriptionObtained=false;
         }
         if (releaseDateObtained){
-            Date date= Date.valueOf(value);
+            LocalDate date= LocalDate.parse(value);
             equipmentForTestModel.setReleaseDate(date);
             releaseDateObtained=false;
         }

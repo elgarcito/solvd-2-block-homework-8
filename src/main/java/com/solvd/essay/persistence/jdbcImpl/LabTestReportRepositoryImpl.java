@@ -8,10 +8,7 @@ import com.solvd.essay.service.EssayModuleService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class LabTestReportRepositoryImpl extends AbstractDao<LabTestReport> {
@@ -55,7 +52,7 @@ public class LabTestReportRepositoryImpl extends AbstractDao<LabTestReport> {
         LabTestReport entity=new LabTestReport();
         entity.setId(resultSet.getLong("id"));
         entity.setEssayCode(resultSet.getString("essay_code"));
-        entity.setDateOfEssay(resultSet.getDate("date_of_essay"));
+        entity.setDateOfEssay(resultSet.getDate("date_of_essay").toLocalDate());
         entity.setEssayDescription(resultSet.getString("essay_description"));
 
         /*
@@ -96,7 +93,7 @@ public class LabTestReportRepositoryImpl extends AbstractDao<LabTestReport> {
     protected void setQueryStatements(PreparedStatement ps, LabTestReport thingToCreate) {
         try {
             ps.setString(1,thingToCreate.getEssayCode());
-            ps.setDate(2,thingToCreate.getDateOfEssay());
+            ps.setDate(2, Date.valueOf(thingToCreate.getDateOfEssay()));
             ps.setString(3,thingToCreate.getEssayDescription());
             ps.setLong(4,thingToCreate.getEquipmentForTestModel().getId());
             ps.setLong(5,thingToCreate.getBatchInfo().getId());

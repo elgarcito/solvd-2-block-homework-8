@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class EmployeeHandler extends DefaultHandler {
 
@@ -81,7 +82,7 @@ public class EmployeeHandler extends DefaultHandler {
             personalIdObtained=false;
         }
         if (birthDateObtained){
-            employee.setBirthDate(Date.valueOf(value));
+            employee.setBirthDate(LocalDate.parse(value));
             birthDateObtained=false;
         }
         if (salaryObtained){

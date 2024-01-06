@@ -19,6 +19,9 @@
         <log4jApiVersion>2.21.1</log4jApiVersion>
         <mavenJarPluginVersion>3.3.0</mavenJarPluginVersion>
         <myBatisVersion>3.5.15</myBatisVersion>
+        <jaxbCoreVersion>4.0.4</jaxbCoreVersion>
+        <jaxbRuntimeVersion>4.0.4</jaxbRuntimeVersion>
+
     </properties>
 
     <dependencies>
@@ -42,6 +45,19 @@
             <groupId>org.mybatis</groupId>
             <artifactId>mybatis</artifactId>
             <version>${myBatisVersion}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-core -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-core</artifactId>
+            <version>${jaxbCoreVersion}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>${jaxbRuntimeVersion}</version>
         </dependency>
 
 

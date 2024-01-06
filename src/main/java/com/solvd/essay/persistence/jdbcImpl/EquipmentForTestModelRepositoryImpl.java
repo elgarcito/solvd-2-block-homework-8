@@ -2,10 +2,7 @@ package com.solvd.essay.persistence.jdbcImpl;
 
 import com.solvd.essay.domain.EquipmentForTestModel;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.List;
 
 public class EquipmentForTestModelRepositoryImpl extends AbstractDao<EquipmentForTestModel> {
@@ -41,7 +38,7 @@ public class EquipmentForTestModelRepositoryImpl extends AbstractDao<EquipmentFo
         entity.setId(resultSet.getLong("id"));
         entity.setModelName(resultSet.getString("model_name"));
         entity.setModelDescription(resultSet.getString("model_description"));
-        entity.setReleaseDate(resultSet.getDate(  "release_date"));
+        entity.setReleaseDate(resultSet.getDate(  "release_date").toLocalDate());
         return entity;
     }
 
@@ -56,7 +53,7 @@ public class EquipmentForTestModelRepositoryImpl extends AbstractDao<EquipmentFo
         try {
             ps.setString(1,thingToCreate.getModelName());
             ps.setString(2,thingToCreate.getModelDescription());
-            ps.setDate(3, thingToCreate.getReleaseDate());
+            ps.setDate(3, Date.valueOf(thingToCreate.getReleaseDate()));
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

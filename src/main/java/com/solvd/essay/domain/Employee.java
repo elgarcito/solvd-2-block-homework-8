@@ -1,14 +1,24 @@
 package com.solvd.essay.domain;
 
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
-
+@XmlRootElement(name="employee")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Employee {
+    @XmlAttribute(name="id")
     private Long id;
     private String firstName;
     private String lastName;
     private String personalId;
-    private Date birthDate;
+    @XmlJavaTypeAdapter(value= LocalDateTimeAdapter.class)
+    private LocalDate birthDate;
     private Double salary;
     private List<Employee> employeeList;
 
@@ -37,11 +47,11 @@ public class Employee {
         this.personalId = personalId;
     }
 
-    public java.sql.Date getBirthDate() {
-        return (java.sql.Date) birthDate;
+    public LocalDate getBirthDate() {
+        return  birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 

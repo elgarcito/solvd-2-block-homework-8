@@ -6,6 +6,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class LabTestReportHandler extends DefaultHandler {
 
@@ -152,7 +153,7 @@ public class LabTestReportHandler extends DefaultHandler {
                 essayCodeObtained=false;
             }
             if(dateOfEssayObtained){
-                labTestReport.setDateOfEssay(Date.valueOf(value));
+                labTestReport.setDateOfEssay(LocalDate.parse(value));
                 dateOfEssayObtained=false;
             }
             if(essayDescriptionObtained){
@@ -168,7 +169,7 @@ public class LabTestReportHandler extends DefaultHandler {
                 modelDescriptionObtained=false;
             }
             if (currentElement.equals("releaseDate")) {
-                Date date= Date.valueOf(value);
+                LocalDate date= LocalDate.parse(value);
                 equipmentForTestModel.setReleaseDate(date);
                 releaseDateObtained=false;
             }
@@ -190,7 +191,7 @@ public class LabTestReportHandler extends DefaultHandler {
                 personalIdObtained=false;
             }
             if (birthDateObtained){
-                employee.setBirthDate(Date.valueOf(value));
+                employee.setBirthDate(LocalDate.parse(value));
                 birthDateObtained=false;
             }
             if (salaryObtained){

@@ -1,15 +1,21 @@
 package com.solvd.essay.domain;
 
+
+import jakarta.xml.bind.annotation.*;
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
-
+@XmlRootElement(name="equipmentForTestModel")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class EquipmentForTestModel {
-
+    @XmlAttribute(name="id")
     private Long id;
     private String modelName;
     private String modelDescription;
-
-    private Date releaseDate;
+    @XmlJavaTypeAdapter(value= LocalDateTimeAdapter.class)
+    private LocalDate releaseDate;
     private List<EquipmentForTestModel> equipmentForTestModelList;
 
     public Long getId() {
@@ -36,11 +42,12 @@ public class EquipmentForTestModel {
         this.modelDescription = modelDescription;
     }
 
-    public java.sql.Date getReleaseDate() {
-        return (java.sql.Date) releaseDate;
+
+    public LocalDate getReleaseDate() {
+        return  releaseDate;
     }
 
-    public void setReleaseDate(Date releaseDate) {
+    public void setReleaseDate(LocalDate releaseDate) {
         this.releaseDate = releaseDate;
     }
 

@@ -3,6 +3,9 @@ package com.solvd.essay;
 
 import com.solvd.essay.domain.*;
 import com.solvd.essay.service.*;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Unmarshaller;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
@@ -284,12 +287,17 @@ public class Main {
         newEmployeeLaboratoryToolService.deleteOne(4L);
 
  */
-        //Sax parse implementation
+
+
+
         File file =new File("src/main/resources/xmlFiles/batchInfo.xml");
         File file1=new File("src/main/resources/xmlFiles/equipmentForTestModel.xml");
         File file2=new File("src/main/resources/xmlFiles/employee.xml");
         File file3=new File("src/main/resources/xmlFiles/essayModule.xml");
         File file4=new File("src/main/resources/xmlFiles/labTestReport.xml");
+
+        //Sax parse implementation
+        /*
         try {
             SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
             SAXParser parser =saxParserFactory.newSAXParser();
@@ -320,6 +328,37 @@ public class Main {
             LOGGER.info(labTestReport.toString());
 
         } catch (ParserConfigurationException | SAXException | IOException e) {
+            throw new RuntimeException(e);
+        }
+
+         */
+
+        //JaxB implementation
+
+        try {
+            JAXBContext context=JAXBContext.newInstance(BatchInfo.class);
+            JAXBContext context1=JAXBContext.newInstance(EquipmentForTestModel.class);
+            JAXBContext context2=JAXBContext.newInstance(Employee.class);
+            JAXBContext context3=JAXBContext.newInstance(EssayModule.class);
+            JAXBContext context4=JAXBContext.newInstance(LabTestReport.class);
+            Unmarshaller unmarshaller =context.createUnmarshaller();
+            Unmarshaller unmarshaller1 =context1.createUnmarshaller();
+            Unmarshaller unmarshaller2 =context2.createUnmarshaller();
+            Unmarshaller unmarshaller3 =context3.createUnmarshaller();
+            Unmarshaller unmarshaller4 =context4.createUnmarshaller();
+            BatchInfo batchInfoJaxb= (BatchInfo) unmarshaller.unmarshal(file);
+            EquipmentForTestModel equipmentForTestModelJaxb= (EquipmentForTestModel) unmarshaller1.unmarshal(file1);
+            Employee employeeJaxb=(Employee)unmarshaller2.unmarshal(file2);
+            EssayModule essayModuleJaxb=(EssayModule) unmarshaller3.unmarshal(file3);
+            LabTestReport labTestReportJaxb=(LabTestReport) unmarshaller4.unmarshal(file4);
+            System.out.println();
+            LOGGER.info(batchInfoJaxb.toString());
+            LOGGER.info(equipmentForTestModelJaxb.toString());
+            LOGGER.info(employeeJaxb.toString());
+            LOGGER.info(essayModuleJaxb.toString());
+            LOGGER.info(labTestReportJaxb.toString());
+            
+        } catch (JAXBException e) {
             throw new RuntimeException(e);
         }
 

@@ -1,8 +1,17 @@
 package com.solvd.essay.domain;
 
-import java.util.List;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.util.List;
+@XmlRootElement(name="batchInfo")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class BatchInfo {
+
+    @XmlAttribute(name="id")
+
     private Long id;
     private String batchNumber;
     private List<BatchInfo> myBatchInfoList;

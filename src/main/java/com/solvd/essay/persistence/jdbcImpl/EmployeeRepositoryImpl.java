@@ -64,7 +64,7 @@ public class EmployeeRepositoryImpl extends AbstractDao<Employee> {
         entity.setFirstName(resultSet.getString("first_name"));
         entity.setLastName(resultSet.getString("last_name"));
         entity.setPersonalId(resultSet.getString("personal_id"));
-        entity.setBirthDate(resultSet.getDate(  "birth_date"));
+        entity.setBirthDate(resultSet.getDate(  "birth_date").toLocalDate());
         entity.setSalary(resultSet.getDouble(  "salary"));
         return entity;
     }
@@ -81,7 +81,7 @@ public class EmployeeRepositoryImpl extends AbstractDao<Employee> {
             ps.setString(1,thingToCreate.getFirstName());
             ps.setString(2,thingToCreate.getLastName());
             ps.setString(3,thingToCreate.getPersonalId());
-            ps.setDate(4, thingToCreate.getBirthDate());
+            ps.setDate(4, Date.valueOf(thingToCreate.getBirthDate()));
             ps.setDouble(5,thingToCreate.getSalary());
         } catch (SQLException e) {
             throw new RuntimeException(e);

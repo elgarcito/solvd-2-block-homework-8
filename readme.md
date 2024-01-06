@@ -5,6 +5,13 @@ In this progressive project, we are going to model a lab essay
 Exercises 
 
 ### 28/12/2023
+Add JAXB annotations to the hierarchy.
+Date, List, and complex objects should be covered.
+Parse XML using JAXB.
+
+
+
+### 28/12/2023
 Create one XML file and XSD schema for at least 5 classes from the below hierarchy.
 Validate XML file using XSD schema and assigned parser.
 
