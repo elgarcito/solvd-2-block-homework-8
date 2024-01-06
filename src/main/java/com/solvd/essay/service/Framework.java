@@ -4,7 +4,7 @@ public enum Framework {
     //Change the name of the framework used to
     // jdbc
     // myBatis
-    FRAMEWORK_USED_NAME("myBatis");
+    FRAMEWORK_USED_NAME("jdbc");
     private final String FRAMEWORK_USED;
 
     Framework(String FRAMEWORK_USED){

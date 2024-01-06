@@ -45,13 +45,13 @@ public class LabTestReportHandler extends DefaultHandler {
     @Override
     public void startDocument() throws SAXException {
         super.startDocument();
-        System.out.println("document start");
+       // System.out.println("document start");
     }
 
     @Override
     public void endDocument() throws SAXException {
         super.endDocument();
-        System.out.println("document end");
+       // System.out.println("document end");
     }
 
     @Override

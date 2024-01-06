@@ -27,6 +27,7 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws SQLException {
+/*
         //EssayModule class implementation and service creation
         EssayModuleService newEssayModuleService= new EssayModuleService();
 
@@ -282,7 +283,7 @@ public class Main {
         newEmployeeLaboratoryToolService.create(emlt1);
         newEmployeeLaboratoryToolService.deleteOne(4L);
 
-/*
+ */
         //Sax parse implementation
         File file =new File("src/main/resources/xmlFiles/batchInfo.xml");
         File file1=new File("src/main/resources/xmlFiles/equipmentForTestModel.xml");
@@ -306,14 +307,14 @@ public class Main {
             BatchInfo batchInfo=handler.getBatchInfo();
             EquipmentForTestModel equipmentForTestModel= handler1.getEquipmentForTestModel();
             Employee employee=handler2.getEmployee();
-            EssayModule essayModule= handler3.getEssayModule();
+            EssayModule essayModule3= handler3.getEssayModule();
 
             LabTestReport labTestReport= handler4.getLabTestReport();
 
             LOGGER.info(batchInfo.toString());
             LOGGER.info(equipmentForTestModel.toString());
             LOGGER.info(employee.toString());
-            LOGGER.info(essayModule.toString());
+            LOGGER.info(essayModule3.toString());
 
 
             LOGGER.info(labTestReport.toString());
@@ -321,9 +322,6 @@ public class Main {
         } catch (ParserConfigurationException | SAXException | IOException e) {
             throw new RuntimeException(e);
         }
-
- */
-
 
     }
 }

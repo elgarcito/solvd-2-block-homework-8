@@ -158,3 +158,83 @@
 14:00:51.472 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - Duplicate entry 'model 11' for key 'equipment_for_test_model.model_name'
 14:00:51.499 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null
 14:00:51.516 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null
+14:03:10.005 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '' for key 'employee.personal_id'
+### The error may exist in mappers/EmployeeMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee(first_name, last_name, personal_id, birth_date, salary)         value (?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '' for key 'employee.personal_id'
+14:03:10.028 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeWorkAreaRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'area new1' for key 'employee_work_area.area_name'
+### The error may exist in mappers/EmployeeWorkAreaMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee_work_area(area_name,area_code) value (?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'area new1' for key 'employee_work_area.area_name'
+14:03:10.111 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EnergyEfficiencyEssayRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+### The error may exist in mappers/EnergyEfficiencyEssayMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into energy_efficiency_essay(value_of_essay,category ,essay_result,lab_test_report_id)         values (?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+14:03:10.225 [main] ERROR com.solvd.essay.persistence.myBatisImpl.GasConsumptionEssayRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+### The error may exist in mappers/GasConsumptionEssayMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into gas_consumption_essay(max_consume,standard_mean,measurement_error,essay_result,lab_test_report_id)         values (?,?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+14:03:10.290 [main] ERROR com.solvd.essay.persistence.myBatisImpl.TemperatureEssayRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+### The error may exist in mappers/TemperatureEssayMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into temperature_essay(front_measurement, essay_result,lab_test_report_id, left_side_measurement)         values (?,?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'lab_test_report_id' cannot be null
+14:03:10.306 [main] ERROR com.solvd.essay.persistence.myBatisImpl.LaboratoryToolRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'tool1' for key 'laboratory_tool.tool_name'
+### The error may exist in mappers/LaboratoryToolMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into laboratory_tool(tool_name,tool_description) value (?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'tool1' for key 'laboratory_tool.tool_name'
+14:03:10.360 [main] ERROR com.solvd.essay.persistence.myBatisImpl.LabTestReportRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'equipment_for_test_model_id' cannot be null
+### The error may exist in mappers/LabTestReportMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into lab_test_report(essay_code, date_of_essay, essay_description,equipment_for_test_model_id         ,batch_info_id,employee_id,essay_module_id)         values (?,?,?,?,         ?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'equipment_for_test_model_id' cannot be null
+14:03:10.393 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EquipmentForTestModelRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'model 11' for key 'equipment_for_test_model.model_name'
+### The error may exist in mappers/EquipmentForTestModelMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into equipment_for_test_model(model_name, model_description, release_date)         value (?,?,?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'model 11' for key 'equipment_for_test_model.model_name'
+14:03:10.431 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeEmployeeWorkAreasRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+### The error may exist in mappers/EmployeeEmployeeWorkAreasMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee_employee_work_areas(employee_id, employee_work_area_id) value (?,         ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+14:03:10.445 [main] ERROR com.solvd.essay.persistence.myBatisImpl.EmployeeLaboratoryToolsRepositoryImpl - 
+### Error updating database.  Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+### The error may exist in mappers/EmployeeEmployeeLaboratoryToolsMapper.xml
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: insert into employee_laboratory_tools(employee_id, laboratory_tool_id) value (?,         ?)
+### Cause: java.sql.SQLIntegrityConstraintViolationException: Column 'employee_id' cannot be null
+14:03:57.208 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - Duplicate entry '' for key 'employee.personal_id'
+14:03:57.231 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - Duplicate entry 'area new1' for key 'employee_work_area.area_name'
+14:03:57.452 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null
+14:03:57.525 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null
+14:03:57.606 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null
+14:03:57.621 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - Duplicate entry 'tool1' for key 'laboratory_tool.tool_name'
+14:03:57.728 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null
+14:03:57.735 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - Duplicate entry 'model 11' for key 'equipment_for_test_model.model_name'
+14:03:57.759 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null
+14:03:57.776 [main] ERROR com.solvd.essay.persistence.jdbcImpl.AbstractDao - null

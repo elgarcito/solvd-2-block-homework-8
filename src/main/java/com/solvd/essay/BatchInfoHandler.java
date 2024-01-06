@@ -29,7 +29,7 @@ public class BatchInfoHandler extends DefaultHandler {
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
         super.startElement(uri, localName, qName, attributes);
         currentElement=qName;
-        System.out.println(qName);
+        //System.out.println(qName);
         if(currentElement.equals("batchInfo")){
             Long id=Long.valueOf(attributes.getValue("id"));
             batchInfo.setId(id);
