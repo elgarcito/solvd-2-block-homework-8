@@ -10,14 +10,16 @@ Date, List, and complex objects should be covered.
 Parse XML using JAXB.
 
 ### Solution:
-The JAXB annotations were added in order to parse xml file.
+The JAXB annotations were added to parse xml file.
 
 The annotations are in the classes:
 * batchInfo.java, employee.java, equipmentForTestModel.java, essayModule.java, 
 labTestReport.java
 
 The date annotations are in classes:
-employee.java, equipmentForTestModel.java, labTestReport.java
+employee.java, equipmentForTestModel.java, labTestReport.java.
+The LocalDateTimeAdapter.java contains the necessary configuration to deliver
+the local time in format yyyy-mm-dd
 
 Because of the nature of our project, any of the objects contains a list of other objects, 
 so the class EssayModuleList is created with essayModuleList.xml
