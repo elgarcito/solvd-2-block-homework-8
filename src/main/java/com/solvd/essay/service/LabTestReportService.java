@@ -1,16 +1,15 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.*;
-import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
-import com.solvd.essay.persistence.myBatisImpl.LabTestReportRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.*;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class LabTestReportService {
-    final InterfaceGenericDao<LabTestReport> labTestReportRepositoryImpl = Factory.getLabTestReportRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    final InterfaceGenericDao<LabTestReport> labTestReportRepositoryImpl = ImplementationFactory.getLabTestReportRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
     public void create(LabTestReport labTestReport) throws SQLException {
             labTestReportRepositoryImpl.create(labTestReport);
     }

@@ -1,9 +1,8 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.EssayModule;
-import com.solvd.essay.persistence.Factory;
+import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
-import com.solvd.essay.persistence.myBatisImpl.EssayModuleRepositoryImpl;
 //import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
 //import com.solvd.essay.persistence.jdbcImpl.EssayModuleRepositoryImpl;
 
@@ -11,7 +10,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EssayModuleService {
-    final InterfaceGenericDao<EssayModule> essayModuleRepositoryImpl = Factory.getEssayModuleRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    final InterfaceGenericDao<EssayModule> essayModuleRepositoryImpl = ImplementationFactory.getEssayModuleRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
     public void create(EssayModule essayModule) throws SQLException {
             essayModuleRepositoryImpl.create(essayModule);
     }

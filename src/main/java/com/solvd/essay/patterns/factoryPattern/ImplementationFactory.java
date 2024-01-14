@@ -1,9 +1,13 @@
-package com.solvd.essay.persistence;
+package com.solvd.essay.patterns.factoryPattern;
 
 import com.solvd.essay.domain.*;
+import com.solvd.essay.patterns.abstractFactorypattern.AbstractFactory;
+import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.service.Framework;
 
-    public class Factory {
+    public class ImplementationFactory{
+
+
         public static InterfaceGenericDao<BatchInfo> getBatchInfoRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":

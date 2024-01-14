@@ -3,6 +3,10 @@ In this progressive project, we are going to model a lab essay
  management database.
 
 Exercises 
+### 11/1/2024
+Add Factory, Abstract Factory, Builder, Listener, Facade, Decorator, 
+Proxy, Strategy, MVC patterns to your current project.
+Refactor code for the current project to satisfy SOLID principles.
 
 ### 28/12/2023
 Add Jackson’s annotation to the hierarchy. Date, List, and complex objects should be covered.
