@@ -1,6 +1,9 @@
 package com.solvd.essay.service;
 
 import com.solvd.essay.domain.Employee;
+import com.solvd.essay.domain.EmployeeLaboratoryTools;
+import com.solvd.essay.patterns.abstractFactorypattern.AbstractFactory;
+import com.solvd.essay.patterns.abstractFactorypattern.FactoryGenerator;
 import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 //import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
@@ -10,8 +13,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeService {
-    final InterfaceGenericDao<Employee> employeeRepositoryImpl = ImplementationFactory.getEmployeeRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
-
+    //final InterfaceGenericDao<Employee> employeeRepositoryImpl = ImplementationFactory.getEmployeeRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    AbstractFactory abstractFactory= FactoryGenerator.getFactory("implementation");
+    final InterfaceGenericDao<Employee> employeeRepositoryImpl= abstractFactory
+            .getImplementation()
+            .getEmployeeRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
 
     public void create(Employee employee) throws SQLException {
             employeeRepositoryImpl.create(employee);

@@ -6,8 +6,9 @@ import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 public class FactoryGenerator {
     public static AbstractFactory getFactory(String choice){
         if(choice.equals("implementation")){
-            return null;
+            return new ImplementationFactory();
         }else {
+            //Another factory for the future
             return null;
         }
     }

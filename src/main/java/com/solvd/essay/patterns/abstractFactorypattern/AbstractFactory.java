@@ -5,5 +5,5 @@ import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 
 public abstract class AbstractFactory {
-
+    public abstract ImplementationFactory getImplementation();
 }

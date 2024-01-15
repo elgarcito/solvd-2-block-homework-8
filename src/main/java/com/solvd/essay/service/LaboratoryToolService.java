@@ -1,6 +1,9 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.GasConsumptionEssay;
 import com.solvd.essay.domain.LaboratoryTool;
+import com.solvd.essay.patterns.abstractFactorypattern.AbstractFactory;
+import com.solvd.essay.patterns.abstractFactorypattern.FactoryGenerator;
 import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 //import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
@@ -10,7 +13,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class LaboratoryToolService {
-    final InterfaceGenericDao<LaboratoryTool> laboratoryToolRepositoryImpl = ImplementationFactory.getLaboratoryToolRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    //final InterfaceGenericDao<LaboratoryTool> laboratoryToolRepositoryImpl = ImplementationFactory.getLaboratoryToolRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+
+    AbstractFactory abstractFactory= FactoryGenerator.getFactory("implementation");
+    final InterfaceGenericDao<LaboratoryTool> laboratoryToolRepositoryImpl= abstractFactory
+            .getImplementation()
+            .getLaboratoryToolRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
     public void create(LaboratoryTool laboratoryTool) throws SQLException {
             laboratoryToolRepositoryImpl.create(laboratoryTool);
     }

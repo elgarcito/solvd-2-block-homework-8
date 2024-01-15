@@ -1,6 +1,9 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.BatchInfo;
 import com.solvd.essay.domain.EmployeeEmployeeWorkAreas;
+import com.solvd.essay.patterns.abstractFactorypattern.AbstractFactory;
+import com.solvd.essay.patterns.abstractFactorypattern.FactoryGenerator;
 import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 //import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
@@ -10,8 +13,12 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class EmployeeEmployeeWorkAreasService {
-    final InterfaceGenericDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl = ImplementationFactory.getEmployeeEmployeeWorkAreasRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    //final InterfaceGenericDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl = ImplementationFactory.getEmployeeEmployeeWorkAreasRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
 
+    AbstractFactory abstractFactory= FactoryGenerator.getFactory("implementation");
+    final InterfaceGenericDao<EmployeeEmployeeWorkAreas> employeeEmployeeWorkAreasRepositoryImpl= abstractFactory
+            .getImplementation()
+            .getEmployeeEmployeeWorkAreasRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
     public void create(EmployeeEmployeeWorkAreas employeeEmployeeWorkAreas) throws SQLException {
         employeeEmployeeWorkAreasRepositoryImpl.create(employeeEmployeeWorkAreas);
     }

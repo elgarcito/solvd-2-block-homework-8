@@ -8,6 +8,39 @@ Add Factory, Abstract Factory, Builder, Listener, Facade, Decorator,
 Proxy, Strategy, MVC patterns to your current project.
 Refactor code for the current project to satisfy SOLID principles.
 
+### Solution
+The factory pattern is added in the package factoryPattern.This is used in the ImplementationFactory class.
+Also, it is an extension of abstractFactory which implements the abstract factory pattern. 
+The related classes to achieve this are in abstractFactory package and are implemented in all the service
+classes in the servicePackage.
+
+The builder pattern is implemented in builderPattern package in the class FullLabTestReportString. 
+In the main method from line 413 to line 422 there is an example of it.
+
+An implementation of the decorator pattern is used in the decoratorPattern package. There are the classes: LabHumidityDecorator.java
+LabInfo.java, LaboratoryInfo.java ,LabTemperatureDecorator.java and the interface LaboratoryExtraInfo.java
+are used to achieve an example of this pattern. The implementation could be seen in the main method from line
+426 to 428. According to the logic of our application, we can have more or less information of the
+temperature or humidity conditions in the lab.
+
+The Facade pattern is implemented in the facadePattern package. An example of this could be found in the
+main method from line 429 to 445.
+
+An implementation of the listener pattern is in the package observerPattern. 
+According to the logic of our application, the subject that sends the message is the LabOwner, and the ones
+that receive it are the suppliers (Observers).An example of this use is in the main method 
+from line 446 to line 466.
+
+The strategy pattern could be found in the stratyPattern package. There we can find 
+the classes Context.java, FindBatchByIdWithService.java, FindBatchWithDirectQuery.java 
+and the interface StrategyBatch.java. In our application, we can find a batch number using
+the previous created service or a direct query. This strategy allows us to choose which one 
+we want to use. An example of this use is in the main method
+from line 476 to line 481.
+
+The proxy pattern could be found in the proxyPattern package.
+An example of this use is in the main method from line 463 to line 476.
+
 ### 28/12/2023
 Add Jackson’s annotation to the hierarchy. Date, List, and complex objects should be covered.
 Parse JSON using Jackson.

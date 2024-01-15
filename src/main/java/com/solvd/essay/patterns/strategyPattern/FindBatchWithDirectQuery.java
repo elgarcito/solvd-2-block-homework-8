@@ -10,8 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class FindBatchWithDirectConsult implements StrategyBatch {
-    private static final Logger LOGGER = LogManager.getLogger(FindBatchWithDirectConsult.class);
+public class FindBatchWithDirectQuery implements StrategyBatch {
+    private static final Logger LOGGER = LogManager.getLogger(FindBatchWithDirectQuery.class);
     @Override
     public String findBatchById(Long id) {
         ConnectionPool connectionPool=new ConnectionPool();

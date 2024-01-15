@@ -1,6 +1,9 @@
 package com.solvd.essay.service;
 
+import com.solvd.essay.domain.LabTestReport;
 import com.solvd.essay.domain.TemperatureEssay;
+import com.solvd.essay.patterns.abstractFactorypattern.AbstractFactory;
+import com.solvd.essay.patterns.abstractFactorypattern.FactoryGenerator;
 import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 //import com.solvd.essay.persistence.jdbcImpl.AbstractDao;
@@ -10,7 +13,11 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class TemperatureEssayService {
-    final InterfaceGenericDao<TemperatureEssay> temperatureEssayRepositoryImpl = ImplementationFactory.getTemperatureEssayRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    //final InterfaceGenericDao<TemperatureEssay> temperatureEssayRepositoryImpl = ImplementationFactory.getTemperatureEssayRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
+    AbstractFactory abstractFactory= FactoryGenerator.getFactory("implementation");
+    final InterfaceGenericDao<TemperatureEssay> temperatureEssayRepositoryImpl= abstractFactory
+            .getImplementation()
+            .getTemperatureEssayRepositoryImpl(Framework.FRAMEWORK_USED_NAME.getFrameworkUsed());
     public void create(TemperatureEssay temperatureEssay) throws SQLException {
             temperatureEssayRepositoryImpl.create(temperatureEssay);
 

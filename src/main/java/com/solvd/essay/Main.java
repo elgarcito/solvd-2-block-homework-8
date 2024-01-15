@@ -1,20 +1,16 @@
 package com.solvd.essay;
 
 
-import com.solvd.essay.patterns.abstractFactorypattern.AbstractFactory;
-import com.solvd.essay.patterns.abstractFactorypattern.FactoryGenerator;
 import com.solvd.essay.patterns.builderPattern.FullLabTestReportString;
 import com.solvd.essay.patterns.decoratorPattern.LabInfo;
 import com.solvd.essay.patterns.facadePattern.Client;
 import com.solvd.essay.patterns.facadePattern.ExternalInfoFactory;
 import com.solvd.essay.patterns.facadePattern.LabVisitor;
-import com.solvd.essay.patterns.factoryPattern.ImplementationFactory;
 import com.solvd.essay.patterns.observerPattern.*;
 import com.solvd.essay.patterns.proxyPattern.ConnectionProxy;
 import com.solvd.essay.patterns.strategyPattern.Context;
 import com.solvd.essay.patterns.strategyPattern.FindBatchByIdWithService;
-import com.solvd.essay.patterns.strategyPattern.FindBatchWithDirectConsult;
-import com.solvd.essay.patterns.strategyPattern.StrategyBatch;
+import com.solvd.essay.patterns.strategyPattern.FindBatchWithDirectQuery;
 import com.solvd.essay.persistence.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -464,29 +460,26 @@ public class Main {
         observer1.update();
         observer2.update();
 
-
         //Proxy pattern in proxyPattern package
         ConnectionPool connectionPool = new ConnectionPool();
         ConnectionProxy connectionProxy = new ConnectionProxy(connectionPool);
-        try (Connection connection = connectionProxy.connect()) {
+        try {
+            Connection connection = connectionProxy.connect();
             PreparedStatement ps = connection.prepareStatement("select * from essay_module where id=1");
             ResultSet resultSet = ps.executeQuery();
             resultSet.next();
             LOGGER.info(resultSet.getLong("id"));
             LOGGER.info(resultSet.getString("module_description"));
+            connectionProxy.disconnect();
         } catch (SQLException e) {
             LOGGER.info(e.getMessage());
         }
 
         // Strategy pattern in strategyPattern package
         Context context=new Context(new FindBatchByIdWithService());
-        Context context1=new Context(new FindBatchWithDirectConsult());
+        Context context1=new Context(new FindBatchWithDirectQuery());
         LOGGER.info(context.executeStrategy(2L));
         LOGGER.info(context1.executeStrategy(2L));
-
-        //Abstract Factory
-        AbstractFactory implementationFactory=FactoryGenerator.getFactory("implementation");
-        implementationFactory.
     }
 
 

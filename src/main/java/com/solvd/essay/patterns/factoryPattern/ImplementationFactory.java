@@ -5,10 +5,13 @@ import com.solvd.essay.patterns.abstractFactorypattern.AbstractFactory;
 import com.solvd.essay.persistence.InterfaceGenericDao;
 import com.solvd.essay.service.Framework;
 
-    public class ImplementationFactory{
+    public class ImplementationFactory extends AbstractFactory{
+        @Override
+        public ImplementationFactory getImplementation() {
+            return this;
+        }
 
-
-        public static InterfaceGenericDao<BatchInfo> getBatchInfoRepositoryImpl(String value) {
+        public InterfaceGenericDao<BatchInfo> getBatchInfoRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.BatchInfoRepositoryImpl();
@@ -19,7 +22,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<Employee> getEmployeeRepositoryImpl(String value) {
+        public InterfaceGenericDao<Employee> getEmployeeRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.EmployeeRepositoryImpl();
@@ -30,7 +33,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<EmployeeEmployeeWorkAreas> getEmployeeEmployeeWorkAreasRepositoryImpl(String value) {
+        public InterfaceGenericDao<EmployeeEmployeeWorkAreas> getEmployeeEmployeeWorkAreasRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.EmployeeEmployeeWorkAreasRepositoryImpl();
@@ -41,7 +44,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<EmployeeLaboratoryTools> getEmployeeLaboratoryToolsRepositoryImpl(String value) {
+        public InterfaceGenericDao<EmployeeLaboratoryTools> getEmployeeLaboratoryToolsRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.EmployeeLaboratoryToolsRepositoryImpl();
@@ -52,7 +55,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<EmployeeWorkArea> getEmployeeWorkAreaRepositoryImpl(String value) {
+        public InterfaceGenericDao<EmployeeWorkArea> getEmployeeWorkAreaRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.EmployeeWorkAreaRepositoryImpl();
@@ -63,7 +66,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<EnergyEfficiencyEssay> getEnergyEfficiencyEssayRepositoryImpl(String value) {
+        public InterfaceGenericDao<EnergyEfficiencyEssay> getEnergyEfficiencyEssayRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.EnergyEfficiencyEssayRepositoryImpl();
@@ -74,7 +77,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<EquipmentForTestModel> getEquipmentForTestModelRepositoryImpl(String value) {
+        public InterfaceGenericDao<EquipmentForTestModel> getEquipmentForTestModelRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.EquipmentForTestModelRepositoryImpl();
@@ -85,7 +88,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<EssayModule> getEssayModuleRepositoryImpl(String value) {
+        public InterfaceGenericDao<EssayModule> getEssayModuleRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.EssayModuleRepositoryImpl();
@@ -96,7 +99,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<GasConsumptionEssay> getGasConsumptionEssayRepositoryImpl(String value) {
+        public InterfaceGenericDao<GasConsumptionEssay> getGasConsumptionEssayRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.GasConsumptionEssayRepositoryImpl();
@@ -107,7 +110,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<LaboratoryTool> getLaboratoryToolRepositoryImpl(String value) {
+        public InterfaceGenericDao<LaboratoryTool> getLaboratoryToolRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.LaboratoryToolRepositoryImpl();
@@ -118,7 +121,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<LabTestReport> getLabTestReportRepositoryImpl(String value) {
+        public InterfaceGenericDao<LabTestReport> getLabTestReportRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.LabTestReportRepositoryImpl();
@@ -129,7 +132,7 @@ import com.solvd.essay.service.Framework;
             }
         }
 
-        public static InterfaceGenericDao<TemperatureEssay> getTemperatureEssayRepositoryImpl(String value) {
+        public InterfaceGenericDao<TemperatureEssay> getTemperatureEssayRepositoryImpl(String value) {
             switch (value) {
                 case "myBatis":
                     return new com.solvd.essay.persistence.myBatisImpl.TemperatureEssayRepositoryImpl();
