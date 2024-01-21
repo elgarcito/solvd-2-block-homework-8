@@ -10,8 +10,7 @@ public class BatchInfoHandler extends DefaultHandler {
     private String currentElement;
     private BatchInfo batchInfo= new BatchInfo();
 
-    private boolean batchNumberObtainded =false;
-
+    private boolean batchNumberObtained =false;
 
     @Override
     public void startDocument() throws SAXException {
@@ -35,7 +34,7 @@ public class BatchInfoHandler extends DefaultHandler {
             batchInfo.setId(id);
         }
         if (currentElement.equals("batchNumber")){
-            batchNumberObtainded=true;
+            batchNumberObtained =true;
         }
 
     }
@@ -50,9 +49,9 @@ public class BatchInfoHandler extends DefaultHandler {
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
         String value= new String(ch, start, length);
-        if (batchNumberObtainded){
+        if (batchNumberObtained){
             batchInfo.setBatchNumber(value);
-            batchNumberObtainded=false;
+            batchNumberObtained =false;
         }
         //System.out.println(value);
     }

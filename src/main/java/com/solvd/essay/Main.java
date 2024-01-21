@@ -6,7 +6,10 @@ import com.solvd.essay.patterns.decoratorPattern.LabInfo;
 import com.solvd.essay.patterns.facadePattern.Client;
 import com.solvd.essay.patterns.facadePattern.ExternalInfoFactory;
 import com.solvd.essay.patterns.facadePattern.LabVisitor;
-import com.solvd.essay.patterns.observerPattern.*;
+import com.solvd.essay.patterns.observerPattern.LabEquipmentSupplier;
+import com.solvd.essay.patterns.observerPattern.LabOwner;
+import com.solvd.essay.patterns.observerPattern.MachineSupplier;
+import com.solvd.essay.patterns.observerPattern.Observer;
 import com.solvd.essay.patterns.proxyPattern.ConnectionProxy;
 import com.solvd.essay.patterns.strategyPattern.Context;
 import com.solvd.essay.patterns.strategyPattern.FindBatchByIdWithService;
@@ -476,12 +479,11 @@ public class Main {
         }
 
         // Strategy pattern in strategyPattern package
-        Context context=new Context(new FindBatchByIdWithService());
-        Context context1=new Context(new FindBatchWithDirectQuery());
+        Context context = new Context(new FindBatchByIdWithService());
+        Context context1 = new Context(new FindBatchWithDirectQuery());
         LOGGER.info(context.executeStrategy(2L));
         LOGGER.info(context1.executeStrategy(2L));
     }
-
 
 
 }
